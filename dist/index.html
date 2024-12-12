@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>Dinni's Landing Page</title>
+  </head>
+  <body class="font-Inter">
+    <p id="home"></p>
+    <!-- Header -->
+    <header class="sticky top-0 bg-ld-green shadow-md z-50">
+      <nav class="container flex items-center justify-center py-4 mt-0">
+        <ul class="font-semibold flex justify-center items-center gap-12 text-white uppercase text-xs w-full">
+          <li class="transform transition-transform duration-300 hover:scale-110"><a href="#home" class="cursor-pointer">Beranda</a></li>
+          <li class="transform transition-transform duration-300 hover:scale-110"><a href="#aboutme" class="cursor-pointer">Tentang</a></li>
+          <li class="transform transition-transform duration-300 hover:scale-110"><a href="#pricing" class="cursor-pointer">Harga</a></li>
+          <li class="transform transition-transform duration-300 hover:scale-110"><a href="#artikel" class="cursor-pointer">Artikel</a></li>
+          <li class="transform transition-transform duration-300 hover:scale-110"><a href="#contact" class="cursor-pointer">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>    
+
+    <!-- Hero -->
+    <section class="relative">
+      <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-20 sm:mb-10">
+        <!-- Content -->
+        <div class="flex flex-1 flex-col items-center lg:items-start">
+          <p class="font-semibold text-lg text-center lg:text-left mb-1">
+            <span class="text-black">Hallo, Aku </span> 
+            <span class="text-ld-green">Dinni Rahmawati</span>
+          </p>
+          <h2 class="font-extrabold text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
+            Career And Self-Development Practitioner
+          </h2>
+          <div class="flex justify-center flex-wrap gap-6">
+            <button type="button" class="font-medium btn btn-green btn-hover-white">Hire Me</button>              
+            <button type="button" class="font-medium btn btn-white hover:bg-ld-green hover:text-white">See My Work</button>
+          </div>
+        </div>
+        <!-- Image -->
+        <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:-mb-10 z-10">
+          <img class="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src="./imgs/cek1.png" alt="">
+        </div>
+        <!-- Rounded Rectangle -->
+        <!-- <div class="hidden md:block overflow-hidden bg-ld-green rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36"></div> -->
+      </div>
+    </section>
+    
+    <!-- About Me -->
+    <section id="aboutme" class="relative bg-white overflow-hidden mt-10">
+    <div class="max-w-7xl mx-auto">
+        <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+                fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polygon points="50,0 100,0 50,100 0,100"></polygon>
+            </svg>
+
+            <div class="pt-1"></div>
+
+            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                <div class="sm:text-center lg:text-left">
+                    <h2 class="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
+                        Halo, Aku Dinni
+                    </h2>
+
+                    <p>
+                      Aku adalah People Development Practitioner dengan pengalaman 5 tahun di bidang pengembangan diri dan karier. Hingga kini, aku telah merancang lebih dari 200 program yang membantu lebih dari 50.000 mahasiswa, fresh graduate, dan pekerja di Indonesia.
+                      <br><br>Perjalanan karierku dimulai di Telkom Indonesia sebagai Innovation Management Officer, di mana aku bertanggung jawab mengembangkan SDM untuk menciptakan produk digital yang berdampak. Pengalaman ini menyadarkanku akan pentingnya kualitas SDM dalam mendorong performa bisnis, yang akhirnya membawaku mendalami bidang ini secara akademik melalui program S2 di Adult Learning and Leadership, Columbia University, dengan beasiswa LPDP.
+                      <br><br>Dengan pengalamanku, aku ingin terus berkontribusi dalam melahirkan talenta-talenta berkualitas dan berwawasan luas, untuk meningkatkan produktivitas dan daya saing SDM Indonesia.          
+                    </p>
+                </div>
+            </main>
+        </div>
+      </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full" src="./imgs/aboutme.png" alt="">
+        </div>
+    </section>
+
+    <!-- Portofolio -->   
+    <section class="bg-white dark:bg-gray-900">
+      <div class="container px-6 py-10 mx-auto">
+          <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Portofolio</h1>
+          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-11.png')">
+                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring 1o1</h2>
+                  </div>
+              </div>
+
+              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-21.png')">
+                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring Kelompok</h2>
+                  </div>
+              </div>
+
+              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-3.png')">
+                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Webinar</h2>
+                  </div>
+              </div>
+
+              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-41.png')">
+                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Pelatihan Soft-Skill</h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+  
+
+    <!-- Services -->
+    <section class="p-4 lg:p-8 dark:bg-gray-100 dark:text-gray-800">
+      <div class="container mx-auto space-y-12">
+        <!-- Mentoring 1o1 -->
+        <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300">
+          <img src="./images/mentoring-1o1.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
+          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50">
+            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
+            <h3 class="text-3xl font-bold">Mentoring 1o1</h3>
+            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
+            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Lihat detail</button>
+          </div>
+        </div>
+        <!-- Proof reading -->
+        <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse hover:scale-105 transition-all duration-300">
+          <img src="./images/proofread.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
+          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50">
+            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
+            <h3 class="text-3xl font-bold">Proofread Dokumen</h3>
+            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
+            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Lihat detail</button>
+          </div>
+        </div>
+        <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300">
+          <img src="./images/services-3.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
+          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50 ">
+            <!-- <span class="text-xs uppercase dark:text-gray-600">Join, it's free</span> -->
+            <h3 class="text-3xl font-bold">Customized Soft-Skill Training & Learning Development Advisory</h3>
+            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
+            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Yuk Kolaborasi</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Pricing -->
+     <p id="pricing"></p>
+    <!-- 1o1 Mentoring -->
+    <section class="py-6 dark:bg-gray-100 dark:text-gray-900">
+      <div class="container mx-auto p-4 sm:p-10">
+        <div class="mb-16 space-y-4 text-center">
+          <h1 class="text-4xl font-semibold leading-tight">Paket Mentoring 1o1</h1>
+          <!-- <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p>       -->
+        </div>
+        <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap- xl:gap-6 lg:grid-cols-3">
+          <!-- Price 1 -->
+          <div class="relative z-0 flex flex-col items-center p-8 border rounded-md">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">Persiapan Kerja</span>
+            <p class="my-6 text-4xl font-bold dark:text-black">FREE</p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Booking sesi maksimal 60 hari setelah pembayaran.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Reschedule maksimal 1 kali, 24 jam sebelumnya.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Sesi via Zoom dan dapat direkam.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rekaman dan rangkuman dikirim dalam 24 jam.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <img src="./images/icon-information.png" alt="" class="w-5 h-5 text-ld-green flex-shrink-0">
+                <span>Paket hanya berlaku untuk yang belum berkerja</span>
+              </li>
+            </ul>
+            <button class="btn btn-white hover:bg-ld-green hover:text-white px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded">Daftar</button>
+          </div>
+          <!-- Price 2 -->
+          <div class="lg:-mt-10 mb-10 relative flex flex-col items-center p-8 border-2 rounded-md border-ld-green">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">1o1 Mentoring</span>
+            <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+              <span class="pb-2 text-4xl">249.000</span>
+              <span class="text-lg">/jam</span>
+            </p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Booking sesi maksimal 60 hari setelah pembayaran.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Reschedule maksimal 1 kali, 24 jam sebelumnya.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Sesi via Zoom dan dapat direkam.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rekaman dan rangkuman dikirim dalam 24 jam.</span>
+              </li>
+            </ul>
+            <button class="btn btn-green btn-hover-white px-8 py-3 mt-12 text-lg font-semibold uppercase rounded">Daftar</button>
+          </div>
+          <!-- Price 3 -->
+          <div class="relative z-0 flex flex-col items-center p-8 border rounded-md dark:bg-gray-100">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">1o1 Mentoring x2</span>
+            <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+              <span class="text-lg line-through dark:text-gray-700">&nbsp;498.000&nbsp;</span>
+              <span class="pb-2 text-4xl">399.000</span>
+              <span class="text-lg">/jam</span>
+            </p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Semua Benefit dan Ketentuan 1o1 Mentoring</span>
+              </li>
+            </ul>
+            <button class="btn btn-white hover:bg-ld-green hover:text-white px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded">Daftar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Proof Reading -->
+    <section class="py-6 dark:bg-gray-100 dark:text-gray-900">
+      <div class="container mx-auto p-4 sm:p-10">
+        <div class="mb-16 space-y-4 text-center">
+          <h1 class="text-4xl font-semibold leading-tight">Paket Proofread</h1>
+          <!-- <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p> -->
+          
+        </div>
+        <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap- xl:gap-6 lg:grid-cols-3">
+          <!-- Price 1 -->
+          <div class="relative z-0 flex flex-col items-center p-8 border rounded-md">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">Proofread A</span>
+            <p class="my-6 text-4xl font-bold dark:text-black">199.000
+              
+              <span class="text-lg">/dokumen</span>
+            </p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Tipe Dokumen: CV, Personal Statement, Form Beasiswa</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Kata Maksimal: 1000 kata</span>
+              </li>
+            </ul>
+            <button class="btn btn-white hover:bg-ld-green hover:text-white px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded">Daftar</button>
+          </div>
+          <!-- Price 2 -->
+          <div class="lg:-mt-10 mb-10 relative flex flex-col items-center p-8 border-2 rounded-md border-ld-green">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">Proofread B</span>
+            <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+              <span class="pb-2 text-4xl">399.000</span>
+              <span class="text-lg">/dokumen</span>
+            </p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Tipe Dokumen: Esai Rencana Kontribusi atau Rencana Studi</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Kata Maksimal: 2000 kata</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Sesi via Zoom dan dapat direkam.</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rekaman dan rangkuman dikirim dalam 24 jam.</span>
+              </li>
+            </ul>
+            <button class="btn btn-green btn-hover-white px-8 py-3 mt-12 text-lg font-semibold uppercase rounded">Daftar</button>
+          </div>
+          <!-- Price 3 -->
+          <div class="relative z-0 flex flex-col items-center p-8 border rounded-md dark:bg-gray-100">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-ld-green text-white dark:bg-ld-green dark:text-gray-50">Bundling</span>
+            <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+              <span class="text-lg line-through dark:text-gray-700">&nbsp;798.000&nbsp;</span>
+              <span class="pb-2 text-4xl">739.000</span>
+            </p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Paket 1o1 Mentoring (2x)</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-ld-green flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Proofread Esai Rencana Studi atau Kontribusi</span>
+              </li>
+            </ul>
+            <button class="btn btn-white hover:bg-ld-green hover:text-white px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded">Daftar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alur Proof Reading -->
+    <section class="dark:bg-gray-100 dark:text-gray-800">
+      <div class="container mx-auto flex flex-col p-6">
+        <h2 class="py-4 text-3xl font-bold text-center">Alur Proofreading</h2>
+        <div class="divide-y dark:divide-gray-300">
+          <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+            <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+              <img src="./images/icon-mail.svg" alt="" class="w-16 h-16">
+            </div>
+            <div class="ml-7 flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+              <span class="text-xs tracking-wider uppercase dark:text-violet-600">Step 1 - Proofreading pertama</span>
+              <span class="text-xl font-bold md:text-2xl">Feedback Awal</span>
+              <span class="mt-4 dark:text-gray-700">Reviewer akan memberikan feedback pertama dalam waktu 3 hari setelah dokumen disubmit. Feedback ini akan disampaikan secara asinkronus melalui email.</span>
+            </div>
+          </div>
+          <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+            <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+              <img src="./images/icon-laptop.svg" alt="" class="w-16 h-16">
+            </div>
+            <div class="ml-7 flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+              <span class="text-xs tracking-wider uppercase dark:text-violet-600">Step 2 - Diskusi</span>
+              <span class="text-xl font-bold md:text-2xl">Penjelasan Feedback</span>
+              <span class="mt-4 dark:text-gray-700">Dua hari setelah feedback awal diberikan, reviewer akan menjelaskan feedback tersebut secara lebih mendetail melalui online meeting selama 30 menit.</span>
+            </div>
+          </div>
+          <div class="grid justify-center grid-cols-4 p-8 mx-auto space-y-8 lg:space-y-0">
+            <div class="flex items-center justify-center lg:col-span-1 col-span-full">
+              <img src="./images/icon-revisi.svg" alt="" class="w-16 h-16">
+            </div>
+            <div class="ml-7 flex flex-col justify-center max-w-3xl text-center col-span-full lg:col-span-3 lg:text-left">
+              <span class="text-xs tracking-wider uppercase dark:text-violet-600">Step 3 - Proofreading kedua</span>
+              <span class="text-xl font-bold md:text-2xl">Feedback akhir</span>
+              <span class="mt-4 dark:bg-gray-100 dark:text-gray-700">Setelah revisi dokumen dikirimkan kembali, reviewer akan memberikan feedback akhir dalam waktu 2 hari secara asinkron melalui email.</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonies -->
+    <section class="dark:bg-gray-100 dark:text-gray-800">
+      <div class="container px-6 py-12 mx-auto">
+        <div class="grid items-center gap-4 xl:grid-cols-5">
+          <div class="max-w-2xl mx-auto my-8 space-y-4 text-center xl:col-span-2 xl:text-left">
+            <h2 class="text-4xl font-bold">Apa Kata Mereka?</h2>
+            <!-- <p class="dark:text-gray-600">Pri ex magna scaevola moderatius. Nullam accommodare no vix, est ei diceret alienum, et sit cetero malorum. Et sea iudico consequat, est sanctus adipisci ex.</p> -->
+          </div>
+          <div class="p-6 xl:col-span-3">
+            <div class="grid gap-4 md:grid-cols-2">
+              <!-- Kiri -->
+              <div class="grid content-center gap-4">
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mt-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full dark:bg-gray-500 border-2 border-gray-400">
+                    <div>
+                      <p class="text-lg font-semibold">Nabila Sheila</p>
+                      <p class="text-sm dark:text-gray-600">Penerima LoA Columbia University dan Beasiswa LPDP</p>
+                    </div>
+                  </div>
+                  <p>
+                    Thank you so much kak Dinni for
+                    guiding me with your thoughtful
+                    feedback, from structuring my essay
+                    to mock interview. 
+                    <br><br>
+                    Kak Dinni helps me with excellent
+                    advice to link my contribution plans
+                    with my current work! 
+                  </p>
+                </div>
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mt-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full border-2 border-gray-400 dark:bg-gray-500">
+                    <div>
+                      <p class="text-lg font-semibold">Farhan Hibatullah</p>
+                      <p class="text-sm dark:text-gray-600">Penerima LoA Columbia University dan Beasiswa LPDP</p>
+                    </div>
+                  </div>
+                  <p>
+                    This mentoring program by Dinni surely helped me in constructing my essay. Her approach to the mentees, how she presented the materials also helped us more in preparing the essay. I also enjoyed her approach, as she did not lecture us and showcased that her way is the best way. She gave us just some theories and feedback, and encourage us to explore our potentials.
+                    <br><br>Thank you for your service, Dinni! 
+                  </p>
+                </div>
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mt-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full border-2 border-gray-400 dark:bg-gray-500">
+                    <div>
+                      <p class="text-lg font-semibold">Anita Khairani</p>
+                      <p class="text-sm dark:text-gray-600">Penerima LoA University College London dan Beasiswa LPDP</p>
+                    </div>
+                  </div>
+                  <p>Masukan yg diberikan sangat
+                    relevan dan membangun. Dinni juga
+                    willing untuk ngasih list interview
+                    question dan probing yang bisa jadi
+                    referensi untuk latihan. Saat mock
+                    interview Dinni selalu ngasih follow
+                    up question yang sesuai konteks
+                    jurusan dan universitas. 
+                    <br><br>                                            
+                    Thank you and goodluck for your
+                    study din!</p>
+                </div>
+              </div>
+              <!-- Kanan -->
+              <div class="grid content-center gap-4">
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mt-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full border-2 border-gray-400 dark:bg-gray-500">
+                    <div>
+                      <p class="text-lg font-semibold">Martha Amelia</p>
+                      <p class="text-sm dark:text-gray-600">Penerima LoA University of Melbourne dan Beasiswa LPDP</p>
+                    </div>
+                  </div>
+                  <p>This mentorship helps me a lot to
+                    understand where my position is in the
+                    application process, what I lack on and
+                    what I can improve. Kak Dinni can pinpoint
+                    both my strenghts and weaknesses and
+                    give detailed suggestion on what to do to
+                    improve my application. 
+                    <br><br>
+                    Overall, being mentored by Kak Dinni is
+                    very recommended!</p>
+                </div>
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mt-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full border-2 border-gray-400 dark:bg-gray-500">
+                    <div>
+                      <p class="text-lg font-semibold">Joshua Hezer</p>
+                      <p class="text-sm dark:text-gray-600">Pegawai Swasta</p>
+                    </div>
+                  </div>
+                  <p>I got a lot of priceless guidances from Dinni! Starting from structuring my thought process into very coherent and dense, and also got enlightened through the mock interview sessions. 
+                    <br><br>
+                    And yes, I will highly recommend Dinni to be your Mentor! </p>
+                </div>
+                <div class="p-6 rounded shadow-md dark:bg-gray-50">
+                  <div class="flex items-center mb-4 space-x-4">
+                    <img src="./images/user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full border-2 border-gray-400 dark:bg-gray-500">
+                    <div>
+                      <p class="text-lg font-semibold">Daffa Ghifari</p>
+                      <p class="text-sm dark:text-gray-600">Pegawai swasta dan aspiring entrepreneur</p>
+                    </div>
+                  </div>
+                  <p>Gw mentoring sama Kak Dinni karena
+                    bingung masa depan kayak gimana yg
+                    harus gw pilih. 
+                    <br><br>
+                    Selama mentoring Kak Dinni ngasih
+                    banyak banget insight dari
+                    pengalamannya dan tokoh-tokoh
+                    inspiratif kenalan Kak Dinni yang luas
+                    banget. Abis mentoring jadi clear
+                    banget apa misi gw di dunia ini.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+    <!-- Article Section -->
+    <section id="artikel" class="bg-white py-6 sm:py-8 lg:py-12">
+      <div class="mx-auto max-w-screen-xl px-4 md:px-8"> 
+        <!-- Heading -->
+        <div class="mb-10 md:mb-16">
+          <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Artikel</h2>
+          <!-- <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint necessitatibus molestias explicabo.</p> -->
+        </div>
+        <!-- /Heading -->
+        <div class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
+          <!-- Article -->
+          <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+            <a href="https://www.linkedin.com/posts/dinni-rahmawati_theory-of-change-for-lpdp-essay-activity-7215884511991975936-Wcwz?utm_source=share&utm_medium=member_desktop" target="_blank" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+              <img src="./images/teoryofchanges.png" class="h-full w-full object-cover" />
+            </a>
+    
+            <div class="flex flex-col gap-2">
+              <span class="text-sm text-gray-400">Juli, 2024</span>
+    
+              <h2 class="text-xl font-bold text-gray-800">
+                <a href="https://www.linkedin.com/posts/dinni-rahmawati_theory-of-change-for-lpdp-essay-activity-7215884511991975936-Wcwz?utm_source=share&utm_medium=member_desktop" target="_blank" class="transition duration-100 hover:text-ld-green active:text-rose-600">Crafting Theory of Change for Your LPDP Essay</a>
+              </h2>
+    
+              <p class="text-gray-500">Setelah review puluhan essay LPDP, ada salah satu hal yang esensial namun masih sulit saya temukan adalah koherensi pengalaman, rencana study dan rencana kontribusi. 
+                <!-- Yang saya temukan, masih banyak ketidakseimbangan antara rencana kontribusi dengan sumberdaya yang dimiliki saat ini, sehingga membuat rencana kontribusinya menjadi perlu dipertanyakan, "Apa iya, ini sesuatu yang achievable?".  -->
+                </p>
+    
+              <div>
+                <a href="https://www.linkedin.com/posts/dinni-rahmawati_theory-of-change-for-lpdp-essay-activity-7215884511991975936-Wcwz?utm_source=share&utm_medium=member_desktop" target="_blank" class="font-semibold text-ld-green transition duration-100 hover:text-rose-600 active:text-rose-700">Read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- /Article -->
+          <!-- Article -->
+          <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+            <a href="https://www.linkedin.com/posts/dinni-rahmawati_leadership-learningorganization-deliberatelydevelopmentalorganization-activity-7272488221505138688-Tro5?utm_source=share&utm_medium=member_desktop" target="_blank" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+              <img src="./images/artikel2.png" loading="lazy" alt="" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            </a>
+    
+            <div class="flex flex-col gap-2">
+              <span class="text-sm text-gray-400">11 Desember, 2024</span>
+    
+              <h2 class="text-xl font-bold text-gray-800">
+                <a href="https://www.linkedin.com/posts/dinni-rahmawati_leadership-learningorganization-deliberatelydevelopmentalorganization-activity-7272488221505138688-Tro5?utm_source=share&utm_medium=member_desktop" target="_blank" class="transition duration-100 hover:text-ld-green active:text-rose-600">"Why is my team not performing as well as I thought they would?"</a>
+              </h2>
+    
+              <p class="text-gray-500">Instead of looking at your team members, have you look at the working environment, or the tools? Yap, apparently these are some factors that we often missed in developing our team to optimize our business performance. </p>
+    
+              <div>
+                <a href="https://www.linkedin.com/posts/dinni-rahmawati_leadership-learningorganization-deliberatelydevelopmentalorganization-activity-7272488221505138688-Tro5?utm_source=share&utm_medium=member_desktop" target="_blank" class="font-semibold text-ld-green transition duration-100 hover:text-rose-600 active:text-rose-700">Read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- /Article -->
+          <!-- Article -->
+          <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+            <a href="https://www.linkedin.com/pulse/pertumbuhan-dua-arah-pada-mentoring-mentor-dan-mentee-dinni-rahmawati-pbdcc/?trackingId=kTF%2Bl2ACSG2PFCY2Pb3UVA%3D%3D" target="_blank" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+              <img src="./images/artikel3.jpg" loading="lazy" alt="" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            </a>
+    
+            <div class="flex flex-col gap-2">
+              <span class="text-sm text-gray-400">27 November, 2024</span>
+    
+              <h2 class="text-xl font-bold text-gray-800">
+                <a href="https://www.linkedin.com/pulse/pertumbuhan-dua-arah-pada-mentoring-mentor-dan-mentee-dinni-rahmawati-pbdcc/?trackingId=kTF%2Bl2ACSG2PFCY2Pb3UVA%3D%3D" target="_blank" class="transition duration-100 hover:text-ld-green active:text-rose-600">Pertumbuhan Dua Arah pada Mentoring: Mentor dan Mentee Saling Bertumbuh dengan Pendekatan Constructive-Developmental Theory</a>
+              </h2>
+    
+              <p class="text-gray-500">Dalam berkarir, pernah nggak sih merasa sudah sangat percaya sama satu sosok yang kita kagumi sebagai mentor, tapi ternyata setelah kita diskusi, masukannya nggak seperti yang kita harapkan.</p>
+              <div>
+                <a href="https://www.linkedin.com/pulse/pertumbuhan-dua-arah-pada-mentoring-mentor-dan-mentee-dinni-rahmawati-pbdcc/?trackingId=kTF%2Bl2ACSG2PFCY2Pb3UVA%3D%3D" target="_blank" class="font-semibold text-ld-green transition duration-100 hover:text-rose-600 active:text-rose-700">Read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- /Article -->
+          <!-- Article -->
+          <article class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+            <a href="https://www.linkedin.com/pulse/3-conversations-can-cost-you-opportunities-lesson-from-rahmawati-2a8uc/?trackingId=B1tA7CKKTdqF4ZHmFtoFUw%3D%3D" target="_blank" class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40">
+              <img src="./images/artikel4.png" loading="lazy" alt="" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            </a>
+    
+            <div class="flex flex-col gap-2">
+              <span class="text-sm text-gray-400">19 November, 2024</span>
+    
+              <h2 class="text-xl font-bold text-gray-800">
+                <a href="https://www.linkedin.com/pulse/3-conversations-can-cost-you-opportunities-lesson-from-rahmawati-2a8uc/?trackingId=B1tA7CKKTdqF4ZHmFtoFUw%3D%3D" target="_blank" class="transition duration-100 hover:text-ld-green active:text-rose-600">The 3 Conversations That Can Cost You Opportunities: A Lesson from the Insurance Agent's Pitch</a>
+              </h2>
+    
+              <p class="text-gray-500">During our recent session with Mestara, I discussed the topic of Building a Professional Network for Professional Growth. I shared insights into three distinct types of conversations and their potential impact on opportunities.</p>
+    
+              <div>
+                <a href="https://www.linkedin.com/pulse/3-conversations-can-cost-you-opportunities-lesson-from-rahmawati-2a8uc/?trackingId=B1tA7CKKTdqF4ZHmFtoFUw%3D%3D" target="_blank" class="font-semibold text-ld-green transition duration-100 hover:text-rose-600 active:text-rose-700">Read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- /Article -->
+        </div>
+      </div>
+    </section>
+        
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white dark:bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div class="md:flex-row md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="https://flowbite.com/" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">My Clients</span>
+                </a>
+            </div>
+            <div class="container flex flex-wrap justify-center mx-auto dark:text-gray-600">
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-microsoft.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-paragon.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-tanoto.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-glints.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-yayasan-baitul-maal.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-shift-academy.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-u-shape.svg" alt="">
+              </div>
+              <div class="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
+                <img src="./images/icon-salman.svg" alt="">
+              </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            © 2023 <a href="https://www.clientwebsite.com" class="hover:underline">Dinni Rahmawati</a>. All Rights Reserved. 
+            All trademarks are the property of their respective owners.
+          </span>
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.linkedin.com/in/dinni-rahmawati-512401135/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+                    <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+                  </svg>                  
+                  <span class="sr-only">Linkedin page</span>
+                </a>
+                <a href="https://dinnirahmawati12.medium.com/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                    <img src="./images/icon-medium.svg" alt="Medium" class="w-6 h-6 text-gray-800 dark:text-white">
+                    <span class="sr-only">Medium</span>
+                </a>
+                <a href="https://www.instagram.com/abcdinis/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                  </svg>                  
+                  <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@abcdinis?_t=8nKW7eqEAx5&_r=1" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-800 dark:text-white" fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 512 512" id="tiktok">
+                    <path d="M353.97 0.43c0.03,7.81 2.31,120.68 120.76,127.72 0,32.55 0.04,56.15 0.04,87.21 -8.97,0.52 -77.98,-4.49 -120.93,-42.8l-0.13 169.78c1.63,117.84 -85.09,189.55 -198.44,164.78 -195.46,-58.47 -130.51,-348.37 65.75,-317.34 0,93.59 0.05,-0.03 0.05,93.59 -81.08,-11.93 -108.2,55.52 -86.65,103.81 19.6,43.97 100.33,53.5 128.49,-8.53 3.19,-12.14 4.78,-25.98 4.78,-41.52l0 -337.13 86.28 0.43z"></path>
+                  </svg>
+                    <span class="sr-only">Tik-Tok</span>
+                </a>
+                <a href="javascript:void(0);" id="copyEmail" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17 6h-2V5h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2h-.541A5.965 5.965 0 0 1 14 10v4a1 1 0 1 1-2 0v-4c0-2.206-1.794-4-4-4-.075 0-.148.012-.22.028C7.686 6.022 7.596 6 7.5 6A4.505 4.505 0 0 0 3 10.5V16a1 1 0 0 0 1 1h7v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3h5a1 1 0 0 0 1-1v-6c0-2.206-1.794-4-4-4Zm-9 8.5H7a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2Z"/>
+                  </svg>
+                  <span class="sr-only">Copy email</span>
+                </a>
+            </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script>
+      // Ambil elemen dengan id 'copyEmail'
+      const copyEmailButton = document.getElementById('copyEmail');
+  
+      // Alamat email yang ingin disalin
+      const emailToCopy = 'dinni.business@gmail.com';
+  
+      // Menambahkan event listener pada tombol
+      copyEmailButton.addEventListener('click', function() {
+          // Membuat elemen input sementara
+          const tempInput = document.createElement('input');
+          tempInput.value = emailToCopy;
+          document.body.appendChild(tempInput);
+          
+          // Pilih teks di input
+          tempInput.select();
+          tempInput.setSelectionRange(0, 99999); // Untuk mobile
+  
+          // Salin ke clipboard
+          document.execCommand('copy');
+  
+          // Hapus input sementara
+          document.body.removeChild(tempInput);
+  
+          // Memberi tahu pengguna
+          alert('Email berhasil disalin ke clipboard!');
+      });
+    </script>
+    <script>
+      document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href'); // Ambil ID tujuan
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      let offset = 0; // Default offset
+
+      // Terapkan offset hanya untuk elemen tertentu
+      if (targetId === '#aboutme') {
+        offset = -40; // Offset khusus untuk #aboutme
+      }
+      if (targetId === '#pricing') {
+        offset = -40; // Offset khusus untuk #aboutme
+      }
+      if (targetId === '#artikel') {
+        offset = -40; // Offset khusus untuk #aboutme
+      }
+      if (targetId === '#contact') {
+        offset = 400; // Offset khusus untuk #aboutme
+      }
+
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition + offset;
+
+      // Gulir dengan smooth
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+    </script>    
+  </body>
+</html>

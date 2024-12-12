@@ -2,17 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .btn{
-    @apply shadow-md py-3 px-6 rounded-md transition duration-300;
+    @apply shadow-md py-3 px-6 rounded-full transition duration-300;
 }
 
-.btn-purple{
-    @apply bg-bookmark-purple text-white;
-}
 
 .btn-white{
-    @apply bg-bookmark-white;
+    @apply bg-bookmark-white border border-ld-green;
+}
+
+.btn-green{
+    @apply bg-ld-green text-white border border-ld-green;
+}
+
+.btn-yellow{
+    @apply bg-ld-yellow text-white;
+}
+
+.btn-hover-white:hover {
+    @apply bg-bookmark-white text-black border border-ld-green;
+}
+
+
+@layer base {
+  h5 {
+    @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
+  }
+}
+
+
+
+.item-container {
+  @apply flex flex-col justify-between w-full space-y-6 text-2xl text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
+}
+
+.item {
+  @apply relative overflow-hidden md:w-1/4;
+}
+
+.item-gradient {
+  @apply absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+}
+
+/* Client Section */
+@layer base {
+  .clients-section {
+    @apply text-center py-8; /* padding vertikal */
+  }
+
+  .client-logos {
+    @apply flex justify-center gap-6 flex-wrap; /* menata logo secara horizontal dengan jarak antar logo */
+  }
+
+  .client-logo {
+    @apply w-auto h-12 transition-all duration-300; /* pastikan tinggi disesuaikan otomatis agar proporsi tetap */
+  }
+
+  .client-logo:hover {
+    @apply scale-105; /* efek zoom saat hover */
+  }
+}
+
+/* Connect With Me Section */
+@layer base {
+  .connect-with-me {
+    @apply text-center py-8; /* padding vertikal */
+  }
+  .social-links {
+    @apply flex justify-center gap-6; /* menata tautan sosial secara horizontal dengan jarak antar ikon */
+  }
+  .social-icon img {
+    @apply w-12 transition-all duration-300; /* ukuran ikon dan animasi */
+  }
+  .social-icon img:hover {
+    @apply scale-110; /* efek zoom saat hover */
+  }
+  .contact-btn {
+    @apply mt-4 px-8 py-2 font-bold uppercase bg-black text-white border-0 cursor-pointer transition-all duration-300; /* styling tombol */
+  }
+  .contact-btn:hover {
+    @apply bg-gray-700; /* perubahan warna latar belakang saat hover */
+  }
+}
+
+/* Footer Layout */
+@layer base {
+  .footer {
+    @apply bg-ld-green text-white; /* background footer dan warna teks */
+  }
+  .footer-container {
+    @apply container mx-auto px-6 py-12; /* padding dan margin untuk container footer */
+  }
+}
+
+/* Optional: For responsive behavior */
+@layer base {
+  /* Responsif: Client logos and social icons on mobile */
+  @media (max-width: 768px) {
+    .client-logos {
+      @apply flex-col; /* Menyusun logo secara vertikal pada perangkat kecil */
+    }
+  }
 }

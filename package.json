@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:tailwinds": "tailwind build src/input.css -o public/output.css"
+    "build:tailwinds": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "flowbite": "^2.5.2",
     "tailwindcss": "^3.4.16"
   }
 }
