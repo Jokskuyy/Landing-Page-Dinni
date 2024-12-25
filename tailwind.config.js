@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './index.html',        // File HTML utama
+    './index.html',
+    './mentoring.html',        // File HTML utama
     './**/*.html',         // Semua file HTML di folder
     './src/**/*.{js,ts,jsx,tsx,vue}', // File JS/TS/Vue jika Anda menggunakan framework
     "./node_modules/flowbite/**/*.js",
