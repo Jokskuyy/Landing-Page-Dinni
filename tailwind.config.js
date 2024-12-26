@@ -38,6 +38,8 @@ module.exports = {
         "ld-yellow": "#FFD929",
         "ld-green": "#006B7B",
         "ld-white": "#FAF9F6",
+        "dn-blue": "#2D5FCF",
+        "dn-green": "#B0C655",
       }
     },
     fontFamily: {

@@ -13,11 +13,15 @@
 
 
 .btn-white{
-    @apply bg-bookmark-white border border-ld-green;
+    @apply bg-bookmark-white border border-dn-blue;
 }
 
 .btn-green{
     @apply bg-ld-green text-white border border-ld-green;
+}
+
+.btn-blue{
+  @apply bg-dn-blue text-white border border-dn-blue;
 }
 
 .btn-yellow{
