@@ -30,7 +30,7 @@ document.querySelectorAll('nav ul li a').forEach(link => {
             if (targetId === '#pricing') offset = -20;
             if (targetId === '#artikel') offset = -30;
             if (targetId === '#contact') offset = 400;
-            if (targetId === '#form') offset = 40000;
+            if (targetId === '#form') offset = 400;
 
             const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
             const offsetPosition = elementPosition + offset;
