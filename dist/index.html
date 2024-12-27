@@ -549,15 +549,7 @@
     </div>
 </footer>
   <script>
-    import '../node_modules/flowbite/dist/flowbite.min.js';
-    document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
+    if (targetElement) {
             let offset = 0;
 
             if (targetId === '#aboutme') offset = -40;
@@ -574,8 +566,6 @@
                 behavior: 'smooth'
             });
         }
-    });
-});
   </script>
   <script src="./main.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> 
