@@ -6,6 +6,8 @@ module.exports = {
     './**/*.html',         // Semua file HTML di folder
     './src/**/*.{js,ts,jsx,tsx,vue}', // File JS/TS/Vue jika Anda menggunakan framework
     "./node_modules/flowbite/**/*.js",
+    './main.js',
+    './*.js'
   ],
   theme: {
     extend: {
