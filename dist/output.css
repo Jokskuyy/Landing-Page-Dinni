@@ -1179,11 +1179,6 @@ h5 {
   margin-bottom: 2rem;
 }
 
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-
 .\!mt-6 {
   margin-top: 1.5rem !important;
 }
@@ -1244,6 +1239,10 @@ h5 {
   margin-top: 3.5rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1258,14 +1257,6 @@ h5 {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .block {

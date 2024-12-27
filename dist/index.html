@@ -102,29 +102,29 @@
       <div class="container px-6 py-10 mx-auto">
           <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Portofolio</h1>
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
-              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-11.png')">
+              <a href="#testimonies" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-11.png')">
                   <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
                       <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring 1o1</h2>
                   </div>
-              </div>
+                </a>
 
-              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-21.png')">
+              <a target="_blank" href="https://www.linkedin.com/services/page/b14b99329a78226740" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-21.png')">
                   <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
                       <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring Kelompok</h2>
                   </div>
-              </div>
+                </a>
 
-              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-3.png')">
+              <a href="#testimonies" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-3.png')">
                   <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
                       <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Webinar</h2>
                   </div>
-              </div>
+                </a>
 
-              <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-41.png')">
+              <a href="#testimonies"  class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover rounded-lg h-96" style="background-image:url('./images/portfolio-41.png')">
                   <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
                       <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Pelatihan Soft-Skill</h2>
                   </div>
-              </div>
+                </a>
           </div>
       </div>
     </section>
@@ -167,7 +167,7 @@
     </section>
     
     <!-- Testimonies -->
-    <section class="bg-dn-green py-4">
+    <section id="testimonies" class="bg-dn-green py-4">
       <div class="container px-6 py-12 mx-auto">
         <div class="max-w-2xl mx-auto my-8 space-y-4 text-center ">
           <h2 class="text-4xl font-bold justify-center grid-cols-2">Apa Kata Mereka?</h2>
@@ -518,7 +518,53 @@
     </div>
 </footer>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
-  
+  <script>
+    import '../node_modules/flowbite/dist/flowbite.min.js';
+
+const copyEmailButton = document.getElementById('copyEmail');
+const emailToCopy = 'dinni.business@gmail.com';
+
+copyEmailButton.addEventListener('click', function () {
+    const tempInput = document.createElement('input');
+    tempInput.value = emailToCopy;
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+
+    document.body.removeChild(tempInput);
+    alert('Email berhasil disalin ke clipboard!');
+    });
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            let offset = 0;
+
+            if (targetId === '#aboutme') offset = -40;
+            if (targetId === '#pricing') offset = -20;
+            if (targetId === '#artikel') offset = -30;
+            if (targetId === '#contact') offset = 400;
+            if (targetId === '#form') offset = 40000;
+
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition + offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+  </script>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> 
   </body>
 </html>
