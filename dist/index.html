@@ -6,30 +6,16 @@
     <link rel="stylesheet" href="./output.css">
     <title>Home | Dinni Rahmawati</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      // Check if the user has already visited the index page
-      const isIndex = window.location.pathname === "/index.html" || window.location.pathname === "/";
-      const hasVisitedIndex = sessionStorage.getItem("visitedIndex");
-
-      if (isIndex && !hasVisitedIndex) {
-          sessionStorage.setItem("visitedIndex", "true");
-      }
-    </script>
     <script defer>
-        document.addEventListener("DOMContentLoaded", () => {
-            const loader = document.getElementById("pre-loader");
-            const isIndex = window.location.pathname === "/index.html" || window.location.pathname === "/";
-            const hasVisitedIndex = sessionStorage.getItem("visitedIndex");
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("pre-loader");
 
-            if ((isIndex && !hasVisitedIndex) || !isIndex) {
-                  $("#pre-loader").fadeIn(0); // Show the loader immediately
-                  setTimeout(() => {
-                      $("#pre-loader").fadeOut(300); // Fade out after 1.2 seconds
-                  }, 800);
-              } else {
-                  $("#pre-loader").hide(); // Immediately hide loader if conditions are not met
-              }
-        });
+        $("#pre-loader").fadeIn(0); 
+    
+        setTimeout(() => {
+          $("#pre-loader").fadeOut(300);
+        }, 600);
+      });
     </script>
   </head>
   <body class=" bg-dn-green scroll-smooth">
