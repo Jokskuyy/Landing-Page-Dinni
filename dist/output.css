@@ -1042,16 +1042,6 @@ h5 {
   }
 }
 
-.footer {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 107 123 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-  /* background footer dan warna teks */
-}
-
-/* Responsif: Client logos and social icons on mobile */
-
 .container {
   width: 100%;
   margin-right: auto;
@@ -1345,10 +1335,6 @@ h5 {
 
 .h-full {
   height: 100%;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .w-1\/2 {
@@ -1743,14 +1729,6 @@ h5 {
 
 .border-4 {
   border-width: 4px;
-}
-
-.border-b-4 {
-  border-bottom-width: 4px;
-}
-
-.border-t-4 {
-  border-top-width: 4px;
 }
 
 .border-blue-600 {
@@ -2386,12 +2364,6 @@ h5 {
   --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
   opacity: 0.7;
 }
-
-/* Connect With Me Section */
-
-/* Footer Layout */
-
-/* Optional: For responsive behavior */
 
 .hover\:scale-105:hover {
   --tw-scale-x: 1.05;
