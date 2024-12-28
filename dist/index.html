@@ -5,71 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
     <title>Home | Dinni Rahmawati</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      // Check if the user has already visited the index page
+      const isIndex = window.location.pathname === "/index.html" || window.location.pathname === "/";
+      const hasVisitedIndex = sessionStorage.getItem("visitedIndex");
+
+      if (isIndex && !hasVisitedIndex) {
+          sessionStorage.setItem("visitedIndex", "true");
+      }
+    </script>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("pre-loader");
+            const isIndex = window.location.pathname === "/index.html" || window.location.pathname === "/";
+            const hasVisitedIndex = sessionStorage.getItem("visitedIndex");
+
+            if ((isIndex && !hasVisitedIndex) || !isIndex) {
+                  $("#pre-loader").fadeIn(0); // Show the loader immediately
+                  setTimeout(() => {
+                      $("#pre-loader").fadeOut(300); // Fade out after 1.2 seconds
+                  }, 800);
+              } else {
+                  $("#pre-loader").hide(); // Immediately hide loader if conditions are not met
+              }
+        });
+    </script>
   </head>
-  <body class="font-Inter bg-dn-green scroll-smooth">
+  <body class=" bg-dn-green scroll-smooth">
+      <!-- Pre Loader -->
+  <div id="pre-loader" class="fixed inset-0 flex items-center justify-center bg-gray-200 text-white z-50">
+    <div class="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent"></div>
+  </div>
     <p id="home"></p>
     <!-- navbar -->
-     <header class="sticky top-0 z-50 w-full bg-dn-blue dark-mode:text-gray-200 dark-mode:bg-gray-800">
-    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-      <div class="p-4 flex flex-row items-center justify-between">
-          <a href="index.html#home" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">
-              Dinni Rahmawati
-          </a>
+    <header class="sticky top-0 z-50 w-full bg-dn-blue dark-mode:text-gray-200 dark-mode:bg-gray-800">
+      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+          <a href="index.html#home" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Dinni Rahmawati</a>
           <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
               <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                  <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                  <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
               </svg>
           </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#home">Beranda</a>
+          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#aboutme">Profil</a>
+          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#pengalaman">Pengalaman</a>
+          <div @click.away="open = false" class="relative " x-data="{ open: false }">
+              <button @click="open = !open" class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+              <span class="text-white ">Jasa</span>
+              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+              <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="proofreading.html">Proofread</a>
+                  <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="mentoring.html">Mentoring</a>
+              </div>
+              </div>
+          </div>    
+          </nav>
       </div>
-      <nav :class="{'flex': open, 'hidden': !open}" class="hidden md:flex md:justify-end">
-          <ul class="flex flex-col md:flex-row md:space-x-4">
-              <li class="mt-1">
-                  <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-                     href="index.html#home">
-                     Beranda
-                  </a>
-              </li>
-              <li class="mt-1">
-                  <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-                     href="index.html#aboutme">
-                     Profil
-                  </a>
-              </li>
-              <li class="mt-1">
-                  <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-                     href="index.html#pengalaman">
-                     Pengalaman
-                  </a>
-              </li >
-              <li class="relative" @click.away="open = false" x-data="{ open: false }">
-                  <button @click="open = !open" class="text-white flex flex-row items-center px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                      Jasa
-                      <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 ml-1 transition-transform duration-200 transform">
-                          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                      </svg>
-                  </button>
-                  <div x-show="open" class="absolute right-0 w-48 mt-2 origin-top-right rounded-md shadow-lg bg-white dark-mode:bg-gray-800">
-                      <ul>
-                          <li>
-                              <a class="text-gray-600 block px-4 py-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-                                 href="proofreading.html">
-                                 Proofread
-                              </a>
-                          </li>
-                          <li>
-                              <a class="text-gray-600 block px-4 py-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" 
-                                 href="mentoring.html">
-                                 Mentoring
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </li>
-          </ul>
-      </nav>
-  </div>
-</header>
+  </header>
+
 
    
 
@@ -96,10 +96,11 @@
         <!-- Rounded Rectangle -->
         <!-- <div class="hidden md:block overflow-hidden bg-ld-green rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36"></div> -->
       </div>
+      <p id="aboutme"></p>
     </section>
     
     <!-- About Me -->
-    <section id="aboutme" class="relative bg-dn-blue overflow-hidden mt-10 text-white">
+    <section class="relative bg-dn-blue overflow-hidden mt-10 text-white">
     <div class="max-w-7xl mx-auto">
         <div class="relative z-10 pb-8 bg-dn-blue sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
             <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-dn-blue transform translate-x-1/2"
@@ -162,11 +163,12 @@
             <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Yuk Kolaborasi</button>
           </div>
         </a>
+        <p id="pengalaman"></p>
       </div>
     </section>
 
     <!-- Portofolio -->   
-    <section id="pengalaman" class="bg-dn-blue dark:bg-gray-900 text-white">
+    <section  class="bg-dn-blue dark:bg-gray-900 text-white">
       <div class="container px-6 py-10 mx-auto">
           <h1 class="text-2xl font-semibold text-center capitalize lg:text-3xl dark:text-white">Portofolio</h1>
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
@@ -550,26 +552,12 @@
       </div>
     </div>
 </footer>
-  <script>
-    if (targetElement) {
-            let offset = 0;
-
-            if (targetId === '#aboutme') offset = -40;
-            if (targetId === '#pricing') offset = -20;
-            if (targetId === '#artikel') offset = -30;
-            if (targetId === '#contact') offset = 400;
-            if (targetId === '#form') offset = 40000;
-
-            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition + offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-  </script>
   <script src="./main.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> 
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <!-- <script>
+    $(window).on('load', function(){
+      $('#preloader').fadeOut(200); 
+    });
+  </script> -->
   </body>
 </html>

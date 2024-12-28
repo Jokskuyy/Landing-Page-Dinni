@@ -7,6 +7,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.fade-out {
+  opacity: 0;}
+
 .btn{
     @apply shadow-md py-3 px-6 rounded-full transition duration-300;
 }
@@ -53,10 +56,9 @@
   @apply absolute top-0 bottom-0 right-0 left-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
 }
 
-/* Client Section */
 @layer base {
   .clients-section {
-    @apply text-center py-8; /* padding vertikal */
+    @apply text-center py-8;
   }
 
   .client-logos {
@@ -68,7 +70,7 @@
   }
 
   .client-logo:hover {
-    @apply scale-105; /* efek zoom saat hover */
+    @apply scale-105;
   }
 }
 

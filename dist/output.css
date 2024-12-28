@@ -1219,6 +1219,10 @@ h5 {
   margin-left: auto;
 }
 
+.mt-0\.5 {
+  margin-top: 0.125rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1341,6 +1345,10 @@ h5 {
 
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-1\/2 {
@@ -1493,6 +1501,16 @@ h5 {
 
 .transform-none {
   transform: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 .cursor-default {
@@ -1723,6 +1741,18 @@ h5 {
   border-width: 2px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-t-4 {
+  border-top-width: 4px;
+}
+
 .border-blue-600 {
   --tw-border-opacity: 1;
   border-color: rgb(28 100 242 / var(--tw-border-opacity, 1));
@@ -1751,6 +1781,15 @@ h5 {
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.border-t-transparent {
+  border-top-color: transparent;
 }
 
 .\!bg-gray-50 {
@@ -1911,11 +1950,6 @@ h5 {
   padding-bottom: 0.625rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1970,10 +2004,6 @@ h5 {
 
 .text-center {
   text-align: center;
-}
-
-.font-Inter {
-  font-family: Inter, sans-serif;
 }
 
 .font-\[sans-serif\] {
@@ -2224,6 +2254,10 @@ h5 {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.fade-out {
+  opacity: 0;
+}
+
 .btn {
   border-radius: 9999px;
   padding-top: 0.75rem;
@@ -2352,8 +2386,6 @@ h5 {
   --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
   opacity: 0.7;
 }
-
-/* Client Section */
 
 /* Connect With Me Section */
 
@@ -2842,12 +2874,6 @@ h5 {
 
   .md\:justify-between {
     justify-content: space-between;
-  }
-
-  .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1rem * var(--tw-space-x-reverse));
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
