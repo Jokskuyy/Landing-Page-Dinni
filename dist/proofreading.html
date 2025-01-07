@@ -1,614 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./output.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
     <title>Services | Dinni Rahmawati</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("pre-loader");
 
-        $("#pre-loader").fadeIn(0);
-
+        $("#pre-loader").fadeIn(0); 
+    
         setTimeout(() => {
           $("#pre-loader").fadeOut(300);
         }, 600);
       });
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Pre Loader -->
-    <div
-      id="pre-loader"
-      class="fixed inset-0 flex items-center justify-center bg-gray-200 text-white z-50"
-    >
-      <div
-        class="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent"
-      ></div>
+    <div id="pre-loader" class="fixed inset-0 flex items-center justify-center bg-gray-200 text-white z-50">
+      <div class="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent"></div>
     </div>
-
     <!-- navbar -->
-    <header
-      class="sticky top-0 z-50 w-full bg-dn-blue dark-mode:text-gray-200 dark-mode:bg-gray-800"
-    >
-      <div
-        x-data="{ open: false }"
-        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
-      >
-        <div class="p-4 flex flex-row items-center justify-between">
-          <a
-            href="index.html#home"
-            class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
-            >Dinni Rahmawati</a
-          >
-          <button
-            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
-            @click="open = !open"
-          >
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              <path
-                x-show="!open"
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-              <path
-                x-show="open"
-                fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <nav
-          :class="{'flex': open, 'hidden': !open}"
-          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
-        >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#home"
-            >Beranda</a
-          >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#aboutme"
-            >Profil</a
-          >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#pengalaman"
-            >Pengalaman</a
-          >
-          <div
-            @click.away="open = false"
-            class="relative"
-            x-data="{ open: false }"
-          >
-            <button
-              @click="open = !open"
-              class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            >
-              <span class="text-white">Jasa</span>
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                :class="{'rotate-180': open, 'rotate-0': !open}"
-                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
+    <header class="sticky top-0 z-50 w-full bg-dn-blue dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between">
+            <a href="index.html#home" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">Dinni Rahmawati</a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
             </button>
-            <div
-              x-show="open"
-              x-transition:enter="transition ease-out duration-100"
-              x-transition:enter-start="transform opacity-0 scale-95"
-              x-transition:enter-end="transform opacity-100 scale-100"
-              x-transition:leave="transition ease-in duration-75"
-              x-transition:leave-start="transform opacity-100 scale-100"
-              x-transition:leave-end="transform opacity-0 scale-95"
-              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
-            >
-              <div
-                class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
-              >
-                <a
-                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="proofreading.html"
-                  >Proofread</a
-                >
-                <a
-                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="mentoring.html"
-                  >Mentoring</a
-                >
-              </div>
             </div>
-          </div>
-        </nav>
-      </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#home">Beranda</a>
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#aboutme">Profil</a>
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#pengalaman">Pengalaman</a>
+            <div @click.away="open = false" class="relative " x-data="{ open: false }">
+                <button @click="open = !open" class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span class="text-white ">Jasa</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                    <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="proofreading.html">Proofread</a>
+                    <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="mentoring.html">Mentoring</a>
+                </div>
+                </div>
+            </div>    
+            </nav>
+        </div>
     </header>
 
     <!-- Price -->
     <section class="py-6 bg-dn-green">
       <div class="container mx-auto p-4 sm:p-10">
         <div class="mb-16 space-y-4 text-center">
-          <h1 class="text-4xl font-semibold leading-tight">
-            Essay Proofreading
-          </h1>
-          <!-- <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p> -->
+          <h1 class="text-4xl font-semibold leading-tight">Essay Proofreading</h1>
+          <!-- <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p>       -->
         </div>
-        <div
-          class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap- xl:gap-6 lg:grid-cols-3"
-        >
+        <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap- xl:gap-6 lg:grid-cols-3">
           <!-- Price 1 -->
-          <div
-            class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50"
-          >
-            <span
-              class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50"
-              >1X Proofread Essay</span
-            >
+          <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">1X Proofread Essay</span>
             <p class="my-6 text-4xl font-bold dark:text-black">Rp 180.000</p>
-            <ul class="flex-1 space-y-2">
-              <li class="flex items-center space-x-2 font-semibold">
-                Cocok untuk kamu yang sedang :
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Sudah percaya diri dengan esai, tetapi ingin memastikan tidak ada kesalahan tata bahasa, alur, atau format.</span>
               </li>
               <li class="flex items-start space-x-2">
-                <svg
-                  class="flex-shrink-0 mt-1.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  viewBox="0 0 375 375"
-                >
-                  <path
-                    fill="#2d5fcf"
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z"
-                  />
-                </svg>
-                <span
-                  >Sudah percaya diri dengan esai, tetapi ingin memastikan tidak
-                  ada kesalahan tata bahasa, alur, atau format.</span
-                >
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Membutuhkan validasi cepat sebelum dikirimkan.</span>
               </li>
+              <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
               <li class="flex items-start space-x-2">
-                <svg
-                  class="flex-shrink-0 mt-1.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  viewBox="0 0 375 375"
-                >
-                  <path
-                    fill="#2d5fcf"
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z"
-                  />
-                </svg>
-                <span>Membutuhkan validasi cepat sebelum dikirimkan.</span>
-              </li>
-              <li class="flex items-center space-x-2 font-semibold">
-                Yang Kamu Dapatkan :
-              </li>
-              <li class="flex items-start space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                 </svg>
                 <span>Review essay 1x (maksimal 2000 kata)</span>
               </li>
               <li class="flex items-start space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 12l2 2 4-4"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                 </svg>
-                <span
-                  >Feedback mencakup :<br />- Susunan tata bahasa<br />- Alur
-                  narasi<br />- Format<br />- Urgensi masalah</span
-                >
+                <span>Feedback mencakup : <br>- Susunan tata bahasa<br>- Alur narasi<br>- Format<br>- Urgensi masalah</span>
               </li>
             </ul>
-            <a
-              target="_blank"
-              href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0"
-            >
-              <button
-                class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110"
-              >
-                Daftar
-              </button>
-            </a>
-          </div>
+          <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+              <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Daftar</button>
+          </a>
+      </div>
           <!-- Price 2 -->
-          <div
-            class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50"
-          >
-            <span
-              class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50"
-              >2X Proofread Essay</span
-            >
+          <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">2X Proofread Essay</span>
             <p class="my-6 text-4xl font-bold dark:text-black">Rp 350.000</p>
-            <ul class="flex-1 space-y-2">
-              <li class="flex items-center space-x-2 font-semibold">
-                Cocok untuk kamu yang sedang :
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Ingin memastikan esai direvisi secara mendalam dan optimal.</span>
               </li>
               <li class="flex items-start space-x-2">
-                <svg
-                  class="flex-shrink-0 mt-1.5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  viewBox="0 0 375 375"
-                >
-                  <path
-                    fill="#2d5fcf"
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z"
-                  />
-                </svg>
-                <span
-                  >Sudah percaya diri dengan esai, tetapi ingin memastikan tidak
-                  ada kesalahan tata bahasa, alur, atau format.</span
-                >
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Mendapatkan follow-up feedback esai hingga tahap finalisasi.</span>
               </li>
-              <!-- Add more content as needed -->
+              <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Review essay 2x (maksimal 2000 kata)</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class=" w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Feedback mencakup : <br>- Susunan tata bahasa<br>- Alur narasi<br>- Format<br>- Konsistensi masalah yang diangkat, tujuan studi dan rencana kontribusi </span>
+              </li>
             </ul>
-          </div>
-        </div>
+          <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+              <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Daftar</button>
+          </a>
       </div>
-    </section>
+          <!-- Price 3 -->
+          <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50 items-center">2X Proofread Essay + <br>1 Meeting 30 menit</span>
+            <p class="mt-16 mb-6 text-4xl font-bold dark:text-black">Rp 450.000</p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Ingin dibimbing dengan pendekatan yang lebih komprehensif untuk menyempurnakan esai secara bertahap.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Menginginkan pemahaman mendalam feedback atas revisi yang telah dilakukan.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Mendiskusikan alur gagasan yang ingin dibahas di dalam secara mendalam. </span>
+              </li>
+              <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Review essay 2x (maksimal 2000 kata)</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Feedback mencakup : <br>- Susunan tata bahasa<br>- Alur narasi<br>- Format<br>- Urgensi masalah</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>1 x sesi meeting online untuk menjelaskan feedback 1 melalui zoom selama 30 menit</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Pengenalan penggunaan generative AI dalam memaksimalkan proses penulisan essay</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rangkuman catatan meeting menggunakan AI</span>
+              </li>
+            </ul>
+          <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+              <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Daftar</button>
+          </a>
+      </div>
+  </section>
+  
 
-    <!-- Ketentuan -->
-    <section class="py-15 bg-dn-green">
-      <div class="container bg-dn-blue rounded-lg text-white p-6">
-        <div>
-          <h4 class="font-semibold">Ketentuan Proofread Dokumen</h4>
+      <!-- Ketentuan -->
+      <section class="py-15 bg-dn-green">
+        <div class="container bg-dn-blue rounded-lg text-white p-6">
+          <div>
+            <h4 class="font-semibold">Ketentuan Proofread Dokumen </h4>
+          </div>
+          <ul>
+            <li class="flex items-start space-x-2">
+              <svg class="flex-shrink-0 mt-1.5" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0">
+                  <defs>
+                      <clipPath id="3fd0162dd4">
+                          <path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/>
+                      </clipPath>
+                      <clipPath id="2312d0ea2d">
+                          <path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/>
+                      </clipPath>
+                  </defs>
+                  <g clip-path="url(#3fd0162dd4)">
+                      <g clip-path="url(#2312d0ea2d)">
+                          <path fill="#FFFFFF" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/>
+                      </g>
+                  </g>
+              </svg>
+              <span>Feedback diberikan maksimal 3 hari setelah dokumen di submit, secara asinkron melalui email.</span>
+          </li>
+            <li class="flex items-start space-x-2">
+              <svg class="flex-shrink-0 mt-1.5" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0">
+                  <defs>
+                      <clipPath id="3fd0162dd4">
+                          <path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/>
+                      </clipPath>
+                      <clipPath id="2312d0ea2d">
+                          <path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/>
+                      </clipPath>
+                  </defs>
+                  <g clip-path="url(#3fd0162dd4)">
+                      <g clip-path="url(#2312d0ea2d)">
+                          <path fill="#FFFFFF" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/>
+                      </g>
+                  </g>
+              </svg>
+              <span>Sesi meeting 30 menit akan dilakukan setelah reviewer memberikan feedback yang pertama.</span>
+          </li>
+          
+          </ul>
         </div>
-        <ul>
-          <li class="flex items-start space-x-2">
-            <svg
-              class="flex-shrink-0 mt-1.5"
-              fill="#FFFFFF"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              width="15"
-              zoomAndPan="magnify"
-              viewBox="0 0 375 374.999991"
-              height="15"
-              preserveAspectRatio="xMidYMid meet"
-              version="1.0"
-            >
-              <defs>
-                <clipPath id="3fd0162dd4">
-                  <path
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 "
-                    clip-rule="nonzero"
-                  />
-                </clipPath>
-                <clipPath id="2312d0ea2d">
-                  <path
-                    d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 "
-                    clip-rule="nonzero"
-                  />
-                </clipPath>
-              </defs>
-              <g clip-path="url(#3fd0162dd4)">
-                <g clip-path="url(#2312d0ea2d)">
-                  <path
-                    fill="#FFFFFF"
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 "
-                    fill-opacity="1"
-                    fill-rule="nonzero"
-                  />
-                </g>
-              </g>
-            </svg>
-            <span
-              >Feedback diberikan maksimal 3 hari setelah dokumen di submit,
-              secara asinkron melalui email.</span
-            >
-          </li>
-          <li class="flex items-start space-x-2">
-            <svg
-              class="flex-shrink-0 mt-1.5"
-              fill="#FFFFFF"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              width="15"
-              zoomAndPan="magnify"
-              viewBox="0 0 375 374.999991"
-              height="15"
-              preserveAspectRatio="xMidYMid meet"
-              version="1.0"
-            >
-              <defs>
-                <clipPath id="3fd0162dd4">
-                  <path
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 "
-                    clip-rule="nonzero"
-                  />
-                </clipPath>
-                <clipPath id="2312d0ea2d">
-                  <path
-                    d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 "
-                    clip-rule="nonzero"
-                  />
-                </clipPath>
-              </defs>
-              <g clip-path="url(#3fd0162dd4)">
-                <g clip-path="url(#2312d0ea2d)">
-                  <path
-                    fill="#FFFFFF"
-                    d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 "
-                    fill-opacity="1"
-                    fill-rule="nonzero"
-                  />
-                </g>
-              </g>
-            </svg>
-            <span
-              >Sesi meeting 30 menit akan dilakukan setelah reviewer memberikan
-              feedback yang pertama.</span
-            >
-          </li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
     <!-- Form Contact -->
     <section id="form" class="bg-dn-green py-24">
-      <div
-        class="grid rounded-lg sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl bg-white font-[sans-serif]"
-      >
-        <div class="pl-2">
-          <h1 class="py-4 text-3xl font-bold">Mari Berkolaborasi!</h1>
-          <p class="text-sm text-gray-500 mt-4">
-            Ingin mengembangkan brand atau karier Anda? Hubungi saya, dan mari
-            wujudkan visi besar Anda bersama!
-          </p>
+        <div class="grid rounded-lg sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl bg-white font-[sans-serif]">
+            <div class="pl-2">
+                <h1 class="py-4 text-3xl font-bold">Mari Berkolaborasi!</h1>
+                <p class="text-sm text-gray-500 mt-4">Ingin mengembangkan brand atau karier Anda? Hubungi saya, dan mari wujudkan visi besar Anda bersama!</p>
 
-          <div class="mt-12">
-            <h2 class="text-gray-800 text-base font-bold">Email</h2>
-            <ul class="mt-4">
-              <li class="flex items-center">
-                <button
-                  id="copyEmail"
-                  class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0 cursor-pointer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="#007bff"
-                    viewBox="0 0 479.058 479.058"
-                  >
-                    <path
-                      d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  id="copyEmail"
-                  class="text-[#007bff] text-sm ml-4 text-left cursor-pointer"
-                >
-                  <small class="block">Mail</small>
-                  <strong>dinni.business@gmail.com</strong>
-                </button>
-              </li>
-            </ul>
-          </div>
+                <div class="mt-12">
+                    <h2 class="text-gray-800 text-base font-bold">Email</h2>
+                    <ul class="mt-4">
+                        <li class="flex items-center">
+                            <button id="copyEmail" class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
+                                    viewBox="0 0 479.058 479.058">
+                                    <path
+                                        d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
+                                        data-original="#000000" />
+                                </svg>
+                            </button>
+                            <button id="copyEmail" class="text-[#007bff] text-sm ml-4 text-left cursor-pointer">
+                                <small class="block">Mail</small>
+                                <strong>dinni.business@gmail.com</strong>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
 
-          <div class="mt-12">
-            <h2 class="text-gray-800 text-base font-bold">Socials</h2>
-            <ul class="flex mt-4 space-x-4">
-              <li
-                class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0"
-              >
-                <a
-                  href="https://www.linkedin.com/in/dinni-rahmawati-512401135/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 50 50"
-                    fill="#007bff"
-                  >
-                    <path
-                      d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <!-- Add similar structure for other social links -->
-            </ul>
-          </div>
+                <div class="mt-12">
+                    <h2 class="text-gray-800 text-base font-bold">Socials</h2>
+                
+                    <ul class="flex mt-4 space-x-4">
+                        <!-- LinkedIn -->
+                        <li class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                            <a href="https://www.linkedin.com/in/dinni-rahmawati-512401135/" target="_blank" rel="noopener noreferrer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 50 50" fill="#007bff">
+                                    <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <!-- Medium -->
+                        <li class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                            <a href="https://dinnirahmawati12.medium.com/" target="_blank" rel="noopener noreferrer">
+                                <svg width="24" height="24" viewBox="0 -55 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#007bff">
+
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                                    
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                                    
+                                    <g id="SVGRepo_iconCarrier"> <g> <path d="M72.2009141,1.42108547e-14 C112.076502,1.42108547e-14 144.399375,32.5485469 144.399375,72.6964154 C144.399375,112.844284 112.074049,145.390378 72.2009141,145.390378 C32.327779,145.390378 0,112.844284 0,72.6964154 C0,32.5485469 32.325326,1.42108547e-14 72.2009141,1.42108547e-14 Z M187.500628,4.25836743 C207.438422,4.25836743 223.601085,34.8960455 223.601085,72.6964154 L223.603538,72.6964154 C223.603538,110.486973 207.440875,141.134463 187.503081,141.134463 C167.565287,141.134463 151.402624,110.486973 151.402624,72.6964154 C151.402624,34.9058574 167.562834,4.25836743 187.500628,4.25836743 Z M243.303393,11.3867175 C250.314,11.3867175 256,38.835526 256,72.6964154 C256,106.547493 250.316453,134.006113 243.303393,134.006113 C236.290333,134.006113 230.609239,106.554852 230.609239,72.6964154 C230.609239,38.837979 236.292786,11.3867175 243.303393,11.3867175 Z" fill="#007bff"> </path> </g> </g>
+                                    
+                                    </svg>
+                            </a>
+                        </li>
+                        <!-- WhatsApp -->
+                        <li class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                            <a href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                                <svg fill="#007bff" height="24" width="24" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
+                                    <g id="XMLID_468_">
+                                        <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
+                                            c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687
+                                            c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887
+                                            c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153
+                                            c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348
+                                            c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802
+                                            c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922
+                                            c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0
+                                            c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458
+                                            C233.168,179.508,230.845,178.393,227.904,176.981z"/>
+                                        <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716
+                                            c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396
+                                            c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z
+                                            M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188
+                                            l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677
+                                            c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867
+                                            C276.546,215.678,222.799,268.994,156.734,268.994z"/>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <!-- TikTok -->
+                        <li class="bg-[#e6e6e6cf] h-12 w-12 rounded-full flex items-center justify-center shrink-0">
+                            <a href="https://www.tiktok.com/@abcdinis?_t=8nKW7eqEAx5&_r=1" target="_blank" rel="noopener noreferrer">
+                                <svg fill="#007bff" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <form class="ml-auto space-y-4 mx-6" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="04dfd03e-9ee5-4355-9568-98c3e7d6bf08">
+                <input type="hidden" name="subject" value="Proofreading">
+                <input name="Nama Lengkap" type="text" placeholder="Nama Lengkap" required
+                    class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
+                <input name="Email" type="email" placeholder="Email" required
+                    class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
+                <input name="No Telephone" type="text" placeholder="No Handphone/Whatsapp"
+                    class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent" />
+                <textarea name="Pesan" placeholder="Pesan" rows="6"
+                    class="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"></textarea>
+                <button type="submit" class="text-white btn-blue hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6">Kirim</button>
+            </form>
         </div>
-
-        <form
-          class="ml-auto space-y-4 mx-6"
-          action="https://api.web3forms.com/submit"
-          method="POST"
-        >
-          <input
-            type="hidden"
-            name="access_key"
-            value="04dfd03e-9ee5-4355-9568-98c3e7d6bf08"
-          />
-          <input type="hidden" name="subject" value="Proofreading" />
-          <input
-            name="Nama Lengkap"
-            type="text"
-            placeholder="Nama Lengkap"
-            required
-            class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
-          />
-          <input
-            name="Email"
-            type="email"
-            placeholder="Email"
-            required
-            class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
-          />
-          <input
-            name="No Telephone"
-            type="text"
-            placeholder="No Handphone/Whatsapp"
-            class="w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent"
-          />
-          <textarea
-            name="Pesan"
-            placeholder="Pesan"
-            rows="6"
-            class="w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent"
-          ></textarea>
-          <button
-            type="submit"
-            class="text-white btn-blue hover:bg-blue-600 tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6"
-          >
-            Kirim
-          </button>
-        </form>
-      </div>
     </section>
 
     <footer id="contact" class="bg-dn-blue dark:bg-gray-900 text-white">
-      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="md:flex-row md:justify-between">
-          <div class="mb-6 md:mb-0">
-            <span class="self-center text-2xl font-semibold dark:text-white"
-              >Klien Sebelumnya</span
-            >
-          </div>
-          <div
-            class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0"
-          >
-            <img
-              src="./images/logo client/microsoft-logo-svgrepo-com.svg"
-              alt="Partner 2"
-              class="w-24 md:w-32 lg:w-48 !h-auto"
-            />
-            <img
-              src="./images/logo client/icon-tanoto.svg"
-              alt="Partner 4"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo client/icon-paragon.svg"
-              alt="Partner 1"
-              class="w-24 md:w-32 lg:w-56 !h-auto"
-            />
-            <img
-              src="./images/logo client/icon-shift-academy.svg"
-              alt="Partner 3"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo client/icon-glints.svg"
-              alt="Partner 3"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo client/icon-yayasan-baitul-maal.svg"
-              alt="Partner 3"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo client/icon-u-shape.svg"
-              alt="Partner 3"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo client/icon-salman.svg"
-              alt="Partner 3"
-              class="w-24 h-auto md:w-32"
-            />
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex-row md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <span class="self-center text-2xl font-semibold  dark:text-white">Klien Sebelumnya</span>
+                </div>
+                <div class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0">
+                  <img src="./images/logo client/microsoft-logo-svgrepo-com.svg" alt="Partner 2" class="w-24 md:w-32 lg:w-48 !h-auto">
+                  <img src="./images/logo client/icon-tanoto.svg" alt="Partner 4" class="w-24 h-auto md:w-32 ">
+                  <img src="./images/logo client/icon-paragon.svg" alt="Partner 1" class="w-24 md:w-32 lg:w-56 !h-auto ">
+                  <img src="./images/logo client/icon-shift-academy.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+                  <img src="./images/logo client/icon-glints.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+                  <img src="./images/logo client/icon-yayasan-baitul-maal.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+                  <img src="./images/logo client/icon-u-shape.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+                  <img src="./images/logo client/icon-salman.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+              </div>
+            </div>
+            <div class="md:flex-row md:justify-between my-8">
+                <div class="mb-10">
+                    <span class="self-center text-2xl font-semibold dark:text-white">Mentee sudah berhasil diterima di kampus ternama</span>
+                </div>
+                <div class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0">
+                  <img src="./images/logo univ/Columbia.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
+                  <img src="./images/logo univ/Cornell.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
+                  <img src="./images/logo univ/Melbourne.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
+                  <img src="./images/logo univ/Insead.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
+                  <img src="./images/logo univ/UCL.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
+                  
+              </div>
+            </div>
+              
+          <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+          <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm sm:text-center dark:text-gray-400">
+               <h2>2024</h2>
+            </span>
+              <div class="flex mt-4 sm:justify-center sm:mt-0">
+                  <h2>Dinni Rahmawati</h2>
+              </div>
           </div>
         </div>
-        <div class="md:flex-row md:justify-between my-8">
-          <div class="mb-10">
-            <span class="self-center text-2xl font-semibold dark:text-white"
-              >Mentee sudah berhasil diterima di kampus ternama</span
-            >
-          </div>
-          <div
-            class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0"
-          >
-            <img
-              src="./images/logo univ/Columbia.svg"
-              alt="Partner 2"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo univ/Cornell.svg"
-              alt="Partner 2"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo univ/Melbourne.svg"
-              alt="Partner 2"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo univ/Insead.svg"
-              alt="Partner 2"
-              class="w-24 h-auto md:w-32"
-            />
-            <img
-              src="./images/logo univ/UCL.svg"
-              alt="Partner 2"
-              class="w-24 h-auto md:w-32"
-            />
-          </div>
-        </div>
-
-        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm sm:text-center dark:text-gray-400">
-            <h2>2024</h2>
-          </span>
-          <div class="flex mt-4 sm:justify-center sm:mt-0">
-            <h2>Dinni Rahmawati</h2>
-          </div>
-        </div>
-      </div>
     </footer>
     <script type="module" src="./main.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-      defer
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
 </html>
