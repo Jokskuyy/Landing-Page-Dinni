@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./output.css">
-    <link rel="icon" href="./images/logo-web.png" type="">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="icon" href="./images/logo-web.png" type="" />
     <title>Home | Dinni Rahmawati</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", () => {
         const loader = document.getElementById("pre-loader");
 
-        $("#pre-loader").fadeIn(0); 
-    
+        $("#pre-loader").fadeIn(0);
+
         setTimeout(() => {
           $("#pre-loader").fadeOut(300);
         }, 600);
@@ -21,103 +26,213 @@
     <script type="text/javascript">
       window.location.replace("https://www.dinnirahmawati.com/index.html#home");
     </script>
-  
-    
   </head>
-  <body class=" bg-dn-green scroll-smooth">
-      <!-- Pre Loader -->
-  <div id="pre-loader" class="fixed inset-0 flex items-center justify-center bg-gray-200 text-white z-50">
-    <div class="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent"></div>
-  </div>
+  <body class="bg-dn-green scroll-smooth">
+    <!-- Pre Loader -->
+    <div
+      id="pre-loader"
+      class="fixed inset-0 flex items-center justify-center bg-gray-200 text-white z-50"
+    >
+      <div
+        class="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent"
+      ></div>
+    </div>
     <p id="home"></p>
     <!-- navbar -->
     <header class="sticky top-0 z-50 w-full bg-dn-blue">
-      <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-          <div class="p-4 flex flex-row items-center justify-between">
-          <a href="index.html#home" class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg focus:outline-none focus:shadow-outline">Dinni Rahmawati</a>
-          <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-              <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-              </svg>
+      <div
+        x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+      >
+        <div class="p-4 flex flex-row items-center justify-between">
+          <a
+            href="index.html#home"
+            class="text-lg font-semibold tracking-widest text-white uppercase rounded-lg focus:outline-none focus:shadow-outline"
+            >Dinni Rahmawati</a
+          >
+          <button
+            class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+            @click="open = !open"
+          >
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path
+                x-show="!open"
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                x-show="open"
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
           </button>
-          </div>
-          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#home">Beranda</a>
-          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#aboutme">Profil</a>
-          <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#pengalaman">Pengalaman</a>
-          <div @click.away="open = false" class="relative " x-data="{ open: false }">
-              <button @click="open = !open" class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-              <span class="text-white ">Jasa</span>
-              <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+        </div>
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
+        >
+          <a
+            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="index.html#home"
+            >Beranda</a
+          >
+          <a
+            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="index.html#aboutme"
+            >Profil</a
+          >
+          <a
+            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="index.html#pengalaman"
+            >Pengalaman</a
+          >
+          <div
+            @click.away="open = false"
+            class="relative"
+            x-data="{ open: false }"
+          >
+            <button
+              @click="open = !open"
+              class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            >
+              <span class="text-white">Jasa</span>
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                :class="{'rotate-180': open, 'rotate-0': !open}"
+                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-out duration-100"
+              x-transition:enter-start="transform opacity-0 scale-95"
+              x-transition:enter-end="transform opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-75"
+              x-transition:leave-start="transform opacity-100 scale-100"
+              x-transition:leave-end="transform opacity-0 scale-95"
+              class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+            >
               <div class="px-2 py-2 bg-white rounded-md shadow">
-                  <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="proofreading.html">Proofread</a>
-                  <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="mentoring.html">Mentoring</a>
+                <a
+                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="proofreading.html"
+                  >Proofread</a
+                >
+                <a
+                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                  href="mentoring.html"
+                  >Mentoring</a
+                >
               </div>
-              </div>
-          </div>    
-          </nav>
+            </div>
+          </div>
+        </nav>
       </div>
-  </header>
-
-
-   
+    </header>
 
     <!-- Hero -->
     <section class="relative pb-2">
-      <div class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-20 sm:mb-10">
+      <div
+        class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-20 sm:mb-10"
+      >
         <!-- Content -->
         <div class="flex flex-1 flex-col items-center lg:items-start">
           <p class="font-semibold text-lg text-center lg:text-left mb-1">
-            <span class="text-black">Hallo, Aku </span> 
+            <span class="text-black">Hallo, Aku </span>
             <span class="text-dn-blue">Dinni Rahmawati</span>
           </p>
-          <h2 class="font-extrabold text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6">
+          <h2
+            class="font-extrabold text-3xl md:text-4 lg:text-5xl text-center lg:text-left mb-6"
+          >
             Career And Self-Development Practitioner
           </h2>
           <a href="#aboutme" class="flex justify-center flex-wrap gap-6">
-            <button type="button" class="font-medium btn btn-blue btn-hover-white">Lebih Kenal Tentang Dinni</button>
+            <button
+              type="button"
+              class="font-medium btn btn-blue btn-hover-white"
+            >
+              Lebih Kenal Tentang Dinni
+            </button>
           </a>
         </div>
         <!-- Image -->
         <div class="flex justify-center flex-1 mb-10 md:mb-16 lg:-mb-10 z-10">
-          <img class="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full" src="./imgs/cek1.png" alt="">
+          <img
+            class="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"
+            src="./imgs/cek1.png"
+            alt=""
+          />
         </div>
         <!-- Rounded Rectangle -->
         <!-- <div class="hidden md:block overflow-hidden bg-ld-green rounded-l-full absolute h-80 w-2/4 top-32 right-0 lg:-bottom-28 lg:-right-36"></div> -->
       </div>
       <p id="aboutme"></p>
     </section>
-    
+
     <!-- About Me -->
     <section class="relative bg-dn-blue overflow-hidden mt-10 text-white">
-    <div class="max-w-7xl mx-auto">
-        <div class="relative z-10 pb-8 bg-dn-blue sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-dn-blue transform translate-x-1/2"
-                fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <polygon points="50,0 100,0 50,100 0,100"></polygon>
-            </svg>
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="relative z-10 pb-8 bg-dn-blue sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
+        >
+          <svg
+            class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-dn-blue transform translate-x-1/2"
+            fill="currentColor"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon points="50,0 100,0 50,100 0,100"></polygon>
+          </svg>
 
-            <div class="pt-1"></div>
+          <div class="pt-1"></div>
 
-            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                <div class="sm:text-center lg:text-left">
-                    <h2 class="my-6 text-2xl tracking-tight font-extrabold text-white sm:text-3xl md:text-4xl">
-                        Halo, Aku Dinni
-                    </h2>
+          <main
+            class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28"
+          >
+            <div class="sm:text-center lg:text-left">
+              <h2
+                class="my-6 text-2xl tracking-tight font-extrabold text-white sm:text-3xl md:text-4xl"
+              >
+                Halo, Aku Dinni
+              </h2>
 
-                    <p>
-                      Aku adalah People Development Practitioner dengan pengalaman 5 tahun di bidang pengembangan diri dan karier. Hingga kini, aku telah merancang lebih dari 200 program yang membantu lebih dari 50.000 mahasiswa, fresh graduate, dan pekerja di Indonesia.
-                      <br><br>Perjalanan karierku dimulai di Telkom Indonesia sebagai Innovation Management Officer, di mana aku bertanggung jawab mengembangkan SDM untuk menciptakan produk digital yang berdampak. Pengalaman ini menyadarkanku akan pentingnya kualitas SDM dalam mendorong performa bisnis, yang akhirnya membawaku mendalami bidang ini secara akademik melalui program S2 di Adult Learning and Leadership, Columbia University, dengan beasiswa LPDP.
-                      <br><br>Dengan pengalamanku, aku ingin terus berkontribusi dalam melahirkan talenta-talenta berkualitas dan berwawasan luas, untuk meningkatkan produktivitas dan daya saing SDM Indonesia.          
-                    </p>
-                </div>
-            </main>
+              <p>
+                Aku adalah People Development Practitioner dengan pengalaman 5
+                tahun di bidang pengembangan diri dan karier. Hingga kini, aku
+                telah merancang lebih dari 200 program yang membantu lebih dari
+                50.000 mahasiswa, fresh graduate, dan pekerja di Indonesia.
+                <br /><br />Perjalanan karierku dimulai di Telkom Indonesia
+                sebagai Innovation Management Officer, di mana aku bertanggung
+                jawab mengembangkan SDM untuk menciptakan produk digital yang
+                berdampak. Pengalaman ini menyadarkanku akan pentingnya kualitas
+                SDM dalam mendorong performa bisnis, yang akhirnya membawaku
+                mendalami bidang ini secara akademik melalui program S2 di Adult
+                Learning and Leadership, Columbia University, dengan beasiswa
+                LPDP. <br /><br />Dengan pengalamanku, aku ingin terus
+                berkontribusi dalam melahirkan talenta-talenta berkualitas dan
+                berwawasan luas, untuk meningkatkan produktivitas dan daya saing
+                SDM Indonesia.
+              </p>
+            </div>
+          </main>
         </div>
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <img class="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full sm:order-first" src="./imgs/aboutme.png" alt="">
+          <img
+            class="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full sm:order-first"
+            src="./imgs/aboutme.png"
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -126,82 +241,179 @@
     <section class="mt-10 p-4 lg:p-8 bg-dn-green">
       <div class="container mx-auto space-y-12">
         <!-- Mentoring 1o1 -->
-        <a href="mentoring.html" class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300">
-          <img src="./images/mentoring-1o1.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
-          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50">
-            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
+        <a
+          href="mentoring.html"
+          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="./images/mentoring-1o1.svg"
+            alt=""
+            class="h-80 object-cover dark:bg-gray-500 aspect-video"
+          />
+          <div
+            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
+          >
+            <span class="text-xs uppercase dark:text-gray-600"
+              >Gabung Sekarang!</span
+            >
             <h3 class="text-3xl font-bold">Mentoring 1o1</h3>
             <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Lihat detail</button>
+            <button
+              type="button"
+              class="self-start underline hover:scale-110 transition-all duration-300"
+            >
+              Lihat detail
+            </button>
           </div>
         </a>
         <!-- Proof reading -->
-        <a href="proofreading.html" class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse hover:scale-105 transition-all duration-300">
-          <img src="./images/proofread.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
-          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50">
-            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
+        <a
+          href="proofreading.html"
+          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="./images/proofread.svg"
+            alt=""
+            class="h-80 object-cover dark:bg-gray-500 aspect-video"
+          />
+          <div
+            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
+          >
+            <span class="text-xs uppercase dark:text-gray-600"
+              >Gabung Sekarang!</span
+            >
             <h3 class="text-3xl font-bold">Proofread Dokumen</h3>
             <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Lihat detail</button>
+            <button
+              type="button"
+              class="self-start underline hover:scale-110 transition-all duration-300"
+            >
+              Lihat detail
+            </button>
           </div>
         </a>
         <!-- Collab -->
-        <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0" class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300">
-          <img src="./images/services-3.svg" alt="" class="h-80 object-cover dark:bg-gray-500 aspect-video">
-          <div class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50 ">
+        <a
+          target="_blank"
+          href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0"
+          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300"
+        >
+          <img
+            src="./images/services-3.svg"
+            alt=""
+            class="h-80 object-cover dark:bg-gray-500 aspect-video"
+          />
+          <div
+            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
+          >
             <!-- <span class="text-xs uppercase dark:text-gray-600">Join, it's free</span> -->
-            <h3 class="text-3xl font-bold">Customized Soft-Skill Training & Learning Development Advisory</h3>
+            <h3 class="text-3xl font-bold">
+              Customized Soft-Skill Training & Learning Development Advisory
+            </h3>
             <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button type="button" class="self-start underline hover:scale-110 transition-all duration-300">Yuk Kolaborasi</button>
+            <button
+              type="button"
+              class="self-start underline hover:scale-110 transition-all duration-300"
+            >
+              Yuk Kolaborasi
+            </button>
           </div>
         </a>
         <p id="pengalaman"></p>
       </div>
     </section>
 
-    <!-- Portofolio -->   
-    <section  class="bg-dn-blue dark:bg-gray-900 text-white">
+    <!-- Portofolio -->
+    <section class="bg-dn-blue dark:bg-gray-900 text-white">
       <div class="container px-6 py-10 mx-auto">
-          <h1 class="text-2xl font-semibold text-center capitalize lg:text-3xl dark:text-white">Portofolio</h1>
-          <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
-              <a href="#testimonies" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('./images/portfolio-11.png')">
-                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring 1o1</h2>
-                  </div>
-              </a>
+        <h1
+          class="text-2xl font-semibold text-center capitalize lg:text-3xl dark:text-white"
+        >
+          Portofolio
+        </h1>
+        <div
+          class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2"
+        >
+          <a
+            href="#testimonies"
+            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
+            style="background-image: url('./images/portfolio-11.png')"
+          >
+            <div
+              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
+            >
+              <h2
+                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
+              >
+                Mentoring 1o1
+              </h2>
+            </div>
+          </a>
 
-              <a target="_blank" href="https://www.linkedin.com/services/page/b14b99329a78226740" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('./images/portfolio-21.png')">
-                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring Kelompok</h2>
-                  </div>
-              </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/services/page/b14b99329a78226740"
+            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
+            style="background-image: url('./images/portfolio-21.png')"
+          >
+            <div
+              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
+            >
+              <h2
+                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
+              >
+                Mentoring Kelompok
+              </h2>
+            </div>
+          </a>
 
-              <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('./images/portfolio-3.png')">
-                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Webinar</h2>
-                  </div>
-                </a>
+          <a
+            href="https://www.linkedin.com/services/page/b14b99329a78226740"
+            target="_blank"
+            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
+            style="background-image: url('./images/portfolio-3.png')"
+          >
+            <div
+              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
+            >
+              <h2
+                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
+              >
+                Webinar
+              </h2>
+            </div>
+          </a>
 
-              <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank"  class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96" style="background-image:url('./images/portfolio-41.png')">
-                  <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                      <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Pelatihan Soft-Skill</h2>
-                  </div>
-                </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/services/page/b14b99329a78226740"
+            target="_blank"
+            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
+            style="background-image: url('./images/portfolio-41.png')"
+          >
+            <div
+              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
+            >
+              <h2
+                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
+              >
+                Pelatihan Soft-Skill
+              </h2>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
-  
-    
 
-    
     <!-- Testimonies -->
     <section id="testimonies" class="bg-dn-green py-4">
       <div class="container px-6 py-12 mx-auto">
-        <div class="max-w-2xl mx-auto my-8 space-y-4 text-center ">
-          <h2 class="text-4xl font-bold justify-center grid-cols-2">Apa Kata Mereka?</h2>
+        <div class="max-w-2xl mx-auto my-8 space-y-4 text-center">
+          <h2 class="text-4xl font-bold justify-center grid-cols-2">
+            Apa Kata Mereka?
+          </h2>
           <!-- <p class="dark:text-gray-600">Pri ex magna scaevola moderatius. Nullam accommodare no vix, est ei diceret alienum, et sit cetero malorum. Et sea iudico consequat, est sanctus adipisci ex.</p> -->
         </div>
-        <div class="grid items-center gap-4 ">
+        <div class="grid items-center gap-4">
           <div class="p-6 xl:col-span-3">
             <div class="grid gap-4 md:grid-cols-2">
               <!-- Kiri -->
@@ -209,47 +421,78 @@
                 <!-- 1 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
                   <p>
-                    Thank you so much kak Dinni for guiding me with your thoughtful feedback, from structuring my essay to mock interview. 
-                    <br><br>
-                    Kak Dinni helps me with excellent advice to link my contribution plans with my current work! 
+                    Thank you so much kak Dinni for guiding me with your
+                    thoughtful feedback, from structuring my essay to mock
+                    interview.
+                    <br /><br />
+                    Kak Dinni helps me with excellent advice to link my
+                    contribution plans with my current work!
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mt-4 space-x-4">
-                    <img src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full  bg-gray-200">
+                    <img
+                      src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Nabila Sheila</p>
-                      <p class="text-sm dark:text-gray-600">Penerima LoA Columbia University dan Beasiswa LPDP</p>
+                      <p class="text-sm dark:text-gray-600">
+                        Penerima LoA Columbia University dan Beasiswa LPDP
+                      </p>
                     </div>
                   </div>
                 </div>
                 <!-- 2 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
                   <p>
-                    This mentoring program by Dinni surely helped me in constructing my essay. Her approach to the mentees, how she presented the materials also helped us more in preparing the essay. I also enjoyed her approach, as she did not lecture us and showcased that her way is the best way. She gave us just some theories and feedback, and encourage us to explore our potentials.
-                    <br><br>
-                    Thank you for your service, Dinni! 
+                    This mentoring program by Dinni surely helped me in
+                    constructing my essay. Her approach to the mentees, how she
+                    presented the materials also helped us more in preparing the
+                    essay. I also enjoyed her approach, as she did not lecture
+                    us and showcased that her way is the best way. She gave us
+                    just some theories and feedback, and encourage us to explore
+                    our potentials.
+                    <br /><br />
+                    Thank you for your service, Dinni!
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mt-4 space-x-4">
-                    <img src="./images/man-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full  bg-gray-200">
+                    <img
+                      src="./images/man-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Farhan Hibatullah</p>
-                      <p class="text-sm dark:text-gray-600">Penerima LoA Columbia University dan Beasiswa LPDP</p>
+                      <p class="text-sm dark:text-gray-600">
+                        Penerima LoA Columbia University dan Beasiswa LPDP
+                      </p>
                     </div>
                   </div>
                 </div>
                 <!-- 3 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
-                  <p>Masukan yg diberikan sangat relevan dan membangun. Dinni juga willing untuk ngasih list interview question dan probing yang bisa jadi referensi untuk latihan. Saat mock interview Dinni selalu ngasih follow up question yang sesuai konteks jurusan dan universitas. 
-                    <br><br>                                            
+                  <p>
+                    Masukan yg diberikan sangat relevan dan membangun. Dinni
+                    juga willing untuk ngasih list interview question dan
+                    probing yang bisa jadi referensi untuk latihan. Saat mock
+                    interview Dinni selalu ngasih follow up question yang sesuai
+                    konteks jurusan dan universitas. <br /><br />
                     Thank you and goodluck for your study din!
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mt-4 space-x-4">
-                    <img src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full  bg-gray-200">
+                    <img
+                      src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Anita Khairani</p>
-                      <p class="text-sm dark:text-gray-600">Penerima LoA University College London dan Beasiswa LPDP</p>
+                      <p class="text-sm dark:text-gray-600">
+                        Penerima LoA University College London dan Beasiswa LPDP
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -258,27 +501,45 @@
               <div class="grid content-center gap-4">
                 <!-- 1 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
-                  <p>This mentorship helps me a lot to understand where my position is in the application process, what I lack on and what I can improve. Kak Dinni can pinpoint both my strenghts and weaknesses and give detailed suggestion on what to do to improve my application. 
-                    <br><br> Overall, being mentored by Kak Dinni is very recommended!
+                  <p>
+                    This mentorship helps me a lot to understand where my
+                    position is in the application process, what I lack on and
+                    what I can improve. Kak Dinni can pinpoint both my strenghts
+                    and weaknesses and give detailed suggestion on what to do to
+                    improve my application. <br /><br />
+                    Overall, being mentored by Kak Dinni is very recommended!
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mt-4 space-x-4">
-                    <img src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full  bg-gray-200">
+                    <img
+                      src="./images/female-avatar-girl-face-woman-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Martha Amelia</p>
-                      <p class="text-sm dark:text-gray-600">Penerima LoA University of Melbourne dan Beasiswa LPDP</p>
+                      <p class="text-sm dark:text-gray-600">
+                        Penerima LoA University of Melbourne dan Beasiswa LPDP
+                      </p>
                     </div>
                   </div>
                 </div>
                 <!-- 2 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
-                  <p>I got a lot of priceless guidances from Dinni! Starting from structuring my thought process into very coherent and dense, and also got enlightened through the mock interview sessions. 
-                    <br><br>
-                    And yes, I will highly recommend Dinni to be your Mentor! 
+                  <p>
+                    I got a lot of priceless guidances from Dinni! Starting from
+                    structuring my thought process into very coherent and dense,
+                    and also got enlightened through the mock interview
+                    sessions. <br /><br />
+                    And yes, I will highly recommend Dinni to be your Mentor!
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mt-4 space-x-4">
-                    <img src="./images/man-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200">
+                    <img
+                      src="./images/man-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Joshua Hezer</p>
                       <p class="text-sm dark:text-gray-600">Pegawai Swasta</p>
@@ -287,16 +548,26 @@
                 </div>
                 <!-- 3 -->
                 <div class="p-6 rounded shadow-md bg-gray-50">
-                  <p>Gw mentoring sama Kak Dinni karena bingung masa depan kayak gimana yg harus gw pilih. 
-                    <br><br>
-                    Selama mentoring Kak Dinni ngasih banyak banget insight dari pengalamannya dan tokoh-tokoh inspiratif kenalan Kak Dinni yang luas banget. Abis mentoring jadi clear banget apa misi gw di dunia ini.
+                  <p>
+                    Gw mentoring sama Kak Dinni karena bingung masa depan kayak
+                    gimana yg harus gw pilih. <br /><br />
+                    Selama mentoring Kak Dinni ngasih banyak banget insight dari
+                    pengalamannya dan tokoh-tokoh inspiratif kenalan Kak Dinni
+                    yang luas banget. Abis mentoring jadi clear banget apa misi
+                    gw di dunia ini.
                   </p>
-                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto">
+                  <hr class="mt-5 mb-2 border-gray-200 sm:mx-auto" />
                   <div class="flex items-center mb-4 space-x-4">
-                    <img src="./images/man-user-svgrepo-com.svg" alt="" class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200">
+                    <img
+                      src="./images/man-user-svgrepo-com.svg"
+                      alt=""
+                      class="w-12 h-12 bg-center bg-cover rounded-full bg-gray-200"
+                    />
                     <div>
                       <p class="text-lg font-semibold">Daffa Ghifari</p>
-                      <p class="text-sm dark:text-gray-600">Pegawai swasta dan aspiring entrepreneur</p>
+                      <p class="text-sm dark:text-gray-600">
+                        Pegawai swasta dan aspiring entrepreneur
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -305,7 +576,7 @@
           </div>
         </div>
       </div>
-    </section> 
+    </section>
 
     <!-- <section id="artikel" class="bg-dn-blue py-6 sm:py-8 lg:py-12">
       <div class="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -397,8 +668,8 @@
       </div>
     </section>
          -->
-  <!-- Form -->
-  <!-- <section id="form" class="bg-dn-green py-24">
+    <!-- Form -->
+    <!-- <section id="form" class="bg-dn-green py-24">
       <div class="grid rounded-lg sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl bg-white font-[sans-serif]">
           <div class="pl-2">
               <h1 class="py-4 text-3xl font-bold">Mari Berkolaborasi!</h1>
@@ -501,50 +772,112 @@
       </div>
   </section> -->
 
-  <!-- Footer -->
-  <footer id="contact" class="bg-dn-blue dark:bg-gray-900 text-white">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <!-- Footer -->
+    <footer id="contact" class="bg-dn-blue dark:bg-gray-900 text-white">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex-row md:justify-between">
-            <div class="mb-6 md:mb-0">
-                <span class="self-center text-2xl font-semibold dark:text-white">Klien Sebelumnya</span>
-            </div>
-            <div class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0">
-              <img src="./images/logo client/microsoft-logo-svgrepo-com.svg" alt="Partner 2" class="w-24 md:w-32 lg:w-48 !h-auto">
-              <img src="./images/logo client/icon-tanoto.svg" alt="Partner 4" class="w-24 h-auto md:w-32 ">
-              <img src="./images/logo client/icon-paragon.svg" alt="Partner 1" class="w-24 md:w-32 lg:w-56 !h-auto ">
-              <img src="./images/logo client/icon-shift-academy.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
-              <img src="./images/logo client/icon-glints.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
-              <img src="./images/logo client/icon-yayasan-baitul-maal.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
-              <img src="./images/logo client/icon-u-shape.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
-              <img src="./images/logo client/icon-salman.svg" alt="Partner 3" class="w-24 h-auto md:w-32">
+          <div class="mb-6 md:mb-0">
+            <span class="self-center text-2xl font-semibold dark:text-white"
+              >Klien Sebelumnya</span
+            >
+          </div>
+          <div
+            class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0"
+          >
+            <img
+              src="./images/logo client/microsoft-logo-svgrepo-com.svg"
+              alt="Partner 2"
+              class="w-24 md:w-32 lg:w-48 !h-auto"
+            />
+            <img
+              src="./images/logo client/icon-tanoto.svg"
+              alt="Partner 4"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo client/icon-paragon.svg"
+              alt="Partner 1"
+              class="w-24 md:w-32 lg:w-56 !h-auto"
+            />
+            <img
+              src="./images/logo client/icon-shift-academy.svg"
+              alt="Partner 3"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo client/icon-glints.svg"
+              alt="Partner 3"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo client/icon-yayasan-baitul-maal.svg"
+              alt="Partner 3"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo client/icon-u-shape.svg"
+              alt="Partner 3"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo client/icon-salman.svg"
+              alt="Partner 3"
+              class="w-24 h-auto md:w-32"
+            />
           </div>
         </div>
         <div class="md:flex-row md:justify-between my-8">
-            <div class="mb-10">
-                <span class="self-center text-2xl font-semibold dark:text-white">Mentee sudah berhasil diterima di kampus ternama</span>
-            </div>
-            <div class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0">
-              <img src="./images/logo univ/Columbia.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
-              <img src="./images/logo univ/Cornell.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
-              <img src="./images/logo univ/Melbourne.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
-              <img src="./images/logo univ/Insead.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
-              <img src="./images/logo univ/UCL.svg" alt="Partner 2" class="w-24 h-auto md:w-32 ">
-              
+          <div class="mb-10">
+            <span class="self-center text-2xl font-semibold dark:text-white"
+              >Mentee sudah berhasil diterima di kampus ternama</span
+            >
+          </div>
+          <div
+            class="container flex flex-wrap justify-center mx-auto space-x-4 space-y-4 md:space-x-6 md:space-y-0"
+          >
+            <img
+              src="./images/logo univ/Columbia.svg"
+              alt="Partner 2"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo univ/Cornell.svg"
+              alt="Partner 2"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo univ/Melbourne.svg"
+              alt="Partner 2"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo univ/Insead.svg"
+              alt="Partner 2"
+              class="w-24 h-auto md:w-32"
+            />
+            <img
+              src="./images/logo univ/UCL.svg"
+              alt="Partner 2"
+              class="w-24 h-auto md:w-32"
+            />
           </div>
         </div>
-          
-      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm sm:text-center dark:text-gray-400">
-           <h2>2024</h2>
-        </span>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm sm:text-center dark:text-gray-400">
+            <h2>2024</h2>
+          </span>
           <div class="flex mt-4 sm:justify-center sm:mt-0">
-              <h2>Dinni Rahmawati</h2>
+            <h2>Dinni Rahmawati</h2>
           </div>
+        </div>
       </div>
-    </div>
-</footer>
-  <script src="./main.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    </footer>
+    <script src="./main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
   </body>
 </html>
