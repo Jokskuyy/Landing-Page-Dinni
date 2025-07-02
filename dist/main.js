@@ -16,9 +16,18 @@ copyEmailButton.addEventListener('click', function () {
     alert('Email berhasil disalin ke clipboard!');
 });
 
-window.onload = function () {
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-        preloader.style.display = "none";
-    }
-};
+// Pre-loader fade in/out logic (runs on all pages)
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("pre-loader");
+  if (loader && window.$) {
+    $("#pre-loader").fadeIn(0);
+    setTimeout(() => {
+      $("#pre-loader").fadeOut(300);
+    }, 600);
+  }
+});
+
+// Redirect logic (only for index.html)
+if (window.location.pathname.endsWith("index.html")) {
+  window.location.replace("https://www.dinnirahmawati.com/index.html#home");
+}

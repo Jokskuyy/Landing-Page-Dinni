@@ -6,26 +6,8 @@
     <link rel="stylesheet" href="./output.css" />
     <link rel="icon" href="./images/logo-web.png" type="" />
     <title>Home | Dinni Rahmawati</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script defer>
-      document.addEventListener("DOMContentLoaded", () => {
-        const loader = document.getElementById("pre-loader");
-
-        $("#pre-loader").fadeIn(0);
-
-        setTimeout(() => {
-          $("#pre-loader").fadeOut(300);
-        }, 600);
-      });
-    </script>
-    <script type="text/javascript">
-      window.location.replace("https://www.dinnirahmawati.com/index.html#home");
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./main.js"></script>
   </head>
   <body class="bg-dn-green scroll-smooth">
     <!-- Pre Loader -->
@@ -74,21 +56,9 @@
           :class="{'flex': open, 'hidden': !open}"
           class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
         >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#home"
-            >Beranda</a
-          >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#aboutme"
-            >Profil</a
-          >
-          <a
-            class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-            href="index.html#pengalaman"
-            >Pengalaman</a
-          >
+          <a class="nav-link" href="index.html#home">Beranda</a>
+          <a class="nav-link" href="index.html#aboutme">Profil</a>
+          <a class="nav-link" href="index.html#pengalaman">Pengalaman</a>
           <div
             @click.away="open = false"
             class="relative"
@@ -96,7 +66,7 @@
           >
             <button
               @click="open = !open"
-              class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              class="nav-dropdown-btn"
             >
               <span class="text-white">Jasa</span>
               <svg
@@ -123,16 +93,8 @@
               class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
             >
               <div class="px-2 py-2 bg-white rounded-md shadow">
-                <a
-                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="proofreading.html"
-                  >Proofread</a
-                >
-                <a
-                  class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                  href="mentoring.html"
-                  >Mentoring</a
-                >
+                <a class="nav-dropdown-link" href="proofreading.html">Proofread</a>
+                <a class="nav-dropdown-link" href="mentoring.html">Mentoring</a>
               </div>
             </div>
           </div>
@@ -143,7 +105,7 @@
     <!-- Hero -->
     <section class="relative pb-2">
       <div
-        class="container flex flex-col-reverse lg:flex-row items-center gap-12 mt-14 lg:mt-20 sm:mb-10"
+        class="section-container"
       >
         <!-- Content -->
         <div class="flex flex-1 flex-col items-center lg:items-start">
@@ -157,10 +119,7 @@
             Career And Self-Development Practitioner
           </h2>
           <a href="#aboutme" class="flex justify-center flex-wrap gap-6">
-            <button
-              type="button"
-              class="font-medium btn btn-blue btn-hover-white"
-            >
+            <button type="button" class="font-medium btn btn-blue btn-hover-white">
               Lebih Kenal Tentang Dinni
             </button>
           </a>
@@ -170,7 +129,7 @@
           <img
             class="w-5/6 h-5/6 sm:w-3/4 sm:h-3/4 md:w-full md:h-full"
             src="./imgs/cek1.png"
-            alt=""
+            alt="Dinni Rahmawati profile picture"
           />
         </div>
         <!-- Rounded Rectangle -->
@@ -241,82 +200,29 @@
     <section class="mt-10 p-4 lg:p-8 bg-dn-green">
       <div class="container mx-auto space-y-12">
         <!-- Mentoring 1o1 -->
-        <a
-          href="mentoring.html"
-          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300"
-        >
-          <img
-            src="./images/mentoring-1o1.svg"
-            alt=""
-            class="h-80 object-cover dark:bg-gray-500 aspect-video"
-          />
-          <div
-            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
-          >
-            <span class="text-xs uppercase dark:text-gray-600"
-              >Gabung Sekarang!</span
-            >
+        <a href="mentoring.html" class="card-service">
+          <img src="./images/mentoring-1o1.svg" alt="Mentoring 1o1" class="card-service-img" />
+          <div class="card-service-content">
+            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
             <h3 class="text-3xl font-bold">Mentoring 1o1</h3>
-            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button
-              type="button"
-              class="self-start underline hover:scale-110 transition-all duration-300"
-            >
-              Lihat detail
-            </button>
+            <button type="button" class="card-service-btn">Lihat detail</button>
           </div>
         </a>
         <!-- Proof reading -->
-        <a
-          href="proofreading.html"
-          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse hover:scale-105 transition-all duration-300"
-        >
-          <img
-            src="./images/proofread.svg"
-            alt=""
-            class="h-80 object-cover dark:bg-gray-500 aspect-video"
-          />
-          <div
-            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
-          >
-            <span class="text-xs uppercase dark:text-gray-600"
-              >Gabung Sekarang!</span
-            >
+        <a href="proofreading.html" class="card-service-reverse">
+          <img src="./images/proofread.svg" alt="Proofread Dokumen" class="card-service-img" />
+          <div class="card-service-content">
+            <span class="text-xs uppercase dark:text-gray-600">Gabung Sekarang!</span>
             <h3 class="text-3xl font-bold">Proofread Dokumen</h3>
-            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button
-              type="button"
-              class="self-start underline hover:scale-110 transition-all duration-300"
-            >
-              Lihat detail
-            </button>
+            <button type="button" class="card-service-btn">Lihat detail</button>
           </div>
         </a>
         <!-- Collab -->
-        <a
-          target="_blank"
-          href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0"
-          class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row hover:scale-105 transition-all duration-300"
-        >
-          <img
-            src="./images/services-3.svg"
-            alt=""
-            class="h-80 object-cover dark:bg-gray-500 aspect-video"
-          />
-          <div
-            class="flex flex-col justify-center flex-1 p-6 bg-gray-100 dark:bg-gray-50"
-          >
-            <!-- <span class="text-xs uppercase dark:text-gray-600">Join, it's free</span> -->
-            <h3 class="text-3xl font-bold">
-              Customized Soft-Skill Training & Learning Development Advisory
-            </h3>
-            <!-- <p class="my-6 dark:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam possimus quas, error esse quos.</p> -->
-            <button
-              type="button"
-              class="self-start underline hover:scale-110 transition-all duration-300"
-            >
-              Yuk Kolaborasi
-            </button>
+        <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0" class="card-service">
+          <img src="./images/services-3.svg" alt="Customized Soft-Skill Training" class="card-service-img" />
+          <div class="card-service-content">
+            <h3 class="text-3xl font-bold">Customized Soft-Skill Training & Learning Development Advisory</h3>
+            <button type="button" class="card-service-btn">Yuk Kolaborasi</button>
           </div>
         </a>
         <p id="pengalaman"></p>
@@ -334,70 +240,27 @@
         <div
           class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2"
         >
-          <a
-            href="#testimonies"
-            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
-            style="background-image: url('./images/portfolio-11.png')"
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-            >
-              <h2
-                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-              >
-                Mentoring 1o1
-              </h2>
+          <a href="#testimonies" class="card-portfolio" style="background-image: url('./images/portfolio-11.png')">
+            <div class="card-portfolio-inner">
+              <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring 1o1</h2>
             </div>
           </a>
 
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
-            style="background-image: url('./images/portfolio-21.png')"
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-            >
-              <h2
-                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-              >
-                Mentoring Kelompok
-              </h2>
+          <a target="_blank" href="https://www.linkedin.com/services/page/b14b99329a78226740" class="card-portfolio" style="background-image: url('./images/portfolio-21.png')">
+            <div class="card-portfolio-inner">
+              <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Mentoring Kelompok</h2>
             </div>
           </a>
 
-          <a
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            target="_blank"
-            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
-            style="background-image: url('./images/portfolio-3.png')"
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-            >
-              <h2
-                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-              >
-                Webinar
-              </h2>
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="card-portfolio" style="background-image: url('./images/portfolio-3.png')">
+            <div class="card-portfolio-inner">
+              <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Webinar</h2>
             </div>
           </a>
 
-          <a
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            target="_blank"
-            class="hover:scale-110 transition-all duration-300 flex items-end overflow-hidden bg-cover bg-center rounded-lg h-96"
-            style="background-image: url('./images/portfolio-41.png')"
-          >
-            <div
-              class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60"
-            >
-              <h2
-                class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white"
-              >
-                Pelatihan Soft-Skill
-              </h2>
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="card-portfolio" style="background-image: url('./images/portfolio-41.png')">
+            <div class="card-portfolio-inner">
+              <h2 class="mt-1.5 text-xl font-semibold text-gray-800 capitalize dark:text-white">Pelatihan Soft-Skill</h2>
             </div>
           </a>
         </div>
@@ -874,7 +737,6 @@
         </div>
       </div>
     </footer>
-    <script src="./main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
