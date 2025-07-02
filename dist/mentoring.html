@@ -7,7 +7,17 @@
     <link rel="icon" href="./images/logo-web.png" type="" />
     <title>Mentoring | Dinni Rahmawati</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="./main.js"></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const loader = document.getElementById("pre-loader");
+
+        $("#pre-loader").fadeIn(0); 
+    
+        setTimeout(() => {
+          $("#pre-loader").fadeOut(300);
+        }, 600);
+      });
+    </script>
 </head>
 <body>
   <!-- Pre Loader -->
@@ -28,18 +38,18 @@
             </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <a class="nav-link" href="index.html#home">Beranda</a>
-            <a class="nav-link" href="index.html#aboutme">Profil</a>
-            <a class="nav-link" href="index.html#pengalaman">Pengalaman</a>
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#home">Beranda</a>
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#aboutme">Profil</a>
+            <a class="text-white px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-white hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="index.html#pengalaman">Pengalaman</a>
             <div @click.away="open = false" class="relative " x-data="{ open: false }">
-                <button @click="open = !open" class="nav-dropdown-btn">
+                <button @click="open = !open" class="text-white flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
                 <span class="text-white ">Jasa</span>
                 <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                 </button>
                 <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
                 <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-                    <a class="nav-dropdown-link" href="proofreading.html">Proofread</a>
-                    <a class="nav-dropdown-link" href="mentoring.html">Mentoring</a>
+                    <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="proofreading.html">Proofread</a>
+                    <a class="text-gray-600 block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="mentoring.html">Mentoring</a>
                 </div>
                 </div>
             </div>    
@@ -55,107 +65,166 @@
           </div>
           <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap- xl:gap-6 lg:grid-cols-3">
             <!-- Price 1 -->
-            <div class="price-card">
-              <span class="price-title">Mentoring Persiapan kerja</span>
-              <p class="price-amount">GRATIS</p>
-              <ul class="price-list"> 
-                <li class="price-list-item-title">Cocok untuk kamu yang sedang :</li>
-                <li class="price-list-item">
+            <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+              <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">Mentoring Persiapan kerja</span>
+              <p class="my-6 text-4xl font-bold dark:text-black">GRATIS</p>
+              <ul class="flex-1 space-y-2"> 
+                <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+                <li class="flex items-start space-x-2">
                     <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                     <span>Sudah lulus kuliah atau sekolah namun masih terkendala dalam mencari pekerjaan</span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                     <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                     <span>Baru saja mengalami PHK atau <i>layoff</i></span>
                 </li>
-                <li class="price-list-item-title">Apa yang bisa kamu diskusikan saat mentoring?</li>
-                <li class="price-list-item">
+                <li class="flex items-center space-x-2 font-semibold">Apa yang bisa kamu diskusikan saat mentoring?</li>
+                <li class="flex items-start space-x-2">
                     <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                   <span>Cara menghadapi krisis yang sedang dialami </span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                   <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                   <span>Langkah-langkah berdamai dengan krisis</span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                     <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                   <span>Membahas berbagai supporting tools yang bisa dimanfaatkan dalam mengambil keputusan</span>
                 </li>
-                <li class="price-list-item-title">Yang Kamu Dapatkan :</li>
-                <li class="price-list-item">
+                <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>1 Sesi Private mentoring selama 60 menit </span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="mt-0.5 w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>Rekaman zoom </span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>Rangkuman catatan menggunakan AI </span>
                 </li>
               </ul>
-              <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
-                  <button class="price-action-btn">Tanya lebih lanjut</button>
-              </a>
-            </div>
-            <!-- Price 2 -->
-            <div class="price-card">
-              <span class="price-title">Private Mentoring</span>
-              <p class="price-amount">Rp 250.000</p>
-              <ul class="price-list"> 
-                <li class="price-list-item-title">Cocok untuk kamu yang sedang :</li>
-                <li class="price-list-item">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                    <span>Butuh teman diskusi untuk menentukan career goals</span>
-                </li>
-                <li class="price-list-item">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                    <span>Ingin melakukan transisi karier (<i>resign</i> atau <i>promotion</i>), namun masih ragu  </span>
-                </li>
-                <li class="price-list-item-title">Apa yang bisa kamu diskusikan saat mentoring?</li>
-                <li class="price-list-item">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+            <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+                <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Tanya lebih lanjut</button>
+            </a>
+        </div>
+        <!-- Price 2 -->
+        <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+            <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">Private Mentoring</span>
+            <p class="my-6 text-4xl font-bold dark:text-black">Rp 250.000</p>
+            <ul class="flex-1 space-y-2"> 
+              <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Butuh teman diskusi untuk menentukan career goals</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Ingin melakukan transisi karier (<i>resign</i> atau <i>promotion</i>), namun masih ragu  </span>
+              </li>
+              <li class="flex items-center space-x-2 font-semibold">Apa yang bisa kamu diskusikan saat mentoring?</li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
                 <span>Diskusi langkah-langkah menemukan tujuan karier</span>
               </li>
-                <li class="price-list-item">
+              <li class="flex items-start space-x-2">
+                <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                <span>Membantu menentukan jalur karier yang sesuai dengan tujuan jangka pendek dan jangka panjang</span>
+              </li>
+              <li class="flex items-start space-x-2">
                   <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                  <span>Membantu menentukan jalur karier yang sesuai dengan tujuan jangka pendek dan jangka panjang</span>
-                </li>
-                <li class="price-list-item">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                  <span>Memahami berbagai <i>supporting tools</i> yang bisa digunakan dalam mengambil keputusan</span>
-                </li>
-                <li class="price-list-item-title">Yang Kamu Dapatkan :</li>
-                <li class="price-list-item">
+                <span>Memahami berbagai <i>supporting tools</i> yang bisa digunakan dalam mengambil keputusan</span>
+              </li>
+              <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>1 Sesi Private mentoring selama 60 menit </span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>Rekaman zoom </span>
                 </li>
-                <li class="price-list-item">
+                <li class="flex items-start space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                  <span>Rangkuman catatan menggunakan AI </span>
+                </li>
+            </ul>
+          <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+              <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Tanya lebih lanjut</button>
+          </a>
+      </div>
+            <!-- Price 3 -->
+            <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
+              <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">2X Private Mentoring</span>
+              <p class="my-6 text-4xl font-bold dark:text-black">Rp 400.000</p>
+              <ul class="flex-1 space-y-2"> 
+                <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                    <span>Mengalami krisis dalam karier, namun masih ragu akan penyebabnya </span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                    <span>Menghadapi kebuntuan dalam karier</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                    <span>Ingin <i>career switch</i> (pindah karier ke bidang lain)</span>
+                </li>
+                <li class="flex items-center space-x-2 font-semibold">Apa yang bisa kamu diskusikan saat mentoring?</li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Cara mengatasi kebuntuan dalam pekerjaan atau kejenuhan</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Cara memperluas koneksi yang mendukung perkembangan karier</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Arahan dan follow-up yang lebih praktis dalam menentukan arah karier </span>
+                </li>
+                <li class="flex items-start space-x-2">
+                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                  <span>Menentukan langkah konkrit dalam menyusun karier menggunakan berbagai <i>supporting tools</i></span>
+                </li>
+                <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+                <li class="flex items-start space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                  <span>2 Sesi Private mentoring, masing-masing selama 60 menit </span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                  </svg>
+                  <span>Rekaman zoom </span>
+                </li>
+                <li class="flex items-start space-x-2">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                   </svg>
                   <span>Rangkuman catatan menggunakan AI </span>
                 </li>
               </ul>
-              <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
-                  <button class="price-action-btn">Tanya lebih lanjut</button>
-              </a>
-            </div>
+            <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
+                <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Tanya lebih lanjut</button>
+            </a>
+        </div>
             
     </section>
 
@@ -304,29 +373,6 @@
                   <span>Feedback langsung melalui email </span>
                 </li>
               </ul>
-              <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
-                  <button class="btn btn-blue card-service-btn mt-12 text-lg font-semibold uppercase border rounded">Tanya lebih lanjut</button>
-              </a>
-            </div>
-            <!-- Price 2 -->
-            <div class="relative z-0 flex flex-col items-center p-8 rounded-md border-2 border-dn-blue bg-gray-50">
-              <span class="font-semibold absolute top-0 px-6 pt-1 pb-2 rounded-b-lg bg-dn-blue text-white dark:bg-dn-blue dark:text-gray-50">Intensive Mentoring</span>
-              <p class="my-6 text-4xl font-bold dark:text-black">Rp 400.000</p>
-              <ul class="flex-1 space-y-2"> 
-                <li class="flex items-center space-x-2 font-semibold">Cocok untuk kamu yang sedang :</li>
-                <li class="flex items-start space-x-2">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                    <span>Membutuhkan panduan lebih dalam untuk menyiapkan dokumen dan strategi aplikasi ke universitas dan beasiswa.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                    <span>Mendapatkan masukan komprehensif tetapi dengan waktu terbatas.</span>
-                </li>
-                <li class="flex items-center space-x-2 font-semibold">Apa yang bisa kamu diskusikan saat mentoring?</li>
-                <li class="flex items-start space-x-2">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                <span>Diskusi langkah-langkah menemukan tujuan jurusan dan universitas</span>
-              </li>
             <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
                 <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Tanya lebih lanjut</button>
             </a>
@@ -356,38 +402,38 @@
               </li>
               <li class="flex items-start space-x-2">
                   <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                  <span>Tips and trick dalam aplikasi.</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                    <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
-                  <span>Simulasi wawancara dan feedback.</span>
-                </li>
-                <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
-                <li class="flex items-start space-x-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                  </svg>
-                  <span>2 Sesi private mentoring, masing-masing  selama 60 menit</span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                  </svg>
-                  <span>Rekaman zoom </span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                  </svg>
-                  <span>Rangkuman catatan menggunakan AI </span>
-                </li>
-                <li class="flex items-start space-x-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                  </svg>
-                  <span>Feedback langsung melalui email </span>
-                </li>
-              </ul>
+                <span>Tips and trick dalam aplikasi.</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                  <svg class="flex-shrink-0 mt-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" zoomAndPan="magnify" viewBox="0 0 375 374.999991" height="15" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="3fd0162dd4"><path d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " clip-rule="nonzero"/></clipPath><clipPath id="2312d0ea2d"><path d="M 187.5 113.59375 C 146.683594 113.59375 113.59375 146.683594 113.59375 187.5 C 113.59375 228.316406 146.683594 261.40625 187.5 261.40625 C 228.316406 261.40625 261.40625 228.316406 261.40625 187.5 C 261.40625 146.683594 228.316406 113.59375 187.5 113.59375 Z M 187.5 113.59375 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#3fd0162dd4)"><g clip-path="url(#2312d0ea2d)"><path fill="#2d5fcf" d="M 113.59375 113.59375 L 261.40625 113.59375 L 261.40625 261.40625 L 113.59375 261.40625 Z M 113.59375 113.59375 " fill-opacity="1" fill-rule="nonzero"/></g></g></svg>
+                <span>Simulasi wawancara dan feedback.</span>
+              </li>
+              <li class="flex items-center space-x-2 font-semibold">Yang Kamu Dapatkan :</li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>2 Sesi private mentoring, masing-masing  selama 60 menit</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rekaman zoom </span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Rangkuman catatan menggunakan AI </span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-dn-blue flex-shrink-0 self-start pt-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+                <span>Feedback langsung melalui email </span>
+              </li>
+            </ul>
           <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0 ">
               <button class="btn btn-blue px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded transform transition-transform duration-300 hover:scale-110">Tanya lebih lanjut</button>
           </a>
