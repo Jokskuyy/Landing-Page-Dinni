@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build:tailwinds": "tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "build": "npm run build:tailwinds"
+    "build": "npm run build:tailwinds",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
