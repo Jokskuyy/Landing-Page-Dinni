@@ -38,7 +38,12 @@
     <p id="home"></p>
     
     <!-- Modern Navigation -->
-    <header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-neutral-200/50 transition-all duration-300">
+    <header 
+      x-data="{ scrolled: false }" 
+      x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 50 })"
+      :class="{ 'bg-white/80 backdrop-blur-lg border-b border-neutral-200/50': scrolled, 'bg-transparent border-b border-transparent': !scrolled }"
+      class="fixed top-0 z-50 w-full transition-all duration-300"
+    >
       <div
         x-data="{ open: false }"
         class="flex flex-col max-w-7xl px-6 mx-auto md:items-center md:justify-between md:flex-row lg:px-8"
@@ -95,6 +100,7 @@
           >
             <button
               @click="open = !open"
+              :class="{ 'text-primary-600 bg-primary-50': open }"
               class="text-neutral-700 flex flex-row items-center w-full px-4 py-3 mx-1 text-sm font-semibold rounded-xl md:w-auto md:inline md:mt-0 hover:text-primary-600 hover:bg-primary-50 focus:text-primary-700 focus:bg-primary-50 transition-all duration-300"
             >
               <span>Jasa</span>
@@ -123,11 +129,13 @@
             >
               <div class="px-2 py-2">
                 <a
+                  @click="open = false"
                   class="text-neutral-700 block px-4 py-3 text-sm font-semibold rounded-xl hover:text-primary-600 hover:bg-primary-50 transition-all duration-300"
                   href="proofreading.html"
                   >Proofread</a
                 >
                 <a
+                  @click="open = false"
                   class="text-neutral-700 block px-4 py-3 text-sm font-semibold rounded-xl hover:text-primary-600 hover:bg-primary-50 transition-all duration-300"
                   href="mentoring.html"
                   >Mentoring</a
@@ -248,7 +256,7 @@
         <!-- Clients Carousel -->
         <div class="mb-20">
           <div class="text-center mb-12">
-            <h3 class="text-2xl font-semibold text-gradient-primary mb-4">Klien Kami</h3>
+            <h3 class="text-2xl font-semibold text-gradient-primary mb-4">Klien Saya</h3>
             <div class="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
           </div>
           
