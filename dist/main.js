@@ -216,15 +216,25 @@ const Carousel = {
     },
 
     bindEvents() {
-        // Pause animation on hover for better UX
+        // Force carousel to never stop - override any potential CSS or JS interference
         this.tracks.forEach(track => {
-            track.addEventListener('mouseenter', () => {
-                track.style.animationPlayState = 'paused';
-            });
-            
-            track.addEventListener('mouseleave', () => {
+            // Force animation to always run
+            const forceAnimation = () => {
                 track.style.animationPlayState = 'running';
-            });
+                track.style.animationDuration = '30s';
+                track.style.animationTimingFunction = 'linear';
+                track.style.animationIterationCount = 'infinite';
+            };
+            
+            // Apply initial force
+            forceAnimation();
+            
+            // Override any hover attempts
+            track.addEventListener('mouseenter', forceAnimation);
+            track.addEventListener('mouseleave', forceAnimation);
+            
+            // Periodic check to ensure animation is still running
+            setInterval(forceAnimation, 1000);
         });
     }
 };

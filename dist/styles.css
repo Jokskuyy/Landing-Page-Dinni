@@ -2046,10 +2046,7 @@ html {
 
 .carousel-track {
   animation: scroll 30s linear infinite;
-}
-
-.carousel-container:hover .carousel-track {
-  animation-play-state: paused;
+  animation-play-state: running;
 }
 
 .carousel-item {
@@ -2520,8 +2517,8 @@ html {
   height: 24rem;
 }
 
-.h-\[180px\] {
-  height: 180px;
+.h-\[250px\] {
+  height: 250px;
 }
 
 .h-auto {
@@ -2601,8 +2598,8 @@ html {
   width: 100%;
 }
 
-.min-w-\[280px\] {
-  min-width: 280px;
+.min-w-\[350px\] {
+  min-width: 350px;
 }
 
 .max-w-2xl {
@@ -4210,21 +4207,25 @@ html {
   opacity: 0;
 }
 
-/* Scroll animation for carousel */
+/* Scroll animation for carousel - force continuous animation */
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite !important;
+  animation-play-state: running !important;
 }
 
 .animate-scroll-reverse {
-  animation: scroll-reverse 30s linear infinite;
+  animation: scroll-reverse 30s linear infinite !important;
+  animation-play-state: running !important;
 }
 
-/* Pause animation on hover */
+/* Ensure carousel never pauses */
 
-.carousel-container:hover .animate-scroll,
-  .carousel-container:hover .animate-scroll-reverse {
-  animation-play-state: paused;
+.carousel-container *, 
+  .carousel-track *,
+  .animate-scroll,
+  .animate-scroll-reverse {
+  animation-play-state: running !important;
 }
 
 /* Portfolio Mobile Horizontal Scroll */
