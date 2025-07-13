@@ -1,18 +1,39 @@
 {
   "name": "landing-page_dinni",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Professional landing page for Dinni Rahmawati - Career and Self-Development Practitioner",
+  "main": "dist/index.html",
   "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npm run build:css",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "build:tailwinds": "tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "build": "npm run build:tailwinds",
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "serve": "npx http-server dist -p 3000 -o",
+    "lint:css": "stylelint src/**/*.css",
+    "clean": "rimraf dist/output.css",
+    "analyze": "tailwindcss -i ./src/input.css -o ./dist/output.css --content './dist/**/*.html' --verbose"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "landing-page",
+    "tailwindcss",
+    "responsive",
+    "career-mentoring",
+    "professional-website"
+  ],
+  "author": "Dinni Rahmawati",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "flowbite": "^2.5.2",
     "tailwindcss": "^3.4.16"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jokskuyy/Landing-Page-Dinni.git"
   }
 }
