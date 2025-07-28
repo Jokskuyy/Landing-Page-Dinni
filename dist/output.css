@@ -2187,6 +2187,10 @@ h5 {
   z-index: 99999;
 }
 
+.z-\[999999\] {
+  z-index: 999999;
+}
+
 .mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
