@@ -21,7 +21,45 @@
         setTimeout(() => {
           $("#pre-loader").fadeOut(300);
         }, 600);
+        
+        // Enhanced Carousel Controls
+        initializeEnhancedCarousel();
       });
+      
+      function initializeEnhancedCarousel() {
+        const clientsCarousel = document.getElementById('clientsCarousel');
+        const universitiesCarousel = document.getElementById('universitiesCarousel');
+        
+        // Add pause/play functionality on hover
+        function addCarouselHoverControls(carousel) {
+          if (!carousel) return;
+          
+          carousel.addEventListener('mouseenter', () => {
+            carousel.style.animationPlayState = 'paused';
+          });
+          
+          carousel.addEventListener('mouseleave', () => {
+            carousel.style.animationPlayState = 'running';
+          });
+        }
+        
+        // Initialize hover controls
+        addCarouselHoverControls(clientsCarousel);
+        addCarouselHoverControls(universitiesCarousel);
+        
+        // Optional: Add keyboard controls (spacebar to pause/play)
+        document.addEventListener('keydown', (e) => {
+          if (e.code === 'Space' && e.target === document.body) {
+            e.preventDefault();
+            const carousels = [clientsCarousel, universitiesCarousel].filter(Boolean);
+            
+            carousels.forEach(carousel => {
+              const currentState = carousel.style.animationPlayState;
+              carousel.style.animationPlayState = currentState === 'paused' ? 'running' : 'paused';
+            });
+          }
+        });
+      }
     </script>
   </head>
   <body>
@@ -279,92 +317,112 @@
           </div>
           
           <div class="relative">
-            <!-- Gradient overlays for smooth edges -->
+            <!-- Enhanced gradient overlays for smooth edges -->
             <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
             
-            <div class="carousel-container bg-white/50 backdrop-blur-sm rounded-3xl border border-neutral-200/50 shadow-xl shadow-neutral-500/10">
-              <div class="carousel-track animate-scroll py-8">
+            <div class="enhanced-carousel-container bg-white/50 backdrop-blur-sm rounded-3xl border border-neutral-200/50 shadow-xl shadow-neutral-500/10 overflow-hidden">
+              <div class="enhanced-carousel-track enhanced-carousel-normal py-8" id="clientsCarousel">
                 <!-- First set of logos -->
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-microsoft.svg" alt="Microsoft" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-glints.svg" alt="Glints" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-shift-academy.svg" alt="Shift Academy" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-tanoto.svg" alt="Tanoto Foundation" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-paragon.svg" alt="Paragon" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-yayasan-baitul-maal.svg" alt="Yayasan Baitul Maal" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-u-shape.svg" alt="U Shape" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-salman.svg" alt="Salman" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo client/Bank_Syariah_Indonesia.svg.png" alt="BSI" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo client/logoICDXOrange 1.db6a58c.png" alt="ICDX" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
                 <!-- Duplicate set for seamless loop -->
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-microsoft.svg" alt="Microsoft" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-glints.svg" alt="Glints" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-shift-academy.svg" alt="Shift Academy" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-tanoto.svg" alt="Tanoto Foundation" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-paragon.svg" alt="Paragon" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-yayasan-baitul-maal.svg" alt="Yayasan Baitul Maal" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-u-shape.svg" alt="U Shape" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo client/icon-salman.svg" alt="Salman" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo client/Bank_Syariah_Indonesia.svg.png" alt="BSI" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo client/logoICDXOrange 1.db6a58c.png" alt="ICDX" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
               </div>
@@ -380,62 +438,72 @@
           </div>
           
           <div class="relative">
-            <!-- Gradient overlays for smooth edges -->
+            <!-- Enhanced gradient overlays for smooth edges -->
             <div class="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
             
-            <div class="carousel-container bg-white/50 backdrop-blur-sm rounded-3xl border border-neutral-200/50 shadow-xl shadow-neutral-500/10">
-              <div class="carousel-track animate-scroll-reverse py-8">
+            <div class="enhanced-carousel-container bg-white/50 backdrop-blur-sm rounded-3xl border border-neutral-200/50 shadow-xl shadow-neutral-500/10 overflow-hidden">
+              <div class="enhanced-carousel-track enhanced-carousel-reverse py-8" id="universitiesCarousel">
                 <!-- First set of university logos -->
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Columbia.svg" alt="Columbia University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Cornell.svg" alt="Cornell University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/UCL.svg" alt="University College London" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Melbourne.svg" alt="University of Melbourne" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Insead.svg" alt="INSEAD" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo univ/Harvard_University_coat_of_arms.svg.png" alt="Harvard University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
                 <!-- Duplicate set for seamless loop -->
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Columbia.svg" alt="Columbia University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Cornell.svg" alt="Cornell University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/UCL.svg" alt="University College London" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Melbourne.svg" alt="University of Melbourne" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
-                <div class="carousel-item">
+                <div class="enhanced-carousel-item">
                   <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
                     <img src="./images/logo univ/Insead.svg" alt="INSEAD" class="logo-item hover:scale-110 transition-transform duration-300">
+                  </div>
+                </div>
+                <div class="enhanced-carousel-item">
+                  <div class="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-200/50 hover:border-secondary-200 hover:shadow-lg transition-all duration-300">
+                    <img src="./images/logo univ/Harvard_University_coat_of_arms.svg.png" alt="Harvard University" class="logo-item hover:scale-110 transition-transform duration-300">
                   </div>
                 </div>
               </div>
@@ -520,20 +588,6 @@
                 alt="Dinni Rahmawati - About Me"
               />
               
-              <!-- Floating stats -->
-              <div class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                <div class="text-center">
-                  <div class="text-2xl font-bold text-primary-600">Columbia</div>
-                  <div class="text-sm text-neutral-600">University</div>
-                </div>
-              </div>
-              
-              <div class="absolute -top-6 -right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                <div class="text-center">
-                  <div class="text-2xl font-bold text-secondary-600">5+</div>
-                  <div class="text-sm text-neutral-600">Years Exp.</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -992,7 +1046,7 @@
 
         <div class="grid lg:grid-cols-2 gap-8">
           <!-- Left Column -->
-          <div class="space-y-8">
+          <div class="space-y-8 lg:-translate-y-8">
             <!-- Testimony 1 -->
             <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
               <div class="flex items-start space-x-1 mb-6">
@@ -1045,12 +1099,9 @@
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
               </div>
               <p class="text-neutral-700 leading-relaxed mb-6">
-                "Program mentoring oleh Dinni sangat membantu saya dalam menyusun essay. Pendekatannya kepada mentee dan cara dia menyampaikan materi juga sangat membantu kami dalam mempersiapkan essay. Saya juga menikmati pendekatannya, karena dia tidak menggurui dan tidak menunjukkan bahwa caranya adalah yang terbaik. Dia hanya memberikan teori dan feedback, dan mendorong kami untuk mengeksplorasi potensi kami.
+                "Program mentoring oleh Dinni sangat membantu saya dalam menyusun essay. Pendekatannya kepada mentee dan cara dia menyampaikan materi juga sangat membantu kami dalam mempersiapkan essay. Saya juga menikmati pendekatanannya, karena dia tidak menggurui dan tidak menunjukkan bahwa caranya adalah yang terbaik. Dia hanya memberikan teori dan feedback, dan mendorong kami untuk mengeksplorasi potensi kami.
                 <br /><br />
                 Terima kasih atas layanannya, Dinni!"
               </p>
@@ -1066,13 +1117,50 @@
                 </div>
               </div>
             </div>
-
-            <!-- Testimony 3 -->
+            
+            <!-- Testimony 3 - Martha Amelia -->
             <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
               <div class="flex items-start space-x-1 mb-6">
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              </div>
+              <p class="text-neutral-700 leading-relaxed mb-6">
+                "This mentorship helps me a lot to understand where my position is in the application process, what I lack on and what I can improve. Kak Dinni can pinpoint both my strengths and weaknesses and give detailed suggestion on what to do to improve my application.
+                <br /><br />
+                Overall, being mentored by Kak Dinni is very recommended!"
+              </p>
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-accent-400 to-primary-400 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-neutral-900">Martha Amelia</p>
+                  <p class="text-sm text-neutral-600">Penerima LoA University of Melbourne dan Beasiswa LPDP</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="space-y-8 lg:translate-y-8">
+            <!-- Testimony 4 -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
+              <div class="flex items-start space-x-1 mb-6">
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
@@ -1092,7 +1180,7 @@
                 Terima kasih dan semoga sukses untuk studinya din!"
               </p>
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-accent-400 to-primary-400 rounded-full flex items-center justify-center">
+                <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-accent-400 rounded-full flex items-center justify-center">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                   </svg>
@@ -1103,53 +1191,11 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Right Column -->
-          <div class="space-y-8">
-            <!-- Testimony 4 -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "Mentoring ini sangat membantu saya untuk memahami di mana posisi saya dalam proses aplikasi, apa yang masih kurang dan apa yang bisa saya tingkatkan. Kak Dinni bisa menunjukkan kelebihan dan kelemahan saya dengan tepat dan memberikan saran detail tentang apa yang harus dilakukan untuk meningkatkan aplikasi saya.
-                <br /><br />
-                Secara keseluruhan, di-mentor oleh Kak Dinni sangat direkomendasikan!"
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-accent-400 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Martha Amelia</p>
-                  <p class="text-sm text-neutral-600">Penerima LoA University of Melbourne dan Beasiswa LPDP</p>
-                </div>
-              </div>
-            </div>
 
             <!-- Testimony 5 -->
             <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
               <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
@@ -1169,7 +1215,7 @@
                 Dan ya, saya sangat merekomendasikan Dinni untuk menjadi Mentor Anda!"
               </p>
               <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-secondary-400 to-primary-400 rounded-full flex items-center justify-center">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-accent-400 rounded-full flex items-center justify-center">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                   </svg>
@@ -1184,9 +1230,6 @@
             <!-- Testimony 6 -->
             <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
               <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
