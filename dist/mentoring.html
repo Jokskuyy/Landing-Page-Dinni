@@ -37,7 +37,7 @@
     <!-- Pre Loader with modern design -->
     <div
       id="pre-loader"
-      class="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-primary-500 to-primary-700 text-white z-50"
+      class="fixed inset-0 flex items-center justify-center bg-primary-600 text-white z-50"
     >
       <div class="flex flex-col items-center space-y-4">
         <div class="animate-spin rounded-full h-16 w-16 border-4 border-white/30 border-t-white"></div>
@@ -50,7 +50,7 @@
       x-data="{ scrolled: false }" 
       x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 50 })"
       :class="{ 'bg-white/80 backdrop-blur-lg border-b border-neutral-200/50': scrolled, 'bg-transparent border-b border-transparent': !scrolled }"
-      class="fixed top-0 z-[99999] w-full transition-all duration-300"
+              class="fixed top-0 z-50 w-full transition-all duration-300"
     >
       <div
         x-data="{ open: false }"
@@ -59,7 +59,7 @@
         <div class="p-4 flex flex-row items-center justify-between w-full md:w-auto">
           <a
             href="index.html#home"
-            class="text-xl font-bold text-gradient-primary tracking-wide hover:scale-105 transition-transform duration-300"
+            class="text-xl font-bold text-primary-600 tracking-wide hover:scale-105 transition-transform duration-300"
             >Dinni Rahmawati</a
           >
           <button
@@ -132,7 +132,7 @@
               x-transition:leave="transition ease-in duration-150"
               x-transition:leave-start="transform opacity-100 scale-100"
               x-transition:leave-end="transform opacity-0 scale-95"
-              class="absolute right-0 w-48 mt-2 origin-top-right rounded-2xl shadow-xl bg-white/90 backdrop-blur-lg border border-neutral-200/50 z-[99999]"
+              class="absolute right-0 w-48 mt-2 origin-top-right rounded-2xl shadow-xl bg-white/90 backdrop-blur-lg border border-neutral-200/50 z-50"
             >
               <div class="px-2 py-2">
                 <a
@@ -161,7 +161,7 @@
           x-transition:leave="transition ease-in duration-150"
           x-transition:leave-start="transform opacity-100 scale-100"
           x-transition:leave-end="transform opacity-0 scale-95"
-          class="absolute top-full left-0 right-0 md:hidden bg-white/95 backdrop-blur-lg rounded-b-2xl mx-4 border border-neutral-200/50 shadow-lg z-[99999]"
+          class="absolute top-full left-0 right-0 md:hidden bg-white/95 backdrop-blur-lg rounded-b-2xl mx-4 border border-neutral-200/50 shadow-lg z-50"
         >
           <div class="flex flex-col py-4">
             <a
@@ -214,7 +214,7 @@
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-20">
           <h1 class="text-6xl font-bold text-neutral-800 mb-6">
-            Career <span class="text-gradient-primary">Mentoring</span>
+            Career <span class="text-primary-600">Mentoring</span>
           </h1>
           <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
             Temukan arah karier yang tepat dengan bimbingan mentor berpengalaman
@@ -226,14 +226,14 @@
           <!-- Private Mentoring -->
           <div class="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 hover:border-primary-300 transition-all duration-300 hover:transform hover:-translate-y-4 hover:scale-105 shadow-xl hover:shadow-2xl">
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
+              <div class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
                 Private Mentoring
               </div>
             </div>
             
             <div class="pt-6 text-center">
               <div class="text-5xl font-bold text-neutral-800 mb-7">
-                Rp <span class="text-gradient-primary">289.000</span>
+                Rp <span class="text-primary-600">289.000</span>
               </div>
               
               <div class="space-y-4 text-left">
@@ -243,7 +243,7 @@
                 
                 <div class="space-y-3">
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -252,7 +252,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -261,7 +261,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -308,7 +308,7 @@
               </div>
               
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                <button class="w-full mt-7 bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                <button class="w-full mt-7 bg-primary-500 text-white py-4 px-8 rounded-2xl font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                   Tanya Lebih Lanjut
                 </button>
               </a>
@@ -318,14 +318,14 @@
           <!-- 2X Private Mentoring -->
           <div class="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 hover:border-primary-300 transition-all duration-300 hover:transform hover:-translate-y-4 hover:scale-105 shadow-xl hover:shadow-2xl">
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
+              <div class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
                 2X Private Mentoring
               </div>
             </div>
             
             <div class="pt-6 text-center">
               <div class="text-5xl font-bold text-neutral-800 mb-7">
-                Rp <span class="text-gradient-primary">550.000</span>
+                Rp <span class="text-primary-600">550.000</span>
               </div>
               
               <div class="space-y-4 text-left">
@@ -335,7 +335,7 @@
                 
                 <div class="space-y-3">
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -344,7 +344,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -353,7 +353,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -400,7 +400,7 @@
               </div>
               
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                <button class="w-full mt-7 bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                <button class="w-full mt-7 bg-primary-500 text-white py-4 px-8 rounded-2xl font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                   Tanya Lebih Lanjut
                 </button>
               </a>
@@ -413,7 +413,7 @@
           
           <!-- Private Mentoring -->
           <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
               <div>
                 <h3 class="text-lg font-semibold">Private Mentoring</h3>
                 <p class="text-white/90 text-base">Rp 289.000</p>
@@ -439,7 +439,7 @@
               
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -447,7 +447,7 @@
                   <span class="text-neutral-600 text-base">1 Sesi private mentoring</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -455,7 +455,7 @@
                   <span class="text-neutral-600 text-base">Rekaman zoom</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -502,7 +502,7 @@
               
               <div class="pt-4">
                 <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                  <button class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-lg">
+                  <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
                     Tanya Lebih Lanjut
                   </button>
                 </a>
@@ -512,7 +512,7 @@
 
           <!-- 2X Private Mentoring -->
           <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
               <div>
                 <h3 class="text-lg font-semibold">2X Private Mentoring</h3>
                 <p class="text-white/90 text-base">Rp 550.000</p>
@@ -538,7 +538,7 @@
               
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -546,7 +546,7 @@
                   <span class="text-neutral-600 text-base">2 Sesi private mentoring</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -554,7 +554,7 @@
                   <span class="text-neutral-600 text-base">Rekaman zoom</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -601,7 +601,7 @@
               
               <div class="pt-4">
                 <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                  <button class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-lg">
+                  <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
                     Tanya Lebih Lanjut
                   </button>
                 </a>
@@ -622,7 +622,7 @@
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-20">
           <h1 class="text-6xl font-bold text-neutral-800 mb-6">
-            Master's and <span class="text-gradient-primary">Scholarship Mentoring</span>
+            Master's and <span class="text-primary-600">Scholarship Mentoring</span>
           </h1>
           <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
             Bimbingan komprehensif untuk perjalanan akademik ke jenjang Master's dan mendapatkan beasiswa impian
@@ -634,14 +634,14 @@
           <!-- Basic Mentoring -->
           <div class="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 hover:border-primary-300 transition-all duration-300 hover:transform hover:-translate-y-4 hover:scale-105 shadow-xl hover:shadow-2xl">
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
+              <div class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
                 Basic Mentoring
               </div>
             </div>
             
             <div class="pt-6 text-center">
               <div class="text-5xl font-bold text-neutral-800 mb-8">
-                Rp <span class="text-gradient-primary">289.000</span>
+                Rp <span class="text-primary-600">289.000</span>
               </div>
               
               <div class="space-y-5 text-left">
@@ -651,7 +651,7 @@
                 
                 <div class="space-y-4">
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -660,7 +660,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -669,7 +669,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -678,7 +678,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -725,7 +725,7 @@
               </div>
               
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                <button class="w-full mt-8 bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                <button class="w-full mt-8 bg-primary-500 text-white py-4 px-8 rounded-2xl font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                   Tanya Lebih Lanjut
                 </button>
               </a>
@@ -735,14 +735,14 @@
           <!-- Super Intensive Mentoring -->
           <div class="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 hover:border-primary-300 transition-all duration-300 hover:transform hover:-translate-y-4 hover:scale-105 shadow-xl hover:shadow-2xl">
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
+              <div class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
                 Super Intensive Mentoring
               </div>
             </div>
             
             <div class="pt-6 text-center">
               <div class="text-4xl font-bold text-neutral-800 mb-6">
-                Rp <span class="text-gradient-primary">1.300.000</span>
+                Rp <span class="text-primary-600">1.300.000</span>
               </div>
               
               <div class="space-y-4 text-left">
@@ -752,7 +752,7 @@
                 
                 <div class="space-y-3">
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -761,7 +761,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -770,7 +770,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -779,7 +779,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -788,7 +788,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -797,7 +797,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -848,7 +848,7 @@
               </div>
               
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                <button class="w-full mt-6 bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                <button class="w-full mt-6 bg-primary-500 text-white py-4 px-8 rounded-2xl font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                   Tanya Lebih Lanjut
                 </button>
               </a>
@@ -858,14 +858,14 @@
           <!-- Intensive Mentoring -->
           <div class="group relative bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 hover:border-primary-300 transition-all duration-300 hover:transform hover:-translate-y-4 hover:scale-105 shadow-xl hover:shadow-2xl">
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
+              <div class="bg-primary-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg text-center whitespace-nowrap">
                 Intensive Mentoring
               </div>
             </div>
             
             <div class="pt-2 text-center">
               <div class="text-5xl font-bold text-neutral-800 mb-4">
-                Rp <span class="text-gradient-primary">550.000</span>
+                Rp <span class="text-primary-600">550.000</span>
               </div>
               
               <div class="space-y-5 text-left">
@@ -875,7 +875,7 @@
                 
                 <div class="space-y-4">
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -884,7 +884,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -893,7 +893,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -902,7 +902,7 @@
                   </div>
                   
                   <div class="flex items-start space-x-3">
-                    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div class="bg-primary-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                       </svg>
@@ -949,7 +949,7 @@
               </div>
               
               <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                <button class="w-full mt-8 bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                <button class="w-full mt-8 bg-primary-500 text-white py-4 px-8 rounded-2xl font-semibold hover:bg-primary-600 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl">
                   Tanya Lebih Lanjut
                 </button>
               </a>
@@ -962,7 +962,7 @@
           
           <!-- Basic Mentoring -->
           <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
               <div>
                 <h3 class="text-lg font-semibold">Basic Mentoring</h3>
                 <p class="text-white/90 text-base">Rp 289.000</p>
@@ -988,7 +988,7 @@
               
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -996,7 +996,7 @@
                   <span class="text-neutral-600 text-base">1 Sesi private mentoring</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1004,7 +1004,7 @@
                   <span class="text-neutral-600 text-base">Rekaman zoom</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1012,7 +1012,7 @@
                   <span class="text-neutral-600 text-base">Rangkuman catatan menggunakan AI</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1055,7 +1055,7 @@
               
               <div class="pt-4">
                 <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                  <button class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-lg">
+                  <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
                     Tanya Lebih Lanjut
                   </button>
                 </a>
@@ -1065,7 +1065,7 @@
 
           <!-- Super Intensive Mentoring -->
           <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
               <div>
                 <h3 class="text-lg font-semibold">Super Intensive Mentoring</h3>
                 <p class="text-white/90 text-base">Rp 1.300.000</p>
@@ -1091,7 +1091,7 @@
               
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1099,7 +1099,7 @@
                   <span class="text-neutral-600 text-base">2 Sesi private mentoring</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1107,7 +1107,7 @@
                   <span class="text-neutral-600 text-base">2X Proofread essay + 1 meeting pembahasan feedback essay</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1115,7 +1115,7 @@
                   <span class="text-neutral-600 text-base">Rekaman zoom</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1123,7 +1123,7 @@
                   <span class="text-neutral-600 text-base">Rangkuman catatan menggunakan AI</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1131,7 +1131,7 @@
                   <span class="text-neutral-600 text-base">Feedback langsung melalui email</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1182,7 +1182,7 @@
               
               <div class="pt-4">
                 <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                  <button class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-lg">
+                  <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
                     Tanya Lebih Lanjut
                   </button>
                 </a>
@@ -1192,7 +1192,7 @@
 
           <!-- Intensive Mentoring -->
           <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
               <div>
                 <h3 class="text-lg font-semibold">Intensive Mentoring</h3>
                 <p class="text-white/90 text-base">Rp 550.000</p>
@@ -1218,7 +1218,7 @@
               
               <div class="space-y-3">
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1226,7 +1226,7 @@
                   <span class="text-neutral-600 text-base">2 Sesi private mentoring</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1234,7 +1234,7 @@
                   <span class="text-neutral-600 text-base">Rekaman zoom</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1242,7 +1242,7 @@
                   <span class="text-neutral-600 text-base">Rangkuman catatan menggunakan AI</span>
                 </div>
                 <div class="flex items-start space-x-3">
-                  <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div class="bg-primary-500 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
@@ -1289,7 +1289,7 @@
               
               <div class="pt-4">
                 <a target="_blank" href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0">
-                  <button class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-lg">
+                  <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
                     Tanya Lebih Lanjut
                   </button>
                 </a>
@@ -1311,7 +1311,7 @@
       <section class="py-20 relative">
         <div class="container mx-auto px-4 relative z-10">
           <div class="max-w-4xl mx-auto bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-neutral-200/50 shadow-xl">
-            <h3 class="text-2xl font-bold text-neutral-800 mb-8 text-center text-gradient-primary">
+            <h3 class="text-2xl font-bold text-neutral-800 mb-8 text-center text-primary-600">
               Ketentuan Sesi Mentoring
             </h3>
             <ul class="space-y-4 text-neutral-600">
@@ -1399,7 +1399,7 @@
         <!-- Section Header -->
         <div class="text-center mb-16 space-y-6">
           <h2 class="text-4xl md:text-5xl font-bold text-neutral-900 leading-tight">
-            Mari <span class="text-gradient-primary">Berkolaborasi</span>
+            Mari <span class="text-primary-600">Berkolaborasi</span>
           </h2>
           <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
             Siap untuk memulai perjalanan karier yang luar biasa? Hubungi saya dan mari wujudkan visi besar Anda bersama!
@@ -1418,14 +1418,14 @@
                 <!-- Email -->
                 <div class="mb-8">
                   <h4 class="text-lg font-semibold text-neutral-800 mb-4 flex items-center">
-                    <div class="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center mr-3">
+                    <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center mr-3">
                       <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                       </svg>
                     </div>
                     Email
                   </h4>
-                  <div class="flex items-center space-x-4 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl border border-white/50 hover:from-primary-100 hover:to-secondary-100 transition-all duration-300 cursor-pointer group" onclick="copyEmail()" id="emailCard">
+                  <div class="flex items-center space-x-4 p-4 bg-primary-50 rounded-2xl border border-white/50 hover:bg-primary-100 transition-all duration-300 cursor-pointer group" onclick="copyEmail()" id="emailCard">
                     <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <svg class="w-6 h-6 text-primary-600 group-hover:text-primary-700 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -1446,7 +1446,7 @@
                 <!-- Social Media -->
                 <div>
                   <h4 class="text-lg font-semibold text-neutral-800 mb-4 flex items-center">
-                    <div class="w-8 h-8 bg-gradient-to-r from-accent-500 to-accent-600 rounded-lg flex items-center justify-center mr-3">
+                    <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center mr-3">
                       <svg class="w-4 h-4 text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                       </svg>
@@ -1535,7 +1535,7 @@
 
             <!-- Contact Form -->
             <div class="relative">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 rounded-3xl blur-xl"></div>
+              <div class="absolute inset-0 bg-primary-500/10 rounded-3xl blur-xl"></div>
               <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl shadow-neutral-500/20">
                 <div class="text-center mb-8">
                   <h3 class="text-2xl font-bold text-neutral-900 mb-2">Hubungi Saya</h3>
@@ -1610,7 +1610,7 @@
 
                   <!-- Submit Button -->
                   <button type="submit" 
-                          class="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-4 px-6 rounded-2xl hover:from-primary-600 hover:to-secondary-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                          class="w-full bg-primary-500 text-white font-semibold py-4 px-6 rounded-2xl hover:bg-primary-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span class="flex items-center justify-center">
                       <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
@@ -1629,9 +1629,9 @@
     <!-- Modern Footer -->
     <footer id="contact" class="relative py-20 overflow-hidden">
       <!-- Background -->
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-secondary-900"></div>
-      <div class="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-accent-500/20 to-primary-500/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-gradient-to-br from-secondary-500/20 to-accent-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute inset-0 bg-primary-800"></div>
+      <div class="absolute top-0 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary-500/20 rounded-full blur-3xl"></div>
       
       <div class="container relative z-10 mx-auto px-6">
         <!-- Section Header -->
@@ -1649,7 +1649,7 @@
           <a
             href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo%20Dinni,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20layanan%20mentoring%20Anda!"
             target="_blank"
-            class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold rounded-2xl shadow-xl shadow-accent-500/30 hover:shadow-2xl hover:shadow-accent-500/50 hover:scale-105 transition-all duration-300"
+            class="group inline-flex items-center px-8 py-4 bg-green-500 text-white font-semibold rounded-2xl shadow-xl shadow-green-500/30 hover:shadow-2xl hover:shadow-green-500/50 hover:scale-105 transition-all duration-300"
           >
             <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.585"/>
@@ -1680,7 +1680,7 @@
     </footer>
 
     <!-- Toast Notification -->
-    <div id="copyToast" class="fixed top-8 right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform translate-x-full opacity-0 transition-all duration-300 ease-in-out z-50">
+    <div id="copyToast" class="fixed top-8 right-8 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform translate-x-full opacity-0 transition-all duration-300 ease-in-out z-50">
       <div class="flex items-center space-x-3">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
