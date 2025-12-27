@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional career mentoring and self-development services by Dinni Rahmawati">
+  <meta name="theme-color" content="#2D5FCF">
+  
+  <!-- Performance optimizations -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Critical CSS inline (to be replaced with actual critical CSS) -->
+  <style>
+    /* Critical above-the-fold styles */
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+    .preloader { position: fixed; inset: 0; z-index: 9999; background: #2D5FCF; display: flex; align-items: center; justify-content: center; }
+  </style>
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="preload" href="./output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./output.css"></noscript>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./images/logo-web.png" type="image/png">
+  <link rel="apple-touch-icon" href="./images/logo-web.png">
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="./manifest.json">
+  
+  <title>Dinni Rahmawati - Career & Self-Development Expert</title>
+</head>
+<body>
+  <!-- Optimized Preloader -->
+  <div id="pre-loader" class="preloader">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <div style="width: 48px; height: 48px; border: 4px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <p style="color: rgba(255,255,255,0.8); font-weight: 500;">Loading...</p>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <!-- Main content would go here -->
+  <div id="app"></div>
+  
+  <!-- Deferred Scripts -->
+  <script>
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('SW registered'))
+          .catch(err => console.log('SW registration failed'));
+      });
+    }
+  </script>
+  
+  <!-- Performance utilities -->
+  <script src="./js/performance.js" defer></script>
+  
+  <!-- Main application -->
+  <script src="./main.min.js" defer></script>
+  
+  <!-- Analytics placeholder -->
+  <!-- <script src="./analytics.js" defer></script> -->
+</body>
+</html>

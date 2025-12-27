@@ -6,6 +6,15 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,vue}',
     './node_modules/flowbite/**/*.js',
   ],
+  
+  // Performance optimizations
+  mode: 'jit', // Just-in-Time mode for faster builds
+  
+  // Optimize for production
+  future: {
+    hoverOnlyWhenSupported: true,
+    respectDefaultRingColorOpacity: true,
+  },
   theme: {
     extend: {
       animation: {
