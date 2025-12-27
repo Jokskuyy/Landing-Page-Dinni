@@ -514,8 +514,17 @@
       
       <div class="container relative z-10 mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <!-- Content -->
-          <div class="space-y-8 text-white">
+          <!-- Image - First on mobile, second on desktop -->
+          <div class="flex justify-center order-1 lg:order-2">
+            <img
+              class="w-full max-w-lg rounded-3xl hover:scale-105 transition-transform duration-700"
+              src="./imgs/aboutme.png"
+              alt="Dinni Rahmawati - About Me"
+            />
+          </div>
+          
+          <!-- Content - Second on mobile, first on desktop -->
+          <div class="space-y-8 text-white order-2 lg:order-1">
             <div class="space-y-6">
               <h2 class="text-4xl md:text-5xl font-bold leading-tight">
                 Halo, Aku <span class="text-accent-300">Dinni</span>
@@ -565,23 +574,6 @@
               </a>
             </div>
           </div>
-          
-          <!-- Image -->
-          <div class="flex justify-center">
-            <div class="relative">
-              <!-- Decorative elements -->
-              <div class="absolute -inset-4 bg-accent-400/30 rounded-3xl rotate-6"></div>
-              <div class="absolute -inset-2 bg-accent-400/30 rounded-3xl -rotate-3"></div>
-              
-              <!-- Main image -->
-              <img
-                class="relative z-10 w-full max-w-lg rounded-3xl shadow-2xl shadow-black/30 hover:scale-105 transition-transform duration-700"
-                src="./imgs/aboutme.png"
-                alt="Dinni Rahmawati - About Me"
-              />
-              
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -604,15 +596,15 @@
           </p>
         </div>
         
-        <!-- Desktop Layout (hidden on mobile) -->
-        <div class="hidden lg:block space-y-12">
+        <!-- Service Cards - Vertical Layout -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Service 1: Mentoring 1o1 -->
           <div class="group">
             <a
               href="mentoring.html"
-              class="service-card flex flex-col lg:flex-row items-stretch gap-0 bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500"
+              class="service-card flex flex-col bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500 h-full"
             >
-              <div class="lg:w-1/2 relative overflow-hidden">
+              <div class="relative overflow-hidden">
                 <div class="absolute inset-0 bg-primary-500/0 group-hover:bg-primary-500/20 transition-all duration-500 z-10"></div>
                 <div class="card-image bg-blue-100 flex items-center justify-center relative">
                   <img
@@ -623,17 +615,17 @@
                   <div class="absolute inset-0 bg-black/20"></div>
                 </div>
               </div>
-              <div class="lg:w-1/2 p-8 lg:p-12 space-y-6 flex flex-col justify-center">
+              <div class="p-8 space-y-6 flex flex-col flex-grow">
                 <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full w-fit">
                   <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                   </svg>
                   Gabung Sekarang!
                 </div>
-                <h3 class="text-3xl lg:text-4xl font-bold text-neutral-900 group-hover:text-primary-600 transition-all duration-300">
+                <h3 class="text-2xl lg:text-3xl font-bold text-neutral-900 group-hover:text-primary-600 transition-all duration-300">
                   Mentoring 1o1
                 </h3>
-                <p class="text-lg text-neutral-600 leading-relaxed">
+                <p class="text-base text-neutral-600 leading-relaxed flex-grow">
                   Sesi mentoring personal yang dirancang untuk mempercepat pertumbuhan karier Anda dengan strategi yang disesuaikan dan wawasan yang dapat ditindaklanjuti.
                 </p>
                 <div class="flex items-center text-primary-600 font-semibold group-hover:text-primary-700 transition-colors duration-300">
@@ -650,9 +642,9 @@
           <div class="group">
             <a
               href="proofreading.html"
-              class="service-card flex flex-col lg:flex-row-reverse items-stretch gap-0 bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500"
+              class="service-card flex flex-col bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500 h-full"
             >
-              <div class="lg:w-1/2 relative overflow-hidden">
+              <div class="relative overflow-hidden">
                 <div class="absolute inset-0 bg-secondary-500/0 group-hover:bg-secondary-500/20 transition-all duration-500 z-10"></div>
                 <div class="card-image bg-cyan-100 flex items-center justify-center relative">
                   <img
@@ -663,17 +655,17 @@
                   <div class="absolute inset-0 bg-black/20"></div>
                 </div>
               </div>
-              <div class="lg:w-1/2 p-8 lg:p-12 space-y-6 flex flex-col justify-center">
+              <div class="p-8 space-y-6 flex flex-col flex-grow">
                 <div class="inline-flex items-center px-4 py-2 bg-secondary-100 text-secondary-700 text-sm font-semibold rounded-full w-fit">
                   <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                   </svg>
                   Gabung Sekarang!
                 </div>
-                <h3 class="text-3xl lg:text-4xl font-bold text-neutral-900 group-hover:text-secondary-600 transition-all duration-300">
+                <h3 class="text-2xl lg:text-3xl font-bold text-neutral-900 group-hover:text-secondary-600 transition-all duration-300">
                   Proofread Dokumen
                 </h3>
-                <p class="text-lg text-neutral-600 leading-relaxed">
+                <p class="text-base text-neutral-600 leading-relaxed flex-grow">
                   Layanan review dan editing dokumen profesional untuk memastikan aplikasi, esai, dan proposal Anda dipoles dan berdampak.
                 </p>
                 <div class="flex items-center text-secondary-600 font-semibold group-hover:text-secondary-700 transition-colors duration-300">
@@ -691,9 +683,9 @@
             <a
               target="_blank"
               href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0"
-              class="service-card flex flex-col lg:flex-row items-stretch gap-0 bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500"
+              class="service-card flex flex-col bg-white rounded-3xl overflow-hidden shadow-xl shadow-neutral-500/10 border border-neutral-200 hover:shadow-2xl hover:shadow-neutral-500/20 transition-all duration-500 h-full"
             >
-              <div class="lg:w-1/2 relative overflow-hidden">
+              <div class="relative overflow-hidden">
                 <div class="absolute inset-0 bg-accent-500/0 group-hover:bg-accent-500/20 transition-all duration-500 z-10"></div>
                 <div class="card-image bg-purple-100 flex items-center justify-center relative">
                   <img
@@ -704,18 +696,18 @@
                   <div class="absolute inset-0 bg-black/20"></div>
                 </div>
               </div>
-              <div class="lg:w-1/2 p-8 lg:p-12 space-y-6 flex flex-col justify-center">
+              <div class="p-8 space-y-6 flex flex-col flex-grow">
                 <div class="inline-flex items-center px-4 py-2 bg-accent-100 text-accent-700 text-sm font-semibold rounded-full w-fit">
                   <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                   </svg>
                   Let's Collaborate!
                 </div>
-                <h3 class="text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight">
+                <h3 class="text-2xl lg:text-3xl font-bold text-neutral-900 leading-tight">
                   <span class="group-hover:text-primary-600 transition-all duration-300">Customized Soft-Skill Training</span>
-                  <span class="block text-2xl lg:text-3xl text-neutral-700 group-hover:text-neutral-800 transition-colors duration-300">& Learning Development Advisory</span>
+                  <span class="block text-xl lg:text-2xl text-neutral-700 group-hover:text-neutral-800 transition-colors duration-300">& Learning Development Advisory</span>
                 </h3>
-                <p class="text-lg text-neutral-600 leading-relaxed">
+                <p class="text-base text-neutral-600 leading-relaxed flex-grow">
                   Program pelatihan korporat dan strategi pengembangan pembelajaran untuk meningkatkan kinerja tim dan pertumbuhan organisasi.
                 </p>
                 <div class="flex items-center text-accent-600 font-semibold group-hover:text-accent-700 transition-colors duration-300">
@@ -726,189 +718,6 @@
                 </div>
               </div>
             </a>
-          </div>
-        </div>
-
-        <!-- Mobile Accordion Layout (visible only on mobile) -->
-        <div class="lg:hidden max-w-2xl mx-auto space-y-4">
-          
-          <!-- Service 1: Mentoring 1o1 Accordion -->
-          <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-primary-500 text-white">
-              <div class="flex items-center space-x-3">
-                <!-- <img src="./images/mentoring-1o1.svg" alt="Mentoring 1o1" class="w-8 h-8"> -->
-                <div>
-                  <h3 class="text-lg font-semibold">Mentoring 1o1</h3>
-                  <p class="text-white/90 text-sm">Sesi mentoring personal</p>
-                </div>
-              </div>
-              <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-500 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div 
-              x-show="open" 
-              x-transition:enter="transition ease-out duration-500"
-              x-transition:enter-start="opacity-0 transform -translate-y-4"
-              x-transition:enter-end="opacity-100 transform translate-y-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 transform translate-y-0"
-              x-transition:leave-end="opacity-0 transform -translate-y-4"
-              class="p-6 space-y-4"
-            >
-              <div class="flex items-center px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full w-fit">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Gabung Sekarang!
-              </div>
-              
-              <div class="aspect-video relative overflow-hidden rounded-xl">
-                <img
-                  src="./images/mentoring-1o1.svg"
-                  alt="Mentoring 1 on 1"
-                  class="w-full h-full object-cover object-center"
-                />
-                <div class="absolute inset-0 bg-black/20"></div>
-              </div>
-              
-              <p class="text-neutral-600 leading-relaxed">
-                Sesi mentoring personal yang dirancang untuk mempercepat pertumbuhan karier Anda dengan strategi yang disesuaikan dan wawasan yang dapat ditindaklanjuti.
-              </p>
-              
-              <a href="mentoring.html" class="block">
-                <button class="w-full bg-primary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 shadow-lg">
-                  <span class="flex items-center justify-center">
-                    <span>Lihat Detail</span>
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </span>
-                </button>
-              </a>
-            </div>
-          </div>
-
-          <!-- Service 2: Proofreading Accordion -->
-          <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-secondary-500 text-white">
-              <div class="flex items-center space-x-3">
-                <!-- <img src="./images/proofread.svg" alt="Proofreading" class="w-8 h-8"> -->
-                <div>
-                  <h3 class="text-lg font-semibold">Proofread Dokumen</h3>
-                  <p class="text-white/90 text-sm">Review dan editing profesional</p>
-                </div>
-              </div>
-              <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-500 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div 
-              x-show="open" 
-              x-transition:enter="transition ease-out duration-500"
-              x-transition:enter-start="opacity-0 transform -translate-y-4"
-              x-transition:enter-end="opacity-100 transform translate-y-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 transform translate-y-0"
-              x-transition:leave-end="opacity-0 transform -translate-y-4"
-              class="p-6 space-y-4"
-            >
-              <div class="flex items-center px-4 py-2 bg-secondary-100 text-secondary-700 text-sm font-semibold rounded-full w-fit">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Gabung Sekarang!
-              </div>
-              
-              <div class="aspect-video relative overflow-hidden rounded-xl">
-                <img
-                  src="./images/proofread.svg"
-                  alt="Proofreading Services"
-                  class="w-full h-full object-cover object-center"
-                />
-                <div class="absolute inset-0 bg-black/20"></div>
-              </div>
-              
-              <p class="text-neutral-600 leading-relaxed">
-                Layanan review dan editing dokumen profesional untuk memastikan aplikasi, esai, dan proposal Anda dipoles dan berdampak.
-              </p>
-              
-              <a href="proofreading.html" class="block">
-                <button class="w-full bg-secondary-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-secondary-600 transition-all duration-300 shadow-lg">
-                  <span class="flex items-center justify-center">
-                    <span>Lihat Detail</span>
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </span>
-                </button>
-              </a>
-            </div>
-          </div>
-
-          <!-- Service 3: Custom Training Accordion -->
-          <div x-data="{ open: false }" class="bg-white/90 backdrop-blur-xl rounded-2xl border border-neutral-200/50 shadow-lg overflow-hidden">
-            <button @click="open = !open" class="w-full px-6 py-4 text-left flex items-center justify-between bg-accent-500 text-white">
-              <div class="flex items-center space-x-3">
-                <!-- <img src="./images/services-3.svg" alt="Custom Training" class="w-8 h-8"> -->
-                <div>
-                  <h3 class="text-lg font-semibold">Customized Training</h3>
-                  <p class="text-white/90 text-sm">Pelatihan korporat</p>
-                </div>
-              </div>
-              <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-500 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div 
-              x-show="open" 
-              x-transition:enter="transition ease-out duration-500"
-              x-transition:enter-start="opacity-0 transform -translate-y-4"
-              x-transition:enter-end="opacity-100 transform translate-y-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 transform translate-y-0"
-              x-transition:leave-end="opacity-0 transform -translate-y-4"
-              class="p-6 space-y-4"
-            >
-              <div class="flex items-center px-4 py-2 bg-accent-100 text-accent-700 text-sm font-semibold rounded-full w-fit">
-                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Let's Collaborate!
-              </div>
-              
-              <div class="aspect-video relative overflow-hidden rounded-xl">
-                <img
-                  src="./images/services-3.svg"
-                  alt="Custom Training & Advisory"
-                  class="w-full h-full object-cover object-center"
-                />
-                <div class="absolute inset-0 bg-black/20"></div>
-              </div>
-              
-              <h4 class="text-xl font-bold text-neutral-900">
-                Customized Soft-Skill Training & Learning Development Advisory
-              </h4>
-              
-              <p class="text-neutral-600 leading-relaxed">
-                Program pelatihan korporat dan strategi pengembangan pembelajaran untuk meningkatkan kinerja tim dan pertumbuhan organisasi.
-              </p>
-              
-              <a 
-                href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo++Dinni++Aku+tertarik+untuk+menggunakan+jasa+mentoring+kamu%21+%28Mohon+sebutkan+paket+yang+kamu+pilih%29&type=phone_number&app_absent=0"
-                target="_blank" 
-                class="block"
-              >
-                <button class="w-full bg-accent-500 text-white py-3 px-6 rounded-xl font-semibold hover:bg-accent-600 transition-all duration-300 shadow-lg">
-                  <span class="flex items-center justify-center">
-                    <span>Yuk Kolaborasi</span>
-                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </span>
-                </button>
-              </a>
-            </div>
           </div>
         </div>
         
@@ -923,282 +732,135 @@
       <div class="absolute top-0 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary-500/20 rounded-full blur-3xl"></div>
       
-      <div class="container relative z-10 mx-auto px-0">
-        <!-- Section Header -->
-        <div class="text-center mb-12 sm:mb-20 space-y-4 sm:space-y-6 px-4 sm:px-6">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
-            Portfolio <span class="text-accent-300">Saya</span>
-          </h2>
-          <p class="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
-            Berbagai program dan kegiatan yang telah saya lakukan untuk membantu pengembangan karier dan diri
-          </p>
+      <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header with Filter Buttons -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
+          <div class="max-w-xl">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
+              Portfolio <span class="text-accent-300">Saya</span>
+            </h2>
+            <p class="text-base sm:text-lg text-white/80 leading-relaxed">
+              Berbagai program dan kegiatan yang telah saya lakukan untuk membantu pengembangan karier dan diri
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button class="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary-600 shadow-md ring-1 ring-inset ring-white transition-all hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+              Semua
+            </button>
+            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+              Mentoring
+            </button>
+            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+              Workshop
+            </button>
+            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+              Pelatihan
+            </button>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:px-6">
-          <!-- Mobile: horizontal scroll, Desktop: 2 columns grid -->
-          <div class="lg:hidden w-full">
-            <!-- Mobile horizontal scroll container -->
-            <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide pl-4 pr-4" style="scroll-behavior: smooth;">
-              <!-- Portfolio Item 1 -->
-              <div class="min-w-[350px] sm:min-w-[320px] flex-shrink-0 snap-start">
-                <a
-                  href="#testimonies"
-                  class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500 h-full flex flex-col"
-                >
-                  <!-- Fixed height for consistent image sizing -->
-                  <div class="h-[250px] sm:h-[200px] relative overflow-hidden flex-shrink-0">
-                    <img
-                      src="./images/portfolio-11.png"
-                      alt="Mentoring 1 on 1"
-                      class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div class="absolute inset-0 bg-transparent group-hover:bg-primary-500/30 transition-all duration-500"></div>
-                  </div>
-                  <!-- Optimized content layout -->
-                  <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                    <div class="flex-1 space-y-2 sm:space-y-3">
-                      <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300 line-clamp-2">
-                        Mentoring 1 on 1
-                      </h3>
-                      <p class="text-white/70 leading-relaxed text-sm sm:text-base line-clamp-3">
-                        Sesi mentoring personal yang dirancang khusus untuk mempercepat pertumbuhan karier dengan strategi yang disesuaikan
-                      </p>
-                    </div>
-                    <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300 text-sm sm:text-base pt-4 mt-auto">
-                      <span>Lihat testimoni</span>
-                      <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Portfolio Item 2 -->
-              <div class="min-w-[350px] sm:min-w-[320px] flex-shrink-0 snap-start">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/services/page/b14b99329a78226740"
-                  class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500 h-full flex flex-col"
-                >
-                  <div class="h-[250px] sm:h-[200px] relative overflow-hidden flex-shrink-0">
-                    <img
-                      src="./images/portfolio-21.png"
-                      alt="Mentoring Kelompok"
-                      class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div class="absolute inset-0 bg-transparent group-hover:bg-secondary-500/30 transition-all duration-500"></div>
-                  </div>
-                  <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                    <div class="flex-1 space-y-2 sm:space-y-3">
-                      <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300 line-clamp-2">
-                        Mentoring Kelompok
-                      </h3>
-                      <p class="text-white/70 leading-relaxed text-sm sm:text-base line-clamp-3">
-                        Program mentoring berkelompok yang memungkinkan peserta belajar bersama dan saling mendukung dalam pengembangan karier
-                      </p>
-                    </div>
-                    <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300 text-sm sm:text-base pt-4 mt-auto">
-                      <span>Pelajari lebih lanjut</span>
-                      <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Portfolio Item 3 -->
-              <div class="min-w-[350px] sm:min-w-[320px] flex-shrink-0 snap-start">
-                <a
-                  href="https://www.linkedin.com/services/page/b14b99329a78226740"
-                  target="_blank"
-                  class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500 h-full flex flex-col"
-                >
-                  <div class="h-[250px] sm:h-[200px] relative overflow-hidden flex-shrink-0">
-                    <img
-                      src="./images/portfolio-3.png"
-                      alt="Webinar"
-                      class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div class="absolute inset-0 bg-transparent group-hover:bg-accent-500/30 transition-all duration-500"></div>
-                  </div>
-                  <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                    <div class="flex-1 space-y-2 sm:space-y-3">
-                      <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300 line-clamp-2">
-                        Webinar & Workshop
-                      </h3>
-                      <p class="text-white/70 leading-relaxed text-sm sm:text-base line-clamp-3">
-                        Sesi webinar dan workshop interaktif tentang pengembangan karier, soft skills, dan strategi profesional
-                      </p>
-                    </div>
-                    <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300 text-sm sm:text-base pt-4 mt-auto">
-                      <span>Lihat jadwal</span>
-                      <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Portfolio Item 4 -->
-              <div class="min-w-[350px] sm:min-w-[320px] flex-shrink-0 snap-start">
-                <a
-                  href="https://www.linkedin.com/services/page/b14b99329a78226740"
-                  target="_blank"
-                  class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500 h-full flex flex-col"
-                >
-                  <div class="h-[250px] sm:h-[200px] relative overflow-hidden flex-shrink-0">
-                    <img
-                      src="./images/portfolio-41.png"
-                      alt="Pelatihan Soft-Skill"
-                      class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div class="absolute inset-0 bg-transparent group-hover:bg-primary-500/30 transition-all duration-500"></div>
-                  </div>
-                  <div class="p-4 sm:p-5 flex-1 flex flex-col">
-                    <div class="flex-1 space-y-2 sm:space-y-3">
-                      <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300 line-clamp-2">
-                        Pelatihan Soft-Skill
-                      </h3>
-                      <p class="text-white/70 leading-relaxed text-sm sm:text-base line-clamp-3">
-                        Program pelatihan komprehensif untuk mengembangkan soft skills yang dibutuhkan di dunia kerja modern
-                      </p>
-                    </div>
-                    <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300 text-sm sm:text-base pt-4 mt-auto">
-                      <span>Daftar sekarang</span>
-                      <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Desktop layout (hidden on mobile) -->
-          <div class="hidden lg:contents">
-          <!-- Portfolio Item 1 -->
-          <a
-            href="#testimonies"
-            class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500"
-          >
-            <div class="aspect-video relative overflow-hidden">
-              <img
-                src="./images/portfolio-11.png"
-                alt="Mentoring 1 on 1"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div class="absolute inset-0 bg-transparent group-hover:bg-primary-500/30 transition-all duration-500"></div>
-            </div>
-            <div class="p-8 space-y-4">
-              <h3 class="text-2xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300">
-                Mentoring 1 on 1
-              </h3>
-              <p class="text-white/70 leading-relaxed">
-                Sesi mentoring personal yang dirancang khusus untuk mempercepat pertumbuhan karier dengan strategi yang disesuaikan
-              </p>
-              <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300">
-                <span>Lihat testimoni</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Portfolio Item 1: Mentoring 1-on-1 -->
+          <a href="#testimonies" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+            <img src="./images/portfolio-11.png" alt="Mentoring 1 on 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+              <div class="transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-flex items-center rounded-md bg-primary-500/20 px-2.5 py-1 text-xs font-medium text-primary-200 backdrop-blur-md ring-1 ring-inset ring-primary-500/30">
+                    Mentoring
+                  </span>
+                  <svg class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 leading-tight">Mentoring 1 on 1</h4>
+                <p class="text-sm text-neutral-300 line-clamp-2 opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 delay-75 mb-4">
+                  Sesi mentoring personal yang dirancang khusus untuk mempercepat pertumbuhan karier dengan strategi yang disesuaikan
+                </p>
+                <button class="w-full rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 py-2.5 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+                  Lihat Testimoni
+                </button>
               </div>
             </div>
           </a>
 
-          <!-- Portfolio Item 2 -->
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500"
-          >
-            <div class="aspect-video relative overflow-hidden">
-              <img
-                src="./images/portfolio-21.png"
-                alt="Mentoring Kelompok"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div class="absolute inset-0 bg-transparent group-hover:bg-secondary-500/30 transition-all duration-500"></div>
-            </div>
-            <div class="p-8 space-y-4">
-              <h3 class="text-2xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300">
-                Mentoring Kelompok
-              </h3>
-              <p class="text-white/70 leading-relaxed">
-                Program mentoring berkelompok yang memungkinkan peserta belajar bersama dan saling mendukung dalam pengembangan karier
-              </p>
-              <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300">
-                <span>Pelajari lebih lanjut</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+          <!-- Portfolio Item 2: Mentoring Kelompok -->
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+            <img src="./images/portfolio-21.png" alt="Mentoring Kelompok" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+              <div class="transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-flex items-center rounded-md bg-secondary-500/20 px-2.5 py-1 text-xs font-medium text-secondary-200 backdrop-blur-md ring-1 ring-inset ring-secondary-500/30">
+                    Mentoring
+                  </span>
+                  <svg class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 leading-tight">Mentoring Kelompok</h4>
+                <p class="text-sm text-neutral-300 line-clamp-2 opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 delay-75 mb-4">
+                  Program mentoring berkelompok yang memungkinkan peserta belajar bersama dan saling mendukung dalam pengembangan karier
+                </p>
+                <button class="w-full rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 py-2.5 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+                  Pelajari Lebih Lanjut
+                </button>
               </div>
             </div>
           </a>
 
-          <!-- Portfolio Item 3 -->
-          <a
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            target="_blank"
-            class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500"
-          >
-            <div class="aspect-video relative overflow-hidden">
-              <img
-                src="./images/portfolio-3.png"
-                alt="Webinar"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div class="absolute inset-0 bg-transparent group-hover:bg-accent-500/30 transition-all duration-500"></div>
-            </div>
-            <div class="p-8 space-y-4">
-              <h3 class="text-2xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300">
-                Webinar & Workshop
-              </h3>
-              <p class="text-white/70 leading-relaxed">
-                Sesi webinar dan workshop interaktif tentang pengembangan karier, soft skills, dan strategi profesional
-              </p>
-              <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300">
-                <span>Lihat jadwal</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+          <!-- Portfolio Item 3: Webinar & Workshop -->
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+            <img src="./images/portfolio-3.png" alt="Webinar & Workshop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+              <div class="transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-flex items-center rounded-md bg-accent-500/20 px-2.5 py-1 text-xs font-medium text-accent-200 backdrop-blur-md ring-1 ring-inset ring-accent-500/30">
+                    Workshop
+                  </span>
+                  <svg class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 leading-tight">Webinar & Workshop</h4>
+                <p class="text-sm text-neutral-300 line-clamp-2 opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 delay-75 mb-4">
+                  Sesi webinar dan workshop interaktif tentang pengembangan karier, soft skills, dan strategi profesional
+                </p>
+                <button class="w-full rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 py-2.5 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+                  Lihat Jadwal
+                </button>
               </div>
             </div>
           </a>
 
-          <!-- Portfolio Item 4 -->
-          <a
-            href="https://www.linkedin.com/services/page/b14b99329a78226740"
-            target="_blank"
-            class="group relative overflow-hidden bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 hover:bg-white/20 hover:scale-105 transition-all duration-500"
-          >
-            <div class="aspect-video relative overflow-hidden">
-              <img
-                src="./images/portfolio-41.png"
-                alt="Pelatihan Soft-Skill"
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div class="absolute inset-0 bg-transparent group-hover:bg-primary-500/30 transition-all duration-500"></div>
-            </div>
-            <div class="p-8 space-y-4">
-              <h3 class="text-2xl font-bold text-white group-hover:text-accent-300 transition-colors duration-300">
-                Pelatihan Soft-Skill
-              </h3>
-              <p class="text-white/70 leading-relaxed">
-                Program pelatihan komprehensif untuk mengembangkan soft skills yang dibutuhkan di dunia kerja modern
-              </p>
-              <div class="flex items-center text-accent-300 font-semibold group-hover:text-accent-200 transition-colors duration-300">
-                <span>Daftar sekarang</span>
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+          <!-- Portfolio Item 4: Pelatihan Soft-Skill -->
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+            <img src="./images/portfolio-41.png" alt="Pelatihan Soft-Skill" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
+            <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+              <div class="transform translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-flex items-center rounded-md bg-purple-500/20 px-2.5 py-1 text-xs font-medium text-purple-200 backdrop-blur-md ring-1 ring-inset ring-purple-500/30">
+                    Pelatihan
+                  </span>
+                  <svg class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-2 leading-tight">Pelatihan Soft-Skill</h4>
+                <p class="text-sm text-neutral-300 line-clamp-2 opacity-0 h-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 delay-75 mb-4">
+                  Program pelatihan komprehensif untuk mengembangkan soft skills yang dibutuhkan di dunia kerja modern
+                </p>
+                <button class="w-full rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 py-2.5 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+                  Daftar Sekarang
+                </button>
               </div>
             </div>
           </a>
-          </div>
+        </div>
       </div>
     </section>
 
