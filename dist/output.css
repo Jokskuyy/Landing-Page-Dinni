@@ -1,6 +1,6 @@
 /* =============================================================================
-   Custom Styles - Landing Page Dinni
-   Built with Tailwind CSS
+   TAILWIND CSS CUSTOM STYLES
+   Professional UI Component Library
    ============================================================================= */
 
 /* -----------------------------------------------------------------------------
@@ -1072,12 +1072,12 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Button Components
+     MODERN BUTTON SYSTEM
      --------------------------------------------------------------------------- */
 
-/* Base Button */
+/* Base button styling */
 
-/* Button Variants */
+/* Button variants - Modern gradient styles */
 
 .btn-primary {
   display: inline-flex;
@@ -1310,8 +1310,10 @@ h5 {
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
 }
 
+/* Legacy button support - for backward compatibility */
+
 /* ---------------------------------------------------------------------------
-     Card Components
+     MODERN CARD SYSTEM
      --------------------------------------------------------------------------- */
 
 .card {
@@ -1362,7 +1364,7 @@ h5 {
   }
 }
 
-/* Service Cards */
+/* Service cards with enhanced hover effects */
 
 .service-card {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1394,7 +1396,7 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Layout Utilities
+     LAYOUT COMPONENTS
      --------------------------------------------------------------------------- */
 
 .section-container {
@@ -1428,15 +1430,15 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Background Gradients
+     GRADIENT BACKGROUNDS
      --------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------
-     Text Gradients
+     TEXT GRADIENTS
      --------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------
-     Portfolio Components
+     PORTFOLIO/GALLERY COMPONENTS
      --------------------------------------------------------------------------- */
 
 .item {
@@ -1452,10 +1454,10 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Carousel Components
+     ENHANCED GLASSMORPHISM CAROUSEL - SEAMLESS LOOP VERSION
      --------------------------------------------------------------------------- */
 
-/* Carousel Container */
+/* Main carousel container with glassmorphism effect */
 
 .enhanced-carousel-container {
   position: relative;
@@ -1492,7 +1494,7 @@ h5 {
   display: none;
 }
 
-/* Carousel Track */
+/* Carousel track - the moving container */
 
 .enhanced-carousel-track {
   display: flex;
@@ -1509,13 +1511,13 @@ h5 {
   transform: translateZ(0);
 }
 
-/* Animation Pause on Hover */
+/* Pause animation on hover */
 
 .enhanced-carousel-container:hover .enhanced-carousel-track {
   animation-play-state: paused;
 }
 
-/* Animation Directions */
+/* Animation directions with consistent timing - SEAMLESS LOOP */
 
 .enhanced-carousel-normal {
   animation: enhanced-scroll-left-seamless 30s linear infinite;
@@ -1525,7 +1527,7 @@ h5 {
   animation: enhanced-scroll-right-seamless 30s linear infinite;
 }
 
-/* Carousel Items */
+/* Individual carousel items */
 
 .enhanced-carousel-item {
   flex-shrink: 0;
@@ -1550,7 +1552,7 @@ h5 {
   padding: 0.5rem;
 }
 
-/* Hover Effects */
+/* Hover effects */
 
 .enhanced-carousel-item:hover {
   --tw-scale-x: 1.05;
@@ -1563,7 +1565,7 @@ h5 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Carousel Images */
+/* Images inside carousel items */
 
 .enhanced-carousel-item img,
   .logo-item {
@@ -1584,7 +1586,7 @@ h5 {
   transform: scale(1.02);
 }
 
-/* Logo Items */
+/* Legacy carousel item support */
 
 .carousel-item {
   margin-left: 1rem;
@@ -1630,6 +1632,82 @@ h5 {
   .logo-item {
     height: 4rem;
   }
+}
+
+/* =============================================================================
+     ADPLIST STYLE CAROUSEL - Modern Infinite Scroll
+     ============================================================================= */
+
+/* Wrapper dengan overflow hidden */
+
+.adplist-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Track yang berisi semua logo dengan smooth scroll */
+
+.adplist-carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .adplist-carousel-track {
+    gap: 4rem;
+  }
+}
+
+.adplist-carousel-track {
+  width: -moz-max-content;
+  width: max-content;
+  animation: adplist-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+/* Reverse animation untuk carousel kedua */
+
+.adplist-carousel-reverse {
+  animation: adplist-scroll-reverse 40s linear infinite;
+}
+
+/* Pause animation on hover */
+
+.adplist-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Logo item container */
+
+.adplist-logo-item {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 80px;
+}
+
+/* Logo image styling with grayscale effect */
+
+.adplist-logo {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  filter: grayscale(100%);
+}
+
+/* Hover effects - remove grayscale and increase opacity */
+
+.adplist-logo-item:hover .adplist-logo {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 /* ---------------------------------------------------------------------------
@@ -3821,11 +3899,11 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Fade Animations
+     FADE ANIMATIONS
      --------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------
-     Scroll Animations
+     SCROLL ANIMATIONS
      --------------------------------------------------------------------------- */
 
 .animate-scroll-reverse {
@@ -3834,28 +3912,28 @@ h5 {
 }
 
 /* ---------------------------------------------------------------------------
-     Scrollbar Utilities
+     SCROLLBAR UTILITIES
      --------------------------------------------------------------------------- */
 
-/* Font Imports */
+/* Font imports - optimized for performance */
 
 /* =============================================================================
-   Base Layer - Global Styles
+   BASE LAYER - Global Styles & Resets
    ============================================================================= */
 
 /* =============================================================================
-   Components Layer - Reusable UI Elements
+   COMPONENTS LAYER - Reusable UI Components
    ============================================================================= */
 
 /* =============================================================================
-   Utilities Layer - Animations & Helpers
+   UTILITIES LAYER - Animation & Helper Classes
    ============================================================================= */
 
 /* =============================================================================
-   Keyframe Animations
+   KEYFRAME ANIMATIONS
    ============================================================================= */
 
-/* Carousel Scroll Animations */
+/* Basic carousel animations */
 
 @keyframes scroll {
   0% {
@@ -3899,6 +3977,29 @@ h5 {
   }
 }
 
+/* Smooth animation keyframes - infinite scroll */
+
+@keyframes adplist-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+    /* Move 1/3 for 3 sets */
+  }
+}
+
+@keyframes adplist-scroll-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Responsive adjustments */
 
 @media (max-width: 640px) {
@@ -3913,6 +4014,20 @@ h5 {
 
   .enhanced-carousel-item {
     min-width: 100px;
+    height: 60px;
+  }
+}
+
+/* Responsive adjustments for mobile */
+
+@media (max-width: 768px) {
+  .adplist-carousel-track {
+    gap: 2rem;
+    animation-duration: 30s;
+  }
+
+  .adplist-logo-item {
+    width: 100px;
     height: 60px;
   }
 }
@@ -3951,6 +4066,30 @@ h5 {
     --tw-scale-x: 1;
     --tw-scale-y: 1;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .adplist-carousel-track,
+  .adplist-carousel-reverse {
+    animation: none;
+  }
+
+  .adplist-logo {
+    transition-property: none;
+  }
+}
+
+/* Print styles - show all logos in grid */
+
+@media print {
+  .adplist-carousel-track {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none;
+  }
+
+  .adplist-logo {
+    filter: none !important;
+    opacity: 1;
   }
 }
 
