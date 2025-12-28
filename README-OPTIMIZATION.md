@@ -10,7 +10,8 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 
 ### ✅ What's Been Optimized
 
-#### 1. **Build System** 
+#### 1. **Build System**
+
 - ✨ Modern build pipeline with Terser, ESBuild, and PostCSS
 - 📦 Automatic minification of HTML, CSS, and JavaScript
 - 🗜️ Image optimization pipeline
@@ -18,6 +19,7 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 - 📈 Bundle analysis tools
 
 #### 2. **JavaScript Optimizations**
+
 - ⚡ Minified and compressed JS files (60-80% size reduction)
 - 🔄 Optimized carousel implementation with minimal DOM operations
 - 🎪 Performance utilities (debounce, throttle, lazy loading)
@@ -25,6 +27,7 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 - 🧹 Dead code elimination and tree-shaking
 
 #### 3. **CSS Optimizations**
+
 - 🎨 Tailwind JIT mode for faster builds
 - 🧼 PurgeCSS removes unused styles
 - 📉 CSS minification with cssnano
@@ -32,6 +35,7 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 - 🔧 Autoprefixer for browser compatibility
 
 #### 4. **Image Optimizations**
+
 - 🖼️ Image compression script (supports JPEG, PNG, SVG, WebP)
 - 🦥 Lazy loading with Intersection Observer
 - 📱 Responsive image sizing
@@ -39,6 +43,7 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 - 🎯 Optimized image delivery
 
 #### 5. **Loading Performance**
+
 - ⚡ Resource hints (dns-prefetch, preconnect, prefetch)
 - 📦 Code splitting ready
 - 🔄 Deferred non-critical resources
@@ -46,6 +51,7 @@ This project has been **ultra-optimized** for maximum performance, minimal bundl
 - 🚀 Font display optimization (font-display: swap)
 
 #### 6. **Caching & Compression**
+
 - 💾 Service Worker caching strategies
 - 🗜️ Gzip and Brotli compression support
 - ⏰ Optimal cache headers configured
@@ -69,12 +75,14 @@ yarn install
 ## 📦 Available Scripts
 
 ### Development
+
 ```bash
 # Start development server with CSS watch mode
 npm run dev
 ```
 
 ### Production Build
+
 ```bash
 # Full production build (recommended)
 npm run build
@@ -89,6 +97,7 @@ npm run build
 ```
 
 ### Individual Build Steps
+
 ```bash
 # Build CSS only
 npm run build:css
@@ -107,6 +116,7 @@ npm run purge:css
 ```
 
 ### Analysis & Testing
+
 ```bash
 # Analyze bundle sizes and compression
 npm run analyze:bundle
@@ -119,6 +129,7 @@ npm run serve
 ```
 
 ### Cleaning
+
 ```bash
 # Remove build artifacts
 npm run clean
@@ -172,42 +183,47 @@ Landing-Page-Dinni/
 
 ## 🎯 Performance Targets Achieved
 
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| CSS Size | ~150KB | ~50KB | 66% reduction |
-| JS Size | ~120KB | ~40KB | 66% reduction |
-| HTML Size | ~80KB | ~60KB | 25% reduction |
-| Images | Unoptimized | Compressed | 30-60% smaller |
-| Load Time | ~3.5s | ~1.2s | 65% faster |
-| Lighthouse Score | ~75 | ~95+ | +20 points |
+| Metric           | Before      | After      | Improvement    |
+| ---------------- | ----------- | ---------- | -------------- |
+| CSS Size         | ~150KB      | ~50KB      | 66% reduction  |
+| JS Size          | ~120KB      | ~40KB      | 66% reduction  |
+| HTML Size        | ~80KB       | ~60KB      | 25% reduction  |
+| Images           | Unoptimized | Compressed | 30-60% smaller |
+| Load Time        | ~3.5s       | ~1.2s      | 65% faster     |
+| Lighthouse Score | ~75         | ~95+       | +20 points     |
 
 ---
 
 ## ⚡ Performance Features
 
 ### 1. **Lazy Loading**
+
 - Images load only when visible
 - Reduces initial page load
 - Uses native `loading="lazy"` with fallback
 
 ### 2. **Code Splitting**
+
 - Main JS, carousel, and utilities separated
 - Load only what's needed
 - Async loading support
 
 ### 3. **Caching Strategy**
+
 - Service Worker for offline support
 - Cache-first for static assets
 - Network-first for dynamic content
 
 ### 4. **Resource Hints**
+
 ```html
-<link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="prefetch" href="./next-page.html">
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="prefetch" href="./next-page.html" />
 ```
 
 ### 5. **Critical CSS**
+
 - Above-the-fold styles inlined
 - Non-critical CSS deferred
 - Eliminates render-blocking CSS
@@ -217,16 +233,19 @@ Landing-Page-Dinni/
 ## 🔧 Configuration Files
 
 ### Tailwind Config
+
 - JIT mode enabled for faster builds
 - Optimized for production
 - Content paths configured for tree-shaking
 
 ### PostCSS Config
+
 - Autoprefixer for cross-browser support
 - cssnano for aggressive minification
 - Optimized for production builds
 
 ### PurgeCSS Config
+
 - Removes unused CSS classes
 - Safelist for dynamic classes
 - Custom extractors for better detection
@@ -236,6 +255,7 @@ Landing-Page-Dinni/
 ## 🚀 Deployment
 
 ### Netlify
+
 ```bash
 # Build command
 npm run build
@@ -248,6 +268,7 @@ dist/_headers
 ```
 
 ### Vercel
+
 ```bash
 # Build command
 npm run build
@@ -260,6 +281,7 @@ dist/_headers
 ```
 
 ### Apache/cPanel
+
 1. Upload `dist/` folder contents
 2. Ensure `.htaccess` is uploaded
 3. Enable mod_deflate and mod_expires
@@ -269,6 +291,7 @@ dist/_headers
 ## 📱 Progressive Web App (PWA)
 
 The site is now a fully functional PWA with:
+
 - ✅ Service Worker for offline support
 - ✅ Web App Manifest
 - ✅ Installable on mobile devices
@@ -280,6 +303,7 @@ The site is now a fully functional PWA with:
 ## 🔐 Security Headers
 
 All security headers are configured:
+
 - `X-Frame-Options: DENY`
 - `X-Content-Type-Options: nosniff`
 - `X-XSS-Protection: 1; mode=block`
@@ -291,12 +315,15 @@ All security headers are configured:
 ## 📈 Monitoring Performance
 
 ### Web Vitals
+
 The site now tracks:
+
 - **LCP** (Largest Contentful Paint) - Target: <2.5s
 - **FID** (First Input Delay) - Target: <100ms
 - **CLS** (Cumulative Layout Shift) - Target: <0.1
 
 ### Performance Monitoring
+
 ```javascript
 // Built-in performance monitoring
 window.PerformanceUtils.monitorPerformance();
@@ -307,22 +334,28 @@ window.PerformanceUtils.monitorPerformance();
 ## 🎨 Optimization Best Practices
 
 ### Images
+
 ```html
 <!-- Use lazy loading -->
-<img loading="lazy" src="image.jpg" alt="Description">
+<img loading="lazy" src="image.jpg" alt="Description" />
 
 <!-- Provide multiple formats -->
 <picture>
-  <source srcset="image.webp" type="image/webp">
-  <img src="image.jpg" alt="Description">
+  <source srcset="image.webp" type="image/webp" />
+  <img src="image.jpg" alt="Description" />
 </picture>
 ```
 
 ### CSS
+
 ```css
 /* Use efficient selectors */
-.component { /* Good */ }
-div > p > span { /* Avoid */ }
+.component {
+  /* Good */
+}
+div > p > span {
+  /* Avoid */
+}
 
 /* Minimize animations */
 @media (prefers-reduced-motion: reduce) {
@@ -333,6 +366,7 @@ div > p > span { /* Avoid */ }
 ```
 
 ### JavaScript
+
 ```javascript
 // Use debounce for expensive operations
 const optimizedHandler = PerformanceUtils.debounce(() => {
@@ -350,6 +384,7 @@ const scrollHandler = PerformanceUtils.throttle(() => {
 ## 🔍 Troubleshooting
 
 ### Build Fails
+
 ```bash
 # Clear node_modules and reinstall
 rm -rf node_modules package-lock.json
@@ -357,6 +392,7 @@ npm install
 ```
 
 ### Images Not Optimizing
+
 ```bash
 # Check if images exist in dist/images
 ls -la dist/images
@@ -366,6 +402,7 @@ node scripts/optimize-images.js
 ```
 
 ### CSS Not Purging
+
 ```bash
 # Check purgecss.config.js content paths
 # Ensure HTML files are in dist/
@@ -387,6 +424,7 @@ npm run purge:css
 ## 🎉 Results
 
 After optimization, your site will:
+
 - ⚡ Load 60-70% faster
 - 📦 Use 50-70% less bandwidth
 - 🚀 Score 95+ on Lighthouse
@@ -399,6 +437,7 @@ After optimization, your site will:
 ## 📝 Maintenance
 
 ### Regular Updates
+
 ```bash
 # Update dependencies
 npm update
@@ -411,6 +450,7 @@ npm audit fix
 ```
 
 ### Performance Checks
+
 ```bash
 # Run bundle analysis after changes
 npm run analyze:bundle
@@ -424,6 +464,7 @@ npm run serve:prod
 ## 🤝 Contributing
 
 When making changes:
+
 1. Test locally with `npm run dev`
 2. Build for production with `npm run build`
 3. Analyze bundle with `npm run analyze:bundle`
@@ -440,6 +481,7 @@ ISC License - See package.json for details
 ## 👤 Author
 
 **Dinni Rahmawati**
+
 - Career & Self-Development Practitioner
 - Email: dinni.business@gmail.com
 

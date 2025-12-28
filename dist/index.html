@@ -84,11 +84,51 @@
     <!-- Pre Loader with modern design -->
     <div
       id="pre-loader"
-      class="fixed inset-0 flex items-center justify-center bg-primary-600 text-white z-50"
+      class="fixed inset-0 flex items-center justify-center bg-primary-50 text-neutral-900 z-50"
     >
-      <div class="flex flex-col items-center space-y-4">
-        <div class="animate-spin rounded-full h-16 w-16 border-4 border-white/30 border-t-white"></div>
-        <p class="text-white/80 font-medium">Loading...</p>
+      <!-- Background Gradient Blobs -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-5%] w-[50vw] h-[50vw] bg-primary-200/30 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-[50vw] h-[50vw] bg-accent-400/20 rounded-full blur-[120px]"></div>
+      </div>
+
+      <!-- Loading Content -->
+      <div class="flex flex-col w-full max-w-[480px] z-10 items-center px-6">
+        <!-- Spinner -->
+        <div class="mb-8 flex items-center justify-center">
+          <div class="h-16 w-16 animate-spin rounded-full border-4 border-primary-200 border-t-primary-600"></div>
+        </div>
+
+        <!-- Text Content -->
+        <div class="w-full flex flex-col gap-2 text-center">
+          <h2 class="text-neutral-900 tracking-tight text-[28px] font-bold leading-tight px-4 pb-1">
+            Memuat konten Anda...
+          </h2>
+          <p class="text-neutral-600 text-base font-normal leading-normal">
+            Mohon tunggu sebentar
+          </p>
+        </div>
+
+        <!-- Progress Dots -->
+        <div class="flex items-center gap-2 mt-8">
+          <div class="w-2 h-2 bg-primary-600 rounded-full animate-pulse"></div>
+          <div class="w-2 h-2 bg-primary-600 rounded-full animate-pulse" style="animation-delay: 0.15s;"></div>
+          <div class="w-2 h-2 bg-primary-600 rounded-full animate-pulse" style="animation-delay: 0.3s;"></div>
+        </div>
+      </div>
+
+      <!-- Footer Branding -->
+      <div class="absolute bottom-8 flex flex-col max-w-[960px] px-6">
+        <div class="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity">
+          <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center shadow-sm">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <p class="text-neutral-700 text-sm font-semibold tracking-wide">
+            Dinni Rahmawati - People Development
+          </p>
+        </div>
       </div>
     </div>
     <p id="home"></p>
@@ -732,7 +772,7 @@
       <div class="absolute top-0 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary-500/20 rounded-full blur-3xl"></div>
       
-      <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8" x-data="{ activeFilter: 'semua' }">
         <!-- Section Header with Filter Buttons -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div class="max-w-xl">
@@ -744,16 +784,28 @@
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <button class="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary-600 shadow-md ring-1 ring-inset ring-white transition-all hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <button 
+              @click="activeFilter = 'semua'"
+              :class="activeFilter === 'semua' ? 'bg-white text-primary-600 shadow-md ring-white' : 'bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50'"
+              class="rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
               Semua
             </button>
-            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+            <button 
+              @click="activeFilter = 'mentoring'"
+              :class="activeFilter === 'mentoring' ? 'bg-white text-primary-600 shadow-md ring-white' : 'bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50'"
+              class="rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
               Mentoring
             </button>
-            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+            <button 
+              @click="activeFilter = 'workshop'"
+              :class="activeFilter === 'workshop' ? 'bg-white text-primary-600 shadow-md ring-white' : 'bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50'"
+              class="rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
               Workshop
             </button>
-            <button class="rounded-full bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-white/30 transition-all hover:bg-white/20 hover:ring-white/50">
+            <button 
+              @click="activeFilter = 'pelatihan'"
+              :class="activeFilter === 'pelatihan' ? 'bg-white text-primary-600 shadow-md ring-white' : 'bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50'"
+              class="rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
               Pelatihan
             </button>
           </div>
@@ -762,7 +814,15 @@
         <!-- Portfolio Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Portfolio Item 1: Mentoring 1-on-1 -->
-          <a href="#testimonies" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+          <a href="#testimonies" 
+            x-show="activeFilter === 'semua' || activeFilter === 'mentoring'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-90"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-90"
+            class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
             <img src="./images/portfolio-11.png" alt="Mentoring 1 on 1" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
@@ -787,7 +847,15 @@
           </a>
 
           <!-- Portfolio Item 2: Mentoring Kelompok -->
-          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" 
+            x-show="activeFilter === 'semua' || activeFilter === 'mentoring'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-90"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-90"
+            class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
             <img src="./images/portfolio-21.png" alt="Mentoring Kelompok" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
@@ -812,7 +880,15 @@
           </a>
 
           <!-- Portfolio Item 3: Webinar & Workshop -->
-          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" 
+            x-show="activeFilter === 'semua' || activeFilter === 'workshop'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-90"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-90"
+            class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
             <img src="./images/portfolio-3.png" alt="Webinar & Workshop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
@@ -837,7 +913,15 @@
           </a>
 
           <!-- Portfolio Item 4: Pelatihan Soft-Skill -->
-          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
+          <a href="https://www.linkedin.com/services/page/b14b99329a78226740" target="_blank" 
+            x-show="activeFilter === 'semua' || activeFilter === 'pelatihan'"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform scale-90"
+            x-transition:enter-end="opacity-100 transform scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 transform scale-100"
+            x-transition:leave-end="opacity-0 transform scale-90"
+            class="group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg hover:shadow-2xl transition-all duration-500 ease-out">
             <img src="./images/portfolio-41.png" alt="Pelatihan Soft-Skill" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/40 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90"></div>
             <div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">

@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide - Ultra-Optimized Build
+saya kan mau deploy di vercel apakah boleh ada gitignore?# 🚀 Quick Start Guide - Ultra-Optimized Build
 
 ## Installation
 
@@ -23,6 +23,7 @@ npm run build
 ```
 
 This will:
+
 1. ✅ Clean previous builds
 2. ✅ Minify CSS (removes unused styles)
 3. ✅ Minify JavaScript (60-80% smaller)
@@ -41,12 +42,12 @@ npm run serve:prod
 
 ## Performance Improvements
 
-| Asset Type | Reduction |
-|------------|-----------|
-| CSS | ~66% smaller |
-| JavaScript | ~66% smaller |
-| HTML | ~25% smaller |
-| Images | ~40% smaller |
+| Asset Type          | Reduction       |
+| ------------------- | --------------- |
+| CSS                 | ~66% smaller    |
+| JavaScript          | ~66% smaller    |
+| HTML                | ~25% smaller    |
+| Images              | ~40% smaller    |
 | **Total Load Time** | **~65% faster** |
 
 ## Features Added
