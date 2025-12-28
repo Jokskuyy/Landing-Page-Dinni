@@ -1,6 +1,6 @@
 /* =============================================================================
-   TAILWIND CSS CUSTOM STYLES
-   Professional UI Component Library
+   Custom Styles - Landing Page Dinni
+   Built with Tailwind CSS
    ============================================================================= */
 
 /* -----------------------------------------------------------------------------
@@ -11,11 +11,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font imports - optimized for performance */
+/* Font Imports */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* =============================================================================
-   BASE LAYER - Global Styles & Resets
+   Base Layer - Global Styles
    ============================================================================= */
 
 @layer base {
@@ -31,15 +31,15 @@
 }
 
 /* =============================================================================
-   COMPONENTS LAYER - Reusable UI Components
+   Components Layer - Reusable UI Elements
    ============================================================================= */
 
 @layer components {
   /* ---------------------------------------------------------------------------
-     MODERN BUTTON SYSTEM
+     Button Components
      --------------------------------------------------------------------------- */
 
-  /* Base button styling */
+  /* Base Button */
   .btn {
     @apply inline-flex items-center justify-center px-8 py-4 text-sm font-semibold 
            rounded-2xl transition-all duration-500 ease-out transform
@@ -47,7 +47,7 @@
            disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
   }
 
-  /* Button variants - Modern gradient styles */
+  /* Button Variants */
   .btn-primary {
     @apply btn bg-gradient-to-r from-primary-600 to-primary-700 text-white
            hover:from-primary-700 hover:to-primary-800 
@@ -76,26 +76,8 @@
            focus:ring-primary-500;
   }
 
-  /* Legacy button support - for backward compatibility */
-  .btn-blue {
-    @apply btn-primary;
-  }
-  .btn-green {
-    @apply btn-secondary;
-  }
-  .btn-white {
-    @apply btn-outline;
-  }
-  .btn-yellow {
-    @apply btn-accent;
-  }
-
-  .btn-hover-white:hover {
-    @apply bg-bookmark-white text-black border-ld-green;
-  }
-
   /* ---------------------------------------------------------------------------
-     MODERN CARD SYSTEM
+     Card Components
      --------------------------------------------------------------------------- */
 
   .card {
@@ -108,7 +90,7 @@
            hover:-translate-y-2;
   }
 
-  /* Service cards with enhanced hover effects */
+  /* Service Cards */
   .service-card {
     @apply transition-all duration-500 ease-out transform;
   }
@@ -128,7 +110,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     LAYOUT COMPONENTS
+     Layout Utilities
      --------------------------------------------------------------------------- */
 
   .section-container {
@@ -144,7 +126,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     GRADIENT BACKGROUNDS
+     Background Gradients
      --------------------------------------------------------------------------- */
 
   .bg-gradient-primary {
@@ -164,7 +146,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     TEXT GRADIENTS
+     Text Gradients
      --------------------------------------------------------------------------- */
 
   .text-gradient-primary {
@@ -176,7 +158,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     PORTFOLIO/GALLERY COMPONENTS
+     Portfolio Components
      --------------------------------------------------------------------------- */
 
   .item-container {
@@ -195,10 +177,10 @@
   }
 
   /* ---------------------------------------------------------------------------
-     ENHANCED GLASSMORPHISM CAROUSEL - SEAMLESS LOOP VERSION
+     Carousel Components
      --------------------------------------------------------------------------- */
 
-  /* Main carousel container with glassmorphism effect */
+  /* Carousel Container */
   .enhanced-carousel-container {
     @apply relative w-full overflow-hidden rounded-3xl p-4 md:p-6;
     background: linear-gradient(
@@ -221,7 +203,7 @@
     display: none;
   }
 
-  /* Carousel track - the moving container */
+  /* Carousel Track */
   .enhanced-carousel-track {
     @apply flex will-change-transform;
     gap: clamp(1rem, 3vw, 2rem);
@@ -236,12 +218,12 @@
     transform: translateZ(0);
   }
 
-  /* Pause animation on hover */
+  /* Animation Pause on Hover */
   .enhanced-carousel-container:hover .enhanced-carousel-track {
     animation-play-state: paused;
   }
 
-  /* Animation directions with consistent timing - SEAMLESS LOOP */
+  /* Animation Directions */
   .enhanced-carousel-normal {
     animation: enhanced-scroll-left-seamless 30s linear infinite;
   }
@@ -250,7 +232,7 @@
     animation: enhanced-scroll-right-seamless 30s linear infinite;
   }
 
-  /* Individual carousel items */
+  /* Carousel Items */
   .enhanced-carousel-item {
     @apply flex-shrink-0 transition-all duration-300 ease-out rounded-xl overflow-hidden;
     will-change: transform, filter;
@@ -271,7 +253,7 @@
     padding: 0.5rem;
   }
 
-  /* Hover effects */
+  /* Hover Effects */
   .enhanced-carousel-item:hover {
     @apply scale-105;
     transform: translateZ(10px) scale(1.05);
@@ -281,7 +263,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 
-  /* Images inside carousel items */
+  /* Carousel Images */
   .enhanced-carousel-item img,
   .logo-item {
     @apply transition-all duration-300 ease-out object-contain;
@@ -296,7 +278,7 @@
     transform: scale(1.02);
   }
 
-  /* Legacy carousel item support */
+  /* Logo Items */
   .carousel-item {
     @apply flex-shrink-0 mx-4 md:mx-8 transition-transform duration-300 ease-out;
   }
@@ -307,25 +289,8 @@
          drop-shadow-sm hover:drop-shadow-md;
   }
 
-  /* UTILITY CLASSES UNTUK DUPLIKASI KONTEN */
-  .carousel-content-original {
-    display: flex;
-    gap: clamp(1rem, 3vw, 2rem);
-  }
-
-  .carousel-content-duplicate {
-    display: flex;
-    gap: clamp(1rem, 3vw, 2rem);
-  }
-
-  /* Kelas untuk membuat seamless loop */
-  .seamless-loop {
-    display: flex;
-    gap: clamp(1rem, 3vw, 2rem);
-  }
-
   /* ---------------------------------------------------------------------------
-     TEXT UTILITIES
+     Text Utilities
      --------------------------------------------------------------------------- */
 
   .line-clamp-2 {
@@ -348,12 +313,12 @@
 }
 
 /* =============================================================================
-   UTILITIES LAYER - Animation & Helper Classes
+   Utilities Layer - Animations & Helpers
    ============================================================================= */
 
 @layer utilities {
   /* ---------------------------------------------------------------------------
-     FADE ANIMATIONS
+     Fade Animations
      --------------------------------------------------------------------------- */
 
   .fade-out {
@@ -364,7 +329,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     SCROLL ANIMATIONS
+     Scroll Animations
      --------------------------------------------------------------------------- */
 
   .animate-scroll {
@@ -378,7 +343,7 @@
   }
 
   /* ---------------------------------------------------------------------------
-     SCROLLBAR UTILITIES
+     Scrollbar Utilities
      --------------------------------------------------------------------------- */
 
   .scrollbar-hide {
@@ -393,10 +358,10 @@
 }
 
 /* =============================================================================
-   KEYFRAME ANIMATIONS
+   Keyframe Animations
    ============================================================================= */
 
-/* Basic carousel animations */
+/* Carousel Scroll Animations */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -415,21 +380,19 @@
   }
 }
 
-/* KEYFRAMES UNTUK SEAMLESS LOOP */
+/* Seamless Loop Animations */
 @keyframes enhanced-scroll-left-seamless {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      -50%
-    ); /* Hanya bergerak setengah karena ada duplikasi */
+    transform: translateX(-50%);
   }
 }
 
 @keyframes enhanced-scroll-right-seamless {
   0% {
-    transform: translateX(-50%); /* Mulai dari setengah */
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0);
@@ -482,108 +445,5 @@
   .enhanced-carousel-item:hover {
     transform: none;
     @apply scale-100;
-  }
-}
-
-/* =============================================================================
-   ADPLIST STYLE CAROUSEL - Modern Infinite Scroll
-   ============================================================================= */
-
-/* Wrapper dengan overflow hidden */
-.adplist-carousel-wrapper {
-  @apply w-full overflow-hidden relative;
-}
-
-/* Track yang berisi semua logo dengan smooth scroll */
-.adplist-carousel-track {
-  @apply flex items-center gap-12 md:gap-16;
-  width: max-content;
-  animation: adplist-scroll 40s linear infinite;
-  will-change: transform;
-}
-
-/* Reverse animation untuk carousel kedua */
-.adplist-carousel-reverse {
-  animation: adplist-scroll-reverse 40s linear infinite;
-}
-
-/* Pause animation on hover */
-.adplist-carousel-track:hover {
-  animation-play-state: paused;
-}
-
-/* Logo item container */
-.adplist-logo-item {
-  @apply flex-shrink-0 flex items-center justify-center;
-  width: 140px;
-  height: 80px;
-}
-
-/* Logo image styling with grayscale effect */
-.adplist-logo {
-  @apply w-full h-full object-contain transition-all duration-300;
-  filter: grayscale(100%);
-}
-
-/* Hover effects - remove grayscale and increase opacity */
-.adplist-logo-item:hover .adplist-logo {
-  filter: grayscale(0%);
-  @apply opacity-100;
-}
-
-/* Smooth animation keyframes - infinite scroll */
-@keyframes adplist-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%); /* Move 1/3 for 3 sets */
-  }
-}
-
-@keyframes adplist-scroll-reverse {
-  0% {
-    transform: translateX(-33.333%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .adplist-carousel-track {
-    @apply gap-8;
-    animation-duration: 30s;
-  }
-
-  .adplist-logo-item {
-    width: 100px;
-    height: 60px;
-  }
-}
-
-/* Accessibility - respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .adplist-carousel-track,
-  .adplist-carousel-reverse {
-    animation: none;
-  }
-
-  .adplist-logo {
-    @apply transition-none;
-  }
-}
-
-/* Print styles - show all logos in grid */
-@media print {
-  .adplist-carousel-track {
-    @apply flex-wrap justify-center;
-    animation: none;
-  }
-
-  .adplist-logo {
-    filter: none !important;
-    @apply opacity-100;
   }
 }
