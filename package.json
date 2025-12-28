@@ -7,6 +7,7 @@
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html && npm run optimize:images",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify && npm run optimize:css",
+    "build:tailwinds": "npm run build:css",
     "build:js": "node scripts/build-js.js",
     "build:html": "node scripts/minify-html.js",
     "optimize:css": "postcss ./dist/output.css --use cssnano --output ./dist/output.css",
