@@ -289,6 +289,42 @@
          drop-shadow-sm hover:drop-shadow-md;
   }
 
+  /* ADPList Style Carousel */
+  .adplist-carousel-wrapper {
+    @apply w-full overflow-hidden relative;
+  }
+
+  .adplist-carousel-track {
+    @apply flex items-center gap-12 md:gap-16;
+    width: max-content;
+    animation: adplist-scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  .adplist-carousel-reverse {
+    animation: adplist-scroll-reverse 40s linear infinite;
+  }
+
+  .adplist-carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  .adplist-logo-item {
+    @apply flex-shrink-0 flex items-center justify-center;
+    width: 140px;
+    height: 80px;
+  }
+
+  .adplist-logo {
+    @apply w-full h-full object-contain transition-all duration-300;
+    filter: grayscale(100%);
+  }
+
+  .adplist-logo-item:hover .adplist-logo {
+    filter: grayscale(0%);
+    @apply opacity-100;
+  }
+
   /* ---------------------------------------------------------------------------
      Text Utilities
      --------------------------------------------------------------------------- */
@@ -399,6 +435,25 @@
   }
 }
 
+/* ADPList Carousel Animations */
+@keyframes adplist-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes adplist-scroll-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .enhanced-carousel-container {
@@ -411,6 +466,16 @@
 
   .enhanced-carousel-item {
     min-width: 100px;
+    height: 60px;
+  }
+
+  .adplist-carousel-track {
+    @apply gap-8;
+    animation-duration: 30s;
+  }
+
+  .adplist-logo-item {
+    width: 100px;
     height: 60px;
   }
 }
@@ -445,5 +510,14 @@
   .enhanced-carousel-item:hover {
     transform: none;
     @apply scale-100;
+  }
+
+  .adplist-carousel-track,
+  .adplist-carousel-reverse {
+    animation: none;
+  }
+
+  .adplist-logo {
+    @apply transition-none;
   }
 }
