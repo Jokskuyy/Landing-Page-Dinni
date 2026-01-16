@@ -126,7 +126,7 @@
 
       // Copy email function
       function copyEmail() {
-        const email = 'dinnirahmawati@example.com';
+        const email = 'dinni.business@gmail.com';
         navigator.clipboard.writeText(email).then(() => {
           const btnText = document.getElementById('emailBtnText');
           const originalText = btnText.textContent;
@@ -1402,7 +1402,7 @@
         currentPage: 0,
         itemsPerPage: 3,
         get totalPages() {
-          return Math.ceil(6 / this.itemsPerPage);
+          return Math.ceil(8 / this.itemsPerPage);
         },
         nextPage() {
           this.currentPage = (this.currentPage + 1) % this.totalPages;
@@ -1658,6 +1658,82 @@
               <p class="text-sm text-primary-600">Senior Manager at Telkom</p>
             </div>
           </div>
+
+          <!-- Testimony 7: Offline Training - KJRI NY -->
+          <div x-show="isVisible(6)"
+               x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="opacity-0 transform scale-95"
+               x-transition:enter-end="opacity-100 transform scale-100"
+               class="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 min-h-[340px] flex flex-col border border-gray-100">
+            <!-- Quote Icon & Badge -->
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-10 h-10 text-neutral-200" fill="currentColor" viewBox="0 0 32 32">
+                <path d="M10 8c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8zm12 0c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8z"/>
+              </svg>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-neutral-700 px-3 py-1.5 text-xs font-medium text-white">
+                <i class="fas fa-building text-[10px]"></i>
+                Offline Training
+              </span>
+            </div>
+
+            <!-- Stars -->
+            <div class="flex gap-1 mb-3">
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-neutral-700 text-sm leading-relaxed mb-4 flex-grow">
+              "Saya atas nama KJRI NY mengucapkan banyak terima kasih kepada Mbak Dinni dan tim yang telah berhasil menyelenggarakan kegiatan Team Building. Output dan Outcomenya bagus banget. Beyond my expectations. Good job."
+            </p>
+
+            <!-- Divider -->
+            <div class="border-t border-neutral-200 pt-3 mt-auto">
+              <p class="font-bold text-neutral-900 mb-1">Bapak Winanto Adi</p>
+              <p class="text-sm text-primary-600">Konsul Jenderal KJRI New York</p>
+            </div>
+          </div>
+
+          <!-- Testimony 8: Online Training - ICDX -->
+          <div x-show="isVisible(7)"
+               x-transition:enter="transition ease-out duration-300"
+               x-transition:enter-start="opacity-0 transform scale-95"
+               x-transition:enter-end="opacity-100 transform scale-100"
+               class="bg-white rounded-2xl p-5 shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 min-h-[340px] flex flex-col border border-gray-100">
+            <!-- Quote Icon & Badge -->
+            <div class="flex items-start justify-between mb-3">
+              <svg class="w-10 h-10 text-neutral-200" fill="currentColor" viewBox="0 0 32 32">
+                <path d="M10 8c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8zm12 0c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8z"/>
+              </svg>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-neutral-700 px-3 py-1.5 text-xs font-medium text-white">
+                <i class="fas fa-video text-[10px]"></i>
+                Online Training
+              </span>
+            </div>
+
+            <!-- Stars -->
+            <div class="flex gap-1 mb-3">
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+              <i class="fas fa-star text-yellow-400 text-sm"></i>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-neutral-700 text-sm leading-relaxed mb-4 flex-grow">
+              "The online workshop on Self-leadership and Teamwork offers a transformative learning experience. Dinni as a facilitator engages participants through interactive brainstorming, reflection, and team exercises. I highly recommend her workshop to cultivate essential soft skills for your team's success."
+            </p>
+
+            <!-- Divider -->
+            <div class="border-t border-neutral-200 pt-3 mt-auto">
+              <p class="font-bold text-neutral-900 mb-1">Zulfal Faradis</p>
+              <p class="text-sm text-primary-600">Strategic Development Manager, ICDX</p>
+            </div>
+          </div>
         </div>
 
         <!-- Pagination Controls -->
@@ -1715,7 +1791,7 @@
               <div class="flex-grow">
                 <h3 class="text-xl font-bold text-neutral-900 mb-2">WhatsApp</h3>
                 <p class="text-neutral-600 mb-4">Respon cepat untuk konsultasi</p>
-                <a href="https://wa.me/6285910653124" target="_blank" 
+                <a href="https://wa.me/62859106531249" target="_blank" 
                    class="inline-flex items-center px-5 py-2.5 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-200 group">
                   Chat via WhatsApp
                   <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
@@ -1751,9 +1827,9 @@
               <div class="flex-grow">
                 <h3 class="text-xl font-bold text-neutral-900 mb-2">Instagram</h3>
                 <p class="text-neutral-600 mb-4">Follow untuk tips & insights</p>
-                <a href="https://instagram.com/dinnirahmawati" target="_blank" 
+                <a href="https://instagram.com/abcdinis" target="_blank" 
                    class="inline-flex items-center px-5 py-2.5 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-semibold rounded-lg transition-all duration-200 group">
-                  @dinnirahmawati
+                  @abcdinis
                   <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                 </a>
               </div>
@@ -1769,7 +1845,7 @@
               <div class="flex-grow">
                 <h3 class="text-xl font-bold text-neutral-900 mb-2">LinkedIn</h3>
                 <p class="text-neutral-600 mb-4">Connect untuk update profesional</p>
-                <a href="https://linkedin.com/in/dinnirahmawati" target="_blank" 
+                <a href="https://linkedin.com/in/dinni-rahmawati" target="_blank" 
                    class="inline-flex items-center px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200 group">
                   Connect di LinkedIn
                   <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
@@ -1834,28 +1910,28 @@
     </section>
 
     <!-- Footer Section -->
-    <footer id="footer" class="bg-slate-700 py-16">
+    <footer id="footer" class="bg-primary-700 py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <!-- Main Footer Content -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <!-- Left Column: About -->
           <div>
             <h3 class="text-2xl font-bold text-white mb-4">Dinni Rahmawati</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            <p class="text-white/90 text-sm leading-relaxed mb-6">
               Career & Self-Development Practitioner yang membantu profesional membuka potensi terbaik mereka.
             </p>
             <!-- Social Media Icons -->
             <div class="flex items-center space-x-4">
-              <a href="https://instagram.com/dinnirahmawati" target="_blank" 
-                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+              <a href="https://instagram.com/abcdinis" target="_blank" 
+                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fab fa-instagram text-white text-lg"></i>
               </a>
-              <a href="https://linkedin.com/in/dinnirahmawati" target="_blank" 
-                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+              <a href="https://linkedin.com/in/dinni-rahmawati" target="_blank" 
+                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fab fa-linkedin-in text-white text-lg"></i>
               </a>
-              <a href="mailto:hello@dinnirahmawati.com" 
-                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+              <a href="mailto:dinni.business@gmail.com" 
+                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fas fa-envelope text-white text-lg"></i>
               </a>
             </div>
@@ -1866,19 +1942,19 @@
             <h3 class="text-lg font-bold text-white mb-4">Menu Cepat</h3>
             <ul class="space-y-3">
               <li>
-                <a href="#tentang" class="text-slate-300 hover:text-white transition-colors text-sm">Tentang</a>
+                <a href="#tentang" class="text-white/80 hover:text-white transition-colors text-sm">Tentang</a>
               </li>
               <li>
-                <a href="#layanan" class="text-slate-300 hover:text-white transition-colors text-sm">Layanan</a>
+                <a href="#layanan" class="text-white/80 hover:text-white transition-colors text-sm">Layanan</a>
               </li>
               <li>
-                <a href="#portfolio" class="text-slate-300 hover:text-white transition-colors text-sm">Portfolio</a>
+                <a href="#portfolio" class="text-white/80 hover:text-white transition-colors text-sm">Portfolio</a>
               </li>
               <li>
-                <a href="#testimoni" class="text-slate-300 hover:text-white transition-colors text-sm">Testimoni</a>
+                <a href="#testimoni" class="text-white/80 hover:text-white transition-colors text-sm">Testimoni</a>
               </li>
               <li>
-                <a href="#kontak" class="text-slate-300 hover:text-white transition-colors text-sm">Kontak</a>
+                <a href="#kontak" class="text-white/80 hover:text-white transition-colors text-sm">Kontak</a>
               </li>
             </ul>
           </div>
@@ -1889,28 +1965,28 @@
             <ul class="space-y-4">
               <li class="flex items-start space-x-3">
                 <i class="fas fa-map-marker-alt text-red-400 mt-1"></i>
-                <span class="text-slate-300 text-sm">Jakarta, Indonesia</span>
+                <span class="text-white/80 text-sm">Jakarta, Indonesia</span>
               </li>
               <li class="flex items-start space-x-3">
-                <i class="fas fa-envelope text-slate-400"></i>
-                <span class="text-slate-300 text-sm">hello@dinnirahmawati.com</span>
+                <i class="fas fa-envelope text-white/60"></i>
+                <span class="text-white/80 text-sm">dinni.business@gmail.com</span>
               </li>
               <li class="flex items-start space-x-3">
-                <i class="fas fa-video text-slate-400"></i>
-                <span class="text-slate-300 text-sm">Tersedia untuk sesi online</span>
+                <i class="fas fa-video text-white/60"></i>
+                <span class="text-white/80 text-sm">Tersedia untuk sesi online</span>
               </li>
             </ul>
           </div>
         </div>
 
         <!-- Bottom Bar -->
-        <div class="border-t border-slate-600 pt-8">
-          <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p class="text-slate-400 text-sm">
+        <div class="border-t border-white/10 pt-8 mt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <p class="text-white/70 text-sm">
               © 2026 Dinni Rahmawati. Hak cipta dilindungi.
             </p>
-            <p class="text-slate-400 text-sm flex items-center">
-              Dibuat dengan <span class="text-red-400 mx-1">❤️</span> di Indonesia
+            <p class="text-white/70 text-sm flex items-center gap-1">
+              Dibuat dengan <span class="text-red-400">❤️</span> di Indonesia
             </p>
           </div>
         </div>
@@ -1930,7 +2006,7 @@
     <script>
       // Copy email to clipboard function
       function copyEmail() {
-        const email = 'dinnirahmawati@example.com';
+        const email = 'dinni.business@gmail.com';
         navigator.clipboard.writeText(email).then(() => {
           const btnText = document.getElementById('emailBtnText');
           if (btnText) {
