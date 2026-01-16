@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./output.css" />
     <link rel="icon" href="./images/logo-web.png" type="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
     <title>Home | Dinni Rahmawati</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -26,6 +27,14 @@
         opacity: 0;
         transform: scale(0.95);
         pointer-events: none;
+      }
+      .btn-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.2);
       }
     </style>
     <script defer>
@@ -83,46 +92,65 @@
         const buttons = document.querySelectorAll(".portfolio-filter-btn");
         
         // Update button styles
-        buttons.forEach(button => {
-          if (button === btn) {
-            button.className = "portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-md ring-1 ring-inset transition-all focus:outline-none bg-white text-primary-600 ring-white scale-105";
-          } else {
-            button.className = "portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50";
-          }
-        });
+        // Reset all buttons to "inactive" state (glassmorphism, text-white)
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].className = "portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-white btn-glass cursor-pointer";
+        }
+        // Set active button (white bg, blue text, shadow, scaled)
+        btn.className = "portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg bg-white text-primary-600 scale-105 ring-4 ring-blue-500/20 cursor-default";
         
-        // Filter cards with smooth transition
+        // Filter Cards Logic
+        // First loop: Fade out non-matches
         for (let i = 0; i < cards.length; i++) {
           const card = cards[i];
           const cardCategories = card.getAttribute('data-category');
-          
-          if (category === 'semua' || cardCategories.includes(category)) {
-            // Match - will show
+          if (category === 'all' || cardCategories.includes(category)) {
+            // It's a match, ensure it's visible but we handle showing in step 2
           } else {
-            // Not a match - start fading out
+            // Not a match, start fading out
             card.classList.add('portfolio-hiding');
           }
         }
         
-        // After fade out animation
+        // Wait for fade out animation (300ms matches CSS)
         setTimeout(() => {
           for (let i = 0; i < cards.length; i++) {
             const card = cards[i];
             const cardCategories = card.getAttribute('data-category');
-            
-            if (category === 'semua' || cardCategories.includes(category)) {
-              // Show card
+            if (category === 'all' || cardCategories.includes(category)) {
+              // MATCH: Remove hidden display, remove hiding class (fade in)
               card.classList.remove('portfolio-hidden-item');
+              // Small delay to allow display:block to apply before opacity transition
               setTimeout(() => {
                 card.classList.remove('portfolio-hiding');
               }, 20);
             } else {
-              // Hide card
+              // NO MATCH: Add hidden display (removes from flow)
               card.classList.add('portfolio-hidden-item');
             }
           }
         }, 300);
       }
+
+      // Make portfolio cards clickable
+      document.addEventListener('DOMContentLoaded', function() {
+        const portfolioCards = document.querySelectorAll('.portfolio-card-item');
+        portfolioCards.forEach(card => {
+          // Add cursor pointer style
+          card.style.cursor = 'pointer';
+          
+          card.addEventListener('click', function(e) {
+            // Find the link inside the card
+            const link = this.querySelector('a[href]');
+            if (link && link.href) {
+              // Don't trigger if clicking directly on the link itself
+              if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+                window.open(link.href, link.target || '_self');
+              }
+            }
+          });
+        });
+      });
 
       // Copy email function
       function copyEmail() {
@@ -1114,70 +1142,77 @@
       
       <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <p class="text-sm font-medium text-accent-300 mb-2 tracking-wider uppercase">PORTFOLIO</p>
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <span class="inline-block py-1 px-3 rounded-full bg-blue-800/50 border border-blue-400/30 text-accent-300 text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
+            PORTFOLIO
+          </span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Pengalaman & <span class="text-accent-300">Track Record</span>
           </h2>
-          <p class="text-lg text-white/80 leading-relaxed">
+          <p class="max-w-2xl mx-auto text-blue-100 text-lg md:text-xl font-light leading-relaxed">
             Berbagai program training, mentoring, dan kolaborasi yang telah saya lakukan dengan berbagai organisasi dan individu.
           </p>
         </div>
 
         <!-- Category Filter -->
-        <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <div class="flex flex-wrap justify-center gap-3 mb-16">
           <button 
-            onclick="filterPortfolio('semua', this)"
-            class="portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-md ring-1 ring-inset transition-all focus:outline-none bg-white text-primary-600 ring-white scale-105">
+            onclick="filterPortfolio('all', this)"
+            class="portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg bg-white text-primary-600 scale-105 ring-4 ring-blue-500/20">
             Semua
           </button>
           <button 
             onclick="filterPortfolio('training', this)"
-            class="portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50">
+            class="portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-white btn-glass">
             Training
           </button>
           <button 
             onclick="filterPortfolio('mentoring', this)"
-            class="portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50">
+            class="portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-white btn-glass">
             Mentoring
           </button>
           <button 
-            onclick="filterPortfolio('collaboration', this)"
-            class="portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50">
+            onclick="filterPortfolio('kolaborasi', this)"
+            class="portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-white btn-glass">
             Kolaborasi
           </button>
           <button 
-            onclick="filterPortfolio('case-study', this)"
-            class="portfolio-filter-btn rounded-full backdrop-blur-sm px-5 py-2.5 text-sm font-semibold shadow-sm ring-1 ring-inset transition-all focus:outline-none bg-white/10 text-white ring-white/30 hover:bg-white/20 hover:ring-white/50">
+            onclick="filterPortfolio('casestudy', this)"
+            class="portfolio-filter-btn px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 text-white btn-glass">
             Case Study
           </button>
         </div>
 
         <!-- Portfolio Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Item 1: Leadership Development Program -->
           <div 
-            data-category="training case-study"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-11.png" alt="Leadership Development Program" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="training casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-11.png" alt="Leadership Development Program" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Telkom Indonesia
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Leadership Development Program</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Program pelatihan kepemimpinan untuk 200+ karyawan level manajerial.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Telkom Indonesia
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Leadership Development Program
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Program pelatihan kepemimpinan untuk 200+ karyawan level manajerial dengan fokus pada agile mindset.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>200+ peserta</span>
+                  <span class="material-icons-round text-base">groups</span>
+                  200+ peserta
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2024</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2024
                 </div>
               </div>
             </div>
@@ -1186,26 +1221,31 @@
           <!-- Item 2: Soft Skills Workshop -->
           <div 
             data-category="training"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-21.png" alt="Soft Skills Workshop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-21.png" alt="Soft Skills Workshop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Microsoft Indonesia
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Soft Skills Workshop</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Workshop pengembangan soft skills untuk tim product dan engineering.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Microsoft Indonesia
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Soft Skills Workshop
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Workshop pengembangan soft skills interaktif untuk tim product dan engineering guna meningkatkan kolaborasi.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>50+ peserta</span>
+                  <span class="material-icons-round text-base">person</span>
+                  50+ peserta
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2023</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2023
                 </div>
               </div>
             </div>
@@ -1213,27 +1253,32 @@
 
           <!-- Item 3: Career Mentoring Success Stories -->
           <div 
-            data-category="mentoring case-study"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-3.png" alt="Career Mentoring Success Stories" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="mentoring casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-3.png" alt="Career Mentoring Success Stories" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Individual Mentees
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Career Mentoring Success Stories</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Membantu 100+ profesional mencapai promosi dan transisi karier yang sukses.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Individual Mentees
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Career Mentoring Success
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Membantu 100+ profesional mencapai promosi dan transisi karier yang sukses melalui 1-on-1 mentoring.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>100+ peserta</span>
+                  <span class="material-icons-round text-base">school</span>
+                  100+ mentee
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2023-2024</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2023-2024
                 </div>
               </div>
             </div>
@@ -1242,26 +1287,31 @@
           <!-- Item 4: Scholarship Application Mentoring -->
           <div 
             data-category="mentoring"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-41.png" alt="Scholarship Application Mentoring" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-41.png" alt="Scholarship Application Mentoring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                LPDP Awardees
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Scholarship Application Mentoring</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Membimbing kandidat beasiswa LPDP dan berhasil diterima di universitas top dunia.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  LPDP Awardees
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Scholarship Mentoring
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Membimbing kandidat beasiswa LPDP dalam penulisan esai dan wawancara, berhasil diterima di universitas top dunia.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>50+ peserta</span>
+                  <span class="material-icons-round text-base">edit_note</span>
+                  50+ awardee
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2022-2024</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2022-2024
                 </div>
               </div>
             </div>
@@ -1269,27 +1319,32 @@
 
           <!-- Item 5: Webinar Series Career Growth -->
           <div 
-            data-category="collaboration"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-11.png" alt="Webinar Series Career Growth" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="kolaborasi"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-11.png" alt="Webinar Series Career Growth" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Glints Indonesia
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Webinar Series: Career Growth</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Kolaborasi webinar series tentang pengembangan karier untuk fresh graduates.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Glints Indonesia
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Webinar Series: Career Growth
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Kolaborasi webinar series tentang strategi pengembangan karier untuk fresh graduates di era digital.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>5000+ peserta</span>
+                  <span class="material-icons-round text-base">podcasts</span>
+                  5000+ views
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2023</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2023
                 </div>
               </div>
             </div>
@@ -1297,27 +1352,32 @@
 
           <!-- Item 6: Podcast Guest Appearances -->
           <div 
-            data-category="collaboration"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-21.png" alt="Podcast Guest Appearances" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="kolaborasi"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-21.png" alt="Podcast Guest Appearances" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Various Platforms
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">Podcast Guest Appearances</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Berbagi insights tentang career development di berbagai podcast populer.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Various Platforms
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Podcast Guest Appearances
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Berbagi insights mendalam tentang career development dan leadership di berbagai podcast populer Indonesia.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>10K+ pendengar</span>
+                  <span class="material-icons-round text-base">headphones</span>
+                  10k+ pendengar
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2023-2024</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2023-2024
                 </div>
               </div>
             </div>
@@ -1325,27 +1385,32 @@
 
           <!-- Item 7: From Engineer to Product Manager -->
           <div 
-            data-category="case-study"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-3.png" alt="From Engineer to Product Manager" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-3.png" alt="From Engineer to Product Manager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                Tech Professional
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">From Engineer to Product Manager</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Membantu software engineer transition ke product manager di startup unicorn.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Career Transition
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                From Engineer to Product Manager
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Membantu software engineer berhasil transisi menjadi Product Manager di startup unicorn dalam 6 bulan.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>1 peserta</span>
+                  <span class="material-icons-round text-base">trending_up</span>
+                  6 bulan
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2024</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2024
                 </div>
               </div>
             </div>
@@ -1353,27 +1418,347 @@
 
           <!-- Item 8: LPDP to Columbia University -->
           <div 
-            data-category="case-study"
-            class="portfolio-card-item group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
-            <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="./images/portfolio-41.png" alt="LPDP to Columbia University" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            data-category="casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/portfolio-41.png" alt="LPDP to Columbia University" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
             </div>
-            <div class="p-5">
-              <span class="inline-flex items-center rounded-md bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-700 mb-3">
-                LPDP Scholar
-              </span>
-              <h4 class="text-lg font-bold text-neutral-900 mb-2 leading-tight">LPDP to Columbia University</h4>
-              <p class="text-sm text-neutral-600 mb-4 line-clamp-2">
-                Case study: Membimbing aplikasi beasiswa LPDP dan admission ke Columbia University.
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Scholarship Success
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                LPDP to Columbia University
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Case study: Mentoring komprehensif dari aplikasi LPDP hingga admission Columbia University, salah satu universitas top dunia.
               </p>
-              <div class="flex items-center justify-between text-xs text-neutral-500">
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
                 <div class="flex items-center gap-1.5">
-                  <i class="fas fa-user"></i>
-                  <span>1 peserta</span>
+                  <span class="material-icons-round text-base">emoji_events</span>
+                  Top 10 University
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <i class="far fa-calendar"></i>
-                  <span>2023</span>
+                  <span class="material-icons-round text-base">calendar_today</span>
+                  2023
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9: Offline Workshop - KJRI New York -->
+          <div 
+            data-category="training"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/kjri-workshop.jpg" alt="Team Building KJRI New York" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  KJRI New York
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Team Building Workshop - KJRI NY
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Workshop team building untuk KJRI New York dengan output dan outcome yang beyond expectations menurut Konsul Jenderal.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">location_city</span>
+                  Offline Workshop
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://www.linkedin.com/posts/dinni-rahmawati_team-building-kjri-new-york-activity-7414546179444908032-OgHB" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 10: Online Training - Mestara -->
+          <div 
+            data-category="training"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/mestara-training.jpg" alt="3 Conversations Training Mestara" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Mestara
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                3 Conversations That Can Cost You
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Online training tentang 3 jenis percakapan yang dapat menghabiskan peluang karier, dengan lesson learned dari pengalaman praktis.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">computer</span>
+                  Online Training
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://www.linkedin.com/pulse/3-conversations-can-cost-you-opportunities-lesson-from-rahmawati-2a8uc/" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    Article
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 11: Online Training - Paragon -->
+          <div 
+            data-category="training"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/paragon-training.jpg" alt="Theory of Change Training Paragon" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Program Beasiswa Inovasia
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Theory of Change dalam Berinovasi
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Kelas ke-5 untuk penerima Program Beasiswa Inovasia, berbagi tips tentang Theory of Change dalam berinovasi.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">lightbulb</span>
+                  Innovation Training
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://tugumalang.id/kelas-ke-5-sesi-kelas-penerima-program-beasiswa-inovasia-dinni-rahmawati-berbagi-tips-theory-of-change-dalam-berinovasi/" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    News
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 12: Kolaborasi Konten - Ibunda ID -->
+          <div 
+            data-category="kolaborasi"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/ibunda-collab.jpg" alt="Kolaborasi Konten Ibunda ID" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Ibunda ID
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Kolaborasi Konten - Ibunda ID
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Kolaborasi pembuatan konten edukatif dengan Ibunda ID, platform untuk para ibu Indonesia.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">video_library</span>
+                  Content Creator
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://www.instagram.com/reel/DI5gSiDOGEb/" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 13: Kolaborasi Konten - IELTSpresso -->
+          <div 
+            data-category="kolaborasi"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/ieltspresso-collab.jpg" alt="Kolaborasi Konten IELTSpresso" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  IELTSpresso
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Kolaborasi Konten - IELTSpresso
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Kolaborasi konten edukatif dengan IELTSpresso, platform persiapan IELTS terkemuka.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">video_library</span>
+                  Content Creator
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://www.instagram.com/reel/C_F0ENlRhbf/" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 14: Kolaborasi Konten - Schoters by Ruangguru -->
+          <div 
+            data-category="kolaborasi"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/schoters-collab.jpg" alt="Kolaborasi Konten Schoters" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Schoters by Ruangguru
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Kolaborasi Konten - Schoters
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Kolaborasi konten dengan Schoters by Ruangguru, platform konsultasi beasiswa dan kuliah luar negeri.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">video_library</span>
+                  Content Creator
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://www.tiktok.com/@abcdinis/video/7569849910023998727" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    TikTok
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 15: Case Study - Learning & Development -->
+          <div 
+            data-category="casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/ld-case-study.jpg" alt="Learning & Development Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  L&D Case Study
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Learning & Development Case Scenario
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Studi kasus komprehensif tentang strategi Learning & Development dalam organisasi modern.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">description</span>
+                  Case Study
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://drive.google.com/file/d/1rFAqnKJ7bZv2Tyg8K6KxtM3fZbfKoH1n/view" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    View PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 16: Case Study - Training & Development -->
+          <div 
+            data-category="casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/td-case-study.jpg" alt="Training & Development Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  T&D Case Study
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Training & Development Case Scenario
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Analisis mendalam tentang implementasi program Training & Development yang efektif.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">description</span>
+                  Case Study
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://drive.google.com/file/d/1O-J3-NkD5LdDCUO73Q9-eJrHyQdRyUD4/view" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    View PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 17: Case Study - Behavioral Research Paper -->
+          <div 
+            data-category="casestudy"
+            class="portfolio-card-item group flex flex-col bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="./images/porto/behavioral-research.jpg" alt="Behavioral Research Paper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-3">
+                <span class="inline-block px-2.5 py-1 rounded-md bg-gray-100 text-xs font-semibold text-gray-600">
+                  Academic Research
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                Behavioral Research Paper
+              </h3>
+              <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
+                Paper penelitian tentang behavioral science dan aplikasinya dalam people development.
+              </p>
+              <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-medium">
+                <div class="flex items-center gap-1.5">
+                  <span class="material-icons-round text-base">science</span>
+                  Research Paper
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <a href="https://drive.google.com/file/d/1Qk41w0SVoxhKc0dfrZe4FtbzvCowuIf8/view" target="_blank" class="text-primary-600 hover:text-primary-700 flex items-center gap-1">
+                    <span class="material-icons-round text-base">link</span>
+                    View PDF
+                  </a>
                 </div>
               </div>
             </div>
@@ -1910,28 +2295,28 @@
     </section>
 
     <!-- Footer Section -->
-    <footer id="footer" class="bg-primary-700 py-16">
+    <footer id="footer" class="bg-slate-700 py-16">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <!-- Main Footer Content -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <!-- Left Column: About -->
           <div>
             <h3 class="text-2xl font-bold text-white mb-4">Dinni Rahmawati</h3>
-            <p class="text-white/90 text-sm leading-relaxed mb-6">
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
               Career & Self-Development Practitioner yang membantu profesional membuka potensi terbaik mereka.
             </p>
             <!-- Social Media Icons -->
             <div class="flex items-center space-x-4">
               <a href="https://instagram.com/abcdinis" target="_blank" 
-                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fab fa-instagram text-white text-lg"></i>
               </a>
               <a href="https://linkedin.com/in/dinni-rahmawati" target="_blank" 
-                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fab fa-linkedin-in text-white text-lg"></i>
               </a>
               <a href="mailto:dinni.business@gmail.com" 
-                 class="w-10 h-10 bg-primary-600 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors">
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
                 <i class="fas fa-envelope text-white text-lg"></i>
               </a>
             </div>
@@ -1942,19 +2327,19 @@
             <h3 class="text-lg font-bold text-white mb-4">Menu Cepat</h3>
             <ul class="space-y-3">
               <li>
-                <a href="#tentang" class="text-white/80 hover:text-white transition-colors text-sm">Tentang</a>
+                <a href="#tentang" class="text-slate-300 hover:text-white transition-colors text-sm">Tentang</a>
               </li>
               <li>
-                <a href="#layanan" class="text-white/80 hover:text-white transition-colors text-sm">Layanan</a>
+                <a href="#layanan" class="text-slate-300 hover:text-white transition-colors text-sm">Layanan</a>
               </li>
               <li>
-                <a href="#portfolio" class="text-white/80 hover:text-white transition-colors text-sm">Portfolio</a>
+                <a href="#portfolio" class="text-slate-300 hover:text-white transition-colors text-sm">Portfolio</a>
               </li>
               <li>
-                <a href="#testimoni" class="text-white/80 hover:text-white transition-colors text-sm">Testimoni</a>
+                <a href="#testimoni" class="text-slate-300 hover:text-white transition-colors text-sm">Testimoni</a>
               </li>
               <li>
-                <a href="#kontak" class="text-white/80 hover:text-white transition-colors text-sm">Kontak</a>
+                <a href="#kontak" class="text-slate-300 hover:text-white transition-colors text-sm">Kontak</a>
               </li>
             </ul>
           </div>
@@ -1965,15 +2350,15 @@
             <ul class="space-y-4">
               <li class="flex items-start space-x-3">
                 <i class="fas fa-map-marker-alt text-red-400 mt-1"></i>
-                <span class="text-white/80 text-sm">Jakarta, Indonesia</span>
+                <span class="text-slate-300 text-sm">Jakarta, Indonesia</span>
               </li>
               <li class="flex items-start space-x-3">
-                <i class="fas fa-envelope text-white/60"></i>
-                <span class="text-white/80 text-sm">dinni.business@gmail.com</span>
+                <i class="fas fa-envelope text-slate-400"></i>
+                <span class="text-slate-300 text-sm">dinni.business@gmail.com</span>
               </li>
               <li class="flex items-start space-x-3">
-                <i class="fas fa-video text-white/60"></i>
-                <span class="text-white/80 text-sm">Tersedia untuk sesi online</span>
+                <i class="fas fa-video text-slate-400"></i>
+                <span class="text-slate-300 text-sm">Tersedia untuk sesi online</span>
               </li>
             </ul>
           </div>
@@ -1982,10 +2367,10 @@
         <!-- Bottom Bar -->
         <div class="border-t border-white/10 pt-8 mt-8">
           <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-            <p class="text-white/70 text-sm">
+            <p class="text-slate-400 text-sm">
               © 2026 Dinni Rahmawati. Hak cipta dilindungi.
             </p>
-            <p class="text-white/70 text-sm flex items-center gap-1">
+            <p class="text-slate-400 text-sm flex items-center gap-1">
               Dibuat dengan <span class="text-red-400">❤️</span> di Indonesia
             </p>
           </div>
