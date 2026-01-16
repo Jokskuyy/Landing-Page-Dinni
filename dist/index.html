@@ -212,69 +212,115 @@
     <p id="home"></p>
     
     <!-- Navigation Menu -->
-    <header 
-      x-data="{ scrolled: false }" 
-      x-init="window.addEventListener('scroll', () => { scrolled = window.pageYOffset > 50 })"
-      :class="{ 'bg-white/80 backdrop-blur-lg border-b border-neutral-200/50': scrolled, 'bg-transparent border-b border-transparent': !scrolled }"
-      class="fixed top-0 z-50 w-full transition-all duration-300"
-    >
-      <div
-        x-data="{ open: false }"
-        class="flex flex-col max-w-7xl px-6 mx-auto md:items-center md:justify-between md:flex-row lg:px-8"
-      >
-        <div class="p-4 flex flex-row items-center justify-between">
-          <a
-            href="index.html#home"
-            class="text-xl font-bold text-primary-600 tracking-wide hover:scale-105 transition-transform duration-300"
-            >Dinni Rahmawati</a
-          >
-          <button
-            class="md:hidden p-2 rounded-xl text-neutral-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300"
-            @click="open = !open"
-          >
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-              <path
-                x-show="!open"
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-              <path
-                x-show="open"
-                fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-        <nav
-          :class="{'flex': open, 'hidden': !open}"
-          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row bg-white/95 backdrop-blur-lg md:bg-transparent md:backdrop-blur-none rounded-xl md:rounded-none mt-2 md:mt-0 mx-4 md:mx-0 border border-neutral-200/50 md:border-none shadow-lg md:shadow-none"
-        >
-          <a
-            class="text-neutral-700 px-4 py-3 mx-1 text-sm font-semibold rounded-xl md:mt-0 hover:text-primary-600 hover:bg-primary-50 focus:text-primary-700 focus:bg-primary-50 transition-all duration-300 bg-white/50 md:bg-transparent"
-            href="index.html#home"
-            >Beranda</a
-          >
-          <a
-            class="text-neutral-700 px-4 py-3 mx-1 text-sm font-semibold rounded-xl md:mt-0 hover:text-primary-600 hover:bg-primary-50 focus:text-primary-700 focus:bg-primary-50 transition-all duration-300 bg-white/50 md:bg-transparent"
-            href="index.html#aboutme"
-            >Profil</a
-          >
-          <a
-            class="text-neutral-700 px-4 py-3 mx-1 text-sm font-semibold rounded-xl md:mt-0 hover:text-primary-600 hover:bg-primary-50 focus:text-primary-700 focus:bg-primary-50 transition-all duration-300 bg-white/50 md:bg-transparent"
-            href="index.html#pengalaman"
-            >Pengalaman</a
-          >
-          <a
-            class="text-neutral-700 px-4 py-3 mx-1 text-sm font-semibold rounded-xl md:mt-0 hover:text-primary-600 hover:bg-primary-50 focus:text-primary-700 focus:bg-primary-50 transition-all duration-300 bg-white/50 md:bg-transparent"
-            href="index.html#services"
-            >Layanan</a
-          >
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200">
+      <div class="container mx-auto px-4 py-4">
+        <nav class="flex items-center justify-between">
+          <a href="#" class="font-serif text-xl font-bold text-neutral-900">
+            Dinni Rahmawati
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-6">
+            <a href="#aboutme" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Tentang
+            </a>
+            <a href="#services" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Layanan
+            </a>
+            <a href="#portfolio" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Portfolio
+            </a>
+            <a href="#testimoni" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Testimoni
+            </a>
+            <a href="#kontak" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Kontak
+            </a>
+            <!-- Language Switcher Placeholder -->
+            <button class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-600 hover:text-primary-600 border border-neutral-300 rounded-lg hover:border-primary-600 transition-colors">
+              <i class="fas fa-globe"></i>
+              <span>ID</span>
+            </button>
+            <a href="#kontak" class="inline-flex items-center px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors">
+              Hubungi Saya
+            </a>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <div class="md:hidden flex items-center gap-2">
+            <button class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-600 border border-neutral-300 rounded-lg">
+              <i class="fas fa-globe"></i>
+              <span>ID</span>
+            </button>
+            <button
+              id="mobileMenuToggle"
+              class="p-2 text-neutral-900"
+              aria-label="Toggle menu"
+            >
+              <i id="menuIcon" class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
         </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-neutral-200 pt-4">
+          <div class="flex flex-col gap-4">
+            <a href="#aboutme" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Tentang
+            </a>
+            <a href="#services" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Layanan
+            </a>
+            <a href="#portfolio" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Portfolio
+            </a>
+            <a href="#testimoni" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Testimoni
+            </a>
+            <a href="#kontak" class="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">
+              Kontak
+            </a>
+            <a href="#kontak" class="inline-flex items-center justify-center px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors mt-2">
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
       </div>
     </header>
+
+    <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        
+        if (mobileMenuToggle && mobileMenu && menuIcon) {
+          mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icon
+            if (mobileMenu.classList.contains('hidden')) {
+              menuIcon.classList.remove('fa-times');
+              menuIcon.classList.add('fa-bars');
+            } else {
+              menuIcon.classList.remove('fa-bars');
+              menuIcon.classList.add('fa-times');
+            }
+          });
+
+          // Close menu when clicking a link
+          const mobileLinks = mobileMenu.querySelectorAll('a');
+          mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              mobileMenu.classList.add('hidden');
+              menuIcon.classList.remove('fa-times');
+              menuIcon.classList.add('fa-bars');
+            });
+          });
+        }
+      });
+    </script>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
