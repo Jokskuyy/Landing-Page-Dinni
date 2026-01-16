@@ -123,6 +123,21 @@
           }
         }, 300);
       }
+
+      // Copy email function
+      function copyEmail() {
+        const email = 'dinnirahmawati@example.com';
+        navigator.clipboard.writeText(email).then(() => {
+          const btnText = document.getElementById('emailBtnText');
+          const originalText = btnText.textContent;
+          btnText.textContent = 'Copied!';
+          setTimeout(() => {
+            btnText.textContent = originalText;
+          }, 2000);
+        }).catch(err => {
+          console.error('Failed to copy email:', err);
+        });
+      }
     </script>
   </head>
   <body>
@@ -1654,11 +1669,11 @@
               <div class="flex-grow">
                 <h3 class="text-xl font-bold text-neutral-900 mb-2">Email</h3>
                 <p class="text-neutral-600 mb-4">Untuk inquiry formal & corporate</p>
-                <a href="mailto:dinnirahmawati@example.com" 
+                <button onclick="copyEmail()" 
                    class="inline-flex items-center px-5 py-2.5 bg-neutral-700 hover:bg-neutral-800 text-white font-semibold rounded-lg transition-all duration-200 group">
-                  Kirim Email
-                  <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                </a>
+                  <span id="emailBtnText">Copy Email</span>
+                  <i class="fas fa-copy ml-2"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -1755,7 +1770,88 @@
     </section>
 
     <!-- Footer Section -->
-    <footer id="footer" class="relative py-20 overflow-hidden">
+    <footer id="footer" class="bg-slate-700 py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <!-- Left Column: About -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Dinni Rahmawati</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Career & Self-Development Practitioner yang membantu profesional membuka potensi terbaik mereka.
+            </p>
+            <!-- Social Media Icons -->
+            <div class="flex items-center space-x-4">
+              <a href="https://instagram.com/dinnirahmawati" target="_blank" 
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+                <i class="fab fa-instagram text-white text-lg"></i>
+              </a>
+              <a href="https://linkedin.com/in/dinnirahmawati" target="_blank" 
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+                <i class="fab fa-linkedin-in text-white text-lg"></i>
+              </a>
+              <a href="mailto:hello@dinnirahmawati.com" 
+                 class="w-10 h-10 bg-slate-600 hover:bg-slate-500 rounded-lg flex items-center justify-center transition-colors">
+                <i class="fas fa-envelope text-white text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Middle Column: Menu Cepat -->
+          <div>
+            <h3 class="text-lg font-bold text-white mb-4">Menu Cepat</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#tentang" class="text-slate-300 hover:text-white transition-colors text-sm">Tentang</a>
+              </li>
+              <li>
+                <a href="#layanan" class="text-slate-300 hover:text-white transition-colors text-sm">Layanan</a>
+              </li>
+              <li>
+                <a href="#portfolio" class="text-slate-300 hover:text-white transition-colors text-sm">Portfolio</a>
+              </li>
+              <li>
+                <a href="#testimoni" class="text-slate-300 hover:text-white transition-colors text-sm">Testimoni</a>
+              </li>
+              <li>
+                <a href="#kontak" class="text-slate-300 hover:text-white transition-colors text-sm">Kontak</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Column: Hubungi Saya -->
+          <div>
+            <h3 class="text-lg font-bold text-white mb-4">Hubungi Saya</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-map-marker-alt text-red-400 mt-1"></i>
+                <span class="text-slate-300 text-sm">Jakarta, Indonesia</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-envelope text-slate-400"></i>
+                <span class="text-slate-300 text-sm">hello@dinnirahmawati.com</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-video text-slate-400"></i>
+                <span class="text-slate-300 text-sm">Tersedia untuk sesi online</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-slate-600 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p class="text-slate-400 text-sm">
+              © 2026 Dinni Rahmawati. Hak cipta dilindungi.
+            </p>
+            <p class="text-slate-400 text-sm flex items-center">
+              Dibuat dengan <span class="text-red-400 mx-1">❤️</span> di Indonesia
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
                 <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -1788,491 +1884,10 @@
                 </div>
               </div>
             </div>
-
-            <!-- Testimony 2 -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "Program mentoring oleh Dinni sangat membantu saya dalam menyusun essay. Pendekatannya kepada mentee dan cara dia menyampaikan materi juga sangat membantu kami dalam mempersiapkan essay. Saya juga menikmati pendekatanannya, karena dia tidak menggurui dan tidak menunjukkan bahwa caranya adalah yang terbaik. Dia hanya memberikan teori dan feedback, dan mendorong kami untuk mengeksplorasi potensi kami.
-                <br /><br />
-                Terima kasih atas layanannya, Dinni!"
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-secondary-600 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Farhan Hibatullah</p>
-                  <p class="text-sm text-neutral-600">Penerima LoA Columbia University dan Beasiswa LPDP</p>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Testimony 3 - Martha Amelia -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "This mentorship helps me a lot to understand where my position is in the application process, what I lack on and what I can improve. Kak Dinni can pinpoint both my strengths and weaknesses and give detailed suggestion on what to do to improve my application.
-                <br /><br />
-                Overall, being mentored by Kak Dinni is very recommended!"
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-accent-600 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Martha Amelia</p>
-                  <p class="text-sm text-neutral-600">Penerima LoA University of Melbourne dan Beasiswa LPDP</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="space-y-8 lg:translate-y-8">
-            <!-- Testimony 4 -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "Masukan yang diberikan sangat relevan dan membangun. Dinni juga willing untuk memberikan list interview question dan probing yang bisa jadi referensi untuk latihan. Saat mock interview Dinni selalu memberikan follow up question yang sesuai konteks jurusan dan universitas.
-                <br /><br />
-                Terima kasih dan semoga sukses untuk studinya din!"
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-secondary-600 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Anita Khairani</p>
-                  <p class="text-sm text-neutral-600">Penerima LoA University College London dan Beasiswa LPDP</p>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- Testimony 5 -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "Saya mendapat banyak bimbingan berharga dari Dinni! Mulai dari menyusun proses berpikir saya menjadi sangat koheren dan padat, dan juga mendapat pencerahan melalui sesi mock interview.
-                <br /><br />
-                Dan ya, saya sangat merekomendasikan Dinni untuk menjadi Mentor Anda!"
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Joshua Hezer</p>
-                  <p class="text-sm text-neutral-600">Pegawai Swasta</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimony 6 -->
-            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-neutral-200/50 shadow-xl shadow-neutral-500/10 hover:shadow-2xl hover:shadow-neutral-500/20 hover:scale-105 transition-all duration-500">
-              <div class="flex items-start space-x-1 mb-6">
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
-              </div>
-              <p class="text-neutral-700 leading-relaxed mb-6">
-                "Saya mentoring sama Kak Dinni karena bingung masa depan seperti apa yang harus saya pilih.
-                <br /><br />
-                Selama mentoring Kak Dinni memberikan banyak sekali insight dari pengalamannya dan tokoh-tokoh inspiratif kenalan Kak Dinni yang luas banget. Setelah mentoring jadi sangat jelas apa misi saya di dunia ini."
-              </p>
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-accent-600 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-semibold text-neutral-900">Daffa Ghifari</p>
-                  <p class="text-sm text-neutral-600">Pegawai swasta dan aspiring entrepreneur</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Footer Section -->
-    <footer id="contact" class="relative py-20 overflow-hidden">
-      <!-- Background -->
-      <div class="absolute inset-0 bg-primary-800"></div>
-      <div class="absolute top-0 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-secondary-500/20 rounded-full blur-3xl"></div>
-      
-      <div class="container mx-auto px-6 relative z-10 pb-12">
-        <!-- Header Section -->
-        <div class="text-center mb-16 space-y-6">
-          <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
-            Mari <span class="text-accent-300">Berkolaborasi</span>
-          </h2>
-          <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Siap untuk meningkatkan kualitas essay Anda? Hubungi saya dan mari wujudkan tulisan yang sempurna bersama!
-          </p>
-        </div>
-
-        <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-          <!-- Left Section: Contact Info (2 columns) -->
-          <div class="lg:col-span-2 space-y-8">
-            <!-- Contact Information -->
-            <div>
-              <h3 class="font-bold text-xl mb-6 text-white border-b border-white/20 pb-2 inline-block">Informasi Kontak</h3>
-              <div class="space-y-6">
-                <!-- Email -->
-                <div class="flex items-start gap-4 group cursor-pointer" onclick="copyEmail()">
-                  <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white/80 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-all duration-300">
-                    <i class="fa-regular fa-envelope text-xl"></i>
-                  </div>
-                  <div class="flex-1">
-                    <div class="text-sm font-bold text-white mb-1">Email Address</div>
-                    <div class="flex items-center gap-2">
-                      <span class="text-sm text-white/70 group-hover:text-white transition-colors">dinni.business@gmail.com</span>
-                      <i class="fa-regular fa-copy text-xs text-white/50 group-hover:text-white transition-all opacity-0 group-hover:opacity-100"></i>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- WhatsApp -->
-                <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white/80 shrink-0 group-hover:bg-green-500 group-hover:text-white transition-all duration-300">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                  </div>
-                  <div>
-                    <div class="text-sm font-bold text-white mb-1">WhatsApp</div>
-                    <a href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo%20Dinni,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20layanan%20Anda!" class="text-sm text-white/70 hover:text-white transition-colors block mb-2">+62 859-1065-31249</a>
-                    <a href="https://api.whatsapp.com/send/?phone=62859106531249&text=Halo%20Dinni,%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20layanan%20Anda!" class="inline-flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white text-[10px] font-bold py-1.5 px-3 rounded-full transition-all hover:shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5">
-                      <span>Chat Sekarang</span>
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Social Media -->
-                <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-white/80 shrink-0 group-hover:bg-accent-500 group-hover:text-white transition-all duration-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div class="text-sm font-bold text-white mb-3">Social Media</div>
-                    <div class="flex gap-3">
-                      <!-- LinkedIn -->
-                      <a href="https://www.linkedin.com/in/dinni-rahmawati-512401135/" target="_blank" 
-                         class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5 text-white hover:text-[#0077b5] transition-colors" viewBox="0 0 50 50" fill="currentColor">
-                          <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"/>
-                        </svg>
-                      </a>
-                      
-                      <!-- Medium -->
-                      <a href="https://dinnirahmawati12.medium.com/" target="_blank" 
-                         class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5 text-white hover:text-neutral-900 transition-colors" viewBox="0 0 256 256" fill="currentColor">
-                          <path d="M72.2009141,1.42108547e-14 C112.076502,1.42108547e-14 144.399375,32.5485469 144.399375,72.6964154 C144.399375,112.844284 112.074049,145.390378 72.2009141,145.390378 C32.327779,145.390378 0,112.844284 0,72.6964154 C0,32.5485469 32.325326,1.42108547e-14 72.2009141,1.42108547e-14 Z M187.500628,4.25836743 C207.438422,4.25836743 223.601085,34.8960455 223.601085,72.6964154 L223.603538,72.6964154 C223.603538,110.486973 207.440875,141.134463 187.503081,141.134463 C167.565287,141.134463 151.402624,110.486973 151.402624,72.6964154 C151.402624,34.9058574 167.562834,4.25836743 187.500628,4.25836743 Z M243.303393,11.3867175 C250.314,11.3867175 256,38.835526 256,72.6964154 C256,106.547493 250.316453,134.006113 243.303393,134.006113 C236.290333,134.006113 230.609239,106.554852 230.609239,72.6964154 C230.609239,38.837979 236.292786,11.3867175 243.303393,11.3867175 Z"/>
-                        </svg>
-                      </a>
-                      
-                      <!-- YouTube -->
-                      <a href="#" target="_blank" 
-                         class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5 text-white hover:text-red-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                      </a>
-                      
-                      <!-- TikTok -->
-                      <a href="https://www.tiktok.com/@abcdinis?_t=8nKW7eqEAx5&_r=1" target="_blank" 
-                         class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5 text-white hover:text-neutral-900 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Layanan Unggulan -->
-            <div>
-              <h3 class="font-bold text-sm text-white/70 uppercase tracking-wider mb-4">Layanan Unggulan</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a href="./mentoring.html" class="group flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-accent-500 hover:border-accent-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-500/25">
-                  <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-white/20 group-hover:text-white shrink-0 transition-colors">
-                    <i class="fa-solid fa-chalkboard-user text-lg"></i>
-                  </div>
-                  <div>
-                    <div class="text-[10px] uppercase font-bold text-white/50 group-hover:text-white/80 tracking-wider mb-0.5">Program</div>
-                    <div class="text-sm font-bold text-white leading-tight">Paket Mentoring</div>
-                  </div>
-                </a>
-                <a href="./proofreading.html" class="group flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-accent-500 hover:border-accent-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-500/25">
-                  <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-white/20 group-hover:text-white shrink-0 transition-colors">
-                    <i class="fa-solid fa-file-circle-check text-lg"></i>
-                  </div>
-                  <div>
-                    <div class="text-[10px] uppercase font-bold text-white/50 group-hover:text-white/80 tracking-wider mb-0.5">Service</div>
-                    <div class="text-sm font-bold text-white leading-tight">Paket Proofreading</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!-- Mengapa Memilih Layanan Saya -->
-            <div>
-              <h3 class="font-bold text-sm text-white/70 uppercase tracking-wider mb-5">Mengapa Memilih Layanan Saya?</h3>
-              <div class="grid grid-cols-1 gap-4">
-                <div class="flex gap-4 items-center bg-white/5 p-3 rounded-xl border border-white/10">
-                  <div class="w-8 h-8 rounded-full bg-accent-500/20 flex items-center justify-center text-accent-300 shrink-0">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">Mentor Berpengalaman</h4>
-                    <p class="text-[11px] text-white/60">Telah membantu ratusan profesional mencapai karier impian</p>
-                  </div>
-                </div>
-                <div class="flex gap-4 items-center bg-white/5 p-3 rounded-xl border border-white/10">
-                  <div class="w-8 h-8 rounded-full bg-secondary-500/20 flex items-center justify-center text-secondary-300 shrink-0">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">Strategi Personal</h4>
-                    <p class="text-[11px] text-white/60">Pendekatan yang disesuaikan dengan goals dan kepribadian Anda</p>
-                  </div>
-                </div>
-                <div class="flex gap-4 items-center bg-white/5 p-3 rounded-xl border border-white/10">
-                  <div class="w-8 h-8 rounded-full bg-accent-500/20 flex items-center justify-center text-accent-300 shrink-0">
-                    <svg class="w-4 h-4 text-neutral-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">Support Berkelanjutan</h4>
-                    <p class="text-[11px] text-white/60">Dukungan dan follow-up hingga target tercapai</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Section: Contact Form (3 columns) -->
-          <div class="lg:col-span-3">
-            <div class="bg-white/5 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl">
-              <div class="mb-8">
-                <h3 class="font-bold text-xl mb-1 text-white">Hubungi Saya</h3>
-                <p class="text-xs text-white/60">Isi form di bawah untuk konsultasi gratis</p>
-              </div>
-
-              <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                <input type="hidden" name="access_key" value="04dfd03e-9ee5-4355-9568-98c3e7d6bf08">
-                <input type="hidden" name="subject" value="Contact Form - Landing Page">
-                
-                <!-- Name & Email Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-xs font-semibold mb-1.5 text-white/80">Nama Lengkap *</label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/40">
-                        <i class="fa-regular fa-user"></i>
-                      </div>
-                      <input 
-                        name="Nama Lengkap"
-                        type="text" 
-                        required 
-                        class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-white/10 bg-white/5 text-sm focus:ring-2 focus:ring-accent-500 focus:border-transparent text-white placeholder-white/30" 
-                        placeholder="Masukkan nama lengkap"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label class="block text-xs font-semibold mb-1.5 text-white/80">Email Address *</label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/40">
-                        <i class="fa-regular fa-envelope"></i>
-                      </div>
-                      <input 
-                        name="Email"
-                        type="email" 
-                        required 
-                        class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-white/10 bg-white/5 text-sm focus:ring-2 focus:ring-accent-500 focus:border-transparent text-white placeholder-white/30" 
-                        placeholder="nama@email.com"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Phone & Package Row -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-xs font-semibold mb-1.5 text-white/80">No. WhatsApp</label>
-                    <div class="relative">
-                      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/40">
-                        <i class="fa-solid fa-phone"></i>
-                      </div>
-                      <input 
-                        name="No Telephone"
-                        type="text" 
-                        class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-white/10 bg-white/5 text-sm focus:ring-2 focus:ring-accent-500 focus:border-transparent text-white placeholder-white/30" 
-                        placeholder="08123456789"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label class="block text-xs font-semibold mb-1.5 text-white/80">Layanan yang Diminati</label>
-                    <div class="relative">
-                      <select name="Layanan" class="w-full pl-4 pr-10 py-2.5 rounded-lg border border-white/10 bg-white/5 text-sm focus:ring-2 focus:ring-accent-500 focus:border-transparent text-white appearance-none">
-                        <option value="" class="bg-primary-800 text-white/60">Pilih layanan</option>
-                        <option value="Mentoring 1 on 1" class="bg-primary-800">Mentoring 1 on 1</option>
-                        <option value="Proofreading Essay" class="bg-primary-800">Proofreading Essay</option>
-                        <option value="Customized Training" class="bg-primary-800">Customized Training</option>
-                      </select>
-                      <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-white/40">
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Message -->
-                <div>
-                  <label class="block text-xs font-semibold mb-1.5 text-white/80">Pesan</label>
-                  <textarea 
-                    name="Pesan"
-                    rows="3" 
-                    class="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 text-sm focus:ring-2 focus:ring-accent-500 focus:border-transparent text-white placeholder-white/30 resize-none" 
-                    placeholder="Ceritakan tentang kebutuhan Anda, deadline, atau pertanyaan lainnya..."
-                  ></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="pt-2">
-                  <button 
-                    type="submit" 
-                    class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 rounded-lg transition-all transform hover:-translate-y-1 hover:shadow-lg hover:shadow-accent-500/30 flex items-center justify-center gap-2"
-                  >
-                    Kirim Pesan <i class="fa-regular fa-paper-plane"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <div class="border-t border-white/20 pt-8">
-        <div class="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
-          <div class="text-center lg:text-left">
-            <p class="text-white/60 text-sm">
-              © 2024 Dinni Rahmawati. Seluruh hak cipta dilindungi.
-            </p>
-          </div>
-          <div class="text-center lg:text-right">
-            <p class="text-white/80 font-medium">
-              Career & Self-Development Practitioner
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- Toast Notification -->
     <div id="emailToast" class="fixed top-8 right-8 bg-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl transform translate-x-full opacity-0 transition-all duration-300 ease-in-out z-50">
