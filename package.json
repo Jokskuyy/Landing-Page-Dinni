@@ -16,6 +16,10 @@
     "analyze:bundle": "node scripts/analyze-bundle.js",
     "serve": "npx http-server dist -p 3000 -o -c-1 --gzip",
     "serve:prod": "npx http-server dist -p 3000 -o -c3600 --gzip --brotli",
+    "daemon": "node scripts/daemon.js",
+    "production": "node scripts/production.js",
+    "start": "npm run daemon",
+    "deploy": "npm run build && npm run production",
     "clean": "rimraf dist/output.css dist/main.min.js dist/optimized",
     "prebuild": "npm run clean",
     "postbuild": "npm run analyze:bundle"
@@ -37,6 +41,7 @@
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.23.0",
     "autoprefixer": "^10.4.16",
+    "chokidar": "^5.0.0",
     "cssnano": "^6.0.1",
     "esbuild": "^0.19.0",
     "html-minifier-terser": "^7.2.0",
