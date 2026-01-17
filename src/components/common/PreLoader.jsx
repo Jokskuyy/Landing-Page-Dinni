@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 /**
  * PreLoader Component
@@ -21,7 +21,7 @@ const PreLoader = () => {
   return (
     <div
       className={`fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500 ${
-        loading ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        loading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
       <div className="text-center">

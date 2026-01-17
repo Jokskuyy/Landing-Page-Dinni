@@ -37,7 +37,7 @@ Modern, production-ready landing page built with **React 19**, **Vite 7.3**, and
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -85,6 +85,7 @@ All portfolio items are stored in `src/data/portfolioData.js`. To add new items:
 ```
 
 Helper functions available:
+
 - `getPortfolioByCategory(category)` - Filter by category
 - `getFeaturedPortfolio()` - Get featured items only
 - `getPortfolioById(id)` - Get single item
@@ -116,7 +117,7 @@ clientLogos.push({
   id: 11,
   name: "New Client",
   image: "./images/logo client/new-client.svg",
-  alt: "New Client"
+  alt: "New Client",
 });
 ```
 
@@ -139,6 +140,7 @@ accent: {
 ### Custom Animations
 
 Available in `tailwind.config.js`:
+
 - `animate-scroll-left` - Carousel scroll left
 - `animate-scroll-right` - Carousel scroll right
 - `animate-fadeIn` - Fade in effect
@@ -170,6 +172,7 @@ vercel
 ```
 
 Configuration:
+
 - Build command: `npm run build`
 - Output directory: `dist`
 - Framework preset: Vite
@@ -183,6 +186,7 @@ Configuration:
 ## 🧪 Testing
 
 Test checklist:
+
 - ✅ Portfolio filtering works across all categories
 - ✅ Testimonial pagination (3 items per page)
 - ✅ Mobile menu toggle
@@ -213,18 +217,21 @@ Test checklist:
 ## 📚 Key Features
 
 ### React Components
+
 - **Modular architecture** - Each section is independent component
 - **Reusable components** - PortfolioCard, TestimonialCard, LogoCarousel
 - **State management** - React hooks (useState, useEffect, useMemo)
 - **Performance optimized** - Memoization and efficient re-renders
 
 ### Data-Driven
+
 - **Portfolio** - 29 items in portfolioData.js
 - **Testimonials** - 8 testimonials in testimonialsData.js
 - **Logos** - 10 clients + 6 universities in logosData.js
 - **Easy updates** - Just edit data files, no HTML changes
 
 ### User Experience
+
 - **Smooth animations** - TailwindCSS transitions
 - **Responsive design** - Mobile-first approach
 - **Accessible** - ARIA labels and semantic HTML
@@ -233,9 +240,11 @@ Test checklist:
 ## 🐛 Troubleshooting
 
 ### Port already in use
+
 Vite will automatically use next available port (3001, 3002, etc.)
 
 ### Build errors
+
 ```bash
 # Clear node_modules and reinstall
 rm -rf node_modules package-lock.json
@@ -243,9 +252,11 @@ npm install
 ```
 
 ### TailwindCSS not working
+
 Check `tailwind.config.js` content paths match your file structure.
 
 ### Images not loading
+
 Ensure image paths are relative to `public/` directory or use absolute paths.
 
 ## 📄 License

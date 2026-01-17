@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 /**
  * Contact Section Component
@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 const Contact = () => {
   const [emailCopied, setEmailCopied] = useState(false);
 
-  const email = 'dinnirahmawati.coach@gmail.com';
+  const email = "dinnirahmawati.coach@gmail.com";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email).then(() => {
@@ -18,48 +18,48 @@ const Contact = () => {
 
   const contactMethods = [
     {
-      icon: 'envelope',
-      title: 'Email',
+      icon: "envelope",
+      title: "Email",
       value: email,
       action: handleCopyEmail,
-      buttonText: emailCopied ? 'Tersalin!' : 'Copy Email',
+      buttonText: emailCopied ? "Tersalin!" : "Copy Email",
     },
     {
-      icon: 'whatsapp',
-      iconType: 'fab',
-      title: 'WhatsApp',
-      value: '+62 859-1065-31249',
-      link: 'https://wa.me/62859106531249',
-      buttonText: 'Chat WhatsApp',
+      icon: "whatsapp",
+      iconType: "fab",
+      title: "WhatsApp",
+      value: "+62 859-1065-31249",
+      link: "https://wa.me/62859106531249",
+      buttonText: "Chat WhatsApp",
     },
     {
-      icon: 'linkedin',
-      iconType: 'fab',
-      title: 'LinkedIn',
-      value: 'Dinni Rahmawati',
-      link: 'https://linkedin.com/in/dinnirahmawati',
-      buttonText: 'Lihat Profil',
+      icon: "linkedin",
+      iconType: "fab",
+      title: "LinkedIn",
+      value: "Dinni Rahmawati",
+      link: "https://linkedin.com/in/dinnirahmawati",
+      buttonText: "Lihat Profil",
     },
   ];
 
   const socialLinks = [
     {
-      name: 'Instagram',
-      icon: 'instagram',
-      link: 'https://instagram.com/dinnirahmawati',
-      color: 'hover:text-pink-600',
+      name: "Instagram",
+      icon: "instagram",
+      link: "https://instagram.com/dinnirahmawati",
+      color: "hover:text-pink-600",
     },
     {
-      name: 'LinkedIn',
-      icon: 'linkedin',
-      link: 'https://linkedin.com/in/dinnirahmawati',
-      color: 'hover:text-blue-600',
+      name: "LinkedIn",
+      icon: "linkedin",
+      link: "https://linkedin.com/in/dinnirahmawati",
+      color: "hover:text-blue-600",
     },
     {
-      name: 'Medium',
-      icon: 'medium',
-      link: 'https://medium.com/@dinnirahmawati',
-      color: 'hover:text-gray-800',
+      name: "Medium",
+      icon: "medium",
+      link: "https://medium.com/@dinnirahmawati",
+      color: "hover:text-gray-800",
     },
   ];
 
@@ -82,12 +82,13 @@ const Contact = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mari Terhubung dan <span className="text-primary-600">Berkembang Bersama</span>
+            Mari Terhubung dan{" "}
+            <span className="text-primary-600">Berkembang Bersama</span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Hubungi saya untuk diskusi lebih lanjut mengenai training, mentoring, atau
-            kolaborasi.
+            Hubungi saya untuk diskusi lebih lanjut mengenai training,
+            mentoring, atau kolaborasi.
           </p>
         </div>
 
@@ -102,7 +103,7 @@ const Contact = () => {
             >
               <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
                 <i
-                  className={`${method.iconType || 'fas'} fa-${
+                  className={`${method.iconType || "fas"} fa-${
                     method.icon
                   } text-2xl text-primary-600`}
                 ></i>
@@ -128,13 +129,13 @@ const Contact = () => {
                   onClick={method.action}
                   className={`inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl transition-all ${
                     emailCopied
-                      ? 'bg-green-600 text-white'
-                      : 'bg-primary-600 hover:bg-primary-700 text-white'
+                      ? "bg-green-600 text-white"
+                      : "bg-primary-600 hover:bg-primary-700 text-white"
                   }`}
                 >
                   <i
                     className={`fas ${
-                      emailCopied ? 'fa-check' : 'fa-copy'
+                      emailCopied ? "fa-check" : "fa-copy"
                     } text-sm`}
                   ></i>
                   <span>{method.buttonText}</span>
@@ -159,7 +160,9 @@ const Contact = () => {
                 className={`w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all ${social.color}`}
                 aria-label={social.name}
               >
-                <i className={`fab fa-${social.icon} text-2xl text-gray-600`}></i>
+                <i
+                  className={`fab fa-${social.icon} text-2xl text-gray-600`}
+                ></i>
               </a>
             ))}
           </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import LogoCarousel from '@components/common/LogoCarousel';
-import { clientLogos, universityLogos } from '@data/logosData';
+import React from "react";
+import LogoCarousel from "@components/common/LogoCarousel";
+import { clientLogos, universityLogos } from "@data/logosData";
 
 /**
  * Clients Section Component
@@ -18,10 +18,12 @@ const Clients = () => {
         {/* Section Title */}
         <div className="text-center mb-20 space-y-6" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Dipercaya oleh <span className="text-primary-600">Organisasi Terkemuka</span>
+            Dipercaya oleh{" "}
+            <span className="text-primary-600">Organisasi Terkemuka</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Kolaborasi dengan para pemimpin industri dan lulusan dari institusi kelas dunia
+            Kolaborasi dengan para pemimpin industri dan lulusan dari institusi
+            kelas dunia
           </p>
         </div>
 

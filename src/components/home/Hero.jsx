@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Hero Section Component
@@ -19,17 +19,20 @@ const Hero = () => {
             <div className="space-y-4">
               <p className="text-lg font-medium text-gray-600">
                 <span className="text-gray-800">Hallo, Aku </span>
-                <span className="text-primary-600 font-semibold">Dinni Rahmawati</span>
+                <span className="text-primary-600 font-semibold">
+                  Dinni Rahmawati
+                </span>
               </p>
               <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight">
-                Founder & CEO of{' '}
+                Founder & CEO of{" "}
                 <span className="text-primary-600">Teman Transisi</span>
               </h1>
               <p className="text-xl font-semibold text-gray-700 mb-2">
                 Master's Candidate, Columbia University
               </p>
               <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-                Soft-skill trainer dan mentor karier yang mentransformasi produktivitas melalui experiential dan challenge-based learning.
+                Soft-skill trainer dan mentor karier yang mentransformasi
+                produktivitas melalui experiential dan challenge-based learning.
               </p>
             </div>
 
@@ -86,7 +89,7 @@ const Hero = () => {
           <div className="flex justify-center flex-1 relative">
             <img
               className="w-full max-w-lg rounded-3xl shadow-2xl"
-              src="./imgs/cek1.png"
+              src="/imgs/cek1.png"
               alt="Dinni Rahmawati - Career Development Practitioner"
               loading="eager"
             />

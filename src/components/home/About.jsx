@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * About Section Component
@@ -7,29 +7,29 @@ import React from 'react';
 const About = () => {
   const careerHistory = [
     {
-      period: '2025 - Current',
-      title: 'Founder & CEO',
-      company: 'Mantra (Teman Transisi)',
+      period: "2025 - Current",
+      title: "Founder & CEO",
+      company: "Mantra (Teman Transisi)",
     },
     {
-      period: '2024 - 2025',
-      title: 'Learning Advisor',
-      company: 'Rumah Siap Kerja',
+      period: "2024 - 2025",
+      title: "Learning Advisor",
+      company: "Rumah Siap Kerja",
     },
     {
-      period: '2021 - 2024',
-      title: 'Head of Learning Department',
-      company: 'Rumah Siap Kerja',
+      period: "2021 - 2024",
+      title: "Head of Learning Department",
+      company: "Rumah Siap Kerja",
     },
     {
-      period: '2020 - 2021',
-      title: 'People & Development Analyst',
-      company: 'Peopleshift',
+      period: "2020 - 2021",
+      title: "People & Development Analyst",
+      company: "Peopleshift",
     },
     {
-      period: '2019 - 2020',
-      title: 'Innovation Management Officer',
-      company: 'Telkom Indonesia',
+      period: "2019 - 2020",
+      title: "Innovation Management Officer",
+      company: "Telkom Indonesia",
     },
   ];
 
@@ -47,18 +47,35 @@ const About = () => {
                 TENTANG SAYA
               </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Membantu Anda Membuka{' '}
+                Membantu Anda Membuka{" "}
                 <span className="text-accent-300">Potensi Terbaik</span>
               </h2>
               <div className="space-y-4 text-white/90 leading-relaxed">
                 <p>
-                  Halo, saya Dinni Rahmawati, seorang people development practitioner, soft-skill trainer, dan juga mentor, yang telah memiliki 7 tahun pengalaman dalam merancang dan memfasilitasi pembelajaran bagi para adult learner di korporat, sektor publik, dan komunitas sosial. Misi saya adalah membantu adult learner mencapai potensi maksimalnya melalui pendekatan pembelajaran yang kontekstual, dan transformatif.
+                  Halo, saya Dinni Rahmawati, seorang people development
+                  practitioner, soft-skill trainer, dan juga mentor, yang telah
+                  memiliki 7 tahun pengalaman dalam merancang dan memfasilitasi
+                  pembelajaran bagi para adult learner di korporat, sektor
+                  publik, dan komunitas sosial. Misi saya adalah membantu adult
+                  learner mencapai potensi maksimalnya melalui pendekatan
+                  pembelajaran yang kontekstual, dan transformatif.
                 </p>
                 <p>
-                  Dengan pendekatan Experiential Learning, dan Challenge-based learning, saya memadukan pengalaman langsung, refleksi terstruktur, serta umpan balik yang konkret, sehingga pembelajaran tidak berhenti pada pemahaman konsep, tetapi mendorong perubahan perilaku yang konkret dan peningkatan produktivitas.
+                  Dengan pendekatan Experiential Learning, dan Challenge-based
+                  learning, saya memadukan pengalaman langsung, refleksi
+                  terstruktur, serta umpan balik yang konkret, sehingga
+                  pembelajaran tidak berhenti pada pemahaman konsep, tetapi
+                  mendorong perubahan perilaku yang konkret dan peningkatan
+                  produktivitas.
                 </p>
                 <p>
-                  Perjalanan karier saya di people development berawal dari Innovation Management di Telkom Indonesia, di mana saya terlibat dalam pengembangan kapasitas dan kapabilitas SDM untuk menciptakan solusi dan produk inovatif yang scalable. Pengalaman ini membentuk keyakinan saya bahwa strategi pembelajaran yang tepat dapat mendorong produktivitas individu dan mendukung pertumbuhan organisasi.
+                  Perjalanan karier saya di people development berawal dari
+                  Innovation Management di Telkom Indonesia, di mana saya
+                  terlibat dalam pengembangan kapasitas dan kapabilitas SDM
+                  untuk menciptakan solusi dan produk inovatif yang scalable.
+                  Pengalaman ini membentuk keyakinan saya bahwa strategi
+                  pembelajaran yang tepat dapat mendorong produktivitas individu
+                  dan mendukung pertumbuhan organisasi.
                 </p>
               </div>
             </div>
@@ -66,7 +83,8 @@ const About = () => {
             {/* Quote */}
             <blockquote className="bg-accent-400/20 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-accent-300">
               <p className="text-lg italic text-white mb-4">
-                "Setiap orang punya potensi luar biasa. Tugas saya adalah membantu mereka menemukannya dan mengembangkannya."
+                "Setiap orang punya potensi luar biasa. Tugas saya adalah
+                membantu mereka menemukannya dan mengembangkannya."
               </p>
               <cite className="text-sm text-accent-200">— Dinni Rahmawati</cite>
             </blockquote>
@@ -89,7 +107,9 @@ const About = () => {
                     <div>
                       <p className="text-xs text-accent-200">{career.period}</p>
                       <p className="font-semibold text-white">{career.title}</p>
-                      <p className="text-sm text-accent-300">{career.company}</p>
+                      <p className="text-sm text-accent-300">
+                        {career.company}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -99,7 +119,10 @@ const About = () => {
         </div>
 
         {/* Credentials Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16" data-aos="fade-up">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16"
+          data-aos="fade-up"
+        >
           <div className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
             <div className="w-10 h-10 bg-accent-300/20 rounded-lg flex items-center justify-center shrink-0">
               <i className="fas fa-graduation-cap text-accent-300 text-lg"></i>

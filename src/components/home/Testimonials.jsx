@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
-import TestimonialCard from '@components/testimonials/TestimonialCard';
-import { testimonials, testimonialStats } from '@data/testimonialsData';
+import React, { useState, useMemo } from "react";
+import TestimonialCard from "@components/testimonials/TestimonialCard";
+import { testimonials, testimonialStats } from "@data/testimonialsData";
 
 /**
  * Testimonials Section Component
@@ -56,17 +56,19 @@ const Testimonials = () => {
           </h2>
 
           <p className="text-lg text-gray-600 leading-relaxed">
-            Cerita sukses dari ratusan mentee dan peserta training yang telah mencapai goals mereka.
+            Cerita sukses dari ratusan mentee dan peserta training yang telah
+            mencapai goals mereka.
           </p>
 
           {/* Statistics */}
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-              <span className="material-icons-round text-yellow-500">
-                star
-              </span>
+              <span className="material-icons-round text-yellow-500">star</span>
               <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">{testimonialStats.averageRating}</strong> Rating
+                <strong className="text-gray-900 font-bold">
+                  {testimonialStats.averageRating}
+                </strong>{" "}
+                Rating
               </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
@@ -74,7 +76,10 @@ const Testimonials = () => {
                 people
               </span>
               <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">{testimonialStats.total}</strong> Testimonials
+                <strong className="text-gray-900 font-bold">
+                  {testimonialStats.total}
+                </strong>{" "}
+                Testimonials
               </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
@@ -82,39 +87,40 @@ const Testimonials = () => {
                 school
               </span>
               <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">{testimonialStats.beasiswa}</strong> Beasiswa
+                <strong className="text-gray-900 font-bold">
+                  {testimonialStats.beasiswa}
+                </strong>{" "}
+                Beasiswa
               </span>
             </div>
           </div>
         </div>
 
         {/* Testimonials Grid */}
-        <div 
+        <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           {currentTestimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="animate-fadeIn"
-            >
+            <div key={testimonial.id} className="animate-fadeIn">
               <TestimonialCard testimonial={testimonial} />
             </div>
           ))}
         </div>
 
         {/* Pagination Controls */}
-        <div className="flex items-center justify-center gap-4 mt-8" data-aos="fade-up">
+        <div
+          className="flex items-center justify-center gap-4 mt-8"
+          data-aos="fade-up"
+        >
           {/* Previous Button */}
           <button
             onClick={prevPage}
             className="group flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-xl font-semibold transition-all hover:shadow-md border border-gray-200"
             aria-label="Previous page"
           >
-            <span className="material-icons-round text-lg">
-              chevron_left
-            </span>
+            <span className="material-icons-round text-lg">chevron_left</span>
             <span className="hidden sm:inline">Previous</span>
           </button>
 
@@ -126,11 +132,11 @@ const Testimonials = () => {
                 onClick={() => goToPage(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   currentPage === index
-                    ? 'bg-primary-600 w-8'
-                    : 'bg-gray-300 hover:bg-primary-300'
+                    ? "bg-primary-600 w-8"
+                    : "bg-gray-300 hover:bg-primary-300"
                 }`}
                 aria-label={`Go to page ${index + 1}`}
-                aria-current={currentPage === index ? 'page' : undefined}
+                aria-current={currentPage === index ? "page" : undefined}
               />
             ))}
           </div>
@@ -142,16 +148,15 @@ const Testimonials = () => {
             aria-label="Next page"
           >
             <span className="hidden sm:inline">Next</span>
-            <span className="material-icons-round text-lg">
-              chevron_right
-            </span>
+            <span className="material-icons-round text-lg">chevron_right</span>
           </button>
         </div>
 
         {/* Page Counter */}
         <div className="text-center mt-6">
           <p className="text-gray-600 text-sm">
-            Page <strong className="text-primary-600">{currentPage + 1}</strong> of <strong>{totalPages}</strong>
+            Page <strong className="text-primary-600">{currentPage + 1}</strong>{" "}
+            of <strong>{totalPages}</strong>
           </p>
         </div>
       </div>

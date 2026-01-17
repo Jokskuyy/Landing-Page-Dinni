@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 /**
  * TestimonialCard Component
  * Reusable card component for displaying testimonials
- * 
+ *
  * @param {Object} props
  * @param {Object} props.testimonial - Testimonial data
  * @param {number} props.testimonial.id - Unique identifier
@@ -16,13 +16,14 @@ import React from 'react';
  * @param {string} props.testimonial.text - Testimonial text
  */
 const TestimonialCard = ({ testimonial }) => {
-  const { name, title, category, categoryIcon, categoryStyle, rating, text } = testimonial;
+  const { name, title, category, categoryIcon, categoryStyle, rating, text } =
+    testimonial;
 
   // Category badge styles
   const badgeStyles = {
-    'white-border': 'bg-white border-2 border-gray-200 text-gray-700',
-    'primary': 'bg-primary-600 text-white',
-    'dark': 'bg-gray-700 text-white',
+    "white-border": "bg-white border-2 border-gray-200 text-gray-700",
+    primary: "bg-primary-600 text-white",
+    dark: "bg-gray-700 text-white",
   };
 
   const badgeClass = badgeStyles[categoryStyle] || badgeStyles.primary;
@@ -33,7 +34,7 @@ const TestimonialCard = ({ testimonial }) => {
       <i
         key={index}
         className={`fas fa-star text-sm ${
-          index < rating ? 'text-yellow-400' : 'text-gray-300'
+          index < rating ? "text-yellow-400" : "text-gray-300"
         }`}
       />
     ));
@@ -44,24 +45,32 @@ const TestimonialCard = ({ testimonial }) => {
       {/* Quote Icon & Badge */}
       <div className="flex items-start justify-between mb-3">
         {/* Quote Icon */}
-        <svg 
-          className="w-10 h-10 text-gray-200 flex-shrink-0" 
-          fill="currentColor" 
+        <svg
+          className="w-10 h-10 text-gray-200 flex-shrink-0"
+          fill="currentColor"
           viewBox="0 0 32 32"
           aria-hidden="true"
         >
-          <path d="M10 8c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8zm12 0c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8z"/>
+          <path d="M10 8c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8zm12 0c-3.3 0-6 2.7-6 6v8h8v-8h-4c0-2.2 1.8-4 4-4V8z" />
         </svg>
 
         {/* Category Badge */}
-        <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${badgeClass}`}>
-          <i className={`fas fa-${categoryIcon} text-[10px]`} aria-hidden="true"></i>
+        <span
+          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${badgeClass}`}
+        >
+          <i
+            className={`fas fa-${categoryIcon} text-[10px]`}
+            aria-hidden="true"
+          ></i>
           <span>{category}</span>
         </span>
       </div>
 
       {/* Stars Rating */}
-      <div className="flex gap-1 mb-3" aria-label={`Rating: ${rating} out of 5 stars`}>
+      <div
+        className="flex gap-1 mb-3"
+        aria-label={`Rating: ${rating} out of 5 stars`}
+      >
         {renderStars()}
       </div>
 

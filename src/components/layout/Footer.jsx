@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Footer Component
@@ -9,17 +9,33 @@ const Footer = () => {
 
   const footerLinks = {
     navigation: [
-      { label: 'Tentang', href: '#aboutme' },
-      { label: 'Layanan', href: '#services' },
-      { label: 'Portfolio', href: '#portfolio' },
-      { label: 'Testimoni', href: '#testimoni' },
-      { label: 'Kontak', href: '#kontak' },
+      { label: "Tentang", href: "#aboutme" },
+      { label: "Layanan", href: "#services" },
+      { label: "Portfolio", href: "#portfolio" },
+      { label: "Testimoni", href: "#testimoni" },
+      { label: "Kontak", href: "#kontak" },
     ],
     social: [
-      { name: 'LinkedIn', icon: 'linkedin', link: 'https://linkedin.com/in/dinnirahmawati' },
-      { name: 'Instagram', icon: 'instagram', link: 'https://instagram.com/dinnirahmawati' },
-      { name: 'Medium', icon: 'medium', link: 'https://medium.com/@dinnirahmawati' },
-      { name: 'WhatsApp', icon: 'whatsapp', link: 'https://wa.me/62859106531249' },
+      {
+        name: "LinkedIn",
+        icon: "linkedin",
+        link: "https://linkedin.com/in/dinnirahmawati",
+      },
+      {
+        name: "Instagram",
+        icon: "instagram",
+        link: "https://instagram.com/dinnirahmawati",
+      },
+      {
+        name: "Medium",
+        icon: "medium",
+        link: "https://medium.com/@dinnirahmawati",
+      },
+      {
+        name: "WhatsApp",
+        icon: "whatsapp",
+        link: "https://wa.me/62859106531249",
+      },
     ],
   };
 
@@ -80,13 +96,21 @@ const Footer = () => {
             <ul className="space-y-3 text-white/80 text-sm">
               <li className="flex items-start gap-3">
                 <i className="fas fa-envelope mt-1 text-white"></i>
-                <a href="mailto:dinnirahmawati.coach@gmail.com" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:dinnirahmawati.coach@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
                   dinnirahmawati.coach@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <i className="fab fa-whatsapp mt-1 text-white"></i>
-                <a href="https://wa.me/62859106531249" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <a
+                  href="https://wa.me/62859106531249"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   +62 859-1065-31249
                 </a>
               </li>
@@ -101,12 +125,8 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-white/20 pt-8">
           <div className="text-center text-white/80 text-sm">
-            <p>
-              &copy; {currentYear} Dinni Rahmawati. All rights reserved.
-            </p>
-            <p className="mt-2">
-              Built with ❤️ using React & TailwindCSS
-            </p>
+            <p>&copy; {currentYear} Dinni Rahmawati. All rights reserved.</p>
+            <p className="mt-2">Built with ❤️ using React & TailwindCSS</p>
           </div>
         </div>
       </div>

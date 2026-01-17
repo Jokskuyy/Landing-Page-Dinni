@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 /**
  * Navigation Component
@@ -14,8 +14,8 @@ const Navigation = () => {
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu when clicking a link
@@ -30,19 +30,19 @@ const Navigation = () => {
 
   // Navigation links
   const navLinks = [
-    { href: '#aboutme', label: 'Tentang' },
-    { href: '#services', label: 'Layanan' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#testimoni', label: 'Testimoni' },
-    { href: '#kontak', label: 'Kontak' },
+    { href: "#aboutme", label: "Tentang" },
+    { href: "#services", label: "Layanan" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#testimoni", label: "Testimoni" },
+    { href: "#kontak", label: "Kontak" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md'
-          : 'bg-white/80 backdrop-blur-md'
+          ? "bg-white/95 backdrop-blur-md shadow-md"
+          : "bg-white/80 backdrop-blur-md"
       } border-b border-gray-200`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -105,7 +105,7 @@ const Navigation = () => {
             >
               <i
                 className={`fas text-2xl transition-transform duration-300 ${
-                  mobileMenuOpen ? 'fa-times' : 'fa-bars'
+                  mobileMenuOpen ? "fa-times" : "fa-bars"
                 }`}
               ></i>
             </button>
@@ -116,8 +116,8 @@ const Navigation = () => {
         <div
           className={`md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 transition-all duration-300 ${
             mobileMenuOpen
-              ? 'max-h-96 opacity-100'
-              : 'max-h-0 opacity-0 overflow-hidden'
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
           <div className="flex flex-col gap-4">

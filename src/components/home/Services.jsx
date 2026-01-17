@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Services Section Component
@@ -8,67 +8,67 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      icon: 'user-tie',
-      title: 'Career Mentoring',
+      icon: "user-tie",
+      title: "Career Mentoring",
       description:
-        'Sesi mentoring personal untuk membantu Anda mencapai tujuan karier, transisi karier (resign/promosi), dan menemukan kejelasan arah profesional.',
+        "Sesi mentoring personal untuk membantu Anda mencapai tujuan karier, transisi karier (resign/promosi), dan menemukan kejelasan arah profesional.",
       features: [
-        'Career direction & goal clarity',
-        'Resume & LinkedIn optimization',
-        'Interview preparation',
-        'Career transition strategy',
+        "Career direction & goal clarity",
+        "Resume & LinkedIn optimization",
+        "Interview preparation",
+        "Career transition strategy",
       ],
       whatsappText:
-        'Halo Kak Dinni, saya tertarik dengan layanan Career Mentoring. Bisa dijelaskan lebih lanjut?',
+        "Halo Kak Dinni, saya tertarik dengan layanan Career Mentoring. Bisa dijelaskan lebih lanjut?",
     },
     {
       id: 2,
-      icon: 'graduation-cap',
+      icon: "graduation-cap",
       title: "Scholarship & Master's Mentoring",
       description:
-        'Bimbingan lengkap untuk aplikasi beasiswa dan admission universitas luar negeri, dari brainstorming hingga interview.',
+        "Bimbingan lengkap untuk aplikasi beasiswa dan admission universitas luar negeri, dari brainstorming hingga interview.",
       features: [
-        'Essay & motivation letter review',
-        'University selection strategy',
-        'Mock interview preparation',
-        'Application timeline planning',
+        "Essay & motivation letter review",
+        "University selection strategy",
+        "Mock interview preparation",
+        "Application timeline planning",
       ],
       whatsappText:
         "Halo Kak Dinni, saya tertarik dengan layanan Scholarship & Master's Mentoring. Bisa dijelaskan lebih lanjut?",
     },
     {
       id: 3,
-      icon: 'file-alt',
-      title: 'Proofreading Services',
+      icon: "file-alt",
+      title: "Proofreading Services",
       description:
-        'Layanan review dokumen profesional untuk aplikasi, essay, proposal, dan dokumen penting lainnya.',
+        "Layanan review dokumen profesional untuk aplikasi, essay, proposal, dan dokumen penting lainnya.",
       features: [
-        'Grammar & spelling check',
-        'Structure & flow improvement',
-        'Content clarity enhancement',
-        'Professional formatting',
+        "Grammar & spelling check",
+        "Structure & flow improvement",
+        "Content clarity enhancement",
+        "Professional formatting",
       ],
       whatsappText:
-        'Halo Kak Dinni, saya tertarik dengan layanan Proofreading Services. Bisa dijelaskan lebih lanjut?',
+        "Halo Kak Dinni, saya tertarik dengan layanan Proofreading Services. Bisa dijelaskan lebih lanjut?",
     },
     {
       id: 4,
-      icon: 'chalkboard-teacher',
-      title: 'Corporate Training',
+      icon: "chalkboard-teacher",
+      title: "Corporate Training",
       description:
-        'Program training korporat yang disesuaikan dengan kebutuhan organisasi untuk meningkatkan soft skills dan produktivitas tim.',
+        "Program training korporat yang disesuaikan dengan kebutuhan organisasi untuk meningkatkan soft skills dan produktivitas tim.",
       features: [
-        'Customized training modules',
-        'Interactive workshops',
-        'Team building activities',
-        'Post-training support',
+        "Customized training modules",
+        "Interactive workshops",
+        "Team building activities",
+        "Post-training support",
       ],
       whatsappText:
-        'Halo Kak Dinni, saya tertarik dengan layanan Corporate Training. Bisa dijelaskan lebih lanjut?',
+        "Halo Kak Dinni, saya tertarik dengan layanan Corporate Training. Bisa dijelaskan lebih lanjut?",
     },
   ];
 
-  const whatsappNumber = '62859106531249';
+  const whatsappNumber = "62859106531249";
 
   return (
     <section id="services" className="relative py-24 overflow-hidden">
@@ -89,13 +89,13 @@ const Services = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Pilih Layanan yang Sesuai dengan{' '}
+            Pilih Layanan yang Sesuai dengan{" "}
             <span className="text-primary-600">Kebutuhanmu</span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Berbagai layanan mentoring dan pengembangan diri yang dirancang untuk
-            membantu Anda mencapai potensi terbaik.
+            Berbagai layanan mentoring dan pengembangan diri yang dirancang
+            untuk membantu Anda mencapai potensi terbaik.
           </p>
         </div>
 
@@ -128,7 +128,10 @@ const Services = () => {
               {/* Features */}
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-gray-700">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3 text-gray-700"
+                  >
                     <i className="fas fa-check-circle text-primary-600 mt-1"></i>
                     <span className="text-sm">{feature}</span>
                   </li>

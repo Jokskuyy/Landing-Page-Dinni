@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 /**
  * LogoCarousel Component
  * Infinite scrolling carousel for displaying logos
- * 
+ *
  * @param {Object} props
  * @param {Array} props.logos - Array of logo objects
  * @param {string} props.direction - Scroll direction: 'left' or 'right' (default: 'left')
  * @param {number} props.speed - Animation speed in seconds (default: 40)
  */
-const LogoCarousel = ({ logos, direction = 'left', speed = 40 }) => {
+const LogoCarousel = ({ logos, direction = "left", speed = 40 }) => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
@@ -18,19 +18,19 @@ const LogoCarousel = ({ logos, direction = 'left', speed = 40 }) => {
 
     // Pause animation on hover
     const handleMouseEnter = () => {
-      carousel.style.animationPlayState = 'paused';
+      carousel.style.animationPlayState = "paused";
     };
 
     const handleMouseLeave = () => {
-      carousel.style.animationPlayState = 'running';
+      carousel.style.animationPlayState = "running";
     };
 
-    carousel.addEventListener('mouseenter', handleMouseEnter);
-    carousel.addEventListener('mouseleave', handleMouseLeave);
+    carousel.addEventListener("mouseenter", handleMouseEnter);
+    carousel.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      carousel.removeEventListener('mouseenter', handleMouseEnter);
-      carousel.removeEventListener('mouseleave', handleMouseLeave);
+      carousel.removeEventListener("mouseenter", handleMouseEnter);
+      carousel.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
@@ -38,7 +38,8 @@ const LogoCarousel = ({ logos, direction = 'left', speed = 40 }) => {
   const tripleLogos = [...logos, ...logos, ...logos];
 
   // Animation direction class
-  const animationClass = direction === 'right' ? 'animate-scroll-right' : 'animate-scroll-left';
+  const animationClass =
+    direction === "right" ? "animate-scroll-right" : "animate-scroll-left";
 
   return (
     <div className="relative w-full overflow-hidden">

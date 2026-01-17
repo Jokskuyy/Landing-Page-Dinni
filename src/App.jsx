@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react';
-import PreLoader from '@components/common/PreLoader';
-import Navigation from '@components/layout/Navigation';
-import Footer from '@components/layout/Footer';
-import Hero from '@components/home/Hero';
-import Clients from '@components/home/Clients';
-import About from '@components/home/About';
-import Services from '@components/home/Services';
-import Portfolio from '@components/home/Portfolio';
-import Testimonials from '@components/home/Testimonials';
-import Contact from '@components/home/Contact';
-import './index.css';
+import React, { useEffect } from "react";
+import PreLoader from "@components/common/PreLoader";
+import Navigation from "@components/layout/Navigation";
+import Footer from "@components/layout/Footer";
+import Hero from "@components/home/Hero";
+import Clients from "@components/home/Clients";
+import About from "@components/home/About";
+import Services from "@components/home/Services";
+import Portfolio from "@components/home/Portfolio";
+import Testimonials from "@components/home/Testimonials";
+import Contact from "@components/home/Contact";
+import "./index.css";
 
 function App() {
   useEffect(() => {
     // Smooth scroll behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
+    document.documentElement.style.scrollBehavior = "smooth";
 
     return () => {
-      document.documentElement.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
 
@@ -40,4 +40,3 @@ function App() {
 }
 
 export default App;
-

@@ -90,22 +90,24 @@ export const testimonials = [
  * Testimonial categories
  */
 export const testimonialCategories = [
-  'All',
-  'Beasiswa',
-  'Mentoring',
-  'Corporate Training',
-  'Offline Training',
-  'Online Training',
+  "All",
+  "Beasiswa",
+  "Mentoring",
+  "Corporate Training",
+  "Offline Training",
+  "Online Training",
 ];
 
 /**
  * Get testimonials by category
  */
 export const getTestimonialsByCategory = (category) => {
-  if (category === 'All') {
+  if (category === "All") {
     return testimonials;
   }
-  return testimonials.filter((testimonial) => testimonial.category === category);
+  return testimonials.filter(
+    (testimonial) => testimonial.category === category
+  );
 };
 
 /**
@@ -113,12 +115,18 @@ export const getTestimonialsByCategory = (category) => {
  */
 export const testimonialStats = {
   total: testimonials.length,
-  beasiswa: testimonials.filter((t) => t.category === 'Beasiswa').length,
-  mentoring: testimonials.filter((t) => t.category === 'Mentoring').length,
-  corporateTraining: testimonials.filter((t) => t.category === 'Corporate Training').length,
-  offlineTraining: testimonials.filter((t) => t.category === 'Offline Training').length,
-  onlineTraining: testimonials.filter((t) => t.category === 'Online Training').length,
-  averageRating: (testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length).toFixed(1),
+  beasiswa: testimonials.filter((t) => t.category === "Beasiswa").length,
+  mentoring: testimonials.filter((t) => t.category === "Mentoring").length,
+  corporateTraining: testimonials.filter(
+    (t) => t.category === "Corporate Training"
+  ).length,
+  offlineTraining: testimonials.filter((t) => t.category === "Offline Training")
+    .length,
+  onlineTraining: testimonials.filter((t) => t.category === "Online Training")
+    .length,
+  averageRating: (
+    testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
+  ).toFixed(1),
 };
 
 export default testimonials;
