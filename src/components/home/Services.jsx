@@ -1,79 +1,98 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * Services Section Component
  * Display available services with cards
  */
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       id: 1,
       icon: "user-tie",
       title: "Career Mentoring",
-      badge: "Popular",
-      subtitle: "Sesi Personal 1-on-1",
-      description:
+      badge: t("Popular", "Popular"),
+      subtitle: t("Sesi Personal 1-on-1", "Personal 1-on-1 Session"),
+      description: t(
         "Sesi mentoring personal untuk membantu Anda mencapai tujuan karier, transisi karier (resign/promosi), dan menemukan kejelasan arah profesional.",
+        "Personal mentoring sessions to help you achieve career goals, career transitions (resignation/promotion), and find clarity in your professional direction."
+      ),
       features: [
-        "Konsultasi 60-90 menit per sesi",
-        "Personalized career roadmap",
-        "CV & LinkedIn review",
-        "Interview preparation",
+        t("Konsultasi 60-90 menit per sesi", "60-90 minute consultation per session"),
+        t("Personalized career roadmap", "Personalized career roadmap"),
+        t("CV & LinkedIn review", "CV & LinkedIn review"),
+        t("Interview preparation", "Interview preparation"),
       ],
-      price: "Mulai dari Rp 350.000",
-      whatsappText:
+      price: t("Mulai dari Rp 350.000", "Starting from IDR 350,000"),
+      whatsappText: t(
         "Halo Kak Dinni, saya tertarik dengan layanan Career Mentoring. Bisa dijelaskan lebih lanjut?",
+        "Hi Dinni, I'm interested in your Career Mentoring service. Can you explain more?"
+      ),
     },
     {
       id: 2,
       icon: "graduation-cap",
-      title: "Scholarship & Master's Mentoring",
-      subtitle: "Beasiswa & Studi Lanjut",
-      description:
+      title: t("Scholarship & Master's Mentoring", "Scholarship & Master's Mentoring"),
+      subtitle: t("Beasiswa & Studi Lanjut", "Scholarship & Further Studies"),
+      description: t(
         "Panduan lengkap untuk aplikasi beasiswa dan universitas top dunia, termasuk brainstorming, CV/essay review, dan mock interview.",
+        "Complete guidance for scholarship and top world university applications, including brainstorming, CV/essay review, and mock interviews."
+      ),
       features: [
-        "Essay & SoP brainstorming",
-        "CV & motivation letter review",
-        "Mock interview practice",
-        "University selection strategy",
+        t("Essay & SoP brainstorming", "Essay & SoP brainstorming"),
+        t("CV & motivation letter review", "CV & motivation letter review"),
+        t("Mock interview practice", "Mock interview practice"),
+        t("University selection strategy", "University selection strategy"),
       ],
-      price: "Mulai dari Rp 500.000",
-      whatsappText:
+      price: t("Mulai dari Rp 500.000", "Starting from IDR 500,000"),
+      whatsappText: t(
         "Halo Kak Dinni, saya tertarik dengan layanan Scholarship & Master's Mentoring. Bisa dijelaskan lebih lanjut?",
+        "Hi Dinni, I'm interested in your Scholarship & Master's Mentoring service. Can you explain more?"
+      ),
     },
     {
       id: 3,
       icon: "file-alt",
-      title: "Proofreading Services",
-      subtitle: "Review Dokumen",
-      description:
+      title: t("Proofreading Services", "Proofreading Services"),
+      subtitle: t("Review Dokumen", "Document Review"),
+      description: t(
         "Layanan review dokumen profesional untuk aplikasi, essay, proposal, dan dokumen penting lainnya.",
+        "Professional document review service for applications, essays, proposals, and other important documents."
+      ),
       features: [
-        "Grammar & structure check",
-        "Clarity improvement",
-        "Formatting review",
-        "Fast turnaround",
+        t("Grammar & structure check", "Grammar & structure check"),
+        t("Clarity improvement", "Clarity improvement"),
+        t("Formatting review", "Formatting review"),
+        t("Fast turnaround", "Fast turnaround"),
       ],
-      price: "Mulai dari Rp 150.000",
-      whatsappText:
+      price: t("Mulai dari Rp 150.000", "Starting from IDR 150,000"),
+      whatsappText: t(
         "Halo Kak Dinni, saya tertarik dengan layanan Proofreading Services. Bisa dijelaskan lebih lanjut?",
+        "Hi Dinni, I'm interested in your Proofreading Services. Can you explain more?"
+      ),
     },
     {
       id: 4,
       icon: "chalkboard-teacher",
-      title: "Corporate Training & Advisory",
-      subtitle: "Untuk Organisasi",
-      description:
+      title: t("Corporate Training & Advisory", "Corporate Training & Advisory"),
+      subtitle: t("Untuk Organisasi", "For Organizations"),
+      description: t(
         "Pelatihan soft-skill dan strategi pengembangan pembelajaran untuk organisasi dan perusahaan.",
+        "Soft-skill training and learning development strategy for organizations and companies."
+      ),
       features: [
-        "Customized training program",
-        "Leadership development",
-        "Team building workshop",
-        "Learning strategy consultation",
+        t("Customized training program", "Customized training program"),
+        t("Leadership development", "Leadership development"),
+        t("Team building workshop", "Team building workshop"),
+        t("Learning strategy consultation", "Learning strategy consultation"),
       ],
-      price: "Hubungi untuk proposal",
-      whatsappText:
+      price: t("Hubungi untuk proposal", "Contact for proposal"),
+      whatsappText: t(
         "Halo Kak Dinni, saya tertarik dengan layanan Corporate Training & Advisory. Bisa dijelaskan lebih lanjut?",
+        "Hi Dinni, I'm interested in your Corporate Training & Advisory service. Can you explain more?"
+      ),
     },
   ];
 
@@ -89,17 +108,19 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16" data-aos="fade-up">
           <p className="text-gray-900 text-xs font-bold tracking-wider uppercase mb-4">
-            LAYANAN
+            {t("LAYANAN", "SERVICES")}
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Pilih Layanan yang Sesuai dengan{" "}
-            <span className="text-primary-600">Kebutuhanmu</span>
+            {t("Pilih Layanan yang Sesuai dengan", "Choose Services That Fit Your")}{" "}
+            <span className="text-primary-600">{t("Kebutuhanmu", "Needs")}</span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Berbagai layanan mentoring dan pengembangan diri yang dirancang
-            untuk membantu Anda mencapai potensi terbaik.
+            {t(
+              "Berbagai layanan mentoring dan pengembangan diri yang dirancang untuk membantu Anda mencapai potensi terbaik.",
+              "Various mentoring and self-development services designed to help you reach your best potential."
+            )}
           </p>
         </div>
 
@@ -174,7 +195,7 @@ const Services = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-primary-600/30"
               >
-                <span>Tanya Lebih Lanjut</span>
+                <span>{t("Tanya Lebih Lanjut", "Ask for More Info")}</span>
                 <i className="fas fa-arrow-right"></i>
               </a>
             </div>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * Contact Section Component
  * Contact information with social media cards and FAQ section
  */
 const Contact = () => {
+  const { t } = useLanguage();
   const [emailCopied, setEmailCopied] = useState(false);
 
   const email = "dinni.rahmwt@gmail.com";
@@ -23,18 +25,18 @@ const Contact = () => {
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
       title: "WhatsApp",
-      subtitle: "Respon cepat untuk konsultasi",
-      buttonText: "Chat via WhatsApp",
+      subtitle: t("Respon cepat untuk konsultasi", "Fast response for consultation"),
+      buttonText: t("Chat via WhatsApp", "Chat via WhatsApp"),
       buttonBg: "bg-blue-600 hover:bg-blue-700",
-      link: `https://wa.me/62859106531249?text=${encodeURIComponent("Halo Kak Dinni, saya ingin bertanya tentang layanan mentoring/training")}`,
+      link: `https://wa.me/62859106531249?text=${encodeURIComponent(t("Halo Kak Dinni, saya ingin bertanya tentang layanan mentoring/training", "Hi Dinni, I want to ask about your mentoring/training services"))}`,
     },
     {
       icon: "fas fa-envelope",
       bgColor: "bg-gray-50",
       iconColor: "text-gray-600",
       title: "Email",
-      subtitle: "Untuk inquiry formal & corporate",
-      buttonText: emailCopied ? "Tersalin!" : "Kirim Email",
+      subtitle: t("Untuk inquiry formal & corporate", "For formal & corporate inquiries"),
+      buttonText: emailCopied ? t("Tersalin!", "Copied!") : t("Kirim Email", "Send Email"),
       buttonBg: emailCopied ? "bg-green-600" : "bg-gray-600 hover:bg-gray-700",
       action: handleCopyEmail,
     },
@@ -43,7 +45,7 @@ const Contact = () => {
       bgColor: "bg-pink-50",
       iconColor: "text-pink-600",
       title: "Instagram",
-      subtitle: "Follow untuk tips & insights",
+      subtitle: t("Follow untuk tips & insights", "Follow for tips & insights"),
       buttonText: "@abcdinis",
       buttonBg: "bg-gray-800 hover:bg-gray-900 text-white",
       link: "https://instagram.com/abcdinis",
@@ -53,8 +55,8 @@ const Contact = () => {
       bgColor: "bg-blue-50",
       iconColor: "text-blue-700",
       title: "LinkedIn",
-      subtitle: "Connect untuk update profesional",
-      buttonText: "Connect di LinkedIn",
+      subtitle: t("Connect untuk update profesional", "Connect for professional updates"),
+      buttonText: t("Connect di LinkedIn", "Connect on LinkedIn"),
       buttonBg: "bg-gray-800 hover:bg-gray-900 text-white",
       link: "https://linkedin.com/in/dinnirahmawati",
     },
@@ -62,24 +64,32 @@ const Contact = () => {
 
   const faqs = [
     {
-      question: "Berapa lama durasi mentoring?",
-      answer:
+      question: t("Berapa lama durasi mentoring?", "How long is the mentoring session?"),
+      answer: t(
         "Satu sesi mentoring berlangsung 60-90 menit, tergantung paket yang dipilih.",
+        "One mentoring session lasts 60-90 minutes, depending on the chosen package."
+      ),
     },
     {
-      question: "Apakah bisa online?",
-      answer:
+      question: t("Apakah bisa online?", "Can it be done online?"),
+      answer: t(
         "Ya, semua sesi mentoring bisa dilakukan secara online via Zoom atau Google Meet.",
+        "Yes, all mentoring sessions can be conducted online via Zoom or Google Meet."
+      ),
     },
     {
-      question: "Bagaimana cara booking?",
-      answer:
+      question: t("Bagaimana cara booking?", "How to book?"),
+      answer: t(
         "Hubungi via WhatsApp untuk diskusi kebutuhan, lalu pilih jadwal yang tersedia.",
+        "Contact via WhatsApp to discuss your needs, then choose an available schedule."
+      ),
     },
     {
-      question: "Ada garansi?",
-      answer:
+      question: t("Ada garansi?", "Is there a guarantee?"),
+      answer: t(
         "Saya menawarkan satisfaction guarantee - jika tidak puas dengan sesi pertama, uang kembali 100%.",
+        "I offer a satisfaction guarantee - if you're not satisfied with the first session, 100% money back."
+      ),
     },
   ];
 
@@ -92,16 +102,18 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-12" data-aos="fade-up">
           <p className="text-blue-600 text-xs font-bold tracking-wider uppercase mb-4">
-            KONTAK
+            {t("KONTAK", "CONTACT")}
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mari Diskusikan Kebutuhanmu
+            {t("Mari Diskusikan Kebutuhanmu", "Let's Discuss Your Needs")}
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Punya pertanyaan tentang layanan mentoring atau ingin mendiskusikan
-            training untuk organisasimu? Jangan ragu untuk menghubungi saya.
+            {t(
+              "Punya pertanyaan tentang layanan mentoring atau ingin mendiskusikan training untuk organisasimu? Jangan ragu untuk menghubungi saya.",
+              "Have questions about mentoring services or want to discuss training for your organization? Don't hesitate to contact me."
+            )}
           </p>
         </div>
 
@@ -154,7 +166,7 @@ const Contact = () => {
           data-aos="fade-up"
         >
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Pertanyaan yang Sering Diajukan
+            {t("Pertanyaan yang Sering Diajukan", "Frequently Asked Questions")}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">

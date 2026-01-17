@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 import PortfolioFilter from "@components/portfolio/PortfolioFilter";
 import PortfolioCard from "@components/portfolio/PortfolioCard";
 import {
@@ -12,6 +13,7 @@ import {
  * Main portfolio section with filtering and grid display
  */
 const Portfolio = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -53,13 +55,14 @@ const Portfolio = () => {
           </p>
 
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Pengalaman & <span className="text-primary">Track Record</span>
+            {t("Pengalaman &", "Experience &")} <span className="text-primary">{t("Track Record", "Track Record")}</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-blue-100 text-lg md:text-xl font-light leading-relaxed">
-            Berbagai program training, mentoring, kolaborasi, case study, dan
-            tulisan yang telah saya lakukan dengan berbagai organisasi dan
-            individu.
+            {t(
+              "Berbagai program training, mentoring, kolaborasi, case study, dan tulisan yang telah saya lakukan dengan berbagai organisasi dan individu.",
+              "Various training programs, mentoring, collaborations, case studies, and writings I have done with various organizations and individuals."
+            )}
           </p>
         </div>
 
@@ -92,7 +95,7 @@ const Portfolio = () => {
                 search_off
               </span>
               <p className="text-blue-100 text-lg">
-                Tidak ada portfolio untuk kategori ini
+                {t("Tidak ada portfolio untuk kategori ini", "No portfolio items for this category")}
               </p>
             </div>
           )}

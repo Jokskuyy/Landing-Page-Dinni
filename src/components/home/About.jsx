@@ -1,10 +1,13 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * About Section Component
  * About me section with career history and credentials
  */
 const About = () => {
+  const { t } = useLanguage();
+
   const careerHistory = [
     {
       period: "2025 - Current",
@@ -44,38 +47,30 @@ const About = () => {
           <div className="space-y-8 text-white" data-aos="fade-right">
             <div>
               <p className="text-sm font-medium text-accent-300 mb-2 tracking-wider uppercase">
-                TENTANG SAYA
+                {t("TENTANG SAYA", "ABOUT ME")}
               </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                Membantu Anda Membuka{" "}
-                <span className="text-accent-300">Potensi Terbaik</span>
+                {t("Membantu Anda Membuka", "Helping You Unlock Your")}{" "}
+                <span className="text-accent-300">{t("Potensi Terbaik", "Best Potential")}</span>
               </h2>
               <div className="space-y-4 text-white/90 leading-relaxed">
                 <p>
-                  Halo, saya Dinni Rahmawati, seorang people development
-                  practitioner, soft-skill trainer, dan juga mentor, yang telah
-                  memiliki 7 tahun pengalaman dalam merancang dan memfasilitasi
-                  pembelajaran bagi para adult learner di korporat, sektor
-                  publik, dan komunitas sosial. Misi saya adalah membantu adult
-                  learner mencapai potensi maksimalnya melalui pendekatan
-                  pembelajaran yang kontekstual, dan transformatif.
+                  {t(
+                    "Halo, saya Dinni Rahmawati, seorang people development practitioner, soft-skill trainer, dan juga mentor, yang telah memiliki 7 tahun pengalaman dalam merancang dan memfasilitasi pembelajaran bagi para adult learner di korporat, sektor publik, dan komunitas sosial. Misi saya adalah membantu adult learner mencapai potensi maksimalnya melalui pendekatan pembelajaran yang kontekstual, dan transformatif.",
+                    "Hi, I'm Dinni Rahmawati, a people development practitioner, soft-skill trainer, and mentor with 7 years of experience designing and facilitating learning for adult learners in corporate, public sector, and social communities. My mission is to help adult learners reach their maximum potential through contextual and transformative learning approaches."
+                  )}
                 </p>
                 <p>
-                  Dengan pendekatan Experiential Learning, dan Challenge-based
-                  learning, saya memadukan pengalaman langsung, refleksi
-                  terstruktur, serta umpan balik yang konkret, sehingga
-                  pembelajaran tidak berhenti pada pemahaman konsep, tetapi
-                  mendorong perubahan perilaku yang konkret dan peningkatan
-                  produktivitas.
+                  {t(
+                    "Dengan pendekatan Experiential Learning, dan Challenge-based learning, saya memadukan pengalaman langsung, refleksi terstruktur, serta umpan balik yang konkret, sehingga pembelajaran tidak berhenti pada pemahaman konsep, tetapi mendorong perubahan perilaku yang konkret dan peningkatan produktivitas.",
+                    "Through Experiential Learning and Challenge-based learning approaches, I combine direct experience, structured reflection, and concrete feedback, so that learning doesn't stop at concept understanding, but drives concrete behavioral change and productivity improvement."
+                  )}
                 </p>
                 <p>
-                  Perjalanan karier saya di people development berawal dari
-                  Innovation Management di Telkom Indonesia, di mana saya
-                  terlibat dalam pengembangan kapasitas dan kapabilitas SDM
-                  untuk menciptakan solusi dan produk inovatif yang scalable.
-                  Pengalaman ini membentuk keyakinan saya bahwa strategi
-                  pembelajaran yang tepat dapat mendorong produktivitas individu
-                  dan mendukung pertumbuhan organisasi.
+                  {t(
+                    "Perjalanan karier saya di people development berawal dari Innovation Management di Telkom Indonesia, di mana saya terlibat dalam pengembangan kapasitas dan kapabilitas SDM untuk menciptakan solusi dan produk inovatif yang scalable. Pengalaman ini membentuk keyakinan saya bahwa strategi pembelajaran yang tepat dapat mendorong produktivitas individu dan mendukung pertumbuhan organisasi.",
+                    "My career journey in people development began with Innovation Management at Telkom Indonesia, where I was involved in developing HR capacity and capability to create scalable innovative solutions and products. This experience shaped my belief that the right learning strategy can drive individual productivity and support organizational growth."
+                  )}
                 </p>
               </div>
             </div>
@@ -83,8 +78,10 @@ const About = () => {
             {/* Quote */}
             <blockquote className="bg-accent-400/20 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-accent-300">
               <p className="text-lg italic text-white mb-4">
-                "Setiap orang punya potensi luar biasa. Tugas saya adalah
-                membantu mereka menemukannya dan mengembangkannya."
+                "{t(
+                  "Setiap orang punya potensi luar biasa. Tugas saya adalah membantu mereka menemukannya dan mengembangkannya.",
+                  "Everyone has extraordinary potential. My job is to help them find it and develop it."
+                )}"
               </p>
               <cite className="text-sm text-accent-200">— Dinni Rahmawati</cite>
             </blockquote>
@@ -95,7 +92,7 @@ const About = () => {
             {/* Career History */}
             <div className="space-y-4">
               <h3 className="font-semibold text-white text-lg">
-                Perjalanan Karier
+                {t("Perjalanan Karier", "Career Journey")}
               </h3>
               <div className="space-y-3">
                 {careerHistory.map((career, index) => (
@@ -150,9 +147,9 @@ const About = () => {
               <i className="fas fa-award text-accent-300 text-lg"></i>
             </div>
             <div>
-              <h4 className="font-semibold text-white">7+ Tahun Pengalaman</h4>
+              <h4 className="font-semibold text-white">{t("7+ Tahun Pengalaman", "7+ Years of Experience")}</h4>
               <p className="text-sm text-white/80">
-                di People Development & Career Coaching
+                {t("di People Development & Career Coaching", "in People Development & Career Coaching")}
               </p>
             </div>
           </div>

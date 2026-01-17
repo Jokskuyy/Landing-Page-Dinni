@@ -1,19 +1,21 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * Footer Component
  * Site footer with links and social media
  */
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     navigation: [
-      { label: "Tentang", href: "#aboutme" },
-      { label: "Layanan", href: "#services" },
+      { label: t("Tentang", "About"), href: "#aboutme" },
+      { label: t("Layanan", "Services"), href: "#services" },
       { label: "Portfolio", href: "#portfolio" },
-      { label: "Testimoni", href: "#testimonies" },
-      { label: "Kontak", href: "#contactus" },
+      { label: t("Testimoni", "Testimonials"), href: "#testimonies" },
+      { label: t("Kontak", "Contact"), href: "#contactus" },
     ],
     social: [
       {
@@ -48,8 +50,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">Dinni Rahmawati</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Career & Self-Development Practitioner yang membantu profesional
-              membuka potensi terbaik mereka.
+              {t(
+                "Career & Self-Development Practitioner yang membantu profesional membuka potensi terbaik mereka.",
+                "Career & Self-Development Practitioner helping professionals unlock their best potential."
+              )}
             </p>
             <div className="flex gap-4">
               {footerLinks.social.map((social, index) => (
@@ -69,7 +73,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Menu Cepat</h4>
+            <h4 className="font-semibold text-white mb-4">{t("Menu Cepat", "Quick Menu")}</h4>
             <ul className="space-y-2">
               {footerLinks.navigation.map((link, index) => (
                 <li key={index}>
@@ -86,7 +90,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Hubungi Saya</h4>
+            <h4 className="font-semibold text-white mb-4">{t("Hubungi Saya", "Contact Me")}</h4>
             <div className="space-y-2 text-sm text-gray-400">
               <p>📱 +62 859-1065-31249</p>
               <p>📧 dinni.business@gmail.com</p>

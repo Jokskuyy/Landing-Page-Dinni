@@ -1,10 +1,13 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * Hero Section Component
  * Landing section with introduction and call-to-action
  */
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
       {/* Background Elements */}
@@ -18,7 +21,7 @@ const Hero = () => {
           <div className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left space-y-8">
             <div className="space-y-4">
               <p className="text-lg font-medium text-gray-600">
-                <span className="text-gray-800">Hallo, Aku </span>
+                <span className="text-gray-800">{t("Hallo, Aku ", "Hello, I'm ")} </span>
                 <span className="text-primary-600 font-semibold">
                   Dinni Rahmawati
                 </span>
@@ -31,8 +34,10 @@ const Hero = () => {
                 Master's Candidate, Columbia University
               </p>
               <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
-                Soft-skill trainer dan mentor karier yang mentransformasi
-                produktivitas melalui experiential dan challenge-based learning.
+                {t(
+                  "Soft-skill trainer dan mentor karier yang mentransformasi produktivitas melalui experiential dan challenge-based learning.",
+                  "Soft-skill trainer and career mentor transforming productivity through experiential and challenge-based learning."
+                )}
               </p>
             </div>
 
@@ -42,7 +47,7 @@ const Hero = () => {
                   type="button"
                   className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-primary-600/30 group-hover:scale-110 duration-300"
                 >
-                  <span>Lebih Kenal Tentang Dinni</span>
+                  <span>{t("Lebih Kenal Tentang Dinni", "Get to Know Dinni")}</span>
                   <svg
                     className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
@@ -63,7 +68,7 @@ const Hero = () => {
                   type="button"
                   className="inline-flex items-center px-8 py-4 bg-white hover:bg-gray-50 text-primary-600 font-semibold rounded-xl border-2 border-primary-600 transition-all hover:shadow-md group-hover:scale-105 duration-300"
                 >
-                  <span>Lihat Portfolio</span>
+                  <span>{t("Lihat Portfolio", "View Portfolio")}</span>
                 </button>
               </a>
             </div>
@@ -72,15 +77,15 @@ const Hero = () => {
             <div className="flex flex-wrap gap-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">200+</div>
-                <div className="text-sm text-gray-600">Program Dirancang</div>
+                <div className="text-sm text-gray-600">{t("Program Dirancang", "Programs Designed")}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">50K+</div>
-                <div className="text-sm text-gray-600">Orang Terbantu</div>
+                <div className="text-sm text-gray-600">{t("Orang Terbantu", "People Helped")}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">7+</div>
-                <div className="text-sm text-gray-600">Tahun Pengalaman</div>
+                <div className="text-sm text-gray-600">{t("Tahun Pengalaman", "Years of Experience")}</div>
               </div>
             </div>
           </div>

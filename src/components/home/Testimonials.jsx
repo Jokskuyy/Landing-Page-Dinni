@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 import TestimonialCard from "@components/testimonials/TestimonialCard";
 import { testimonials, testimonialStats } from "@data/testimonialsData";
 
@@ -7,6 +8,7 @@ import { testimonials, testimonialStats } from "@data/testimonialsData";
  * Main testimonials section with pagination
  */
 const Testimonials = () => {
+  const { t } = useLanguage();
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 3;
 
@@ -43,16 +45,18 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
           <p className="text-gray-900 text-xs font-bold tracking-wider uppercase mb-4">
-            TESTIMONI
+            {t("TESTIMONI", "TESTIMONIALS")}
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-            Apa Kata Mereka?
+            {t("Apa Kata Mereka?", "What Do They Say?")}
           </h2>
 
           <p className="text-lg text-gray-600 leading-relaxed">
-            Cerita sukses dari ratusan mentee dan peserta training yang telah
-            mencapai goals mereka.
+            {t(
+              "Cerita sukses dari ratusan mentee dan peserta training yang telah mencapai goals mereka.",
+              "Success stories from hundreds of mentees and training participants who have achieved their goals."
+            )}
           </p>
         </div>
 
@@ -81,7 +85,7 @@ const Testimonials = () => {
             aria-label="Previous page"
           >
             <span className="material-icons-round text-lg">chevron_left</span>
-            <span className="hidden sm:inline">Previous</span>
+            <span className="hidden sm:inline">{t("Previous", "Previous")}</span>
           </button>
 
           {/* Page Indicators */}
@@ -107,7 +111,7 @@ const Testimonials = () => {
             className="group flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-primary-50 text-gray-700 hover:text-primary-600 rounded-xl font-semibold transition-all hover:shadow-md border border-gray-200"
             aria-label="Next page"
           >
-            <span className="hidden sm:inline">Next</span>
+            <span className="hidden sm:inline">{t("Next", "Next")}</span>
             <span className="material-icons-round text-lg">chevron_right</span>
           </button>
         </div>
