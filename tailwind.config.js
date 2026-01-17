@@ -22,8 +22,11 @@ module.exports = {
         "fade-in-right": "fadeInRight 1s ease-out",
         "fade-in-top": "fadeInTop 1s ease-out",
         "fade-in-bottom": "fadeInBottom 1s ease-out",
+        fadeIn: "fadeIn 0.3s ease-in-out",
         scroll: "scroll 30s linear infinite",
         "scroll-reverse": "scroll-reverse 30s linear infinite",
+        "scroll-left": "scrollLeft 40s linear infinite",
+        "scroll-right": "scrollRight 40s linear infinite",
       },
       keyframes: {
         fadeInLeft: {
@@ -42,12 +45,24 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateY(100%)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         scroll: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
         "scroll-reverse": {
           "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        scrollLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-100% / 3))" },
+        },
+        scrollRight: {
+          "0%": { transform: "translateX(calc(-100% / 3))" },
           "100%": { transform: "translateX(0)" },
         },
       },
