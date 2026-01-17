@@ -1,64 +1,74 @@
 /* =============================================================================
-   Tailwind CSS Directives
+   TAILWIND CSS CUSTOM STYLES
+   Professional UI Component Library
    ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   CORE SETUP
+   ----------------------------------------------------------------------------- */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* =============================================================================
-   Font Imports - Combined for better performance
-   ============================================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Font imports - optimized for performance */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* =============================================================================
-   Base Layer - Global styles and resets
+   BASE LAYER - Global Styles & Resets
    ============================================================================= */
+
 @layer base {
-  /* Typography enhancements */
-  h5 {
-    @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black;
-  }
-  
-  /* Smooth scrolling for better UX */
   html {
     @apply scroll-smooth;
+  }
+
+  /* Special heading style for portfolio items */
+  h5 {
+    @apply absolute px-6 duration-200 w-52 bottom-4 md:bottom-8 md:px-10 
+           group-hover:scale-110 group-hover:text-black;
   }
 }
 
 /* =============================================================================
-   Components Layer - Reusable component styles
+   COMPONENTS LAYER - Reusable UI Components
    ============================================================================= */
+
 @layer components {
-  /* Modern Button System */
+  /* ---------------------------------------------------------------------------
+     MODERN BUTTON SYSTEM
+     --------------------------------------------------------------------------- */
+
+  /* Base button styling */
   .btn {
     @apply inline-flex items-center justify-center px-8 py-4 text-sm font-semibold 
            rounded-2xl transition-all duration-500 ease-out transform
            hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-opacity-50
            disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
   }
-  
-  /* Modern Button Variants */
+
+  /* Button variants - Modern gradient styles */
   .btn-primary {
     @apply btn bg-gradient-to-r from-primary-600 to-primary-700 text-white
            hover:from-primary-700 hover:to-primary-800 
            shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40
            focus:ring-primary-500;
   }
-  
+
   .btn-secondary {
     @apply btn bg-gradient-to-r from-secondary-500 to-secondary-600 text-white
            hover:from-secondary-600 hover:to-secondary-700
            shadow-lg shadow-secondary-500/25 hover:shadow-secondary-500/40
            focus:ring-secondary-500;
   }
-  
+
   .btn-accent {
     @apply btn bg-gradient-to-r from-accent-400 to-accent-500 text-neutral-900
            hover:from-accent-500 hover:to-accent-600
            shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40
            focus:ring-accent-500;
   }
-  
+
   .btn-outline {
     @apply btn bg-white/80 backdrop-blur-sm text-primary-700 border-2 border-primary-200
            hover:bg-primary-50 hover:border-primary-300 hover:text-primary-800
@@ -66,100 +76,109 @@
            focus:ring-primary-500;
   }
 
-  /* Modern Card System */
-  .card {
-    @apply bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden 
-           shadow-xl shadow-neutral-500/10 transition-all duration-500 ease-out;
+  /* Legacy button support - for backward compatibility */
+  .btn-blue {
+    @apply btn-primary;
   }
-  
-  .card-hover {
-    @apply card hover:scale-105 hover:shadow-2xl hover:shadow-neutral-500/20
-           hover:-translate-y-2;
+  .btn-green {
+    @apply btn-secondary;
   }
-  
-  /* Section Container with better spacing */
-  .section-container {
-    @apply container mx-auto px-6 py-20 lg:py-28;
+  .btn-white {
+    @apply btn-outline;
   }
-  
-  /* Modern Gradient Backgrounds */
-  .bg-gradient-primary {
-    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700;
-  }
-  
-  .bg-gradient-secondary {
-    @apply bg-gradient-to-br from-secondary-400 via-secondary-500 to-secondary-600;
-  }
-  
-  .bg-gradient-neutral {
-    @apply bg-gradient-to-br from-neutral-50 via-white to-neutral-100;
-  }
-  
-  .bg-gradient-accent {
-    @apply bg-gradient-to-br from-accent-400 via-accent-500 to-accent-600;
+  .btn-yellow {
+    @apply btn-accent;
   }
 
-  /* Responsive Grid System */
-  .grid-responsive {
-    @apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
-  }
-  
-  /* Utility Classes */
-  .flex-center {
-    @apply flex items-center justify-center;
-  }
-  
-  .text-gradient-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-secondary {
-    @apply bg-gradient-to-r from-secondary-600 to-secondary-800 bg-clip-text text-transparent;
-  }
-  
-  .btn-outline {
-    @apply btn bg-bookmark-white text-dn-blue border border-dn-blue 
-           hover:bg-dn-blue hover:text-white focus:ring-dn-blue;
-  }
-  
-  .btn-accent {
-    @apply btn bg-ld-yellow text-gray-900 border border-ld-yellow 
-           hover:bg-yellow-400 focus:ring-ld-yellow;
-  }
-
-  /* Legacy button classes for backward compatibility */
-  .btn-blue { @apply btn-primary; }
-  .btn-green { @apply btn-secondary; }
-  .btn-white { @apply btn-outline; }
-  .btn-yellow { @apply btn-accent; }
-  
   .btn-hover-white:hover {
     @apply bg-bookmark-white text-black border-ld-green;
   }
 
-  /* Card System */
+  /* ---------------------------------------------------------------------------
+     MODERN CARD SYSTEM
+     --------------------------------------------------------------------------- */
+
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300;
-  }
-  
-  .card-hover {
-    @apply card hover:shadow-xl hover:scale-105;
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden 
+           shadow-xl shadow-neutral-500/10 transition-all duration-500 ease-out;
   }
 
-  /* Layout Components */
-  .section-container {
-    @apply container mx-auto px-4 py-12 lg:py-16;
+  .card-hover {
+    @apply card hover:scale-105 hover:shadow-2xl hover:shadow-neutral-500/20
+           hover:-translate-y-2;
   }
-  
+
+  /* Service cards with enhanced hover effects */
+  .service-card {
+    @apply transition-all duration-500 ease-out transform;
+  }
+
+  .service-card:hover {
+    @apply -translate-y-2 shadow-2xl shadow-neutral-500/25;
+  }
+
+  .card-image {
+    @apply h-full min-h-[400px];
+  }
+
+  @media (max-width: 1024px) {
+    .card-image {
+      @apply min-h-[300px];
+    }
+  }
+
+  /* ---------------------------------------------------------------------------
+     LAYOUT COMPONENTS
+     --------------------------------------------------------------------------- */
+
+  .section-container {
+    @apply container mx-auto px-6 py-20 lg:py-28;
+  }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
-  
+
   .grid-responsive {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+    @apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3;
   }
 
-  /* Portfolio/Gallery Items */
+  /* ---------------------------------------------------------------------------
+     GRADIENT BACKGROUNDS
+     --------------------------------------------------------------------------- */
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-br from-secondary-400 via-secondary-500 to-secondary-600;
+  }
+
+  .bg-gradient-neutral {
+    @apply bg-gradient-to-br from-neutral-50 via-white to-neutral-100;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-br from-accent-400 via-accent-500 to-accent-600;
+  }
+
+  /* ---------------------------------------------------------------------------
+     TEXT GRADIENTS
+     --------------------------------------------------------------------------- */
+
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-600 to-secondary-800 bg-clip-text text-transparent;
+  }
+
+  /* ---------------------------------------------------------------------------
+     PORTFOLIO/GALLERY COMPONENTS
+     --------------------------------------------------------------------------- */
+
   .item-container {
     @apply flex flex-col justify-between w-full space-y-6 text-2xl text-white uppercase 
            md:flex-row md:space-y-0 md:space-x-8;
@@ -175,44 +194,169 @@
            group-hover:opacity-70;
   }
 
-  /* Carousel Components */
-  .carousel-container {
-    @apply relative w-full overflow-hidden bg-white py-8;
-  }
-  
-  .carousel-track {
-    @apply flex animate-scroll;
-  }
-  
-  .carousel-item {
-    @apply flex-shrink-0 mx-4 md:mx-8;
-  }
-  
-  .logo-item {
-    @apply h-16 md:h-20 w-auto object-contain opacity-60 hover:opacity-100 
-           transition-opacity duration-300 filter grayscale hover:grayscale-0;
+  /* ---------------------------------------------------------------------------
+     ENHANCED GLASSMORPHISM CAROUSEL - SEAMLESS LOOP VERSION
+     --------------------------------------------------------------------------- */
+
+  /* Main carousel container with glassmorphism effect */
+  .enhanced-carousel-container {
+    @apply relative w-full overflow-hidden rounded-3xl p-4 md:p-6;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    /* Prevent scroll bars */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  /* Modern Card System for Services */
-  .service-card {
-    @apply transition-all duration-500 ease-out transform;
+  .enhanced-carousel-container::-webkit-scrollbar {
+    display: none;
   }
-  
-  .service-card:hover {
-    @apply -translate-y-2 shadow-2xl shadow-neutral-500/25;
+
+  /* Carousel track - the moving container */
+  .enhanced-carousel-track {
+    @apply flex will-change-transform;
+    gap: clamp(1rem, 3vw, 2rem);
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+
+    /* Smooth animation performance */
+    transform: translateZ(0);
   }
-  
-  .card-image {
-    @apply h-full min-h-[400px];
+
+  /* Pause animation on hover */
+  .enhanced-carousel-container:hover .enhanced-carousel-track {
+    animation-play-state: paused;
   }
-  
-  @media (max-width: 1024px) {
-    .card-image {
-      @apply min-h-[300px];
-    }
+
+  /* Animation directions with consistent timing - SEAMLESS LOOP */
+  .enhanced-carousel-normal {
+    animation: enhanced-scroll-left-seamless 30s linear infinite;
   }
-  
-  /* Text clamp utilities for better mobile text display */
+
+  .enhanced-carousel-reverse {
+    animation: enhanced-scroll-right-seamless 30s linear infinite;
+  }
+
+  /* Individual carousel items */
+  .enhanced-carousel-item {
+    @apply flex-shrink-0 transition-all duration-300 ease-out rounded-xl overflow-hidden;
+    will-change: transform, filter;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+
+    /* Flexible sizing - no fixed dimensions */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Subtle background for better visibility */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Minimal padding for content */
+    padding: 0.5rem;
+  }
+
+  /* Hover effects */
+  .enhanced-carousel-item:hover {
+    @apply scale-105;
+    transform: translateZ(10px) scale(1.05);
+    filter: brightness(1.05) contrast(1.02);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Images inside carousel items */
+  .enhanced-carousel-item img,
+  .logo-item {
+    @apply transition-all duration-300 ease-out object-contain;
+    filter: brightness(0.9) saturate(0.8) grayscale(100%);
+    opacity: 0.8;
+  }
+
+  .enhanced-carousel-item:hover img,
+  .enhanced-carousel-item:hover .logo-item {
+    filter: brightness(1.1) saturate(1.1) contrast(1.05) grayscale(0);
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  /* Legacy carousel item support */
+  .carousel-item {
+    @apply flex-shrink-0 mx-4 md:mx-8 transition-transform duration-300 ease-out;
+  }
+
+  .logo-item {
+    @apply h-12 md:h-16 w-auto object-contain opacity-70 hover:opacity-100 
+         transition-all duration-300 filter grayscale hover:grayscale-0
+         drop-shadow-sm hover:drop-shadow-md;
+  }
+
+  /* =============================================================================
+     ADPLIST STYLE CAROUSEL - Modern Infinite Scroll
+     ============================================================================= */
+
+  /* Wrapper dengan overflow hidden */
+  .adplist-carousel-wrapper {
+    @apply w-full overflow-hidden relative;
+  }
+
+  /* Track yang berisi semua logo dengan smooth scroll */
+  .adplist-carousel-track {
+    @apply flex items-center gap-12 md:gap-16;
+    width: max-content;
+    animation: adplist-scroll 40s linear infinite;
+    will-change: transform;
+  }
+
+  /* Reverse animation untuk carousel kedua */
+  .adplist-carousel-reverse {
+    animation: adplist-scroll-reverse 40s linear infinite;
+  }
+
+  /* Pause animation on hover */
+  .adplist-carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Logo item container */
+  .adplist-logo-item {
+    @apply flex-shrink-0 flex items-center justify-center;
+    width: 140px;
+    height: 80px;
+  }
+
+  /* Logo image styling with grayscale effect */
+  .adplist-logo {
+    @apply w-full h-full object-contain transition-all duration-300;
+    filter: grayscale(100%);
+  }
+
+  /* Hover effects - remove grayscale and increase opacity */
+  .adplist-logo-item:hover .adplist-logo {
+    filter: grayscale(0%);
+    @apply opacity-100;
+  }
+
+  /* ---------------------------------------------------------------------------
+     Text Utilities
+     --------------------------------------------------------------------------- */
+
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -221,7 +365,7 @@
     overflow: hidden;
     line-height: 1.5;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -233,53 +377,55 @@
 }
 
 /* =============================================================================
-   Utilities Layer - Animation and utility classes
+   UTILITIES LAYER - Animation & Helper Classes
    ============================================================================= */
+
 @layer utilities {
-  /* Animation utilities */
+  /* ---------------------------------------------------------------------------
+     FADE ANIMATIONS
+     --------------------------------------------------------------------------- */
+
   .fade-out {
     @apply opacity-0;
   }
-  
   .fade-in {
     @apply opacity-100;
   }
-  
-  /* Scroll animation for carousel - force continuous animation */
+
+  /* ---------------------------------------------------------------------------
+     SCROLL ANIMATIONS
+     --------------------------------------------------------------------------- */
+
   .animate-scroll {
     animation: scroll 30s linear infinite !important;
     animation-play-state: running !important;
   }
-  
+
   .animate-scroll-reverse {
     animation: scroll-reverse 30s linear infinite !important;
     animation-play-state: running !important;
   }
-  
-  /* Ensure carousel never pauses */
-  .carousel-container *, 
-  .carousel-track *,
-  .animate-scroll,
-  .animate-scroll-reverse {
-    animation-play-state: running !important;
-  }
-  
-  /* Portfolio Mobile Horizontal Scroll */
+
+  /* ---------------------------------------------------------------------------
+     SCROLLBAR UTILITIES
+     --------------------------------------------------------------------------- */
+
   .scrollbar-hide {
-    /* Hide scrollbar for Chrome, Safari and Opera */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* WebKit */
+    display: none; /* WebKit browsers */
   }
 }
 
 /* =============================================================================
-   Keyframe Animations
+   KEYFRAME ANIMATIONS
    ============================================================================= */
+
+/* Basic carousel animations */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -295,5 +441,127 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* Seamless Loop Animations */
+@keyframes enhanced-scroll-left-seamless {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes enhanced-scroll-right-seamless {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Smooth animation keyframes - infinite scroll */
+@keyframes adplist-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%); /* Move 1/3 for 3 sets */
+  }
+}
+
+@keyframes adplist-scroll-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .enhanced-carousel-container {
+    @apply p-3 rounded-2xl;
+  }
+
+  .enhanced-carousel-track {
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .enhanced-carousel-item {
+    min-width: 100px;
+    height: 60px;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .adplist-carousel-track {
+    @apply gap-8;
+    animation-duration: 30s;
+  }
+
+  .adplist-logo-item {
+    width: 100px;
+    height: 60px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .enhanced-carousel-container {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .enhanced-carousel-item {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .enhanced-carousel-item img,
+  .logo-item {
+    filter: contrast(1.2);
+    opacity: 0.9;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .enhanced-carousel-track {
+    animation-duration: 120s;
+  }
+
+  .enhanced-carousel-item {
+    @apply transition-none;
+  }
+
+  .enhanced-carousel-item:hover {
+    transform: none;
+    @apply scale-100;
+  }
+
+  .adplist-carousel-track,
+  .adplist-carousel-reverse {
+    animation: none;
+  }
+
+  .adplist-logo {
+    @apply transition-none;
+  }
+}
+
+/* Print styles - show all logos in grid */
+@media print {
+  .adplist-carousel-track {
+    @apply flex-wrap justify-center;
+    animation: none;
+  }
+
+  .adplist-logo {
+    filter: none !important;
+    @apply opacity-100;
   }
 }

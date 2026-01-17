@@ -176,65 +176,184 @@ const EmailCopy = {
 };
 
 /**
- * Carousel Module
- * Enhanced carousel functionality with better performance
+ * Carousel Module - Enhanced with more duplicates and faster initial speed
+ * Maintains original styling while improving functionality
  */
 const Carousel = {
     init() {
-        this.tracks = document.querySelectorAll(CONFIG.selectors.carouselTracks);
-        if (this.tracks.length === 0) return;
+        this.containers = document.querySelectorAll('.carousel-container');
+        if (this.containers.length === 0) return;
 
         this.setupCarousels();
-        this.bindEvents();
+        this.injectStyles();
     },
 
     setupCarousels() {
-        this.tracks.forEach((track, index) => {
-            // Add unique identifier
-            track.dataset.carouselId = `carousel-${index}`;
-            
-            // Ensure smooth animation by duplicating content if needed
-            this.ensureSmoothLoop(track);
-        });
-    },
+        this.containers.forEach((container, index) => {
+            const track = container.querySelector('.carousel-track');
+            if (!track) return;
 
-    ensureSmoothLoop(track) {
-        const items = track.children;
-        const minItems = 10; // Minimum items for smooth loop
-        
-        if (items.length < minItems) {
-            const originalItems = Array.from(items);
-            const timesToDuplicate = Math.ceil(minItems / originalItems.length);
+            // Get original items
+            const originalItems = Array.from(track.children);
+            const itemCount = originalItems.length;
             
-            for (let i = 1; i < timesToDuplicate; i++) {
+            if (itemCount === 0) return;
+
+            // Determine carousel type based on class or position
+            const isAlumniCarousel = track.classList.contains('animate-scroll-reverse');
+            const carouselType = isAlumniCarousel ? 'alumni' : 'clients';
+            
+            console.log(`Setting up ${carouselType} carousel with ${itemCount} items`);
+
+            // Clear track
+            track.innerHTML = '';
+            
+            // Create sets for seamless looping - different for each type
+            const setsToCreate = isAlumniCarousel ? 6 : 4; // More sets for alumni (fewer items)
+            for (let setIndex = 0; setIndex < setsToCreate; setIndex++) {
                 originalItems.forEach(item => {
                     const clone = item.cloneNode(true);
                     track.appendChild(clone);
                 });
             }
-        }
+
+            // Calculate dimensions based on carousel-item structure
+            const isDesktop = window.innerWidth >= 768;
+            const itemWidth = isDesktop ? 280 + 64 : 220 + 48; // width + gap (carousel-item + margin)
+            const singleSetWidth = itemWidth * itemCount;
+            
+            // Set track width for all sets
+            track.style.width = `${singleSetWidth * setsToCreate}px`;
+            
+            // Apply CSS class for animation with specific type
+            if (isAlumniCarousel) {
+                track.classList.add('animate-scroll-reverse-enhanced');
+                track.classList.add('carousel-alumni');
+            } else {
+                track.classList.add('animate-scroll-enhanced');
+                track.classList.add('carousel-clients');
+            }
+            
+            // Store data for keyframes generation
+            track.dataset.itemCount = itemCount;
+            track.dataset.itemWidth = itemWidth;
+            track.dataset.singleSetWidth = singleSetWidth;
+            track.dataset.isReverse = isAlumniCarousel;
+            track.dataset.carouselType = carouselType;
+            track.dataset.setsCount = setsToCreate;
+        });
     },
 
-    bindEvents() {
-        // Force carousel to never stop - override any potential CSS or JS interference
-        this.tracks.forEach(track => {
-            // Force animation to always run
-            const forceAnimation = () => {
-                track.style.animationPlayState = 'running';
-                track.style.animationDuration = '30s';
-                track.style.animationTimingFunction = 'linear';
-                track.style.animationIterationCount = 'infinite';
-            };
+    injectStyles() {
+        // Remove existing carousel styles
+        const existingStyle = document.querySelector('#carousel-styles');
+        if (existingStyle) {
+            existingStyle.remove();
+        }
+
+        // Get both carousel tracks to determine individual configurations
+        const clientsTrack = document.querySelector('.carousel-clients');
+        const alumniTrack = document.querySelector('.carousel-alumni');
+        
+        if (!clientsTrack && !alumniTrack) return;
+
+        // Default values for fallback
+        let clientsWidth = 3440; // Default for 10 items
+        let alumniWidth = 2064;  // Default for 6 items
+        
+        // Get actual dimensions if tracks exist
+        if (clientsTrack) {
+            const itemCount = parseInt(clientsTrack.dataset.itemCount || 10);
+            const itemWidth = parseInt(clientsTrack.dataset.itemWidth || 344);
+            clientsWidth = itemWidth * itemCount;
+        }
+        
+        if (alumniTrack) {
+            const itemCount = parseInt(alumniTrack.dataset.itemCount || 6);
+            const itemWidth = parseInt(alumniTrack.dataset.itemWidth || 344);
+            alumniWidth = itemWidth * itemCount;
+        }
+
+        // Create style element with separated keyframes for each carousel type
+        const style = document.createElement('style');
+        style.id = 'carousel-styles';
+        style.textContent = `
+            /* Clients Carousel - 10 items, medium speed */
+            @keyframes scroll-clients {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-${clientsWidth}px);
+                }
+            }
             
-            // Apply initial force
-            forceAnimation();
+            /* Alumni Carousel - 6 items, optimized speed */
+            @keyframes scroll-alumni {
+                0% {
+                    transform: translateX(-${alumniWidth}px);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
             
-            // Override any hover attempts
-            track.addEventListener('mouseenter', forceAnimation);
-            track.addEventListener('mouseleave', forceAnimation);
+            /* Clients Animation - 30s for balanced viewing */
+            .carousel-clients.animate-scroll-enhanced {
+                animation: scroll-clients 30s linear infinite;
+                animation-play-state: running !important;
+            }
             
-            // Periodic check to ensure animation is still running
-            setInterval(forceAnimation, 1000);
+            /* Alumni Animation - 60s for relaxed viewing of 6 items */
+            .carousel-alumni.animate-scroll-reverse-enhanced {
+                animation: scroll-alumni 60s linear infinite;
+                animation-play-state: running !important;
+                animation-delay: -20s;
+            }
+            
+            /* Fallback for enhanced classes */
+            .animate-scroll-enhanced:not(.carousel-clients) {
+                animation: scroll-clients 30s linear infinite;
+                animation-play-state: running !important;
+            }
+            
+            .animate-scroll-reverse-enhanced:not(.carousel-alumni) {
+                animation: scroll-alumni 60s linear infinite;
+                animation-play-state: running !important;
+                animation-delay: -20s;
+            }
+            
+            /* Force continuous animation */
+            .carousel-track {
+                animation-play-state: running !important;
+                will-change: transform;
+            }
+            
+            .carousel-track:hover {
+                animation-play-state: running !important;
+            }
+            
+            /* Ensure smooth transitions */
+            .carousel-item {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                flex-shrink: 0;
+            }
+            
+            @media (min-width: 768px) {
+                .carousel-item {
+                    margin-left: 2rem;
+                    margin-right: 2rem;
+                }
+            }
+        `;
+        
+        document.head.appendChild(style);
+        
+        // Debug info
+        console.log('🎠 Carousel Configuration:', {
+            clients: { width: clientsWidth, duration: '30s', items: clientsTrack?.dataset.itemCount || 'unknown' },
+            alumni: { width: alumniWidth, duration: '60s', items: alumniTrack?.dataset.itemCount || 'unknown' }
         });
     }
 };
