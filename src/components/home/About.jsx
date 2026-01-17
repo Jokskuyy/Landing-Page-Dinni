@@ -34,7 +34,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
+    <section id="aboutme" className="relative py-24 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-primary-600"></div>
 
