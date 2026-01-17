@@ -1,6 +1,7 @@
 # Portfolio Data Structure
 
 ## Overview
+
 Centralized data source for all 29 portfolio items. This makes content management easy - just edit this file to add/update portfolio items!
 
 ## Data Schema
@@ -27,6 +28,7 @@ Centralized data source for all 29 portfolio items. This makes content managemen
 - **tulisan**: Written articles (self-help, masters, learning)
 
 ## Sub-categories (Tulisan)
+
 - **self-help**: Personal development, productivity
 - **masters**: LPDP, scholarship, higher education
 - **learning**: Learning theories, EdTech, mentoring
@@ -34,20 +36,20 @@ Centralized data source for all 29 portfolio items. This makes content managemen
 ## Usage Examples
 
 ```javascript
-import { 
-  portfolioItems, 
+import {
+  portfolioItems,
   portfolioCategories,
   getPortfolioByCategory,
   getFeaturedPortfolio,
-  portfolioStats 
-} from '@data/portfolioData';
+  portfolioStats,
+} from "@data/portfolioData";
 
 // Get all items
 const allItems = portfolioItems;
 
 // Get items by category
-const trainingItems = getPortfolioByCategory('training');
-const tulisanItems = getPortfolioByCategory('tulisan');
+const trainingItems = getPortfolioByCategory("training");
+const tulisanItems = getPortfolioByCategory("tulisan");
 
 // Get featured items only
 const featured = getFeaturedPortfolio();
@@ -81,7 +83,7 @@ console.log(portfolioStats.training); // 5
 
 - **Total Items**: 29
 - **Training**: 5 items
-- **Mentoring**: 2 items  
+- **Mentoring**: 2 items
 - **Kolaborasi**: 4 items
 - **Case Study**: 4 items
 - **Tulisan**: 12 items (3 self-help, 5 masters, 4 learning)
@@ -93,6 +95,7 @@ All images are stored in `/dist/images/porto/` directory.
 Image filenames follow pattern: `Category - Title.ext`
 
 Examples:
+
 - `Self-Help - Energy Map.jpg`
 - `Masters & LPDP - Crafting Theory of Change.png`
 - `Learning - How TikTok Is Transforming.jpg`
