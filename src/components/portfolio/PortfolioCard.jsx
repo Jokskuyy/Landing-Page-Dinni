@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 /**
  * PortfolioCard Component
@@ -8,7 +9,8 @@ import React from "react";
  * @param {Object} props.item - Portfolio item data
  * @param {number} props.item.id - Unique identifier
  * @param {string} props.item.title - Title of the portfolio item
- * @param {string} props.item.description - Brief description
+ * @param {string} props.item.descriptionId - Indonesian description
+ * @param {string} props.item.descriptionEn - English description
  * @param {string[]} props.item.category - Array of categories
  * @param {string[]} props.item.tags - Array of tags
  * @param {string} props.item.image - Image path
@@ -16,7 +18,13 @@ import React from "react";
  * @param {boolean} props.item.featured - Featured status
  */
 const PortfolioCard = ({ item }) => {
-  const { title, description, category, tags, image, link } = item;
+  const { t } = useLanguage();
+  const { title, descriptionId, descriptionEn, description, category, tags, image, link } = item;
+
+  // Use new bilingual fields or fallback to old description field
+  const itemDescription = descriptionId && descriptionEn 
+    ? t(descriptionId, descriptionEn)
+    : description;
 
   // Get primary category for badge
   const primaryCategory = category[0];
@@ -98,7 +106,7 @@ const PortfolioCard = ({ item }) => {
 
         {/* Description */}
         <p className="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow">
-          {description}
+          {itemDescription}
         </p>
 
         {/* Footer */}

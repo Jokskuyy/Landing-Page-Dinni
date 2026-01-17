@@ -8,8 +8,8 @@ export const portfolioItems = [
   {
     id: 1,
     title: "Leadership Development Program",
-    description:
-      "Comprehensive training program focusing on developing leadership skills and capabilities for emerging leaders in various organizations.",
+    descriptionId: "Program training komprehensif yang berfokus pada pengembangan keterampilan dan kapabilitas kepemimpinan untuk calon pemimpin di berbagai organisasi.",
+    descriptionEn: "Comprehensive training program focusing on developing leadership skills and capabilities for emerging leaders in various organizations.",
     category: ["training", "casestudy"],
     tags: ["Leadership", "Professional Development"],
     image:
@@ -22,8 +22,8 @@ export const portfolioItems = [
   {
     id: 2,
     title: "Soft Skills Workshop",
-    description:
-      "Interactive workshop designed to enhance communication, teamwork, and interpersonal skills in professional settings.",
+    descriptionId: "Workshop interaktif yang dirancang untuk meningkatkan komunikasi, kerja tim, dan keterampilan interpersonal dalam lingkungan profesional.",
+    descriptionEn: "Interactive workshop designed to enhance communication, teamwork, and interpersonal skills in professional settings.",
     category: ["training"],
     tags: ["Soft Skills", "Workshop"],
     image: "/images/porto/Online Training - Paragon.webp",
@@ -35,8 +35,8 @@ export const portfolioItems = [
   {
     id: 3,
     title: "Career Mentoring Success Stories",
-    description:
-      "One-on-one career mentoring sessions helping professionals transition to their dream roles and achieve career growth.",
+    descriptionId: "Sesi mentoring karier satu-satu yang membantu para profesional transisi ke peran impian mereka dan mencapai pertumbuhan karier.",
+    descriptionEn: "One-on-one career mentoring sessions helping professionals transition to their dream roles and achieve career growth.",
     category: ["mentoring"],
     tags: ["Career Development", "Personal Growth"],
     image: "/images/porto/Online Training - Mestara.jpg",
@@ -48,7 +48,8 @@ export const portfolioItems = [
   {
     id: 4,
     title: "Scholarship Application Mentoring",
-    description:
+    descriptionId: "Bimbingan komprehensif untuk aplikasi beasiswa mencakup strategi esai, persiapan interview, dan pemilihan universitas.",
+    descriptionEn: "Comprehensive guidance for scholarship applications including essay strategy, interview preparation, and university selection.",
       "Guidance for scholarship applications including LPDP, Fulbright, and other international scholarship programs.",
     category: ["mentoring"],
     tags: ["Scholarship", "Higher Education"],
@@ -62,7 +63,9 @@ export const portfolioItems = [
   {
     id: 5,
     title: "Webinar Series: Career Growth",
-    description:
+    descriptionId:
+      "Seri webinar kolaboratif yang membahas strategi pengembangan karir, wawasan industri, dan tips pertumbuhan profesional.",
+    descriptionEn:
       "Collaborative webinar series discussing career development strategies, industry insights, and professional growth tips.",
     category: ["kolaborasi"],
     tags: ["Webinar", "Career"],
@@ -75,7 +78,9 @@ export const portfolioItems = [
   {
     id: 6,
     title: "Podcast Guest Appearances",
-    description:
+    descriptionId:
+      "Tampil sebagai tamu di berbagai podcast membahas pengembangan karir, strategi pembelajaran, dan pertumbuhan profesional.",
+    descriptionEn:
       "Featured guest on various podcasts discussing career development, learning strategies, and professional growth.",
     category: ["kolaborasi"],
     tags: ["Podcast", "Speaking"],
@@ -88,7 +93,9 @@ export const portfolioItems = [
   {
     id: 7,
     title: "From Engineer to Product Manager",
-    description:
+    descriptionId:
+      "Studi kasus yang mendokumentasikan transisi karir sukses dari peran engineering ke product management.",
+    descriptionEn:
       "Case study documenting successful career transition from engineering to product management role.",
     category: ["casestudy"],
     tags: ["Career Transition", "Case Study"],
@@ -101,7 +108,9 @@ export const portfolioItems = [
   {
     id: 8,
     title: "LPDP to Columbia University",
-    description:
+    descriptionId:
+      "Kisah sukses mendapatkan beasiswa LPDP dan penerimaan ke Columbia University untuk program Master.",
+    descriptionEn:
       "Success story of securing LPDP scholarship and admission to Columbia University for Master's program.",
     category: ["casestudy"],
     tags: ["LPDP", "Columbia University"],
@@ -114,7 +123,9 @@ export const portfolioItems = [
   {
     id: 9,
     title: "Offline Workshop - KJRI New York",
-    description:
+    descriptionId:
+      "Workshop team building on-site yang dilakukan untuk staf Konsulat Jenderal Indonesia di New York.",
+    descriptionEn:
       "On-site team building workshop conducted for Indonesian Consulate General staff in New York.",
     category: ["training"],
     tags: ["Team Building", "Workshop"],
@@ -127,7 +138,9 @@ export const portfolioItems = [
   {
     id: 10,
     title: "Online Training - Mestara",
-    description:
+    descriptionId:
+      "Sesi training virtual tentang komunikasi efektif dan pengenalan peluang untuk peserta Mestara.",
+    descriptionEn:
       "Virtual training session on effective communication and opportunity recognition for Mestara participants.",
     category: ["training"],
     tags: ["Online Training", "Communication"],
@@ -140,7 +153,9 @@ export const portfolioItems = [
   {
     id: 11,
     title: "Online Training - Paragon",
-    description:
+    descriptionId:
+      "Workshop Theory of Change untuk penerima beasiswa Paragon tentang inovasi dan dampak sosial.",
+    descriptionEn:
       "Theory of Change workshop for Paragon scholarship recipients on innovation and social impact.",
     category: ["training"],
     tags: ["Theory of Change", "Innovation"],
@@ -153,7 +168,9 @@ export const portfolioItems = [
   {
     id: 12,
     title: "Kolaborasi Konten - Ibunda ID",
-    description:
+    descriptionId:
+      "Kolaborasi konten dengan Ibunda ID tentang parenting dan keseimbangan karir.",
+    descriptionEn:
       "Content collaboration with Ibunda ID on parenting and career balance topics.",
     category: ["kolaborasi"],
     tags: ["Content Creation", "Collaboration"],
@@ -166,7 +183,9 @@ export const portfolioItems = [
   {
     id: 13,
     title: "Kolaborasi Konten - IELTSpresso",
-    description:
+    descriptionId:
+      "Kolaborasi konten edukatif dengan IELTSpresso tentang strategi pembelajaran bahasa Inggris.",
+    descriptionEn:
       "Educational content collaboration with IELTSpresso on English language learning strategies.",
     category: ["kolaborasi"],
     tags: ["IELTS", "Education"],
@@ -179,7 +198,9 @@ export const portfolioItems = [
   {
     id: 14,
     title: "Kolaborasi Konten - Schoters by Ruangguru",
-    description:
+    descriptionId:
+      "Kemitraan dengan Schoters by Ruangguru dalam membuat konten tentang persiapan studi ke luar negeri.",
+    descriptionEn:
       "Partnership with Schoters by Ruangguru creating content on study abroad preparation.",
     category: ["kolaborasi"],
     tags: ["Study Abroad", "Education"],
@@ -192,7 +213,9 @@ export const portfolioItems = [
   {
     id: 15,
     title: "Case Study - Learning & Development",
-    description:
+    descriptionId:
+      "Studi kasus akademik yang menganalisis skenario pembelajaran dan pengembangan dalam konteks organisasi.",
+    descriptionEn:
       "Academic case study analyzing learning and development scenarios in organizational contexts.",
     category: ["casestudy"],
     tags: ["L&D", "Research"],
@@ -206,7 +229,9 @@ export const portfolioItems = [
   {
     id: 16,
     title: "Case Study - Training & Development",
-    description:
+    descriptionId:
+      "Paper penelitian yang mengkaji skenario training dan development dalam lingkungan korporat.",
+    descriptionEn:
       "Research paper examining training and development case scenarios in corporate environment.",
     category: ["casestudy"],
     tags: ["Training", "Research"],
@@ -220,7 +245,9 @@ export const portfolioItems = [
   {
     id: 17,
     title: "Case Study - Behavioral Research Paper",
-    description:
+    descriptionId:
+      "Paper penelitian akademik yang mengeksplorasi pola perilaku dan dampaknya terhadap pengembangan organisasi.",
+    descriptionEn:
       "Academic research paper exploring behavioral patterns and their impact on organizational development.",
     category: ["casestudy"],
     tags: ["Behavioral Science", "Research"],
@@ -233,8 +260,10 @@ export const portfolioItems = [
   {
     id: 18,
     title: "Energy Map: Untuk yang Sibuk tapi Belum Merasa Produktif",
-    description:
+    descriptionId:
       "Strategi mengelola energi agar tetap produktif meski kesibukan tinggi menggunakan kerangka Energy Map.",
+    descriptionEn:
+      "Energy management strategies to stay productive despite high busyness using the Energy Map framework.",
     category: ["tulisan", "self-help"],
     tags: ["Productivity", "Self-Help"],
     image: "/images/porto/Self-Help - Energy Map.jpg",
@@ -246,8 +275,10 @@ export const portfolioItems = [
   {
     id: 19,
     title: "Naik Jabatan Bukan Satu-Satunya Jalan untuk Berkembang",
-    description:
+    descriptionId:
       "Eksplorasi berbagai jalur career mobility selain vertical promotion untuk pengembangan karir yang berkelanjutan.",
+    descriptionEn:
+      "Exploring various career mobility paths beyond vertical promotion for sustainable career development.",
     category: ["tulisan", "self-help"],
     tags: ["Career Mobility", "Career Growth"],
     image: "/images/porto/Self-Help - Career Mobility.jpg",
@@ -259,8 +290,10 @@ export const portfolioItems = [
   {
     id: 20,
     title: "The 3 Conversations That Can Cost You Opportunities",
-    description:
+    descriptionId:
       "Pelajaran penting tentang komunikasi efektif dari pengalaman pitching insurance agent yang bisa diterapkan dalam karir.",
+    descriptionEn:
+      "Important lessons on effective communication from insurance agent pitching experiences applicable to careers.",
     category: ["tulisan", "self-help"],
     tags: ["Communication", "Professional Skills"],
     image:
@@ -273,8 +306,10 @@ export const portfolioItems = [
   {
     id: 21,
     title: "Crafting Theory of Change for Your LPDP Essay",
-    description:
+    descriptionId:
       "Panduan lengkap menggunakan framework Theory of Change untuk menulis esai LPDP yang kuat dan terstruktur.",
+    descriptionEn:
+      "Complete guide to using the Theory of Change framework for writing strong and structured LPDP essays.",
     category: ["tulisan", "masters"],
     tags: ["LPDP", "Essay Writing"],
     image:
@@ -287,8 +322,10 @@ export const portfolioItems = [
   {
     id: 22,
     title: "Menulis Esai LPDP dan Motivation Letter dengan SCQA",
-    description:
+    descriptionId:
       "Teknik menulis esai beasiswa dan motivation letter yang persuasif menggunakan framework SCQA.",
+    descriptionEn:
+      "Techniques for writing persuasive scholarship essays and motivation letters using the SCQA framework.",
     category: ["tulisan", "masters"],
     tags: ["SCQA Framework", "Writing Skills"],
     image:
@@ -302,8 +339,10 @@ export const portfolioItems = [
     id: 23,
     title:
       "5 Tips Mengatur Waktu untuk Pekerja Full-Time yang Mempersiapkan S2",
-    description:
+    descriptionId:
       "Strategi time management untuk menyeimbangkan pekerjaan full-time dan persiapan aplikasi program master.",
+    descriptionEn:
+      "Time management strategies for balancing full-time work and master's program application preparation.",
     category: ["tulisan", "masters"],
     tags: ["Time Management", "Higher Education"],
     image:
@@ -316,8 +355,10 @@ export const portfolioItems = [
   {
     id: 24,
     title: "Galau Resign atau Lanjut S2? Coba Pakai Weight Decision Matrix",
-    description:
+    descriptionId:
       "Framework pengambilan keputusan menggunakan Weight Decision Matrix untuk membantu dilema resign atau melanjutkan S2.",
+    descriptionEn:
+      "Decision-making framework using Weight Decision Matrix to help with the dilemma of resigning or continuing Master's studies.",
     category: ["tulisan", "masters"],
     tags: ["Decision Making", "Career Planning"],
     image:
@@ -331,8 +372,10 @@ export const portfolioItems = [
     id: 25,
     title:
       "Nilai Bahasa Inggris C+ Saat S1, Nggak Menghalangi Saya Mendaftar S2 di Columbia",
-    description:
+    descriptionId:
       "Cerita inspiratif perjalanan meningkatkan kemampuan bahasa Inggris dari nilai C+ hingga diterima di Columbia University.",
+    descriptionEn:
+      "Inspirational story of improving English proficiency from C+ grade to acceptance at Columbia University.",
     category: ["tulisan", "masters"],
     tags: ["English Learning", "Motivation"],
     image: "/images/porto/Masters & LPDP - 𝗡𝗶𝗹𝗮𝗶 𝗕𝗮𝗵𝗮𝘀𝗮 𝗜𝗻𝗴𝗴𝗿𝗶𝘀 𝗖.png",
@@ -345,8 +388,10 @@ export const portfolioItems = [
     id: 26,
     title:
       "How Successful Corporate Innovation Training Look Like in the Age of AI?",
-    description:
+    descriptionId:
       "Analisis tentang bagaimana corporate innovation training perlu beradaptasi di era AI untuk tetap efektif dan relevan.",
+    descriptionEn:
+      "Analysis of how corporate innovation training needs to adapt in the AI era to remain effective and relevant.",
     category: ["tulisan", "learning"],
     tags: ["Corporate Learning", "AI"],
     image:
@@ -360,8 +405,10 @@ export const portfolioItems = [
     id: 27,
     title:
       "How TikTok Is Transforming Adult Learning to Foster Lifelong Learning",
-    description:
+    descriptionId:
       "Eksplorasi bagaimana TikTok menjadi hidden EdTech platform yang powerful untuk adult learning dan lifelong learning.",
+    descriptionEn:
+      "Exploration of how TikTok has become a powerful hidden EdTech platform for adult learning and lifelong learning.",
     category: ["tulisan", "learning"],
     tags: ["EdTech", "Lifelong Learning"],
     image:
@@ -375,8 +422,10 @@ export const portfolioItems = [
     id: 28,
     title:
       "Pertumbuhan Dua Arah pada Mentoring: Mentor dan Mentee Saling Bertumbuh",
-    description:
+    descriptionId:
       "Analisis relasi mentoring dengan pendekatan Constructive-Developmental Theory yang menguntungkan kedua belah pihak.",
+    descriptionEn:
+      "Analysis of mentoring relationships using Constructive-Developmental Theory approach that benefits both parties.",
     category: ["tulisan", "learning"],
     tags: ["Mentoring", "Learning Theory"],
     image:
@@ -389,8 +438,10 @@ export const portfolioItems = [
   {
     id: 29,
     title: "Connectivism: The Learning Strategy for the Digital Age",
-    description:
+    descriptionId:
       "Penjelasan mendalam tentang teori Connectivism sebagai strategi pembelajaran yang paling sesuai untuk era digital.",
+    descriptionEn:
+      "In-depth explanation of Connectivism theory as the most suitable learning strategy for the digital age.",
     category: ["tulisan", "learning"],
     tags: ["Learning Theory", "Digital Age"],
     image:

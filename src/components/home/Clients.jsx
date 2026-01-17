@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
 import LogoCarousel from "@components/common/LogoCarousel";
 import { clientLogos, universityLogos } from "@data/logosData";
 
@@ -7,6 +8,8 @@ import { clientLogos, universityLogos } from "@data/logosData";
  * Displays trusted clients and university network with infinite scroll carousels
  */
 const Clients = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background */}
@@ -18,12 +21,14 @@ const Clients = () => {
         {/* Section Title */}
         <div className="text-center mb-20 space-y-6" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-            Dipercaya oleh{" "}
-            <span className="text-primary-600">Organisasi Terkemuka</span>
+            {t("Dipercaya oleh", "Trusted by")}{" "}
+            <span className="text-primary-600">{t("Organisasi Terkemuka", "Leading Organizations")}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Kolaborasi dengan para pemimpin industri dan lulusan dari institusi
-            kelas dunia
+            {t(
+              "Kolaborasi dengan para pemimpin industri dan lulusan dari institusi kelas dunia",
+              "Collaboration with industry leaders and graduates from world-class institutions"
+            )}
           </p>
         </div>
 
@@ -31,7 +36,7 @@ const Clients = () => {
         <div className="mb-20" data-aos="fade-up" data-aos-delay="100">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase mb-6">
-              Dipercaya oleh Organisasi Terkemuka
+              {t("Dipercaya oleh Organisasi Terkemuka", "Trusted by Leading Organizations")}
             </p>
           </div>
 
@@ -42,7 +47,7 @@ const Clients = () => {
         <div data-aos="fade-up" data-aos-delay="200">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-wider text-gray-500 uppercase mb-6">
-              Jaringan Alumni dari Universitas Terkemuka
+              {t("Jaringan Alumni dari Universitas Terkemuka", "Alumni Network from Leading Universities")}
             </p>
           </div>
 

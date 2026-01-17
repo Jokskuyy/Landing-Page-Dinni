@@ -127,7 +127,7 @@ const About = () => {
             <div>
               <h4 className="font-semibold text-white">Columbia University</h4>
               <p className="text-sm text-white/80">
-                M.A. in Adult Learning and Leadership (LPDP Awardee)
+                {t("M.A. in Adult Learning and Leadership (LPDP Awardee)", "M.A. in Adult Learning and Leadership (LPDP Awardee)")}
               </p>
             </div>
           </div>
@@ -138,7 +138,7 @@ const About = () => {
             <div>
               <h4 className="font-semibold text-white">Rumah Siap Kerja</h4>
               <p className="text-sm text-white/80">
-                Head of Learning Department (2021-2024)
+                {t("Head of Learning Department (2021-2024)", "Head of Learning Department (2021-2024)")}
               </p>
             </div>
           </div>
@@ -158,9 +158,9 @@ const About = () => {
               <i className="fas fa-heart text-accent-300 text-lg"></i>
             </div>
             <div>
-              <h4 className="font-semibold text-white">50K+ Lives Impacted</h4>
+              <h4 className="font-semibold text-white">{t("50K+ Kehidupan Terbantu", "50K+ Lives Impacted")}</h4>
               <p className="text-sm text-white/80">
-                Through training & mentoring programs
+                {t("Melalui program training & mentoring", "Through training & mentoring programs")}
               </p>
             </div>
           </div>
