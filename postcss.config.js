@@ -9,16 +9,3 @@ module.exports = {
     autoprefixer: {},
   },
 };
-          normalizeUrl: true,
-          normalizeWhitespace: true,
-          colormin: true,
-          minifySelectors: true,
-          minifyParams: true,
-          calc: {
-            precision: 3,
-          },
-        },
-      ],
-    }),
-  ],
-};
