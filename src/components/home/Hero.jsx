@@ -6,7 +6,7 @@ import React from "react";
  */
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-primary-50/30"></div>
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary-200/40 rounded-full blur-3xl animate-pulse"></div>
@@ -71,7 +71,7 @@ const Hero = () => {
             {/* Stats */}
             <div className="flex flex-wrap gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">100+</div>
+                <div className="text-3xl font-bold text-primary-600">200+</div>
                 <div className="text-sm text-gray-600">Program Dirancang</div>
               </div>
               <div className="text-center">
@@ -79,7 +79,7 @@ const Hero = () => {
                 <div className="text-sm text-gray-600">Orang Terbantu</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">5+</div>
+                <div className="text-3xl font-bold text-primary-600">7+</div>
                 <div className="text-sm text-gray-600">Tahun Pengalaman</div>
               </div>
             </div>
