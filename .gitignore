@@ -40,3 +40,10 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# Vite
+dist-ssr
+*.local
+dist/assets/*.js
+dist/assets/*.css
+dist/index.html

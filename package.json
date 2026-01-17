@@ -4,8 +4,12 @@
   "description": "Professional landing page for Dinni Rahmawati - Career and Self-Development Practitioner",
   "main": "dist/index.html",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npm run clean && npm run build:css && npm run build:js && npm run build:html && npm run optimize:images",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "dev:old": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build:old": "npm run clean && npm run build:css && npm run build:js && npm run build:html && npm run optimize:images",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify && npm run optimize:css",
     "build:tailwinds": "npm run build:css",
     "build:js": "node scripts/build-js.js",
@@ -18,7 +22,7 @@
     "serve:prod": "npx http-server dist -p 3000 -o -c3600 --gzip --brotli",
     "daemon": "node scripts/daemon.js",
     "production": "node scripts/production.js",
-    "start": "npm run daemon",
+    "start": "npm run dev",
     "deploy": "npm run build && npm run production",
     "clean": "rimraf dist/output.css dist/main.min.js dist/optimized",
     "prebuild": "npm run clean",
@@ -35,15 +39,22 @@
   "license": "ISC",
   "dependencies": {
     "flowbite": "^2.5.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.28.5",
+    "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.16",
     "chokidar": "^5.0.0",
     "cssnano": "^6.0.1",
     "esbuild": "^0.19.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "html-minifier-terser": "^7.2.0",
     "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
@@ -54,7 +65,8 @@
     "postcss-cli": "^11.0.0",
     "purgecss": "^5.0.0",
     "rimraf": "^5.0.5",
-    "terser": "^5.24.0"
+    "terser": "^5.24.0",
+    "vite": "^7.3.1"
   },
   "browserslist": [
     "> 1%",
