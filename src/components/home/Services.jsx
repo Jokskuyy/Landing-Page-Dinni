@@ -163,9 +163,13 @@ const Services = () => {
 
               {/* CTA Button */}
               <a
-                href={service.id === 1 ? "https://temantransisi.com/mentor-info/19" : `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-                  service.whatsappText
-                )}`}
+                href={
+                  service.id === 1
+                    ? "https://temantransisi.com/mentor-info/19"
+                    : `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                        service.whatsappText
+                      )}`
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-primary-600/30"

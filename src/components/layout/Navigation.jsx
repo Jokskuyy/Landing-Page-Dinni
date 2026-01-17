@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 /**
  * Navigation Component
  * Fixed header with mobile menu toggle and scroll behavior
  */
 const Navigation = () => {
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,11 +33,11 @@ const Navigation = () => {
 
   // Navigation links
   const navLinks = [
-    { href: "#aboutme", label: "Tentang" },
-    { href: "#services", label: "Layanan" },
-    { href: "#portfolio", label: "Portfolio" },
-    { href: "#testimonies", label: "Testimoni" },
-    { href: "#contactus", label: "Kontak" },
+    { href: "#aboutme", labelId: "Tentang", labelEn: "About" },
+    { href: "#services", labelId: "Layanan", labelEn: "Services" },
+    { href: "#portfolio", labelId: "Portfolio", labelEn: "Portfolio" },
+    { href: "#testimonies", labelId: "Testimoni", labelEn: "Testimonials" },
+    { href: "#contactus", labelId: "Kontak", labelEn: "Contact" },
   ];
 
   return (
@@ -63,38 +66,24 @@ const Navigation = () => {
                 href={link.href}
                 className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
               >
-                {link.label}
+                {t(link.labelId, link.labelEn)}
               </a>
             ))}
 
-            {/* Language Switcher Placeholder */}
-            <button
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 border border-gray-300 rounded-lg hover:border-primary-600 transition-colors"
-              aria-label="Language switcher"
-            >
-              <i className="fas fa-globe"></i>
-              <span>ID</span>
-            </button>
+            <LanguageSwitcher />
 
             {/* CTA Button */}
             <a
               href="#contactus"
               className="inline-flex items-center px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-all hover:shadow-lg hover:shadow-primary-600/30"
             >
-              Hubungi Saya
+              {t("Hubungi Saya", "Let's Talk")}
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center gap-2">
-            {/* Language Switcher Mobile */}
-            <button
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg"
-              aria-label="Language switcher"
-            >
-              <i className="fas fa-globe"></i>
-              <span>ID</span>
-            </button>
+            <LanguageSwitcher />
 
             {/* Hamburger Button */}
             <button
@@ -123,7 +112,7 @@ const Navigation = () => {
                   onClick={handleLinkClick}
                   className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
                 >
-                  {link.label}
+                  {t(link.labelId, link.labelEn)}
                 </a>
               ))}
 
@@ -133,7 +122,7 @@ const Navigation = () => {
                 onClick={handleLinkClick}
                 className="inline-flex items-center justify-center px-5 py-2.5 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold rounded-lg transition-colors mt-2"
               >
-                Hubungi Saya
+                {t("Hubungi Saya", "Let's Talk")}
               </a>
             </div>
           </div>

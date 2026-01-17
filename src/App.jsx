@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import PreLoader from "@components/common/PreLoader";
 import Navigation from "@components/layout/Navigation";
 import Footer from "@components/layout/Footer";
@@ -22,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <LanguageProvider>
       <PreLoader />
       <Navigation />
       <main>
@@ -35,7 +36,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }
 
