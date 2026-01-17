@@ -335,8 +335,7 @@ export const portfolioItems = [
       "Techniques for writing persuasive scholarship essays and motivation letters using the SCQA framework.",
     category: ["tulisan", "masters"],
     tags: ["SCQA Framework", "Writing Skills"],
-    image:
-      "/images/porto/Masters & LPDP - 𝗠𝗲𝗻𝘂𝗹𝗶𝘀 𝗘𝘀𝗮𝗶 𝗟𝗣𝗗𝗣 𝗱𝗮𝗻 𝗠𝗼𝘁𝗶𝘃𝗮𝘁𝗶𝗼𝗻 𝗟𝗲𝘁𝘁𝗲𝗿 𝗱𝗲𝗻𝗴𝗮𝗻 𝗦𝗖𝗤𝗔.jpg",
+    image: "/images/porto/Masters-LPDP-SCQA-Essay-Writing.jpg",
     link: "https://www.linkedin.com/posts/dinni-rahmawati_scqaframework-essaywriting-menulisesai-activity-7285823144051855361-YPmM",
     featured: false,
   },
@@ -352,8 +351,7 @@ export const portfolioItems = [
       "Time management strategies for balancing full-time work and master's program application preparation.",
     category: ["tulisan", "masters"],
     tags: ["Time Management", "Higher Education"],
-    image:
-      "/images/porto/Masters & LPDP - 𝟱 𝗧𝗶𝗽𝘀 𝗠𝗲𝗻𝗴𝗮𝘁𝘂𝗿 𝗪𝗮𝗸𝘁𝘂 𝘂𝗻𝘁𝘂𝗸 𝗣𝗲𝗸𝗲𝗿𝗷𝗮 𝗙𝘂𝗹𝗹-𝗧𝗶𝗺𝗲 𝘆𝗮𝗻𝗴 𝗦𝗲𝗱𝗮𝗻𝗴 𝗠𝗲𝗺𝗽𝗲𝗿𝘀𝗶𝗮𝗽𝗸𝗮𝗻 𝗦𝟮.jpg",
+    image: "/images/porto/Masters-Time-Management-FullTime-S2.jpg",
     link: "https://www.linkedin.com/posts/dinni-rahmawati_timemanagement-highereducation-lifelonglearning-activity-7285098384615448577-YJ5Q",
     featured: false,
   },
@@ -449,8 +447,7 @@ export const portfolioItems = [
       "In-depth explanation of Connectivism theory as the most suitable learning strategy for the digital age.",
     category: ["tulisan", "learning"],
     tags: ["Learning Theory", "Digital Age"],
-    image:
-      "/images/porto/Learning - 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗶𝘃𝗶𝘀𝗺 𝗧𝗵𝗲 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗔𝗴𝗲.webp",
+    image: "/images/porto/Learning-Connectivism-Digital-Age.webp",
     link: "https://dinnirahmawati12.medium.com/connectivism-the-learning-strategy-for-the-digital-age-74031a53793e",
     featured: false,
   },
