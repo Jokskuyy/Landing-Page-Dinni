@@ -50,7 +50,6 @@ export const portfolioItems = [
     title: "Scholarship Application Mentoring",
     descriptionId: "Bimbingan komprehensif untuk aplikasi beasiswa mencakup strategi esai, persiapan interview, dan pemilihan universitas.",
     descriptionEn: "Comprehensive guidance for scholarship applications including essay strategy, interview preparation, and university selection.",
-      "Guidance for scholarship applications including LPDP, Fulbright, and other international scholarship programs.",
     category: ["mentoring"],
     tags: ["Scholarship", "Higher Education"],
     image:
