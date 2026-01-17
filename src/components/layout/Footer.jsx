@@ -12,24 +12,24 @@ const Footer = () => {
       { label: "Tentang", href: "#aboutme" },
       { label: "Layanan", href: "#services" },
       { label: "Portfolio", href: "#portfolio" },
-      { label: "Testimoni", href: "#testimoni" },
-      { label: "Kontak", href: "#kontak" },
+      { label: "Testimoni", href: "#testimonies" },
+      { label: "Kontak", href: "#contactus" },
     ],
     social: [
+      {
+        name: "Instagram",
+        icon: "instagram",
+        link: "https://instagram.com/abcdinis",
+      },
       {
         name: "LinkedIn",
         icon: "linkedin",
         link: "https://linkedin.com/in/dinnirahmawati",
       },
       {
-        name: "Instagram",
-        icon: "instagram",
-        link: "https://instagram.com/dinnirahmawati",
-      },
-      {
-        name: "Medium",
-        icon: "medium",
-        link: "https://medium.com/@dinnirahmawati",
+        name: "TikTok",
+        icon: "tiktok",
+        link: "https://tiktok.com/@dinnirahmawati",
       },
       {
         name: "WhatsApp",
@@ -40,18 +40,16 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="bg-primary-600 py-16">
-      <div className="container mx-auto px-6">
+    <footer id="footer" className="bg-gray-900 py-12">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Branding */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Dinni Rahmawati
-            </h3>
-            <p className="text-white/80 mb-6 leading-relaxed">
-              People Development Practitioner & Career Mentor. Membantu individu
-              mencapai potensi terbaik melalui pembelajaran yang transformatif.
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-white">Dinni Rahmawati</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Career & Self-Development Practitioner yang membantu profesional
+              membuka potensi terbaik mereka.
             </p>
             <div className="flex gap-4">
               {footerLinks.social.map((social, index) => (
@@ -60,7 +58,7 @@ const Footer = () => {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                  className="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center text-white transition-colors"
                   aria-label={social.name}
                 >
                   <i className={`fab fa-${social.icon} text-lg`}></i>
@@ -71,15 +69,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-4">Menu Cepat</h4>
+            <ul className="space-y-2">
               {footerLinks.navigation.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -90,44 +86,24 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">
-              Contact Info
-            </h4>
-            <ul className="space-y-3 text-white/80 text-sm">
-              <li className="flex items-start gap-3">
-                <i className="fas fa-envelope mt-1 text-white"></i>
-                <a
-                  href="mailto:dinnirahmawati.coach@gmail.com"
-                  className="hover:text-white transition-colors"
-                >
-                  dinnirahmawati.coach@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <i className="fab fa-whatsapp mt-1 text-white"></i>
-                <a
-                  href="https://wa.me/62859106531249"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  +62 859-1065-31249
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <i className="fas fa-map-marker-alt mt-1 text-white"></i>
-                <span>New York, USA & Jakarta, Indonesia</span>
-              </li>
-            </ul>
+            <h4 className="font-semibold text-white mb-4">Hubungi Saya</h4>
+            <div className="space-y-2 text-sm text-gray-400">
+              <p>📱 +62 859-1065-31249</p>
+              <p>📧 dinni.business@gmail.com</p>
+              <p>📍 Jakarta, Indonesia</p>
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-white/20 pt-8">
-          <div className="text-center text-white/80 text-sm">
-            <p>&copy; {currentYear} Dinni Rahmawati. All rights reserved.</p>
-            <p className="mt-2">Built with ❤️ using React & TailwindCSS</p>
-          </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-500">
+            © {currentYear} Dinni Rahmawati. All rights reserved.
+          </p>
+          <p className="text-sm text-gray-500 flex items-center gap-1">
+            Built with <span className="text-red-500">❤️</span> using React &
+            TailwindCSS
+          </p>
         </div>
       </div>
     </footer>

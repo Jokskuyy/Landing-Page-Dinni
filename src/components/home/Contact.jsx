@@ -2,12 +2,13 @@ import React, { useState } from "react";
 
 /**
  * Contact Section Component
- * Contact information and social media links
+ * Contact information with social media cards and FAQ section
  */
 const Contact = () => {
   const [emailCopied, setEmailCopied] = useState(false);
 
-  const email = "dinnirahmawati.coach@gmail.com";
+  const email = "dinni.rahmwt@gmail.com";
+  const whatsappNumber = "+62 859-1065-31249";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email).then(() => {
@@ -16,154 +17,152 @@ const Contact = () => {
     });
   };
 
-  const contactMethods = [
+  const contactCards = [
     {
-      icon: "envelope",
-      title: "Email",
-      value: email,
-      action: handleCopyEmail,
-      buttonText: emailCopied ? "Tersalin!" : "Copy Email",
-    },
-    {
-      icon: "whatsapp",
-      iconType: "fab",
+      icon: "fab fa-whatsapp",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-600",
       title: "WhatsApp",
-      value: "+62 859-1065-31249",
-      link: "https://wa.me/62859106531249",
-      buttonText: "Chat WhatsApp",
+      subtitle: "Respon cepat untuk konsultasi",
+      buttonText: "Chat via WhatsApp",
+      buttonBg: "bg-blue-600 hover:bg-blue-700",
+      link: `https://wa.me/62859106531249?text=${encodeURIComponent("Halo Kak Dinni, saya ingin bertanya tentang layanan mentoring/training")}`,
     },
     {
-      icon: "linkedin",
-      iconType: "fab",
+      icon: "fas fa-envelope",
+      bgColor: "bg-gray-50",
+      iconColor: "text-gray-600",
+      title: "Email",
+      subtitle: "Untuk inquiry formal & corporate",
+      buttonText: emailCopied ? "Tersalin!" : "Kirim Email",
+      buttonBg: emailCopied ? "bg-green-600" : "bg-gray-600 hover:bg-gray-700",
+      action: handleCopyEmail,
+    },
+    {
+      icon: "fab fa-instagram",
+      bgColor: "bg-pink-50",
+      iconColor: "text-pink-600",
+      title: "Instagram",
+      subtitle: "Follow untuk tips & insights",
+      buttonText: "@abcdinis",
+      buttonBg: "bg-gray-800 hover:bg-gray-900 text-white",
+      link: "https://instagram.com/abcdinis",
+    },
+    {
+      icon: "fab fa-linkedin",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-700",
       title: "LinkedIn",
-      value: "Dinni Rahmawati",
+      subtitle: "Connect untuk update profesional",
+      buttonText: "Connect di LinkedIn",
+      buttonBg: "bg-gray-800 hover:bg-gray-900 text-white",
       link: "https://linkedin.com/in/dinnirahmawati",
-      buttonText: "Lihat Profil",
     },
   ];
 
-  const socialLinks = [
+  const faqs = [
     {
-      name: "Instagram",
-      icon: "instagram",
-      link: "https://instagram.com/dinnirahmawati",
-      color: "hover:text-pink-600",
+      question: "Berapa lama durasi mentoring?",
+      answer:
+        "Satu sesi mentoring berlangsung 60-90 menit, tergantung paket yang dipilih.",
     },
     {
-      name: "LinkedIn",
-      icon: "linkedin",
-      link: "https://linkedin.com/in/dinnirahmawati",
-      color: "hover:text-blue-600",
+      question: "Apakah bisa online?",
+      answer:
+        "Ya, semua sesi mentoring bisa dilakukan secara online via Zoom atau Google Meet.",
     },
     {
-      name: "Medium",
-      icon: "medium",
-      link: "https://medium.com/@dinnirahmawati",
-      color: "hover:text-gray-800",
+      question: "Bagaimana cara booking?",
+      answer:
+        "Hubungi via WhatsApp untuk diskusi kebutuhan, lalu pilih jadwal yang tersedia.",
+    },
+    {
+      question: "Ada garansi?",
+      answer:
+        "Saya menawarkan satisfaction guarantee - jika tidak puas dengan sesi pertama, uang kembali 100%.",
     },
   ];
 
   return (
-    <section id="kontak" className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-primary-50"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl"></div>
-
-      <div className="container relative z-10 mx-auto px-6">
+    <section
+      id="contactus"
+      className="relative py-24 overflow-hidden bg-gray-50"
+    >
+      <div className="container relative z-10 mx-auto px-6 max-w-5xl">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 rounded-full mb-4">
-            <span className="material-icons-round text-primary-600 text-lg">
-              contact_mail
-            </span>
-            <span className="text-primary-600 font-semibold text-sm">
-              KONTAK
-            </span>
-          </div>
+        <div className="text-center mb-12" data-aos="fade-up">
+          <p className="text-blue-600 text-xs font-bold tracking-wider uppercase mb-4">
+            KONTAK
+          </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mari Terhubung dan{" "}
-            <span className="text-primary-600">Berkembang Bersama</span>
+            Mari Diskusikan Kebutuhanmu
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Hubungi saya untuk diskusi lebih lanjut mengenai training,
-            mentoring, atau kolaborasi.
+            Punya pertanyaan tentang layanan mentoring atau ingin mendiskusikan
+            training untuk organisasimu? Jangan ragu untuk menghubungi saya.
           </p>
         </div>
 
-        {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {contactMethods.map((method, index) => (
+        {/* Contact Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {contactCards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100"
+              className="bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
-                <i
-                  className={`${method.iconType || "fas"} fa-${
-                    method.icon
-                  } text-2xl text-primary-600`}
-                ></i>
+              <div
+                className={`w-14 h-14 ${card.bgColor} rounded-xl flex items-center justify-center mb-4`}
+              >
+                <i className={`${card.icon} text-2xl ${card.iconColor}`}></i>
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {method.title}
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                {card.title}
               </h3>
-              <p className="text-gray-600 mb-6">{method.value}</p>
+              <p className="text-sm text-gray-600 mb-4">{card.subtitle}</p>
 
-              {method.link ? (
+              {card.link ? (
                 <a
-                  href={method.link}
+                  href={card.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors"
+                  className={`inline-flex items-center gap-2 px-6 py-2.5 ${card.buttonBg} text-white font-medium rounded-lg transition-all w-full justify-center`}
                 >
-                  <span>{method.buttonText}</span>
+                  <span>{card.buttonText}</span>
                   <i className="fas fa-arrow-right text-sm"></i>
                 </a>
               ) : (
                 <button
-                  onClick={method.action}
-                  className={`inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-xl transition-all ${
-                    emailCopied
-                      ? "bg-green-600 text-white"
-                      : "bg-primary-600 hover:bg-primary-700 text-white"
-                  }`}
+                  onClick={card.action}
+                  className={`inline-flex items-center gap-2 px-6 py-2.5 ${card.buttonBg} text-white font-medium rounded-lg transition-all w-full justify-center`}
                 >
-                  <i
-                    className={`fas ${
-                      emailCopied ? "fa-check" : "fa-copy"
-                    } text-sm`}
-                  ></i>
-                  <span>{method.buttonText}</span>
+                  <span>{card.buttonText}</span>
+                  <i className="fas fa-arrow-right text-sm"></i>
                 </button>
               )}
             </div>
           ))}
         </div>
 
-        {/* Social Links */}
-        <div className="text-center" data-aos="fade-up">
-          <h3 className="text-xl font-bold text-gray-900 mb-6">
-            Ikuti Saya di Media Sosial
+        {/* FAQ Section */}
+        <div
+          className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200"
+          data-aos="fade-up"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Pertanyaan yang Sering Diajukan
           </h3>
-          <div className="flex justify-center gap-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-xl transition-all ${social.color}`}
-                aria-label={social.name}
-              >
-                <i
-                  className={`fab fa-${social.icon} text-2xl text-gray-600`}
-                ></i>
-              </a>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <h4 className="font-bold text-gray-900 mb-2">{faq.question}</h4>
+                <p className="text-gray-600 text-sm">{faq.answer}</p>
+              </div>
             ))}
           </div>
         </div>

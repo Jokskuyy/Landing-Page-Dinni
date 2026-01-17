@@ -88,7 +88,7 @@ const Hero = () => {
           {/* Image */}
           <div className="flex justify-center flex-1 relative">
             <img
-              className="w-full max-w-lg rounded-3xl shadow-2xl"
+              className="w-full max-w-lg rounded-3xl"
               src="/imgs/cek1.png"
               alt="Dinni Rahmawati - Career Development Practitioner"
               loading="eager"

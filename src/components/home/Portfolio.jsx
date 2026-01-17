@@ -44,26 +44,31 @@ const Portfolio = () => {
     >
       {/* Background Gradient */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500 via-blue-700 to-blue-900"></div>
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 space-y-4" data-aos="fade-up">
-          <span className="inline-block py-1 px-3 rounded-full bg-blue-800/50 border border-blue-400/30 text-primary text-xs font-bold tracking-wider uppercase backdrop-blur-sm">
+          <p className="text-white text-xs font-bold tracking-wider uppercase">
             Portfolio
-          </span>
+          </p>
 
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Pengalaman & <span className="text-primary">Track Record</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-blue-100 text-lg md:text-xl font-light leading-relaxed">
-            Berbagai program training, mentoring, kolaborasi, case study, dan tulisan yang telah saya lakukan dengan berbagai organisasi dan individu.
+            Berbagai program training, mentoring, kolaborasi, case study, dan
+            tulisan yang telah saya lakukan dengan berbagai organisasi dan
+            individu.
           </p>
-
         </div>
 
         {/* Portfolio Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-16" data-aos="fade-up" data-aos-delay="100">
+        <div
+          className="flex flex-wrap justify-center gap-3 mb-16"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <PortfolioFilter
             activeFilter={activeFilter}
             onFilterChange={handleFilterChange}

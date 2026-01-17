@@ -29,7 +29,7 @@ const PortfolioFilter = ({ activeFilter, onFilterChange }) => {
         <button
           key={button.category}
           onClick={() => handleFilterClick(button.category)}
-          className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 `{
+          className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
             activeFilter === button.category
               ? "shadow-lg bg-white text-blue-700 scale-105 ring-4 ring-blue-500/20"
               : "text-white btn-glass hover:bg-white/20"

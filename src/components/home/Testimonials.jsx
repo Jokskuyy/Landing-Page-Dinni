@@ -42,14 +42,9 @@ const Testimonials = () => {
       <div className="container relative z-10 mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 rounded-full mb-4">
-            <span className="material-icons-round text-primary-600 text-lg">
-              forum
-            </span>
-            <span className="text-primary-600 font-semibold text-sm">
-              TESTIMONI
-            </span>
-          </div>
+          <p className="text-gray-900 text-xs font-bold tracking-wider uppercase mb-4">
+            TESTIMONI
+          </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Apa Kata Mereka?
@@ -59,41 +54,6 @@ const Testimonials = () => {
             Cerita sukses dari ratusan mentee dan peserta training yang telah
             mencapai goals mereka.
           </p>
-
-          {/* Statistics */}
-          <div className="flex flex-wrap justify-center gap-6 mt-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-              <span className="material-icons-round text-yellow-500">star</span>
-              <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">
-                  {testimonialStats.averageRating}
-                </strong>{" "}
-                Rating
-              </span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-              <span className="material-icons-round text-primary-600">
-                people
-              </span>
-              <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">
-                  {testimonialStats.total}
-                </strong>{" "}
-                Testimonials
-              </span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm">
-              <span className="material-icons-round text-green-600">
-                school
-              </span>
-              <span className="text-gray-600 text-sm">
-                <strong className="text-gray-900 font-bold">
-                  {testimonialStats.beasiswa}
-                </strong>{" "}
-                Beasiswa
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* Testimonials Grid */}
@@ -150,14 +110,6 @@ const Testimonials = () => {
             <span className="hidden sm:inline">Next</span>
             <span className="material-icons-round text-lg">chevron_right</span>
           </button>
-        </div>
-
-        {/* Page Counter */}
-        <div className="text-center mt-6">
-          <p className="text-gray-600 text-sm">
-            Page <strong className="text-primary-600">{currentPage + 1}</strong>{" "}
-            of <strong>{totalPages}</strong>
-          </p>
         </div>
       </div>
     </section>
