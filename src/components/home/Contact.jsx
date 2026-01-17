@@ -25,7 +25,10 @@ const Contact = () => {
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
       title: "WhatsApp",
-      subtitle: t("Respon cepat untuk konsultasi", "Fast response for consultation"),
+      subtitle: t(
+        "Respon cepat untuk konsultasi",
+        "Fast response for consultation"
+      ),
       buttonText: t("Chat via WhatsApp", "Chat via WhatsApp"),
       buttonBg: "bg-blue-600 hover:bg-blue-700",
       link: `https://wa.me/62859106531249?text=${encodeURIComponent(t("Halo Kak Dinni, saya ingin bertanya tentang layanan mentoring/training", "Hi Dinni, I want to ask about your mentoring/training services"))}`,
@@ -35,8 +38,13 @@ const Contact = () => {
       bgColor: "bg-gray-50",
       iconColor: "text-gray-600",
       title: "Email",
-      subtitle: t("Untuk inquiry formal & corporate", "For formal & corporate inquiries"),
-      buttonText: emailCopied ? t("Tersalin!", "Copied!") : t("Kirim Email", "Send Email"),
+      subtitle: t(
+        "Untuk inquiry formal & corporate",
+        "For formal & corporate inquiries"
+      ),
+      buttonText: emailCopied
+        ? t("Tersalin!", "Copied!")
+        : t("Kirim Email", "Send Email"),
       buttonBg: emailCopied ? "bg-green-600" : "bg-gray-600 hover:bg-gray-700",
       action: handleCopyEmail,
     },
@@ -55,7 +63,10 @@ const Contact = () => {
       bgColor: "bg-blue-50",
       iconColor: "text-blue-700",
       title: "LinkedIn",
-      subtitle: t("Connect untuk update profesional", "Connect for professional updates"),
+      subtitle: t(
+        "Connect untuk update profesional",
+        "Connect for professional updates"
+      ),
       buttonText: t("Connect di LinkedIn", "Connect on LinkedIn"),
       buttonBg: "bg-gray-800 hover:bg-gray-900 text-white",
       link: "https://linkedin.com/in/dinnirahmawati",
@@ -64,7 +75,10 @@ const Contact = () => {
 
   const faqs = [
     {
-      question: t("Berapa lama durasi mentoring?", "How long is the mentoring session?"),
+      question: t(
+        "Berapa lama durasi mentoring?",
+        "How long is the mentoring session?"
+      ),
       answer: t(
         "Satu sesi mentoring berlangsung 60-90 menit, tergantung paket yang dipilih.",
         "One mentoring session lasts 60-90 minutes, depending on the chosen package."

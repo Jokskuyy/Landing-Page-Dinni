@@ -55,7 +55,10 @@ const Portfolio = () => {
           </p>
 
           <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            {t("Pengalaman &", "Experience &")} <span className="text-primary">{t("Track Record", "Track Record")}</span>
+            {t("Pengalaman &", "Experience &")}{" "}
+            <span className="text-primary">
+              {t("Track Record", "Track Record")}
+            </span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-blue-100 text-lg md:text-xl font-light leading-relaxed">
@@ -95,7 +98,10 @@ const Portfolio = () => {
                 search_off
               </span>
               <p className="text-blue-100 text-lg">
-                {t("Tidak ada portfolio untuk kategori ini", "No portfolio items for this category")}
+                {t(
+                  "Tidak ada portfolio untuk kategori ini",
+                  "No portfolio items for this category"
+                )}
               </p>
             </div>
           )}

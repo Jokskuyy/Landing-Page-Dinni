@@ -8,8 +8,10 @@ export const portfolioItems = [
   {
     id: 1,
     title: "Leadership Development Program",
-    descriptionId: "Program training komprehensif yang berfokus pada pengembangan keterampilan dan kapabilitas kepemimpinan untuk calon pemimpin di berbagai organisasi.",
-    descriptionEn: "Comprehensive training program focusing on developing leadership skills and capabilities for emerging leaders in various organizations.",
+    descriptionId:
+      "Program training komprehensif yang berfokus pada pengembangan keterampilan dan kapabilitas kepemimpinan untuk calon pemimpin di berbagai organisasi.",
+    descriptionEn:
+      "Comprehensive training program focusing on developing leadership skills and capabilities for emerging leaders in various organizations.",
     category: ["training", "casestudy"],
     tags: ["Leadership", "Professional Development"],
     image:
@@ -22,8 +24,10 @@ export const portfolioItems = [
   {
     id: 2,
     title: "Soft Skills Workshop",
-    descriptionId: "Workshop interaktif yang dirancang untuk meningkatkan komunikasi, kerja tim, dan keterampilan interpersonal dalam lingkungan profesional.",
-    descriptionEn: "Interactive workshop designed to enhance communication, teamwork, and interpersonal skills in professional settings.",
+    descriptionId:
+      "Workshop interaktif yang dirancang untuk meningkatkan komunikasi, kerja tim, dan keterampilan interpersonal dalam lingkungan profesional.",
+    descriptionEn:
+      "Interactive workshop designed to enhance communication, teamwork, and interpersonal skills in professional settings.",
     category: ["training"],
     tags: ["Soft Skills", "Workshop"],
     image: "/images/porto/Online Training - Paragon.webp",
@@ -35,8 +39,10 @@ export const portfolioItems = [
   {
     id: 3,
     title: "Career Mentoring Success Stories",
-    descriptionId: "Sesi mentoring karier satu-satu yang membantu para profesional transisi ke peran impian mereka dan mencapai pertumbuhan karier.",
-    descriptionEn: "One-on-one career mentoring sessions helping professionals transition to their dream roles and achieve career growth.",
+    descriptionId:
+      "Sesi mentoring karier satu-satu yang membantu para profesional transisi ke peran impian mereka dan mencapai pertumbuhan karier.",
+    descriptionEn:
+      "One-on-one career mentoring sessions helping professionals transition to their dream roles and achieve career growth.",
     category: ["mentoring"],
     tags: ["Career Development", "Personal Growth"],
     image: "/images/porto/Online Training - Mestara.jpg",
@@ -48,8 +54,10 @@ export const portfolioItems = [
   {
     id: 4,
     title: "Scholarship Application Mentoring",
-    descriptionId: "Bimbingan komprehensif untuk aplikasi beasiswa mencakup strategi esai, persiapan interview, dan pemilihan universitas.",
-    descriptionEn: "Comprehensive guidance for scholarship applications including essay strategy, interview preparation, and university selection.",
+    descriptionId:
+      "Bimbingan komprehensif untuk aplikasi beasiswa mencakup strategi esai, persiapan interview, dan pemilihan universitas.",
+    descriptionEn:
+      "Comprehensive guidance for scholarship applications including essay strategy, interview preparation, and university selection.",
     category: ["mentoring"],
     tags: ["Scholarship", "Higher Education"],
     image:
@@ -360,8 +368,7 @@ export const portfolioItems = [
       "Decision-making framework using Weight Decision Matrix to help with the dilemma of resigning or continuing Master's studies.",
     category: ["tulisan", "masters"],
     tags: ["Decision Making", "Career Planning"],
-    image:
-      "/images/porto/Masters & LPDP - Galau Resign atau Lanjut S2.jpg",
+    image: "/images/porto/Masters & LPDP - Galau Resign atau Lanjut S2.jpg",
     link: "https://www.linkedin.com/posts/dinni-rahmawati_weightdecisionmatrix-decisionmaking-careermentoring-activity-7283278877311868928-CRYM",
     featured: false,
   },
@@ -427,8 +434,7 @@ export const portfolioItems = [
       "Analysis of mentoring relationships using Constructive-Developmental Theory approach that benefits both parties.",
     category: ["tulisan", "learning"],
     tags: ["Mentoring", "Learning Theory"],
-    image:
-      "/images/porto/Learning - Pertumbuhan Dua Arah pada Mentoring.png",
+    image: "/images/porto/Learning - Pertumbuhan Dua Arah pada Mentoring.png",
     link: "https://www.linkedin.com/pulse/pertumbuhan-dua-arah-pada-mentoring-mentor-dan-mentee-dinni-rahmawati-pbdcc/",
     featured: false,
   },

@@ -7,7 +7,7 @@ import { useLanguage } from "../../contexts/LanguageContext";
  */
 const Hero = () => {
   const { t } = useLanguage();
-  
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
       {/* Background Elements */}
@@ -21,7 +21,9 @@ const Hero = () => {
           <div className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left space-y-8">
             <div className="space-y-4">
               <p className="text-lg font-medium text-gray-600">
-                <span className="text-gray-800">{t("Hallo, Aku ", "Hello, I'm ")} </span>
+                <span className="text-gray-800">
+                  {t("Hallo, Aku ", "Hello, I'm ")}{" "}
+                </span>
                 <span className="text-primary-600 font-semibold">
                   Dinni Rahmawati
                 </span>
@@ -47,7 +49,9 @@ const Hero = () => {
                   type="button"
                   className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-primary-600/30 group-hover:scale-110 duration-300"
                 >
-                  <span>{t("Lebih Kenal Tentang Dinni", "Get to Know Dinni")}</span>
+                  <span>
+                    {t("Lebih Kenal Tentang Dinni", "Get to Know Dinni")}
+                  </span>
                   <svg
                     className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
@@ -77,15 +81,21 @@ const Hero = () => {
             <div className="flex flex-wrap gap-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">200+</div>
-                <div className="text-sm text-gray-600">{t("Program Dirancang", "Programs Designed")}</div>
+                <div className="text-sm text-gray-600">
+                  {t("Program Dirancang", "Programs Designed")}
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">50K+</div>
-                <div className="text-sm text-gray-600">{t("Orang Terbantu", "People Helped")}</div>
+                <div className="text-sm text-gray-600">
+                  {t("Orang Terbantu", "People Helped")}
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600">7+</div>
-                <div className="text-sm text-gray-600">{t("Tahun Pengalaman", "Years of Experience")}</div>
+                <div className="text-sm text-gray-600">
+                  {t("Tahun Pengalaman", "Years of Experience")}
+                </div>
               </div>
             </div>
           </div>

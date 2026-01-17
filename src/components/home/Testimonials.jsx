@@ -85,7 +85,9 @@ const Testimonials = () => {
             aria-label="Previous page"
           >
             <span className="material-icons-round text-lg">chevron_left</span>
-            <span className="hidden sm:inline">{t("Previous", "Previous")}</span>
+            <span className="hidden sm:inline">
+              {t("Previous", "Previous")}
+            </span>
           </button>
 
           {/* Page Indicators */}

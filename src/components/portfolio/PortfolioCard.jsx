@@ -19,12 +19,22 @@ import { useLanguage } from "../../contexts/LanguageContext";
  */
 const PortfolioCard = ({ item }) => {
   const { t } = useLanguage();
-  const { title, descriptionId, descriptionEn, description, category, tags, image, link } = item;
+  const {
+    title,
+    descriptionId,
+    descriptionEn,
+    description,
+    category,
+    tags,
+    image,
+    link,
+  } = item;
 
   // Use new bilingual fields or fallback to old description field
-  const itemDescription = descriptionId && descriptionEn 
-    ? t(descriptionId, descriptionEn)
-    : description;
+  const itemDescription =
+    descriptionId && descriptionEn
+      ? t(descriptionId, descriptionEn)
+      : description;
 
   // Get primary category for badge
   const primaryCategory = category[0];

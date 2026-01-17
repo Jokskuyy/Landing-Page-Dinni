@@ -73,7 +73,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-white mb-4">{t("Menu Cepat", "Quick Menu")}</h4>
+            <h4 className="font-semibold text-white mb-4">
+              {t("Menu Cepat", "Quick Menu")}
+            </h4>
             <ul className="space-y-2">
               {footerLinks.navigation.map((link, index) => (
                 <li key={index}>
@@ -90,7 +92,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-white mb-4">{t("Hubungi Saya", "Contact Me")}</h4>
+            <h4 className="font-semibold text-white mb-4">
+              {t("Hubungi Saya", "Contact Me")}
+            </h4>
             <div className="space-y-2 text-sm text-gray-400">
               <p>📱 +62 859-1065-31249</p>
               <p>📧 dinni.business@gmail.com</p>

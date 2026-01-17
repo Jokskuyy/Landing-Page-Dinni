@@ -20,7 +20,10 @@ const Services = () => {
         "Personal mentoring sessions to help you achieve career goals, career transitions (resignation/promotion), and find clarity in your professional direction."
       ),
       features: [
-        t("Konsultasi 60-90 menit per sesi", "60-90 minute consultation per session"),
+        t(
+          "Konsultasi 60-90 menit per sesi",
+          "60-90 minute consultation per session"
+        ),
         t("Personalized career roadmap", "Personalized career roadmap"),
         t("CV & LinkedIn review", "CV & LinkedIn review"),
         t("Interview preparation", "Interview preparation"),
@@ -34,7 +37,10 @@ const Services = () => {
     {
       id: 2,
       icon: "graduation-cap",
-      title: t("Scholarship & Master's Mentoring", "Scholarship & Master's Mentoring"),
+      title: t(
+        "Scholarship & Master's Mentoring",
+        "Scholarship & Master's Mentoring"
+      ),
       subtitle: t("Beasiswa & Studi Lanjut", "Scholarship & Further Studies"),
       description: t(
         "Panduan lengkap untuk aplikasi beasiswa dan universitas top dunia, termasuk brainstorming, CV/essay review, dan mock interview.",
@@ -76,7 +82,10 @@ const Services = () => {
     {
       id: 4,
       icon: "chalkboard-teacher",
-      title: t("Corporate Training & Advisory", "Corporate Training & Advisory"),
+      title: t(
+        "Corporate Training & Advisory",
+        "Corporate Training & Advisory"
+      ),
       subtitle: t("Untuk Organisasi", "For Organizations"),
       description: t(
         "Pelatihan soft-skill dan strategi pengembangan pembelajaran untuk organisasi dan perusahaan.",
@@ -112,8 +121,13 @@ const Services = () => {
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t("Pilih Layanan yang Sesuai dengan", "Choose Services That Fit Your")}{" "}
-            <span className="text-primary-600">{t("Kebutuhanmu", "Needs")}</span>
+            {t(
+              "Pilih Layanan yang Sesuai dengan",
+              "Choose Services That Fit Your"
+            )}{" "}
+            <span className="text-primary-600">
+              {t("Kebutuhanmu", "Needs")}
+            </span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">

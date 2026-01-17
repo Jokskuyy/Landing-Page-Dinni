@@ -51,7 +51,9 @@ const About = () => {
               </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                 {t("Membantu Anda Membuka", "Helping You Unlock Your")}{" "}
-                <span className="text-accent-300">{t("Potensi Terbaik", "Best Potential")}</span>
+                <span className="text-accent-300">
+                  {t("Potensi Terbaik", "Best Potential")}
+                </span>
               </h2>
               <div className="space-y-4 text-white/90 leading-relaxed">
                 <p>
@@ -78,10 +80,12 @@ const About = () => {
             {/* Quote */}
             <blockquote className="bg-accent-400/20 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-accent-300">
               <p className="text-lg italic text-white mb-4">
-                "{t(
+                "
+                {t(
                   "Setiap orang punya potensi luar biasa. Tugas saya adalah membantu mereka menemukannya dan mengembangkannya.",
                   "Everyone has extraordinary potential. My job is to help them find it and develop it."
-                )}"
+                )}
+                "
               </p>
               <cite className="text-sm text-accent-200">— Dinni Rahmawati</cite>
             </blockquote>
@@ -127,7 +131,10 @@ const About = () => {
             <div>
               <h4 className="font-semibold text-white">Columbia University</h4>
               <p className="text-sm text-white/80">
-                {t("M.A. in Adult Learning and Leadership (LPDP Awardee)", "M.A. in Adult Learning and Leadership (LPDP Awardee)")}
+                {t(
+                  "M.A. in Adult Learning and Leadership (LPDP Awardee)",
+                  "M.A. in Adult Learning and Leadership (LPDP Awardee)"
+                )}
               </p>
             </div>
           </div>
@@ -138,7 +145,10 @@ const About = () => {
             <div>
               <h4 className="font-semibold text-white">Rumah Siap Kerja</h4>
               <p className="text-sm text-white/80">
-                {t("Head of Learning Department (2021-2024)", "Head of Learning Department (2021-2024)")}
+                {t(
+                  "Head of Learning Department (2021-2024)",
+                  "Head of Learning Department (2021-2024)"
+                )}
               </p>
             </div>
           </div>
@@ -147,9 +157,14 @@ const About = () => {
               <i className="fas fa-award text-accent-300 text-lg"></i>
             </div>
             <div>
-              <h4 className="font-semibold text-white">{t("7+ Tahun Pengalaman", "7+ Years of Experience")}</h4>
+              <h4 className="font-semibold text-white">
+                {t("7+ Tahun Pengalaman", "7+ Years of Experience")}
+              </h4>
               <p className="text-sm text-white/80">
-                {t("di People Development & Career Coaching", "in People Development & Career Coaching")}
+                {t(
+                  "di People Development & Career Coaching",
+                  "in People Development & Career Coaching"
+                )}
               </p>
             </div>
           </div>
@@ -158,9 +173,14 @@ const About = () => {
               <i className="fas fa-heart text-accent-300 text-lg"></i>
             </div>
             <div>
-              <h4 className="font-semibold text-white">{t("50K+ Kehidupan Terbantu", "50K+ Lives Impacted")}</h4>
+              <h4 className="font-semibold text-white">
+                {t("50K+ Kehidupan Terbantu", "50K+ Lives Impacted")}
+              </h4>
               <p className="text-sm text-white/80">
-                {t("Melalui program training & mentoring", "Through training & mentoring programs")}
+                {t(
+                  "Melalui program training & mentoring",
+                  "Through training & mentoring programs"
+                )}
               </p>
             </div>
           </div>
