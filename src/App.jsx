@@ -6,7 +6,7 @@ import Footer from "@components/layout/Footer";
 import Hero from "@components/home/Hero";
 import Clients from "@components/home/Clients";
 import About from "@components/home/About";
-import Services from "@components/home/Services";
+// import Services from "@components/home/Services";
 import Portfolio from "@components/home/Portfolio";
 import Testimonials from "@components/home/Testimonials";
 import Contact from "@components/home/Contact";
@@ -30,7 +30,7 @@ function App() {
         <Hero />
         <Clients />
         <About />
-        <Services />
+        {/* <Services /> */}
         <Portfolio />
         <Testimonials />
         <Contact />

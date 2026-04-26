@@ -42,10 +42,10 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-blue-600 overflow-hidden"
+      className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-primary-600 overflow-hidden"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-500 via-blue-700 to-blue-900"></div>
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] bg-primary-600"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}

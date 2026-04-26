@@ -34,7 +34,7 @@ const Navigation = () => {
   // Navigation links
   const navLinks = [
     { href: "#aboutme", labelId: "Tentang", labelEn: "About" },
-    { href: "#services", labelId: "Layanan", labelEn: "Services" },
+    // { href: "#services", labelId: "Layanan", labelEn: "Services" },
     { href: "#portfolio", labelId: "Portfolio", labelEn: "Portfolio" },
     { href: "#testimonies", labelId: "Testimoni", labelEn: "Testimonials" },
     { href: "#contactus", labelId: "Kontak", labelEn: "Contact" },

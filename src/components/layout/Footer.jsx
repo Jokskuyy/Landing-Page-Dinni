@@ -42,14 +42,14 @@ const Footer = () => {
   };
 
   return (
-    <footer id="footer" className="bg-gray-900 py-12">
+    <footer id="footer" className="bg-primary-600 py-12">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Branding */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">Dinni Rahmawati</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               {t(
                 "Career & Self-Development Practitioner yang membantu profesional membuka potensi terbaik mereka.",
                 "Career & Self-Development Practitioner helping professionals unlock their best potential."
@@ -81,7 +81,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-white hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </a>
@@ -95,7 +95,7 @@ const Footer = () => {
             <h4 className="font-semibold text-white mb-4">
               {t("Hubungi Saya", "Contact Me")}
             </h4>
-            <div className="space-y-2 text-sm text-gray-400">
+            <div className="space-y-2 text-sm text-white">
               <p>📱 +62 859-1065-31249</p>
               <p>📧 dinni.business@gmail.com</p>
               <p>📍 Jakarta, Indonesia</p>
@@ -105,13 +105,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-white">
             © {currentYear} Dinni Rahmawati. All rights reserved.
           </p>
-          <p className="text-sm text-gray-500 flex items-center gap-1">
+          {/* <p className="text-sm text-gray-500 flex items-center gap-1">
             Built with <span className="text-red-500">❤️</span> using React &
             TailwindCSS
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

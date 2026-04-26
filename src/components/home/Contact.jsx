@@ -110,7 +110,7 @@ const Contact = () => {
   return (
     <section
       id="contactus"
-      className="relative py-24 overflow-hidden bg-gray-50"
+      className="relative py-24 overflow-hidden"
     >
       <div className="container relative z-10 mx-auto px-6 max-w-5xl">
         {/* Section Header */}
@@ -175,7 +175,7 @@ const Contact = () => {
         </div>
 
         {/* FAQ Section */}
-        <div
+        {/* <div
           className="bg-white rounded-2xl p-8 md:p-10 border border-gray-200"
           data-aos="fade-up"
         >
@@ -191,7 +191,7 @@ const Contact = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
